@@ -18,15 +18,11 @@ seqSites <- function(data, sites = data$site, src = data$src, ...){
   seqSite2 <- droplevels(subset(seqSite, (index2 %in% data$index2)))
   data2 <- droplevels(subset(data, (index2 %in% seqSite2$index2)))
   index <- data.frame()
-  for(i in 1:length(levels(seqSite2$site))){
-    data3 <- droplevels(subset(data2, site == levels(seqSite2$site)[i]))
-    seqSite3 <- droplevels(subset(seqSite2, site == levels(seqSite2$site)[i]))
-    for(j in 1:length(levels(as.factor(seqSite3$src)))){
-      seqSite4 <- subset(seqSite3, src == seqSite3$src[j])
-      data4 <- subset(data3, src == seqSite3$src[j])
-      data4$index <- seqSite4$index
-      index <- rbind(index, data4) 
-    }
+  for(i in 1:length(levels(seqSite2$index2))){
+    data3 <- droplevels(subset(data2, index2 == levels(seqSite2$index2)[i]))
+    seqSite3 <- droplevels(subset(seqSite2, index2 == levels(seqSite2$index2)[i]))
+    data3$index <- seqSite3$index
+    index <- rbind(index, data3)
   }
   index <- index[order(index$index),]
   #index$index2 <- paste(index$site, index$src, sep = "/ ")
