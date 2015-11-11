@@ -1,0 +1,69 @@
+#############################################################################
+## This script does:
+# 1. loads daily temperature time series;
+# 2. Removes time series with too much NA%;
+# 3. Saves for Eric Oliver to run his Python MHW script on
+#############################################################################
+
+#############################################################################
+## DEPENDS ON:
+source("func/seqSites.R")
+# "data/insituDaily_v3.4.RData"
+#############################################################################
+
+#############################################################################
+## USED BY:
+# 
+#############################################################################
+
+#############################################################################
+## CREATES:
+# "metaData.csv"
+# "graph/sa_site_NA.pdf"
+# "graph/hist_NA.pdf"
+#############################################################################
+
+#############################################################################
+## Read in daily temperatures created by SACTN scripts and meta-data for it
+load("data/insituDaily_v3.4.RData")
+metaData <- read.csv("metaData.csv")
+siteList <- read.csv("setupParams/site_list_v3.4.csv")
+
+#############################################################################
+## Investigate the state of NA% in data
+NArundown <- data.frame()
+for(i in 1:10){
+  data1 <- data.frame(NA. = i*10, n = length(metaData$NA.[metaData$NA. <= i*10]))
+  NArundown <- rbind(NArundown, data1)
+}
+
+# Best time series as decided by NA%
+best <- metaData[metaData$NA. < 10, ]
+mean(best$length)
+max(best$length)
+min(best$length)
+
+# Add index for subsetting
+metaData$index <- paste(metaData$site, metaData$src, sep = "/")
+best$index <- paste(best$site, best$src, sep = "/")
+insituDaily_v3.4$index <- paste(insituDaily_v3.4$site, insituDaily_v3.4$src, sep = "/")
+siteList$index <- paste(siteList$site, siteList$src, sep = "/")
+insitu <- insituDaily_v3.4[insituDaily_v3.4$index %in% best$index, ]
+
+# Add lon/ lat and order along coast
+# SA_coastal_temps <- data.frame()
+# for(i in 1:length(levels(as.factor(insitu$index)))){
+#   data1 <- droplevels(subset(insitu, index == levels(as.factor(insitu$index))[i]))
+#   coords <- droplevels(subset(siteList, index == data1$index[1]))
+#   data1 <- cbind(data1, coords[,4:5])
+#   SA_coastal_temps <- rbind(SA_coastal_temps, data1)
+# }
+SA_coastal_temps <- seqSites(insitu)
+
+# Subset meta-data
+SA_coastal_meta <- metaData[metaData$index %in% best$index, ]
+SA_coastal_meta <- seqSites(SA_coastal_meta)
+
+# Save
+write.csv(SA_coastal_temps, file = "prep/SA_coastal_temps.csv")
+write.csv(SA_coastal_meta, file = "prep/SA_coastal_meta.csv")

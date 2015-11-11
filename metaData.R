@@ -9,7 +9,7 @@
 #############################################################################
 ## DEPENDS ON:
 require(plyr); require(zoo); require(lubridate); require(reshape2); require(maptools); require(sp); require(geosphere); require(PBSmapping); require(mapproj); require(ggplot2); require(gridExtra); require(grid); require(viridis); require(scales)
-source("func/seqSites.R"); source("func/metaTemp.R")
+source("func/seqSites.R"); source("func/metaTemp.R"); source("setupParams/theme.R")
 # "data/insituDaily_v3.4.RData"
 #############################################################################
 
@@ -25,11 +25,11 @@ source("func/seqSites.R"); source("func/metaTemp.R")
 # "graph/hist_NA.pdf"
 #############################################################################
 
-##############################################################################
+#############################################################################
 ## Read in daily temperatures created by SACTN scripts
 load("data/insituDaily_v3.4.RData")
 
-##############################################################################
+#############################################################################
 ## Create meta-data table
 
 # Prep data for calculations
@@ -75,7 +75,7 @@ for(i in 1:length(levels(as.factor(data.summary2$src)))){
 metaData <- seqSites(metaData)
 write.csv(metaData, "metaData.csv")
 
-##############################################################################
+#############################################################################
 ## Create the site map
 
 # Load meta-data
@@ -159,27 +159,27 @@ sa_site <- ggplot() + theme_bw() +
 #sa_site
 ggsave("graph/sa_site_NA.pdf", width = 7.5, height = 4.5, pointsize = 10)
 
-##############################################################################
+#############################################################################
 ## NA% fiugure
 
 # Calculate NAs per month for each time series # This is greyed out as it takes a long time to run
-metaMonthNA <- data.frame()
-for(i in 1:length(levels(insituDaily_v3.4$site))){
-  data1 <- droplevels(subset(insituDaily_v3.4, site == levels(insituDaily_v3.4$site)[i]))
-  for(j in 1:length(levels(as.factor(data1$src)))){
-    data2 <- subset(data1, src == levels(as.factor(data1$src))[j])
-    data2$date <- format(data2$date, "%Y-%m")
-    data2 <- na.trim(data2)
-    for(k in 1:length(levels(as.factor(data2$date)))){
-      data3 <- subset(data2, date == levels(as.factor(data2$date))[k])
-      data4 <- length(data3$temp[is.na(data3$temp)])
-      data5 <- data.frame(site = data2$site[1], src = data2$src[1], date = data3$date[1], NA.days = data4)
-      metaMonthNA <- rbind(metaMonthNA, data5)
-    }
-  }
-}
-metaMonthNA <- seqSites(metaMonthNA)
-save(metaMonthNA, file = "data/metaMonthNA.RData")
+# metaMonthNA <- data.frame()
+# for(i in 1:length(levels(insituDaily_v3.4$site))){
+#   data1 <- droplevels(subset(insituDaily_v3.4, site == levels(insituDaily_v3.4$site)[i]))
+#   for(j in 1:length(levels(as.factor(data1$src)))){
+#     data2 <- subset(data1, src == levels(as.factor(data1$src))[j])
+#     data2$date <- format(data2$date, "%Y-%m")
+#     data2 <- na.trim(data2)
+#     for(k in 1:length(levels(as.factor(data2$date)))){
+#       data3 <- subset(data2, date == levels(as.factor(data2$date))[k])
+#       data4 <- length(data3$temp[is.na(data3$temp)])
+#       data5 <- data.frame(site = data2$site[1], src = data2$src[1], date = data3$date[1], NA.days = data4)
+#       metaMonthNA <- rbind(metaMonthNA, data5)
+#     }
+#   }
+# }
+# metaMonthNA <- seqSites(metaMonthNA)
+# save(metaMonthNA, file = "data/metaMonthNA.RData")
 load("data/metaMonthNA.RData")
 # Create ordered factor by site/ src for plotting
 metaMonthNA$index <- as.factor(paste(metaMonthNA$site, metaMonthNA$src, sep = "/ "))
@@ -194,37 +194,30 @@ for(i in 1:length(levels(as.factor(metaMonthNA$index)))){
   metaMonthNA2 <- rbind(metaMonthNA2, data1)
 }
 
+metaMonthNA2$index <- reorder(metaMonthNA2$index, metaMonthNA2$index2)
+#metaMonthNA2$index <- reorder(metaMonthNA2$index, metaMonthNA$site)
 
-metaMonthNA$index <- reorder(metaMonthNA$index, siteList$index2)
-metaMonthNA$index2 <- 
-metaMonthNA$index <- reorder(metaMonthNA$index, metaMonthNA$site)
-metaMonthNA$date2 <- as.character(metaMonthNA$date)
-metaMonthNA$date2 <- parse_date_time(metaMonthNA$date, "ym", tz = "Africa/Johannesburg")
+metaMonthNA2$date2 <- as.character(metaMonthNA2$date)
+metaMonthNA2$date2 <- parse_date_time(metaMonthNA2$date, "ym", tz = "Africa/Johannesburg")
+
+#metaMonthNA2 <- droplevels(subset(metaMonthNA2, index %in% best$index)) # for use when subsetting from other scripts
 
 # Calculate average missing days
-metaMonthNAmean <- ddply(metaMonthNA, .(site, src), summarize, 
+metaMonthNAmean <- ddply(metaMonthNA2, .(site, src), summarize, 
                    sd = round(sd(NA.days, na.rm = TRUE), 2),
                    mean = round(mean(NA.days, na.rm = TRUE), 2))
 metaMonthNAmean$index <- paste(metaMonthNAmean$site, metaMonthNAmean$src, sep = "/ ")
 
 # figure
-hist_NA <- ggplot(metaMonthNA2, aes(x = date2, y = NA.days, fill = src)) + # Lay plot foundation
+hist_NA <- ggplot(metaMonthNA2, aes(x = date2, y = NA.days, fill = src)) + bw_update +
   geom_bar(stat = "identity") + # Create histogram
   geom_hline(data = metaMonthNAmean, linetype = "solid", size = 0.4, 
              aes(yintercept = mean, colour = src, alpha = 0.6)) +
-  facet_wrap(~ index, ncol = 13, scales = "free_x") + # Create figure for each site
+  facet_wrap(~ index, ncol = 11, scales = "free_x") + # Create figure for each site
   scale_y_discrete(expand = c(0,0), breaks = c(0, 10, 20, 30)) +
-  labs(title = NULL, X = NULL, Y = expression(paste("NA%"))) +
+  labs(title = NULL, x = NULL, y = expression(paste("NA%"))) +
   scale_fill_discrete(name = "Source", l = 20) +
-  theme(panel.background = element_rect(fill = "white", colour = NA),
-        panel.border = element_rect(colour = "black", fill = NA, size = 0.1),
-        panel.grid.major = element_line(colour = "black", size = 0.1, linetype = "dotted"),
-        panel.grid.minor = element_blank(),
-        strip.background = element_blank(),
-        axis.text.x = element_text(size = 5, angle = 45), 
-        axis.text.y = element_text(size = 5), 
-        axis.title.y = element_text(size = 5),
-        strip.text = element_text(size = 6),
+  theme(axis.text.x = element_text(angle = 45),
         legend.position = "bottom")
-#hist_NA
-ggsave("graph/hist_NA.pdf", width = 15, height = 11, pointsize = 10)
+hist_NA
+ggsave("graph/hist_NA.pdf", width = 15, height = 16, pointsize = 10)
