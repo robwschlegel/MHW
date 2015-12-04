@@ -1,0 +1,42 @@
+# Annual average marine coldspell statistics at Port_Nolloth
+# A value of nan indicates mising data. This should correspond to a year with no MCS events (count = 0)
+Year, MCS event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MCS days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1973, 1, 5.0, -2.236, -1.834, -9.172, 5.0, -9.172, 0.2008, 0.2567, 0.008311, -0.5, -0.1001, -0.5003, 0.2, 10.5, 10.9, 54.5, 0.2, -1.288, -1.058, 11.74, 17.0, 10.0
+1974, 1, 12.0, -2.322, -2.005, -24.07, 12.0, -24.07, 0.2273, 0.2196, 0.00858, -0.5097, -0.1972, -2.366, 0.2311, 10.5, 10.81, 129.8, 0.2311, -1.281, -1.109, 11.9, 16.0, 10.0
+1975, 9, 9.778, -2.028, -1.829, -18.63, 88.0, -167.7, 0.1716, 0.2914, 0.000981, -0.5799, -0.4056, -4.483, 0.1676, 10.33, 10.5, 101.9, 0.1633, -1.413, -1.292, 11.6, 18.0, 10.0
+1976, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.14, 16.5, 10.0
+1977, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.5, 18.5, 10.0
+1978, 1, 6.0, -2.6, -2.031, -12.19, 6.0, -12.19, 0.3319, 0.9545, 0.000949, -1.389, -0.8215, -4.929, 0.3321, 9.5, 10.05, 60.3, 0.3253, -2.147, -1.679, 12.33, 15.5, 9.5
+1979, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.29, 17.4, 9.2
+1980, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.36, 17.0, 10.4
+1981, 2, 8.0, -1.885, -1.719, -13.62, 16.0, -27.23, 0.08912, 0.1876, 0.0002275, -0.3421, -0.1829, -2.011, 0.08513, 10.9, 11.05, 88.54, 0.08393, -1.261, -1.14, 12.17, 15.9, 10.0
+1982, 4, 7.75, -1.684, -1.653, -12.62, 31.0, -50.49, 0.04304, 0.7425, 0.0001698, -0.2693, -0.2322, -2.205, 0.04612, 10.75, 10.76, 82.12, 0.03331, -1.218, -1.187, 11.77, 16.0, 10.0
+1983, 4, 5.25, -2.195, -1.985, -10.48, 21.0, -41.94, 0.1089, 1.159, 0.0001853, -0.7404, -0.5482, -2.87, 0.1024, 10.5, 10.7, 56.25, 0.1, -1.525, -1.396, 11.84, 16.0, 10.0
+1984, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.62, 20.0, 10.0
+1985, 3, 6.0, -1.867, -1.848, -11.13, 18.0, -33.38, 0.01378, 0.7049, 0.0002426, -0.3412, -0.3285, -2.071, 0.01042, 11.0, 11.0, 66.0, 0.0, -1.241, -1.235, 12.53, 20.0, 11.0
+1986, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.38, 17.0, 10.0
+1987, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.0, 20.5, 10.0
+1988, 4, 7.0, -2.145, -1.832, -12.61, 28.0, -50.45, 0.3157, 0.966, 0.0001814, -0.7606, -0.4595, -3.253, 0.311, 10.05, 10.35, 72.28, 0.3117, -1.555, -1.343, 12.0, 21.0, 10.0
+1989, 2, 7.5, -1.703, -1.425, -10.58, 15.0, -21.16, 0.2511, 0.177, 0.0001243, -0.5732, -0.2971, -2.136, 0.2523, 10.0, 10.26, 77.0, 0.2492, -1.507, -1.263, 12.33, 21.0, 10.0
+1990, 2, 6.5, -2.012, -1.62, -10.64, 13.0, -21.29, 0.235, 0.5541, 0.0001176, -0.8945, -0.5023, -3.409, 0.2356, 9.7, 10.1, 65.5, 0.2367, -1.806, -1.451, 12.35, 20.0, 9.4
+1991, 4, 5.25, -2.277, -1.949, -10.22, 21.0, -40.87, 0.2186, 0.4978, 0.0001304, -0.9024, -0.581, -3.018, 0.215, 9.9, 10.22, 53.7, 0.2144, -1.668, -1.441, 11.82, 16.0, 9.4
+1992, 10, 6.8, -2.364, -1.909, -12.74, 68.0, -127.4, 0.2853, 0.6536, 0.0001517, -0.9358, -0.4819, -3.317, 0.2844, 10.01, 10.47, 71.01, 0.2861, -1.687, -1.352, 11.54, 18.1, 9.4
+1993, 3, 6.333, -1.882, -1.558, -9.866, 19.0, -29.6, 0.2142, 0.2892, 0.0001352, -0.678, -0.3482, -2.178, 0.2196, 10.1, 10.43, 66.17, 0.2233, -1.561, -1.289, 11.88, 15.4, 9.7
+1994, 2, 13.0, -1.668, -1.467, -19.16, 26.0, -38.33, 0.1217, 0.0575, 5.747e-05, -0.4759, -0.2593, -3.362, 0.131, 10.35, 10.58, 137.7, 0.1386, -1.402, -1.218, 12.36, 18.4, 10.2
+1995, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.82, 20.8, 10.1
+1996, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.76, 18.6, 10.2
+1997, 2, 5.0, -2.121, -1.779, -8.895, 10.0, -17.79, 0.2513, 0.4516, 7.5e-05, -0.6266, -0.2865, -1.432, 0.2503, 10.8, 11.14, 55.7, 0.2503, -1.418, -1.191, 12.24, 19.0, 10.4
+1998, 1, 7.0, -1.875, -1.649, -11.54, 7.0, -11.54, 0.1826, 0.4475, 6.614e-05, -0.6665, -0.4429, -3.101, 0.1836, 10.2, 10.41, 72.9, 0.1959, -1.552, -1.367, 12.34, 19.8, 10.1
+1999, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.61, 18.7, 10.7
+2000, 1, 9.0, -2.466, -1.808, -16.27, 9.0, -16.27, 0.3432, 1.895, 0.0001031, -1.101, -0.4054, -3.649, 0.3625, 10.1, 10.73, 96.6, 0.33, -1.806, -1.293, 12.21, 17.9, 10.1
+2001, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 13.03, 17.9, 11.1
+2002, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.77, 19.9, 10.2
+2003, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.15, 20.0, 10.3
+2004, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.04, 16.0, 10.5
+2005, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.44, 19.5, 10.5
+2006, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.74, 15.5, 10.5
+2007, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.41, 19.0, 11.0
+2008, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.87, 15.5, 11.0
+2009, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.95, 16.5, 11.0
+2010, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.62, 18.0, 11.0
+2011, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 13.38, 18.0, 11.0

@@ -1,0 +1,23 @@
+# Annual average marine coldspell statistics at Fish_Hoek
+# A value of nan indicates mising data. This should correspond to a year with no MCS events (count = 0)
+Year, MCS event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MCS days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1992, 5, 25.4, -3.802, -2.393, -60.06, 127.0, -300.3, 0.6583, 0.4818, 0.02434, -2.3, -0.8903, -22.52, 0.6695, 10.7, 12.1, 304.0, 0.7153, -2.542, -1.618, 13.7, 20.0, 10.0
+1993, 1, 5.0, -4.208, -3.412, -17.06, 5.0, -17.06, 0.9102, 1.339, 0.004029, -2.174, -1.384, -6.919, 0.9288, 11.0, 11.8, 59.0, 0.9798, -2.069, -1.687, 15.95, 22.0, 11.0
+1994, 1, 12.0, -5.251, -4.03, -48.36, 12.0, -48.36, 1.057, 0.5533, 0.006276, -2.85, -1.64, -19.68, 1.051, 13.0, 14.21, 170.5, 1.05, -2.187, -1.685, 15.08, 20.0, 12.0
+1995, 4, 11.5, -2.803, -2.013, -22.74, 46.0, -90.96, 0.4409, 0.6713, 0.001181, -1.303, -0.5204, -5.509, 0.4501, 11.38, 12.05, 140.6, 0.4421, -1.88, -1.367, 14.7, 19.0, 10.0
+1996, 3, 9.667, -3.701, -2.658, -29.01, 29.0, -87.04, 0.5446, 1.137, 0.001255, -1.67, -0.6321, -8.932, 0.5407, 12.5, 13.54, 132.2, 0.5333, -1.795, -1.302, 14.69, 20.5, 11.0
+1997, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.68, 21.0, 12.0
+1998, 1, 5.0, -5.24, -4.447, -22.23, 5.0, -22.23, 0.6753, 0.3867, 0.0008185, -2.85, -2.05, -10.25, 0.6782, 13.0, 13.8, 69.0, 0.6782, -2.192, -1.856, 15.5, 22.0, 12.0
+1999, 1, 9.0, -3.791, -2.471, -22.24, 9.0, -22.24, 0.6495, 0.3946, 0.0007709, -2.023, -0.7036, -6.332, 0.6706, 10.0, 11.33, 102.0, 0.6667, -2.144, -1.403, 15.45, 20.0, 10.0
+2000, 1, 12.0, -2.831, -1.998, -23.97, 12.0, -23.97, 0.287, 0.1304, 0.0004298, -1.026, -0.1922, -2.306, 0.2843, 11.0, 11.88, 142.5, 0.2976, -1.568, -1.106, 15.57, 20.5, 11.0
+2001, 4, 6.75, -2.6, -2.262, -14.48, 27.0, -57.92, 0.2801, 0.2969, 0.0002117, -0.8927, -0.5618, -3.462, 0.2779, 12.88, 13.17, 88.0, 0.2697, -1.485, -1.302, 14.78, 20.0, 12.0
+2002, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.32, 20.5, 10.0
+2003, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.96, 21.0, 11.0
+2004, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.25, 22.0, 12.0
+2005, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.74, 22.0, 11.5
+2006, 1, 5.0, -2.329, -1.823, -9.115, 5.0, -9.115, 0.314, 0.3629, 0.0002347, -1.047, -0.5597, -2.798, 0.3218, 11.0, 11.5, 57.5, 0.3162, -1.816, -1.445, 15.31, 20.0, 11.0
+2007, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.66, 22.0, 12.0
+2008, 1, 5.0, -3.284, -2.648, -13.24, 5.0, -13.24, 0.5071, 1.037, 0.0004005, -1.342, -0.7271, -3.635, 0.495, 13.0, 13.6, 68.0, 0.4899, -1.691, -1.377, 15.98, 22.5, 12.0
+2009, 1, 10.0, -4.748, -3.805, -38.05, 10.0, -38.05, 0.8618, 0.4708, 0.0004369, -2.823, -1.932, -19.32, 0.8485, 11.5, 12.35, 123.5, 0.8415, -2.466, -2.029, 15.27, 20.0, 11.5
+2010, 1, 8.0, -4.234, -3.382, -27.06, 8.0, -27.06, 0.5808, 0.349, 0.00027, -2.468, -1.639, -13.11, 0.563, 10.0, 10.88, 87.0, 0.5995, -2.397, -1.937, 15.76, 22.0, 10.0
+2011, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.03, 20.0, 10.0

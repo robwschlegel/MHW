@@ -1,0 +1,16 @@
+# Annual average marine heatwave statistics at Pollock_Beach
+# A value of nan indicates mising data. This should correspond to a year with no MHW events (count = 0)
+Year, MHW event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MHW days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1999, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.21, 20.4, 13.2
+2000, 1, 6.0, 3.604, 3.118, 18.71, 6.0, 18.71, 0.3821, 0.2558, 0.002779, 1.397, 0.9322, 5.593, 0.3763, 23.9, 23.38, 140.2, 0.3955, 1.633, 1.426, 17.69, 23.9, 13.0
+2001, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.57, 26.5, 12.3
+2002, 1, 5.0, 2.478, 1.868, 9.339, 5.0, 9.339, 0.4985, 0.8913, 0.0007883, 1.474, 0.8571, 4.285, 0.4999, 18.5, 17.9, 89.5, 0.494, 2.468, 1.849, 18.16, 25.0, 14.1
+2003, 4, 6.75, 3.189, 2.567, 17.17, 27.0, 68.68, 0.3412, 0.3634, 0.0009662, 1.382, 0.7478, 4.913, 0.353, 22.02, 21.41, 144.4, 0.3456, 1.726, 1.387, 18.59, 24.3, 13.5
+2004, 5, 9.4, 3.029, 2.202, 20.4, 47.0, 102.0, 0.4658, 0.489, 0.0007687, 1.45, 0.6119, 5.314, 0.4667, 21.64, 20.79, 195.6, 0.4814, 1.919, 1.381, 18.75, 23.5, 10.8
+2005, 2, 5.0, 3.293, 2.707, 13.54, 10.0, 27.07, 0.4546, 0.3921, 0.001055, 1.29, 0.691, 3.455, 0.465, 23.5, 22.92, 114.6, 0.4509, 1.652, 1.351, 18.38, 24.0, 14.0
+2006, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.2, 22.9, 14.1
+2007, 2, 5.5, 2.905, 2.658, 14.31, 11.0, 28.62, 0.2122, 1.311, 0.0004062, 1.039, 0.8197, 4.405, 0.2012, 21.5, 21.24, 115.7, 0.2153, 1.56, 1.443, 18.65, 24.9, 14.0
+2008, 1, 6.0, 2.573, 1.973, 11.84, 6.0, 11.84, 0.3885, 0.2456, 0.0002588, 1.235, 0.6098, 3.659, 0.4141, 19.3, 18.75, 112.5, 0.3403, 1.924, 1.453, 18.05, 22.9, 13.4
+2009, 1, 7.0, 2.995, 2.661, 18.62, 7.0, 18.62, 0.2362, 0.3515, 0.000387, 1.783, 1.431, 10.01, 0.2332, 19.4, 19.07, 133.5, 0.2433, 2.47, 2.163, 17.95, 23.4, 14.0
+2010, 2, 6.0, 2.276, 1.697, 10.18, 12.0, 20.36, 0.3453, 2.283, 0.0003059, 0.986, 0.4061, 2.436, 0.3405, 18.85, 18.25, 109.5, 0.3657, 1.76, 1.314, 18.09, 23.3, 14.1
+2011, 1, 5.0, 2.436, 2.101, 10.51, 5.0, 10.51, 0.238, 0.4961, 0.0001195, 0.821, 0.4823, 2.411, 0.237, 21.2, 20.8, 104.0, 0.2366, 1.508, 1.298, 17.66, 21.6, 11.8

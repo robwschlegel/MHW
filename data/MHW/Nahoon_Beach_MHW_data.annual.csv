@@ -1,0 +1,18 @@
+# Annual average marine heatwave statistics at Nahoon_Beach
+# A value of nan indicates mising data. This should correspond to a year with no MHW events (count = 0)
+Year, MHW event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MHW days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1984, 2, 6.5, 4.203, 3.177, 20.94, 13.0, 41.87, 0.615, 1.578, 0.006574, 1.937, 0.9339, 6.398, 0.6063, 23.0, 22.01, 143.5, 0.6028, 1.871, 1.427, 17.7, 24.0, 11.0
+1985, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.43, 24.0, 14.0
+1986, 1, 7.0, 5.856, 3.287, 23.01, 7.0, 23.01, 1.049, 2.324, 0.004736, 3.697, 1.125, 7.877, 1.05, 25.0, 22.43, 157.0, 1.05, 2.712, 1.521, 18.1, 25.0, 15.0
+1987, 2, 8.0, 5.07, 3.257, 25.36, 16.0, 50.73, 0.904, 1.332, 0.002356, 2.763, 0.9709, 6.887, 0.8957, 23.5, 21.68, 172.5, 0.9067, 2.217, 1.433, 17.79, 24.0, 15.0
+1988, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.98, 23.0, 13.0
+1989, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.19, 24.0, 10.0
+1990, 3, 6.0, 3.831, 3.254, 19.52, 18.0, 58.57, 0.438, 0.7852, 0.0006421, 1.978, 1.413, 8.475, 0.4312, 22.0, 21.44, 128.7, 0.4234, 2.133, 1.807, 18.29, 24.0, 15.0
+1991, 3, 5.667, 3.499, 2.878, 16.08, 17.0, 48.25, 0.4239, 1.052, 0.0005364, 1.657, 1.035, 5.81, 0.4228, 21.33, 20.72, 117.0, 0.4224, 1.892, 1.57, 18.37, 23.0, 15.0
+1992, 3, 8.333, 3.707, 2.877, 22.37, 25.0, 67.12, 0.7021, 1.035, 0.0006743, 1.818, 0.9524, 7.179, 0.7163, 21.67, 20.87, 172.3, 0.6875, 1.963, 1.496, 18.94, 23.0, 15.0
+1993, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.22, 24.0, 14.0
+1994, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.89, 22.0, 15.0
+1995, 2, 11.5, 5.055, 3.988, 53.63, 23.0, 107.3, 0.7806, 1.658, 0.0005257, 2.865, 1.835, 29.81, 0.8008, 23.0, 21.94, 258.5, 0.7798, 2.405, 1.898, 18.49, 25.0, 15.0
+1996, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.79, 23.0, 13.5
+1997, 1, 8.0, 3.854, 3.465, 27.72, 8.0, 27.72, 0.4899, 2.005, 0.0003169, 1.505, 1.069, 8.55, 0.5113, 22.0, 21.62, 173.0, 0.4841, 1.641, 1.448, 17.67, 22.0, 13.0
+1998, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.82, 19.0, 16.0

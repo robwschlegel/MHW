@@ -1,0 +1,16 @@
+# Annual average marine coldspell statistics at Pollock_Beach
+# A value of nan indicates mising data. This should correspond to a year with no MCS events (count = 0)
+Year, MCS event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MCS days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1999, 1, 6.0, -4.129, -3.074, -18.44, 6.0, -18.44, 0.7316, 1.761, 0.01215, -2.349, -1.28, -7.678, 0.7307, 13.6, 14.7, 88.2, 0.7371, -2.32, -1.713, 16.21, 20.4, 13.2
+2000, 4, 6.5, -2.738, -2.108, -13.61, 26.0, -54.44, 0.3405, 0.4551, 0.002955, -1.268, -0.6316, -4.049, 0.3405, 14.25, 14.93, 96.97, 0.3619, -1.944, -1.471, 17.69, 23.9, 13.0
+2001, 1, 6.0, -3.326, -2.693, -16.16, 6.0, -16.16, 0.5813, 1.943, 0.002838, -1.564, -0.9538, -5.723, 0.5716, 14.8, 15.3, 91.8, 0.5477, -1.888, -1.547, 17.57, 26.5, 12.3
+2002, 1, 5.0, -2.102, -1.648, -8.239, 5.0, -8.239, 0.2637, 0.8487, 0.0008035, -0.7361, -0.2865, -1.432, 0.2606, 14.4, 14.84, 74.2, 0.2577, -1.539, -1.21, 18.16, 25.0, 14.1
+2003, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.59, 24.3, 13.5
+2004, 1, 19.0, -5.808, -2.577, -48.95, 19.0, -48.95, 1.26, 0.5684, 0.002236, -4.417, -1.197, -22.75, 1.247, 10.8, 14.01, 266.2, 1.203, -4.174, -1.861, 18.75, 23.5, 10.8
+2005, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.38, 24.0, 14.0
+2006, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.2, 22.9, 14.1
+2007, 1, 6.0, -4.199, -3.074, -18.44, 6.0, -18.44, 0.9513, 1.376, 0.0008574, -2.525, -1.39, -8.341, 0.9785, 14.5, 15.59, 93.55, 0.8566, -2.509, -1.835, 18.65, 24.9, 14.0
+2008, 2, 8.5, -2.054, -1.632, -14.52, 17.0, -29.04, 0.2247, 0.1819, 0.0003925, -0.895, -0.4752, -4.756, 0.2261, 14.05, 14.52, 122.4, 0.2291, -1.78, -1.414, 18.05, 22.9, 13.4
+2009, 2, 5.5, -4.06, -3.145, -17.26, 11.0, -34.52, 0.7045, 3.048, 0.0008006, -2.2, -1.313, -7.104, 0.6815, 15.9, 16.81, 92.62, 0.6891, -2.197, -1.727, 17.95, 23.4, 14.0
+2010, 2, 5.0, -1.967, -1.668, -8.342, 10.0, -16.68, 0.2129, 0.3158, 0.0001931, -0.57, -0.275, -1.375, 0.2047, 14.9, 15.2, 76.0, 0.2102, -1.403, -1.192, 18.09, 23.3, 14.1
+2011, 4, 7.25, -4.746, -3.686, -27.13, 29.0, -108.5, 0.6939, 1.782, 0.0006846, -2.39, -1.369, -9.914, 0.674, 15.32, 16.37, 118.5, 0.6875, -1.981, -1.581, 17.66, 21.6, 11.8

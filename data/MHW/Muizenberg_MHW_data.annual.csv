@@ -1,0 +1,42 @@
+# Annual average marine heatwave statistics at Muizenberg
+# A value of nan indicates mising data. This should correspond to a year with no MHW events (count = 0)
+Year, MHW event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MHW days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1973, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.22, 21.0, 10.0
+1974, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.03, 23.0, 11.0
+1975, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.28, 22.0, 11.0
+1976, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.11, 21.0, 9.0
+1977, 1, 5.0, 3.462, 2.62, 13.1, 5.0, 13.1, 0.5377, 0.4423, 0.0008131, 1.574, 0.729, 3.645, 0.5418, 20.5, 19.6, 98.0, 0.5831, 1.834, 1.386, 16.47, 22.5, 11.0
+1978, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.32, 22.0, 11.5
+1979, 2, 6.5, 3.296, 2.736, 17.91, 13.0, 35.82, 0.3121, 1.004, 0.0005578, 1.237, 0.6929, 4.606, 0.3064, 17.5, 16.85, 109.8, 0.3613, 1.599, 1.337, 16.25, 21.5, 10.0
+1980, 6, 10.5, 4.09, 2.934, 31.81, 63.0, 190.9, 0.6356, 0.7703, 0.000788, 2.299, 1.121, 12.5, 0.6392, 20.0, 18.85, 210.3, 0.6311, 2.275, 1.618, 16.7, 24.5, 12.0
+1981, 2, 11.0, 3.675, 2.822, 32.64, 22.0, 65.28, 0.3904, 0.9558, 0.0005255, 1.598, 0.7384, 9.863, 0.3873, 21.0, 20.03, 231.2, 0.423, 1.773, 1.356, 16.79, 24.5, 10.5
+1982, 1, 5.0, 2.286, 2.047, 10.23, 5.0, 10.23, 0.2512, 0.4623, 0.0002604, 0.7426, 0.5077, 2.539, 0.2463, 15.5, 15.3, 76.5, 0.2449, 1.481, 1.329, 16.31, 22.0, 11.0
+1983, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.18, 23.0, 10.5
+1984, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 14.28, 23.0, 9.0
+1985, 2, 5.0, 3.326, 2.398, 11.99, 10.0, 23.98, 0.5882, 0.4556, 0.0003186, 1.501, 0.5795, 2.897, 0.5852, 18.5, 17.5, 87.5, 0.6449, 1.885, 1.334, 16.23, 23.0, 10.0
+1986, 1, 5.0, 3.279, 2.195, 10.98, 5.0, 10.98, 0.5452, 0.3872, 0.0001585, 1.484, 0.4129, 2.065, 0.5394, 19.5, 18.3, 91.5, 0.6, 1.826, 1.231, 16.17, 23.0, 10.0
+1987, 1, 13.0, 2.783, 2.483, 32.28, 13.0, 32.28, 0.185, 0.09863, 0.0001238, 0.8177, 0.5504, 7.155, 0.2139, 16.5, 16.15, 210.0, 0.2308, 1.416, 1.287, 16.65, 23.0, 11.0
+1988, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.41, 22.0, 10.0
+1989, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.54, 21.0, 10.0
+1990, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.62, 22.0, 11.5
+1991, 5, 9.6, 3.111, 2.653, 25.5, 48.0, 127.5, 0.3195, 0.31, 0.000168, 1.12, 0.6788, 6.68, 0.3093, 19.2, 18.7, 174.8, 0.3751, 1.578, 1.35, 16.78, 21.5, 11.4
+1992, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 14.58, 21.0, 9.0
+1993, 3, 8.0, 2.36, 2.097, 17.47, 24.0, 52.41, 0.2016, 0.3704, 8.129e-05, 0.6271, 0.3478, 3.24, 0.206, 15.5, 15.33, 122.0, 0.1421, 1.354, 1.194, 16.27, 20.5, 12.0
+1994, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.56, 21.0, 12.0
+1995, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.8, 23.0, 12.0
+1996, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.3, 21.5, 11.0
+1997, 2, 7.0, 4.941, 2.946, 20.34, 14.0, 40.67, 1.047, 1.907, 0.0003545, 3.244, 1.269, 8.689, 1.036, 20.25, 18.34, 127.5, 1.006, 2.877, 1.749, 15.77, 22.5, 10.5
+1998, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.49, 21.5, 11.0
+1999, 10, 27.2, 4.889, 3.233, 90.49, 272.0, 904.9, 0.7526, 1.085, 0.0002892, 3.044, 1.369, 40.03, 0.7535, 19.8, 18.28, 534.1, 0.8515, 2.671, 1.741, 18.35, 25.0, 13.0
+2000, 3, 21.0, 4.365, 3.082, 69.12, 63.0, 207.4, 0.7286, 0.2171, 0.0002832, 2.343, 1.048, 25.46, 0.7226, 18.5, 17.56, 395.0, 0.8011, 2.141, 1.506, 16.89, 24.5, 12.0
+2001, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 14.57, 22.0, 10.0
+2002, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.29, 23.0, 10.0
+2003, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.84, 24.0, 10.0
+2004, 2, 6.5, 3.749, 2.955, 19.36, 13.0, 38.73, 0.4386, 0.4725, 0.0001496, 1.844, 1.056, 7.05, 0.4366, 22.75, 21.89, 142.2, 0.4759, 1.971, 1.563, 16.02, 23.0, 11.0
+2005, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.78, 22.5, 10.0
+2006, 2, 5.5, 2.489, 2.242, 12.38, 11.0, 24.76, 0.1927, 0.3615, 7.12e-05, 0.6968, 0.4414, 2.398, 0.1911, 19.75, 19.53, 108.5, 0.2179, 1.391, 1.25, 15.5, 22.5, 11.0
+2007, 2, 5.0, 2.503, 2.296, 11.48, 10.0, 22.96, 0.1565, 0.1618, 6.968e-05, 0.5419, 0.3381, 1.69, 0.1546, 21.5, 21.35, 106.8, 0.1225, 1.283, 1.174, 17.49, 22.5, 11.0
+2008, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.34, 22.0, 10.5
+2009, 1, 6.0, 2.033, 1.943, 11.66, 6.0, 11.66, 0.1158, 0.16, 2.184e-05, 0.4462, 0.3597, 2.158, 0.1428, 14.5, 14.42, 86.5, 0.1273, 1.281, 1.229, 16.14, 22.0, 11.0
+2010, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.13, 21.5, 9.5
+2011, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.09, 21.5, 10.5

@@ -1,0 +1,18 @@
+# Annual average marine coldspell statistics at Knysna
+# A value of nan indicates mising data. This should correspond to a year with no MCS events (count = 0)
+Year, MCS event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MCS days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1995, 4, 14.0, -4.667, -3.413, -57.11, 56.0, -228.5, 0.7099, 0.594, 0.02912, -2.248, -1.08, -19.81, 0.6551, 12.13, 13.38, 185.3, 0.6795, -1.858, -1.412, 15.45, 19.31, 10.85
+1996, 8, 16.12, -5.057, -3.816, -51.17, 129.0, -409.4, 0.7259, 0.6536, 0.00624, -2.458, -1.215, -15.53, 0.7165, 12.1, 13.31, 215.7, 0.7187, -1.98, -1.449, 15.36, 21.85, 10.72
+1997, 1, 6.0, -4.51, -2.83, -16.98, 6.0, -16.98, 1.018, 1.764, 0.003273, -3.393, -1.701, -10.21, 1.028, 11.76, 13.49, 80.92, 1.064, -4.039, -2.516, 17.44, 23.0, 11.76
+1998, 1, 5.0, -7.417, -6.241, -31.2, 5.0, -31.2, 1.106, 1.275, 0.002834, -4.599, -3.414, -17.07, 1.093, 11.68, 12.86, 64.29, 1.156, -2.632, -2.206, 17.86, 24.18, 11.58
+1999, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.74, 22.86, 12.86
+2000, 2, 8.5, -7.075, -5.704, -49.49, 17.0, -98.97, 1.174, 1.054, 0.001847, -3.411, -2.008, -17.86, 1.194, 11.96, 13.32, 115.7, 1.131, -1.927, -1.544, 17.83, 23.39, 11.4
+2001, 1, 9.0, -6.018, -5.097, -45.87, 9.0, -45.87, 1.174, 1.123, 0.001392, -3.734, -2.805, -25.24, 1.177, 12.29, 13.21, 118.9, 1.152, -2.634, -2.225, 17.26, 22.8, 12.06
+2002, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.54, 23.57, 13.28
+2003, 1, 8.0, -2.562, -1.749, -13.99, 8.0, -13.99, 0.4359, 1.428, 0.000418, -1.337, -0.555, -4.44, 0.423, 12.93, 13.8, 110.4, 0.4626, -2.092, -1.461, 18.2, 24.24, 12.93
+2004, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.63, 23.57, 14.18
+2005, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.55, 23.04, 12.75
+2006, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.77, 22.65, 12.0
+2007, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 18.28, 23.55, 12.55
+2008, 3, 7.333, -5.943, -4.43, -31.9, 22.0, -95.69, 1.066, 1.741, 0.0006693, -3.258, -1.732, -12.09, 1.063, 11.95, 13.42, 97.67, 1.045, -2.292, -1.662, 16.74, 22.54, 11.81
+2009, 2, 6.0, -3.593, -2.953, -17.72, 12.0, -35.44, 0.5902, 1.302, 0.0002818, -2.026, -1.331, -7.988, 0.6165, 13.55, 14.22, 85.35, 0.6054, -2.337, -1.894, 16.62, 21.78, 12.57

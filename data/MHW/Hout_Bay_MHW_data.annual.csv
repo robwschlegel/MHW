@@ -1,0 +1,21 @@
+# Annual average marine heatwave statistics at Hout_Bay
+# A value of nan indicates mising data. This should correspond to a year with no MHW events (count = 0)
+Year, MHW event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MHW days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1991, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 12.25, 15.43, 8.85
+1992, 6, 7.167, 3.051, 2.414, 17.81, 43.0, 106.9, 0.4711, 0.4939, 0.003548, 1.603, 0.9747, 8.304, 0.4768, 13.76, 13.08, 93.58, 0.4886, 2.532, 1.945, 11.62, 15.7, 8.279
+1993, 2, 13.5, 2.057, 1.896, 25.71, 27.0, 51.42, 0.1304, 0.0719, 0.0004464, 0.537, 0.3845, 5.335, 0.1327, 15.33, 15.25, 205.6, 0.1427, 1.353, 1.255, 11.25, 15.5, 8.317
+1994, 2, 10.0, 2.277, 1.684, 18.27, 20.0, 36.55, 0.2758, 0.2901, 0.001214, 1.134, 0.526, 5.422, 0.2785, 13.91, 13.32, 140.0, 0.2755, 2.131, 1.504, 11.1, 16.09, 8.6
+1995, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 11.14, 14.32, 8.279
+1996, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 10.77, 14.09, 7.456
+1997, 3, 6.333, 2.734, 2.229, 13.82, 19.0, 41.45, 0.3737, 0.3058, 0.0005623, 1.054, 0.5488, 3.737, 0.3794, 14.34, 13.84, 85.95, 0.3843, 1.764, 1.406, 10.97, 15.64, 7.52
+1998, 1, 10.0, 3.204, 2.595, 25.95, 10.0, 25.95, 0.4321, 0.2509, 0.0004939, 1.236, 0.7282, 7.282, 0.3963, 14.74, 14.0, 140.0, 0.5163, 1.628, 1.389, 10.96, 15.95, 8.015
+1999, 1, 11.0, 2.768, 1.942, 21.36, 11.0, 21.36, 0.5839, 0.3118, 0.0005339, 1.831, 1.005, 11.05, 0.5966, 12.68, 11.85, 130.4, 0.5847, 2.956, 2.081, 11.14, 15.38, 8.857
+2000, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 11.08, 15.37, 7.825
+2001, 3, 7.0, 2.965, 2.516, 17.21, 21.0, 51.62, 0.3349, 0.5338, 0.0002969, 1.13, 0.7073, 4.321, 0.3267, 14.96, 14.59, 102.4, 0.3001, 1.603, 1.378, 11.84, 16.13, 8.813
+2002, 2, 11.0, 2.046, 1.365, 15.19, 22.0, 30.39, 0.3855, 0.145, 0.0003739, 1.241, 0.5677, 6.402, 0.3839, 11.85, 11.16, 122.9, 0.3889, 2.531, 1.707, 11.24, 14.64, 7.637
+2003, 2, 9.0, 4.151, 3.115, 28.28, 18.0, 56.55, 0.6879, 0.4891, 0.0004902, 2.598, 1.551, 13.63, 0.6932, 14.71, 13.7, 124.3, 0.7, 3.165, 2.245, 10.96, 15.1, 8.534
+2004, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 10.82, 14.54, 8.546
+2005, 5, 8.2, 2.876, 2.361, 20.31, 41.0, 101.6, 0.3282, 0.9469, 0.0002667, 1.209, 0.7098, 5.991, 0.3239, 14.99, 14.54, 122.5, 0.3274, 1.767, 1.459, 11.6, 16.72, 8.236
+2006, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 10.69, 14.51, 8.352
+2007, 4, 8.5, 3.283, 2.593, 21.92, 34.0, 87.68, 0.6053, 0.4312, 0.0002414, 1.587, 0.9116, 7.136, 0.6101, 14.94, 14.33, 122.3, 0.5992, 1.943, 1.544, 11.66, 15.85, 8.026
+2008, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 9.624, 10.98, 8.578
