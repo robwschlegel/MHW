@@ -126,5 +126,22 @@ results(annualMCSsc)
 results(annualMCSec)
 
 #############################################################################
-# Extract two largest MHW and MCS events per coast for further analysis
+## Extract two largest MHW and MCS events per coast for further analysis
+# Create function to be applied to all MHW and MCS ddataframes
+big2 <- function(x){ # To be used with "annual" data frames only
+  y1 <- x[which.max(abs(x$Cumulative.intensity..deg.C.x.days.)), 1:15]
+  x2 <- x[-which.max(abs(x$Cumulative.intensity..deg.C.x.days.)), ] # Remove largest so second largest can be found
+  y2 <- x2[which.max(abs(x2$Cumulative.intensity..deg.C.x.days.)), 1:15]
+  z <- rbind(y1, y2)
+  return(z)
+}
 
+# Big 2 for MHW and MCS for all coastal sections
+big2(eventMHW)
+big2(eventMHWwc)
+big2(eventMHWsc)
+big2(eventMHWec)
+big2(eventMCS)
+big2(eventMCSwc)
+big2(eventMCSsc)
+big2(eventMCSec)
