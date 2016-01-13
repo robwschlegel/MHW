@@ -73,13 +73,14 @@ for(i in 1:length(levels(as.factor(data.summary2$src)))){
 
 # Order correctly for use in table
 metaData <- seqSites(metaData)
-write.csv(metaData, "metaData.csv")
+save(metaData, file = "data/metaData.Rdata")
+write.csv(metaData, "data/metaData.csv", row.names = F)
 
 #############################################################################
 ## Create the site map
 
 # Load meta-data
-metaData <- read.csv("metaData.csv")
+metaData <- read.csv("data/metaData.csv")
 colnames(metaData)[1] <- "order"
 colnames(metaData)[13] <- "NAper"
 

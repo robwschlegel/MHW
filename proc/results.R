@@ -81,9 +81,34 @@ eventMCSsc <- droplevels(subset(eventMCS, site %in% sc))
 eventMCSec <- droplevels(subset(eventMCS, site %in% ec))
 
 #############################################################################
+## Analyse relevant statistiics per site
+# Create functions for cleaner calculating... better to not use for loops...
+resultsSite <- function(x){ # To be used with "annual" data frames only
+  results <- data.frame()
+  for(i in 1:length(levels(as.factor(x$site)))){
+    y <- droplevels(subset(x, site == levels(as.factor(x$site))[i]))
+    z <- data.frame(site = y$site[1], event_count = mean(y[, 3], na.rm = T), 
+                    event_length = mean(y[, 8], na.rm = T), event_cum_in = mean(y[, 9]),
+                    trend_count = as.numeric(coef(lm(y[, 3] ~ index(y)))[2])*10, 
+                    trend_length = as.numeric(coef(lm(y[, 8] ~ index(y)))[2])*10,
+                    trend_cum_in = as.numeric(coef(lm(y[, 9] ~ index(y)))[2])*10)
+    results <- rbind(results, z)
+  }
+  return(results)
+}
+
+resultsSite(annualMHW)
+resultsSite(annualMCS)
+
+# Combine and save for use with "graph/diffMaps.R"
+allSitesMHWMCS <- rbind(data.frame(resultsSite(annualMHW), event = "MHW"),
+                        data.frame(resultsSite(annualMCS), event = "MCS"))
+save(allSitesMHWMCS, file = "data/allSitesMHWMCS.Rdata")
+
+#############################################################################
 ## Analyse relevant statistiics per coast
 # Create functions for cleaner calculating... better to not use for loops...
-results <- function(x){ # To be used with "annual" data frames only
+resultsCoast <- function(x){ # To be used with "annual" data frames only
   event_counts <- data.frame()
   event_lengths <- data.frame()
   event_cum_ins <- data.frame()
@@ -116,14 +141,14 @@ results <- function(x){ # To be used with "annual" data frames only
 }
 
 # Stats for MHW and MCS for all coastal sections
-results(annualMHW)
-results(annualMHWwc)
-results(annualMHWsc)
-results(annualMHWec)
-results(annualMCS)
-results(annualMCSwc)
-results(annualMCSsc)
-results(annualMCSec)
+resultsCoast(annualMHW)
+resultsCoast(annualMHWwc)
+resultsCoast(annualMHWsc)
+resultsCoast(annualMHWec)
+resultsCoast(annualMCS)
+resultsCoast(annualMCSwc)
+resultsCoast(annualMCSsc)
+resultsCoast(annualMCSec)
 
 #############################################################################
 ## Extract two largest MHW and MCS events per coast for further analysis
