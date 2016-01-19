@@ -39,6 +39,7 @@ for(i in 1:length(metaData2$site)){
  site_transect <- shore.normal.transect(site, 2)
  site_transects <- rbind(site_transects, site_transect)
 }
+
 # Manually correct some transects
 site_transects$heading[2:4] <- 290
 site_transects$heading[5:6] <- 178

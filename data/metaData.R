@@ -161,7 +161,7 @@ sa_site <- ggplot() + theme_bw() +
 ggsave("graph/sa_site_NA.pdf", width = 7.5, height = 4.5, pointsize = 10)
 
 #############################################################################
-## NA% fiugure
+## NA% figure
 
 # Calculate NAs per month for each time series # This is greyed out as it takes a long time to run
 # metaMonthNA <- data.frame()

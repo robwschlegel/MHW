@@ -26,7 +26,7 @@ source("func/seqSites.R")
 #############################################################################
 ## Read in daily temperatures created by SACTN scripts and meta-data for it
 load("data/insituDaily_v3.4.RData")
-metaData <- read.csv("metaData.csv")
+metaData <- read.csv("data/metaData.csv")
 siteList <- read.csv("setupParams/site_list_v3.4.csv")
 
 #############################################################################
@@ -43,12 +43,17 @@ mean(best$length)
 max(best$length)
 min(best$length)
 
+# Then refine by length
+best <- best[best$length >= 3650, ]
+mean(best$length)
+max(best$length)
+min(best$length)
+
 # Add index for subsetting
 metaData$index <- paste(metaData$site, metaData$src, sep = "/")
 best$index <- paste(best$site, best$src, sep = "/")
 insituDaily_v3.4$index <- paste(insituDaily_v3.4$site, insituDaily_v3.4$src, sep = "/")
 siteList$index <- paste(siteList$site, siteList$src, sep = "/")
-insitu <- insituDaily_v3.4[insituDaily_v3.4$index %in% best$index, ]
 
 # Add lon/ lat and order along coast
 # SA_coastal_temps <- data.frame()
@@ -58,11 +63,25 @@ insitu <- insituDaily_v3.4[insituDaily_v3.4$index %in% best$index, ]
 #   data1 <- cbind(data1, coords[,4:5])
 #   SA_coastal_temps <- rbind(SA_coastal_temps, data1)
 # }
-SA_coastal_temps <- seqSites(insitu)
+#SA_coastal_temps <- seqSites(insitu) # Ordering the sites no longer works when the names of Tsitsikamma are changed
 
-# Subset meta-data
+# Subset data and meta-data
+SA_coastal_temps <- insituDaily_v3.4[insituDaily_v3.4$index %in% best$index, ]
 SA_coastal_meta <- metaData[metaData$index %in% best$index, ]
-SA_coastal_meta <- seqSites(SA_coastal_meta)
+#SA_coastal_meta <- seqSites(SA_coastal_meta)
+
+# Differentiate between the two different Tsitsikamma sites
+SA_coastal_temps$site <- as.character(SA_coastal_temps$site)
+SA_coastal_temps$site[SA_coastal_temps$site == "Tsitsikamma" & SA_coastal_temps$src == "SAWS"] <- "Tsitsikamma West"
+SA_coastal_temps$site[SA_coastal_temps$site == "Tsitsikamma" & SA_coastal_temps$src == "DEA"] <- "Tsitsikamma East"
+SA_coastal_temps$site <- as.factor(SA_coastal_temps$site)
+levels(SA_coastal_temps$site)
+
+SA_coastal_meta$site <- as.character(SA_coastal_meta$site)
+SA_coastal_meta$site[SA_coastal_meta$site == "Tsitsikamma" & SA_coastal_meta$src == "SAWS"] <- "Tsitsikamma West"
+SA_coastal_meta$site[SA_coastal_meta$site == "Tsitsikamma" & SA_coastal_meta$src == "DEA"] <- "Tsitsikamma East"
+SA_coastal_meta$site <- as.factor(SA_coastal_meta$site)
+levels(SA_coastal_meta$site)
 
 # Save
 save(SA_coastal_temps, file = "prep/SA_coastal_temps.RData")
