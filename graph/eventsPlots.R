@@ -1,6 +1,7 @@
 library(lubridate)
 library(scales) # for 'date_format' function
 library(plyr)
+require(stringr)
 
 #############################################################################
 ## 1. Load and set stuff.
@@ -10,7 +11,7 @@ source("setupParams/theme.R") # also loads ggplot2 etc.
 
 # Decide on which sites should belong to which coasts
 wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")
-sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna", "Mossel Bay", "Muizenberg", "Pollock Beach", "Storms River Mouth", "Tsitsikamma", "Ystervarkpunt")
+sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna", "Mossel Bay", "Muizenberg", "Pollock Beach", "Tsitsikamma West", "Storms River Mouth", "Tsitsikamma East", "Ystervarkpunt")
 ec <- c("Eastern Beach", "Nahoon Beach", "Orient Beach", "Sodwana")
 
 load("prep/SA_coastal_temps.RData") # These data come directly from the SACTN so are already POSIXCt etc.
@@ -131,7 +132,7 @@ mcsEC <- droplevels(mcs[mcs$site %in% sitesEC, ])
 eventPlot <- function(dat, xvar = "month", yvar = "temp", mhw, mcs, width = 6, height = 6) {
     fName <- paste(getwd(),"/graph/", deparse(substitute(dat)), "_plot.pdf", sep = "")
     pdf(fName, width = width, height = height)
-      p1 <- ggplot(data = dat, aes_string(x = xvar, y = yvar, group = "site")) +
+      p1 <- ggplot(data = dat, aes(x = xvar, y = yvar, group = "site")) +
       geom_line() + bw_update +
       geom_vline(data = mhw, aes(xintercept = as.numeric(month), 
                                  linetype = as.factor(event)), col = "red", size = 0.4) +

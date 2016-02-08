@@ -1,0 +1,21 @@
+# Annual average marine heatwave statistics at Tsitsikamma_West
+# A value of nan indicates mising data. This should correspond to a year with no MHW events (count = 0)
+Year, MHW event count [number], Duration [days], Maximum intensity [deg C], Mean intensity [deg C], Cumulative intensity [deg C x days], Total MHW days [days], Total cumulative intensity [deg C x days], Intensity variability [deg C], Rate of onset [deg C / days], Rate of decline [deg C / days], Maximum intensity (rel. thresh.) [deg C], Mean intensity (rel. thresh.) [deg C], Cumulative intensity (rel. thresh.) [deg C x days], Intensity variability (rel. thresh.) [deg C], Maximum intensity (absolute) [deg C], Mean intensity (absolute) [deg C], Cumulative intensity (absolute) [deg C x days], Intensity variability (absolute) [deg C], Maximum intensity (normalized) [unitless], Mean intensity (normalized) [unitless], Mean temperature [deg C], Max temperature [deg C], Min temperature [deg C]
+1990, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.85, 20.0, 11.0
+1991, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.39, 22.2, 11.0
+1992, 3, 24.33, 3.856, 2.722, 74.39, 73.0, 223.2, 0.5951, 0.1524, 0.002728, 2.248, 1.196, 31.98, 0.5526, 20.0, 18.88, 472.0, 0.6213, 2.375, 1.801, 18.12, 25.0, 11.0
+1993, 3, 8.667, 4.468, 3.748, 32.53, 26.0, 97.6, 0.4409, 0.2425, 0.00125, 1.262, 0.5626, 5.02, 0.4175, 23.33, 22.63, 196.5, 0.4375, 1.395, 1.177, 17.3, 24.0, 10.0
+1994, 1, 7.0, 2.679, 2.102, 14.71, 7.0, 14.71, 0.2726, 0.3485, 0.000585, 0.89, 0.3148, 2.203, 0.2695, 20.5, 19.99, 139.9, 0.2356, 1.497, 1.176, 15.85, 23.5, 10.5
+1995, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.32, 22.7, 10.0
+1996, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 15.27, 21.0, 10.0
+1997, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 17.55, 23.4, 11.5
+1998, 2, 10.5, 2.465, 1.783, 18.2, 21.0, 36.4, 0.3555, 0.2257, 0.0003743, 1.089, 0.404, 3.711, 0.3558, 18.5, 17.84, 187.1, 0.3549, 1.791, 1.293, 17.3, 23.5, 10.0
+1999, 3, 7.0, 5.174, 4.415, 30.54, 21.0, 91.63, 0.6169, 2.25, 0.0007316, 1.883, 1.093, 7.995, 0.6256, 23.73, 22.98, 161.8, 0.6094, 1.58, 1.332, 17.72, 25.0, 10.5
+2000, 1, 27.0, 2.979, 2.064, 55.74, 27.0, 55.74, 0.4306, 0.1163, 0.0003531, 1.372, 0.5708, 15.41, 0.413, 19.3, 18.33, 494.9, 0.4512, 1.854, 1.388, 16.38, 23.2, 9.5
+2001, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 16.7, 23.0, 10.2
+2002, 2, 14.0, 4.212, 3.239, 61.61, 28.0, 123.2, 0.5086, 0.1424, 0.0006117, 1.98, 0.8106, 16.82, 0.5131, 20.45, 19.62, 295.2, 0.5247, 1.708, 1.28, 17.39, 23.5, 10.6
+2003, 4, 5.25, 4.504, 3.973, 20.96, 21.0, 83.83, 0.3684, 0.4944, 0.0002479, 1.254, 0.7308, 3.812, 0.3655, 22.03, 21.55, 113.0, 0.3448, 1.388, 1.228, 18.1, 24.5, 11.0
+2004, 4, 7.0, 3.353, 2.836, 20.27, 28.0, 81.09, 0.4357, 1.035, 0.0002359, 1.547, 0.9945, 7.381, 0.4465, 20.7, 20.23, 142.8, 0.4513, 1.922, 1.615, 18.43, 29.3, 12.5
+2005, 1, 6.0, 4.986, 4.006, 24.04, 6.0, 24.04, 0.5451, 0.5903, 0.0004558, 2.265, 1.279, 7.676, 0.5491, 24.0, 23.01, 138.1, 0.5526, 1.833, 1.469, 17.6, 24.0, 11.0
+2006, 1, 7.0, 2.669, 2.271, 15.9, 7.0, 15.9, 0.2493, 0.1042, 8.055e-05, 0.8502, 0.4632, 3.242, 0.2456, 19.5, 18.94, 132.6, 0.3379, 1.467, 1.256, 17.64, 23.6, 12.3
+2007, 0, nan, nan, nan, nan, 0.0, 0.0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 21.04, 23.5, 15.4

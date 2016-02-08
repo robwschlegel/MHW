@@ -18,9 +18,10 @@ source("func/seqSites.R")
 
 #############################################################################
 ## CREATES:
-# "metaData.csv"
-# "graph/sa_site_NA.pdf"
-# "graph/hist_NA.pdf"
+#"prep/SA_coastal_temps.RData"
+#"prep/SA_coastal_temps.csv"
+#"prep/SA_coastal_meta.RData"
+#"prep/SA_coastal_meta.csv"
 #############################################################################
 
 #############################################################################

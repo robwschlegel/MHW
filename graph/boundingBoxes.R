@@ -20,7 +20,7 @@ source("func/shoreNormalTransectFunc.R"); source("setupParams/theme.R")
 
 #############################################################################
 ## CREATES:
-# "graph/diff.pdf"
+# "graph/boundingBoxesAll.pdf"
 #############################################################################
 
 #############################################################################
@@ -45,7 +45,7 @@ site_transects$heading[2:4] <- 290
 site_transects$heading[5:6] <- 178
 site_transects$heading[13:14] <- 177.9855
 save(site_transects, file = "data/site_transects.RData")
-write.csv(site_transects, file = "data/site_transects.csv")
+write.csv(site_transects, file = "data/site_transects.csv", row.names = F)
 load("data/site_transects.RData")
 
 # Pixel points
@@ -56,7 +56,7 @@ for(i in 1:length(metaData2$site)){
   site_pixels <- rbind(site_pixels, site_pixel)
 }
 save(site_pixels, file = "data/site_pixels.RData")
-write.csv(site_pixels, file = "data/site_pixels.csv")
+write.csv(site_pixels, file = "data/site_pixels.csv", row.names = F)
 load("data/site_pixels.RData")
 
 # Bounding box
