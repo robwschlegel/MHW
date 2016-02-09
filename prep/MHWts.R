@@ -8,7 +8,7 @@
 #############################################################################
 ## DEPENDS ON:
 source("func/seqSites.R")
-# "data/insituDaily_v3.4.RData"
+# "data/SACTNdaily_v4.0.Rdata"
 #############################################################################
 
 #############################################################################
@@ -26,7 +26,7 @@ source("func/seqSites.R")
 
 #############################################################################
 ## Read in daily temperatures created by SACTN scripts and meta-data for it
-load("data/insituDaily_v3.4.RData")
+load("data/SACTNdaily_v4.0.Rdata")
 metaData <- read.csv("data/metaData.csv")
 siteList <- read.csv("setupParams/site_list_v3.4.csv")
 
@@ -53,7 +53,7 @@ min(best$length)
 # Add index for subsetting
 metaData$index <- paste(metaData$site, metaData$src, sep = "/")
 best$index <- paste(best$site, best$src, sep = "/")
-insituDaily_v3.4$index <- paste(insituDaily_v3.4$site, insituDaily_v3.4$src, sep = "/")
+SACTNdaily_v4.0$index <- paste(SACTNdaily_v4.0$site, SACTNdaily_v4.0$src, sep = "/")
 siteList$index <- paste(siteList$site, siteList$src, sep = "/")
 
 # Add lon/ lat and order along coast
@@ -67,7 +67,7 @@ siteList$index <- paste(siteList$site, siteList$src, sep = "/")
 #SA_coastal_temps <- seqSites(insitu) # Ordering the sites no longer works when the names of Tsitsikamma are changed
 
 # Subset data and meta-data
-SA_coastal_temps <- insituDaily_v3.4[insituDaily_v3.4$index %in% best$index, ]
+SA_coastal_temps <- SACTNdaily_v4.0[SACTNdaily_v4.0$index %in% best$index, ]
 SA_coastal_meta <- metaData[metaData$index %in% best$index, ]
 #SA_coastal_meta <- seqSites(SA_coastal_meta)
 
