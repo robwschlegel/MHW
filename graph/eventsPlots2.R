@@ -6,12 +6,13 @@
 # 4. Extracts top three MHW/ MCS events for each time series and type of data;
 # 5. Prepares data for plotting;
 # 6. Creates map of co-occurrence values;
-# 7. Creates massive line graph of all time series with top three events
+# 7. Prepares data for plotting;
+# 8. Creates massive line graph of all time series with top three events
 #############################################################################
 
 #############################################################################
 ## DEPENDS ON:
-require(ggplot2); require(stringr); require(plyr); require(lubridate)
+require(ggplot2); require(stringr); require(plyr); require(zoo); require(lubridate)
 source("setupParams/theme.R")
 # "prep/SA_coastal_temps.RData"
 # "data/metaData2.Rdata"
@@ -26,23 +27,31 @@ source("setupParams/theme.R")
 #############################################################################
 ## CREATES:
 # "data/mhwCO.csv"
-# "data/mhwCOm.csv"
+# "data/mhwCOb.csv"
+# "data/mhwCOa.csv"
 # "data/mcsCO.csv"
-# "data/mcsCOm.csv"
+# "data/mcsCOb.csv"
+# "data/mcsCOa.csv"
 # "graph/mhwCOmap.pdf"
-# "graph/mhwCOmmap.pdf"
+# "graph/mhwCObmap.pdf"
+# "graph/mhwCOamap.pdf"
 # "graph/mcsCOmap.pdf"
-# "graph/mcsCOmmap.pdf"
+# "graph/mcsCObmap.pdf"
+# "graph/mcsCOamap.pdf"
+# "graph/eventsALL.pdf"
 #############################################################################
 
 #############################################################################
 ## 1. loads daily coastal and SST time series
 load("prep/SA_coastal_temps.RData")
-levels(SA_coastal_temps$site) # Check that the correct sites are being used
+#levels(SA_coastal_temps$site) # Check that the correct sites are being used
+
+# Load satellite time series
+load("data/OISSTdaily.Rdata")
+#levels(OISSTdaily$site)
 
 # Load metadata to get the lon/ lat values later
 load("data/metaData2.Rdata")
-
 
 #############################################################################
 ## 2. loads coastal and SST MHW/ MCS results
@@ -92,6 +101,7 @@ eventLoad <- function(dir) {
                   col.names = colNames)
     x$site <-  siteNames1[i]
     x$date <-  as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-"))
+    x$month <- floor_date(as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-")), "month")
     x$lon <- metaData2$lon[metaData2$site == x$site[1]]
     x$lat <- metaData2$lat[metaData2$site == x$site[1]]
     dat <- rbind(dat, x)
@@ -104,33 +114,38 @@ dir2 <- paste(getwd(), "/data/MCS/events/", sep = "")
 dir3 <- paste(getwd(), "/data/MHW/SST events/", sep = "")
 dir4 <- paste(getwd(), "/data/MCS/SST events/", sep = "")
 mhw <- eventLoad(dir1) # produce a data frame with mhw data...
+mhw$type <- "insitu"
 mcs <- eventLoad(dir2) # produce a data frame with mcs data...
+mcs$type <- "insitu"
 mhwSST <- eventLoad(dir3) # produce a data frame with SST mhw data...
+mhwSST$type <- "sst"
 mcsSST <- eventLoad(dir4) # produce a data frame with SST mcs data...
+mcsSST$type <- "sst"
 
 #############################################################################
 ## 3. Calculates co-occurrence of events between coastal and SST time series
 
-cooccurrence <- function(dat1, dat2, lag = 14) {
+cooccurrence <- function(dat1, dat2, lag = 14, direction = "x") {
+  dat1 <- dat1[dat1$yearStrt >= min(dat2$yearStrt), ]
+  dat1 <- dat1[dat1$yearStrt <= max(dat2$yearStrt), ]
   dat3 <- data.frame()
   for(i in 1:length(levels(as.factor(dat1$site)))) {
     x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
     x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
     y <- 0
+    #x3 <- data.frame() # For test purposes to see which events match up
     for(j in 1:nrow(x1)) {
       x1.1 <- x1$date[j]
-      x1.2 <- x1.1 - days(lag)
-      if(lag > 0) {
-        x1.3 <- seq(x1.2, x1.1, 1)
-      } else if(lag < 0) {
-        x1.3 <- seq(x1.1, x1.2, 1)
-      } else if(lag == 0){
-        x1.3 <- x1.1
+      if(direction == "x"){
+        x1.2 <- seq((x1.1 - days(lag)), (x1.1 + days(lag)), 1)
+      } else if (direction == "b") {
+        x1.2 <- seq((x1.1 - days(lag)), x1.1, 1)
+      } else if (direction == "a") {
+        x1.2 <- seq(x1.1, (x1.1 + days(lag)), 1)
       }
-      x2.1 <- droplevels(subset(x2, date %in% x1.3))
-      if(nrow(x2.1) > 0){
-        y <- y + 1
-      }
+      x2.1 <- droplevels(subset(x2, date %in% x1.2))
+      #x3 <- rbind(x3, x2.1)
+      y <- y + nrow(x2.1)
     }
     z <- data.frame(site = x1$site[1], events = nrow(x1), 
                     cooccurrence = y, proportion = y/nrow(x1),
@@ -140,15 +155,19 @@ cooccurrence <- function(dat1, dat2, lag = 14) {
   return(dat3)
 }
 
+#mhwCO0 <- cooccurrence(mhw, mhwSST, 0) # Test to see which happen on exact same day
 mhwCO <- cooccurrence(mhw, mhwSST)
 write.csv(mhwCO, "data/mhwCO.csv", row.names = F)
 mcsCO <- cooccurrence(mcs, mcsSST)
 write.csv(mcsCO, "data/mcsCO.csv", row.names = F)
-mhwCOm <- cooccurrence(mhw, mhwSST, lag = -14)
-write.csv(mhwCOm, "data/mhwCOm.csv", row.names = F)
-mcsCOm <- cooccurrence(mcs, mcsSST, lag = -14)
-write.csv(mcsCOm, "data/mcsCOm.csv", row.names = F)
-
+mhwCOb <- cooccurrence(mhw, mhwSST, direction = "b")
+write.csv(mhwCOb, "data/mhwCOb.csv", row.names = F)
+mcsCOb <- cooccurrence(mcs, mcsSST, direction = "b")
+write.csv(mcsCOb, "data/mcsCOb.csv", row.names = F)
+mhwCOa <- cooccurrence(mhw, mhwSST, direction = "a")
+write.csv(mhwCOa, "data/mhwCOa.csv", row.names = F)
+mcsCOa <- cooccurrence(mcs, mcsSST, direction = "a")
+write.csv(mcsCOa, "data/mcsCOa.csv", row.names = F)
 
 #############################################################################
 ## 4. Extracts top three MHW/ MCS events for each time series and type of data
@@ -171,13 +190,17 @@ eventLoadn <- function(dir, nCum = 5) {
 # in situ
 mhwn <- eventLoadn(dir1, nCum = 3) # produce a data frame with mhw data...
 mhwn$event <- rep(1:3, length(levels(as.factor(mhwn$site)))) # Make sure to correct the rep() to match nCum
+mhwn$type <- "insitu"
 mcsn <- eventLoadn(dir2, nCum = 3) # produce a data frame with mcs data...
 mcsn$event <- rep(1:3, length(levels(as.factor(mcsn$site))))
+mcsn$type <- "insitu"
 # SST
 mhwnSST <- eventLoadn(dir3, nCum = 3)
 mhwnSST$event <- rep(1:3, length(levels(as.factor(mhwnSST$site))))
-mcsnSST <- eventLoadn(dir2, nCum = 3)
-mcsnSST$event <- rep(1:3, length(levels(as.factor(mcsnSST$site)))) 
+mhwnSST$type <- "sst"
+mcsnSST <- eventLoadn(dir4, nCum = 3)
+mcsnSST$event <- rep(1:3, length(levels(as.factor(mcsnSST$site))))
+mcsnSST$type <- "sst"
 
 # mhwWC <- droplevels(mhw[mhw$site %in% sitesWC, ]) # Currently not focussing on coastal values
 # mhwSC <- droplevels(mhw[mhw$site %in% sitesSC, ])
@@ -205,7 +228,7 @@ cooccurrenceMap <- function(dat){
     geom_polygon(data = south_africa_coast, aes(x = long, y = lat, group = group), 
                  colour = "black", fill = "grey80") +
     geom_point(data = dat, aes(x = lon, y = lat, colour = proportion), size = 3.2) +
-    scale_colour_continuous(limits = c(0.0, 0.5), low = "blue", high = "red", breaks = seq(0.0, 0.5, 0.1)) +
+    scale_colour_continuous(limits = c(0.0, 0.8), low = "blue", high = "red", breaks = seq(0.2, 0.6, 0.2)) +
     coord_map(xlim = lonSA, ylim = latSA, projection = "mercator") +
     theme(legend.background = element_blank(),
           legend.justification = c(1,0), legend.position = c(0.18, 0.08))
@@ -215,34 +238,82 @@ cooccurrenceMap <- function(dat){
 # Create all the graphs
 mhwCOmap <- cooccurrenceMap(mhwCO)
 ggsave("graph/mhwCOmap.pdf", width = 8, height = 6)
-mhwCOmmap <- cooccurrenceMap(mhwCOm)
-ggsave("graph/mhwCOmmap.pdf", width = 8, height = 6)
+mhwCObmap <- cooccurrenceMap(mhwCOb)
+ggsave("graph/mhwCObmap.pdf", width = 8, height = 6)
+mhwCOamap <- cooccurrenceMap(mhwCOa)
+ggsave("graph/mhwCOamap.pdf", width = 8, height = 6)
 mcsCOmap <- cooccurrenceMap(mcsCO)
 ggsave("graph/mcsCOmap.pdf", width = 8, height = 6)
-mcsCOmmap <- cooccurrenceMap(mcsCOm)
-ggsave("graph/mcsCOmmap.pdf", width = 8, height = 6)
+mcsCObmap <- cooccurrenceMap(mcsCOb)
+ggsave("graph/mcsCObmap.pdf", width = 8, height = 6)
+mcsCOamap <- cooccurrenceMap(mcsCOa)
+ggsave("graph/mcsCOamap.pdf", width = 8, height = 6)
 
 #############################################################################
-## 7. Creates massive line graph of all time series with top three events
+## 7. Prepares data for plotting
 
-eventPlot <- function(dat, xvar = "month", yvar = "temp", mhw, mcs, width = 6, height = 6) {
-  fName <- paste("graphs/", deparse(substitute(dat)), "_plot.pdf", sep = "")
-  pdf(fName, width = width, height = height)
-  p1 <- ggplot(data = dat, aes_string(x = xvar, y = yvar, group = "site")) +
-    geom_line() +
-    geom_vline(data = mhw, aes(xintercept = as.numeric(month)), col = "red", size = 0.4) +
-    geom_vline(data = mcs, aes(xintercept = as.numeric(month)), col = "blue", size = 0.4) +
-    scale_x_date(breaks = "1 year", minor_breaks = "1 month", labels = date_format("%Y")) +
-    facet_grid(site ~ ., scale = "free_x") +
-    ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
-  print(p1) # necessary for save to pdf to work...
-  dev.off()
-  return(p1)
+coastalTemp <- SA_coastal_temps[,c(1,3,4)]
+coastalTemp$date <- as.Date(coastalTemp$date)
+coastalTemp$type <- "insitu"
+OISSTdaily$type <- "sst"
+
+# Combine and reduce to monthly values
+tsALL <- rbind(coastalTemp, OISSTdaily)
+tsALL$date <- floor_date(tsALL$date, "month")
+tsALL <- ddply(tsALL, .(site, type, date), summarize,
+                         temp = mean(temp, na.rm = TRUE))
+
+# Reorder sites for plotting
+siteOrder <- c("Port Nolloth", "Sea Point", "Hout Bay", "Kommetjie", "Fish Hoek", "Muizenberg", "Gordons Bay", "Hermanus", "Ystervarkpunt", "Mossel Bay", "Knysna", "Tsitsikamma West", "Storms River Mouth", "Tsitsikamma East", "Pollock Beach", "Humewood", "Hamburg", "Eastern Beach", "Orient Beach", "Nahoon Beach", "Sodwana")
+
+tsALL$site <- factor(tsALL$site, levels = siteOrder)
+mhwn$site <- factor(mhwn$site, levels = siteOrder)
+mcsn$site <- factor(mcsn$site, levels = siteOrder)
+mhwnSST$site <- factor(mhwnSST$site, levels = siteOrder)
+mcsnSST$site <- factor(mcsnSST$site, levels = siteOrder)
+
+# Can't get factors to reorder for plotting\  # Doing so manually with a for loop
+tsALL2 <- data.frame()
+for(i in 1:length(siteOrder)){
+  x <- droplevels(subset(tsALL, site == siteOrder[i]))
+  x$index <- i
+  tsALL2 <- rbind(tsALL2,x)
 }
-eventPlot(dat = monthsWC, mhw = mhwWC, mcs = mcsWC) # plot of West Coast mhw
-eventPlot(dat = monthsSC, mhw = mhwSC, mcs = mcsSC) # plot of South Coast mhw
-eventPlot(dat = monthsEC, mhw = mhwEC, mcs = mcsEC) # plot of East Coast mhw
+tsALL2$site <- reorder(tsALL2$site, tsALL2$index)
+levels(tsALL2$site)
+
+tsALL$site <- factor(tsALL$site, levels = siteOrder) 
+levels(tsALL$site)
+
+dat <- data.frame(x = runif(100), y = runif(100), 
+                  Group = gl(5, 20, labels = LETTERS[1:5]))
+head(dat)
+with(dat, levels(Group))
+
+set.seed(1)
+with(dat, sample(levels(Group)))
+
+#############################################################################
+## 8. Creates massive line graph of all time series with top three events
+
+p1 <- ggplot(data = tsALL, aes(x = date, y = temp)) + bw_update +
+  geom_line() +
+  geom_vline(data = mhwn, aes(xintercept = as.numeric(month), linetype = as.factor(event)), col = "red", size = 0.4) +
+  geom_vline(data = mcsn, aes(xintercept = as.numeric(month), linetype = as.factor(event)), col = "blue", size = 0.4) +
+  geom_vline(data = mhwnSST, aes(xintercept = as.numeric(month), linetype = as.factor(event)), col = "red", size = 0.4) +
+  geom_vline(data = mcsnSST, aes(xintercept = as.numeric(month), linetype = as.factor(event)), col = "blue", size = 0.4) +
+  scale_linetype_manual(values = c("solid","dashed", "dotted"), guide = FALSE) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y", expand = c(0.015,0)) +
+  facet_grid(site ~ type) +
+  ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+p1
+
+ggsave("graph/figure2.pdf", height = 24, width = 12)
+
+# eventPlot(dat = monthsWC, mhw = mhwWC, mcs = mcsWC) # plot of West Coast mhw
+# eventPlot(dat = monthsSC, mhw = mhwSC, mcs = mcsSC) # plot of South Coast mhw
+# eventPlot(dat = monthsEC, mhw = mhwEC, mcs = mcsEC) # plot of East Coast mhw
 
 ## Calculate mean from annual time series
   ## Use the .annual results to calculate other statistics

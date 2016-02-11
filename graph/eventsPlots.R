@@ -92,10 +92,9 @@ eventLoad <- function(dir, nCum = 5) {
   df1 = ldply(l1, top_n) # pick the n highest ones
   require(stringr)
   siteNames1 = unlist(strsplit(dir(dir, pattern = "data.events", full.names = FALSE), pf[1]))
-  siteNames1 = str_replace(siteNames1, "_", " ") # parse names for site column
+  siteNames1 = str_replace_all(siteNames1, "_", " ") # parse names for site column
   df1$site = rep(siteNames1, each = nCum)
   df1$month = floor_date(as.Date(paste(df1$yearStrt, df1$monthStrt, df1$dayStrt, sep = "-")), "month")
-  df1$site[df1$site == "Storms River_Mouth"] <- "Storms River Mouth" # str_replace() misses the second "_"
   return(df1)
 }
 
