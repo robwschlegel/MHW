@@ -3,11 +3,14 @@
 # 1. loads daily coastal and SST time series;
 # 2. loads coastal and SST MHW/ MCS results;
 # 3. Calculates co-occurrence of events between coastal and SST time series;
-# 4. Extracts top three MHW/ MCS events for each time series and type of data;
-# 5. Prepares data for plotting;
-# 6. Creates map of co-occurrence values;
-# 7. Prepares data for plotting;
-# 8. Creates massive line graph of all time series with top three events
+# 4. Calculates co-occurrence of events based on size of event;
+# 5. Extracts top three MHW/ MCS events for each time series and type of data;
+# 6. Prepares data for plotting;
+# 7. Creates map of co-occurrence values;
+# 8. Prepares data for plotting;
+# 9. Creates massive line graph of all time series with top three events;
+# 10. Prepares data for plotting;
+# 11. Creates dot and line graph of co-occurrence depending on quantiles of events
 #############################################################################
 
 #############################################################################
@@ -16,6 +19,7 @@ require(ggplot2); require(stringr); require(plyr); require(zoo); require(lubrida
 source("setupParams/theme.R")
 # "prep/SA_coastal_temps.RData"
 # "data/metaData2.Rdata"
+# "graph/sa_shore.Rdata"
 # All of the files from Eric
 #############################################################################
 
@@ -32,6 +36,12 @@ source("setupParams/theme.R")
 # "data/mcsCO.csv"
 # "data/mcsCOb.csv"
 # "data/mcsCOa.csv"
+# "data/mhwnCO.csv"
+# "data/mcsnCO.csv"
+# "data/mhwnCOb.csv"
+# "data/mcsnCOb.csv"
+# "data/mhwnCOa.csv"
+# "data/mcsnCOa.csv"
 # "graph/mhwCOmap.pdf"
 # "graph/mhwCObmap.pdf"
 # "graph/mhwCOamap.pdf"
@@ -39,6 +49,12 @@ source("setupParams/theme.R")
 # "graph/mcsCObmap.pdf"
 # "graph/mcsCOamap.pdf"
 # "graph/eventsALL.pdf"
+# "graph/mhwnCOfig.pdf"
+# "graph/mcsnCOfig.pdf"
+# "graph/mhwnCObfig.pdf"
+# "graph/mcsnCObfig.pdf"
+# "graph/mhwnCOafig.pdf"
+# "graph/mcsnCOafig.pdf"
 #############################################################################
 
 #############################################################################
@@ -170,7 +186,59 @@ mcsCOa <- cooccurrence(mcs, mcsSST, direction = "a")
 write.csv(mcsCOa, "data/mcsCOa.csv", row.names = F)
 
 #############################################################################
-## 4. Extracts top three MHW/ MCS events for each time series and type of data
+## 4. Calculates co-occurrence of events based on size of event
+
+cooccurrencen <- function(dat1, dat2, lag = 14, direction = "x") {
+  dat1 <- dat1[dat1$yearStrt >= min(dat2$yearStrt), ]
+  dat1 <- dat1[dat1$yearStrt <= max(dat2$yearStrt), ]
+  dat3 <- data.frame()
+  for(i in 1:length(levels(as.factor(dat1$site)))) {
+    x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
+    x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
+    for(j in 1:length(seq(0.0,1,0.1))){
+      x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[j]),]
+      x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[j]),]
+      y <- 0
+      #x3 <- data.frame() # For test purposes to see which events match up
+      for(k in 1:nrow(x1.1)) {
+        x1.2 <- x1.1$date[k]
+        if(direction == "x"){
+          x1.3 <- seq((x1.2 - days(lag)), (x1.2 + days(lag)), 1)
+        } else if (direction == "b") {
+          x1.3 <- seq((x1.2 - days(lag)), x1.2, 1)
+        } else if (direction == "a") {
+          x1.3 <- seq(x1.2, (x1.2 + days(lag)), 1)
+        }
+        x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
+        #x3 <- rbind(x3, x2.1)
+        y <- y + nrow(x2.2)
+      }
+      z <- data.frame(site = x1$site[1], events = nrow(x1.1), 
+                      cooccurrence = y, proportion = y/nrow(x1.1),
+                      lon = x1$lon[1], lat = x1$lat[1], 
+                      quantile = seq(0.0,1,0.1)[j])
+      dat3 <- rbind(dat3, z)
+    }
+  }
+  return(dat3)
+}
+
+#mhwCO0 <- cooccurrence(mhw, mhwSST, 0) # Test to see which happen on exact same day
+mhwnCO <- cooccurrencen(mhw, mhwSST)
+write.csv(mhwnCO, "data/mhwnCO.csv", row.names = F)
+mcsnCO <- cooccurrencen(mcs, mcsSST)
+write.csv(mcsnCO, "data/mcsnCO.csv", row.names = F)
+mhwnCOb <- cooccurrencen(mhw, mhwSST, direction = "b")
+write.csv(mhwnCOb, "data/mhwnCOb.csv", row.names = F)
+mcsnCOb <- cooccurrencen(mcs, mcsSST, direction = "b")
+write.csv(mcsnCOb, "data/mcsnCOb.csv", row.names = F)
+mhwnCOa <- cooccurrencen(mhw, mhwSST, direction = "a")
+write.csv(mhwnCOa, "data/mhwnCOa.csv", row.names = F)
+mcsnCOa <- cooccurrencen(mcs, mcsSST, direction = "a")
+write.csv(mcsnCOa, "data/mcsnCOa.csv", row.names = F)
+
+#############################################################################
+## 5. Extracts top three MHW/ MCS events for each time series and type of data
 
 eventLoadn <- function(dir, nCum = 5) {
   fname1 = dir(dir, pattern = "data.events", full.names = TRUE)
@@ -211,7 +279,7 @@ mcsnSST$type <- "sst"
 # mcsEC <- droplevels(mcs[mcs$site %in% sitesEC, ])
 
 #############################################################################
-## 5. Prepares data for plotting
+## 6. Prepares data for plotting
 
 # Setup up environment for plotting
 latSA <- c(-35.5, -26); lonSA <- c(14, 34)
@@ -220,7 +288,7 @@ latSA <- c(-35.5, -26); lonSA <- c(14, 34)
 load("graph/south_africa_coast.RData")
 
 #############################################################################
-## 6. Creates map of co-occurrence values
+## 7. Creates map of co-occurrence values
 
 # Create graphing function
 cooccurrenceMap <- function(dat){
@@ -250,7 +318,7 @@ mcsCOamap <- cooccurrenceMap(mcsCOa)
 ggsave("graph/mcsCOamap.pdf", width = 8, height = 6)
 
 #############################################################################
-## 7. Prepares data for plotting
+## 8. Prepares data for plotting
 
 coastalTemp <- SA_coastal_temps[,c(1,3,4)]
 coastalTemp$date <- as.Date(coastalTemp$date)
@@ -272,29 +340,8 @@ mcsn$site <- factor(mcsn$site, levels = siteOrder)
 mhwnSST$site <- factor(mhwnSST$site, levels = siteOrder)
 mcsnSST$site <- factor(mcsnSST$site, levels = siteOrder)
 
-# Can't get factors to reorder for plotting\  # Doing so manually with a for loop
-tsALL2 <- data.frame()
-for(i in 1:length(siteOrder)){
-  x <- droplevels(subset(tsALL, site == siteOrder[i]))
-  x$index <- i
-  tsALL2 <- rbind(tsALL2,x)
-}
-tsALL2$site <- reorder(tsALL2$site, tsALL2$index)
-levels(tsALL2$site)
-
-tsALL$site <- factor(tsALL$site, levels = siteOrder) 
-levels(tsALL$site)
-
-dat <- data.frame(x = runif(100), y = runif(100), 
-                  Group = gl(5, 20, labels = LETTERS[1:5]))
-head(dat)
-with(dat, levels(Group))
-
-set.seed(1)
-with(dat, sample(levels(Group)))
-
 #############################################################################
-## 8. Creates massive line graph of all time series with top three events
+## 9. Creates massive line graph of all time series with top three events
 
 p1 <- ggplot(data = tsALL, aes(x = date, y = temp)) + bw_update +
   geom_line() +
@@ -311,6 +358,43 @@ p1
 
 ggsave("graph/figure2.pdf", height = 24, width = 12)
 
+#############################################################################
+# 10. Prepares data for plotting
+
+mhwnCO$site <- factor(mhwnCO$site, levels = siteOrder)
+mcsnCO$site <- factor(mcsnCO$site, levels = siteOrder)
+mhwnCOb$site <- factor(mhwnCOb$site, levels = siteOrder)
+mcsnCOb$site <- factor(mcsnCOb$site, levels = siteOrder)
+mhwnCOa$site <- factor(mhwnCOa$site, levels = siteOrder)
+mcsnCOa$site <- factor(mcsnCOa$site, levels = siteOrder)
+
+#############################################################################
+# 11. Creates dot and line graph of co-occurrence depending on quantiles of events
+
+cooccurrenceQuantFigure <- function(dat){
+  p2 <- ggplot(data = dat, aes(x = quantile, y = proportion)) + bw_update +
+    geom_line() + geom_point() +
+    facet_grid(site ~ .) +
+    ylab("proportion") + xlab("quantile (%)") #+
+    #theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+  p2
+}
+
+mhwnCOfig <- cooccurrenceQuantFigure(mhwnCO)
+ggsave("graph/mhwnCOfig.pdf", width = 4, height = 18)
+mcsnCOfig <- cooccurrenceQuantFigure(mcsnCO)
+ggsave("graph/mcsnCOfig.pdf", width = 4, height = 18)
+mhwnCObfig <- cooccurrenceQuantFigure(mhwnCOb)
+ggsave("graph/mhwnCObfig.pdf", width = 4, height = 18)
+mcsnCObfig <- cooccurrenceQuantFigure(mcsnCOb)
+ggsave("graph/mcsnCObfig.pdf", width = 4, height = 18)
+mhwnCOafig <- cooccurrenceQuantFigure(mhwnCOa)
+ggsave("graph/mhwnCOafig.pdf", width = 4, height = 18)
+mcsnCOafig <- cooccurrenceQuantFigure(mcsnCOa)
+ggsave("graph/mcsnCOafig.pdf", width = 4, height = 18)
+
+
+## Note currently focussing on individual coastlines
 # eventPlot(dat = monthsWC, mhw = mhwWC, mcs = mcsWC) # plot of West Coast mhw
 # eventPlot(dat = monthsSC, mhw = mhwSC, mcs = mcsSC) # plot of South Coast mhw
 # eventPlot(dat = monthsEC, mhw = mhwEC, mcs = mcsEC) # plot of East Coast mhw
@@ -322,7 +406,3 @@ ggsave("graph/figure2.pdf", height = 24, width = 12)
 
 ## If things match up/ coupling this shows ability to exchange water with offshore bodies
 ## If no match up, this means a lack of ability to exchange water with offshore bodies
-
-## Calculate probability of co-occurence between in situ SST time series 
-  ## Include lag to help expand the range of possibility
-## Create a map showing the fraction of co-occurence happening at each site
