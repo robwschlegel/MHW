@@ -52,11 +52,11 @@ load("data/metaData2.Rdata")
 metaData2 <- droplevels(metaData2[1:21,]) # Remove coastal aggreagte values
 
 check <- droplevels(metaData2$site[!(metaData2$site %in% OISSTdaily$site)])
-check # Currently missing Nahoon Beach and Sodwana
+check # Currently missing nothing!
 
 # Insert placeholder rows for missing time series for plotting purposes
-placeholder <- data.frame(site = as.factor(c("Nahoon Beach", "Sodwana")), date = OISSTdaily$date[1:2], temp = c(NA,NA))
-OISSTdaily <- rbind(OISSTdaily, placeholder)
+#placeholder <- data.frame(site = as.factor(c("Nahoon Beach", "Sodwana")), date = OISSTdaily$date[1:2], temp = c(NA,NA))
+#OISSTdaily <- rbind(OISSTdaily, placeholder)
 
 save(OISSTdaily, file = "data/OISSTdaily.Rdata")
 write.csv(OISSTdaily, "data/OISSTdaily.csv")
