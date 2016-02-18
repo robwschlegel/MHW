@@ -2,15 +2,14 @@
 ## This script does:
 # 1. loads daily coastal and SST time series;
 # 2. loads coastal and SST MHW/ MCS results;
-# 3. Calculates co-occurrence of events between coastal and SST time series;
-# 4. Calculates co-occurrence of events based on size of event;
-# 5. Extracts top three MHW/ MCS events for each time series and type of data;
-# 6. Prepares data for plotting;
-# 7. Creates map of co-occurrence values;
-# 8. Prepares data for plotting;
-# 9. Creates massive line graph of all time series with top three events;
-# 10. Prepares data for plotting;
-# 11. Creates dot and line graph of co-occurrence depending on quantiles of events
+# 3. Calculates co-occurrence of events based on size of event and lag;
+# 4. Extracts top three MHW/ MCS events for each time series and type of data;
+# 5. Prepares data for plotting;
+# 6. Creates map of co-occurrence values;
+# 7. Prepares data for plotting;
+# 8. Creates massive line graph of all time series with top three events;
+# 9. Prepares data for plotting;
+# 10. Creates dot and line graph of co-occurrence depending on quantiles of events and lag
 #############################################################################
 
 #############################################################################
@@ -139,106 +138,61 @@ mcsSST <- eventLoad(dir4) # produce a data frame with SST mcs data...
 mcsSST$type <- "sst"
 
 #############################################################################
-## 3. Calculates co-occurrence of events between coastal and SST time series
+## 3. Calculates co-occurrence of events based on quantile of event and lag
 
-cooccurrence <- function(dat1, dat2, lag = 14, direction = "x") {
-  dat1 <- dat1[dat1$yearStrt >= min(dat2$yearStrt), ]
-  dat1 <- dat1[dat1$yearStrt <= max(dat2$yearStrt), ]
+cooccurrence <- function(dat1, dat2, lag = seq(2,14,2)){
   dat3 <- data.frame()
+  direction <- c("x","b","a")
   for(i in 1:length(levels(as.factor(dat1$site)))) {
     x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
     x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
-    y <- 0
-    #x3 <- data.frame() # For test purposes to see which events match up
-    for(j in 1:nrow(x1)) {
-      x1.1 <- x1$date[j]
-      if(direction == "x"){
-        x1.2 <- seq((x1.1 - days(lag)), (x1.1 + days(lag)), 1)
-      } else if (direction == "b") {
-        x1.2 <- seq((x1.1 - days(lag)), x1.1, 1)
-      } else if (direction == "a") {
-        x1.2 <- seq(x1.1, (x1.1 + days(lag)), 1)
-      }
-      x2.1 <- droplevels(subset(x2, date %in% x1.2))
-      #x3 <- rbind(x3, x2.1)
-      y <- y + nrow(x2.1)
-    }
-    z <- data.frame(site = x1$site[1], events = nrow(x1), 
-                    cooccurrence = y, proportion = y/nrow(x1),
-                    lon = x1$lon[1], lat = x1$lat[1])
-    dat3 <- rbind(dat3, z)
-  }
-  return(dat3)
-}
-
-#mhwCO0 <- cooccurrence(mhw, mhwSST, 0) # Test to see which happen on exact same day
-mhwCO <- cooccurrence(mhw, mhwSST)
-write.csv(mhwCO, "data/mhwCO.csv", row.names = F)
-mcsCO <- cooccurrence(mcs, mcsSST)
-write.csv(mcsCO, "data/mcsCO.csv", row.names = F)
-mhwCOb <- cooccurrence(mhw, mhwSST, direction = "b")
-write.csv(mhwCOb, "data/mhwCOb.csv", row.names = F)
-mcsCOb <- cooccurrence(mcs, mcsSST, direction = "b")
-write.csv(mcsCOb, "data/mcsCOb.csv", row.names = F)
-mhwCOa <- cooccurrence(mhw, mhwSST, direction = "a")
-write.csv(mhwCOa, "data/mhwCOa.csv", row.names = F)
-mcsCOa <- cooccurrence(mcs, mcsSST, direction = "a")
-write.csv(mcsCOa, "data/mcsCOa.csv", row.names = F)
-
-#############################################################################
-## 4. Calculates co-occurrence of events based on size of event
-
-cooccurrencen <- function(dat1, dat2, lag = 14, direction = "x") {
-  dat1 <- dat1[dat1$yearStrt >= min(dat2$yearStrt), ]
-  dat1 <- dat1[dat1$yearStrt <= max(dat2$yearStrt), ]
-  dat3 <- data.frame()
-  for(i in 1:length(levels(as.factor(dat1$site)))) {
-    x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
-    x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
-    for(j in 1:length(seq(0.0,1,0.1))){
-      x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[j]),]
-      x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[j]),]
-      y <- 0
-      #x3 <- data.frame() # For test purposes to see which events match up
-      for(k in 1:nrow(x1.1)) {
-        x1.2 <- x1.1$date[k]
-        if(direction == "x"){
-          x1.3 <- seq((x1.2 - days(lag)), (x1.2 + days(lag)), 1)
-        } else if (direction == "b") {
-          x1.3 <- seq((x1.2 - days(lag)), x1.2, 1)
-        } else if (direction == "a") {
-          x1.3 <- seq(x1.2, (x1.2 + days(lag)), 1)
+    x1 <- x1[x1$yearStrt >= min(x2$yearStrt), ] # Subset x so that dates match up
+    x1 <- x1[x1$yearStrt <= max(x2$yearStrt), ]
+    x2 <- x2[x2$yearStrt >= min(x1$yearStrt), ]
+    x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
+    for(j in 1:length(lag)){
+      for(k in 1:length(seq(0.0,1,0.1))){
+        for(l in 1:3){
+          x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
+          x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
+          y <- 0
+          #x3 <- data.frame() # For test purposes to see which events match up
+          for(m in 1:nrow(x1.1)) {
+            x1.2 <- x1.1$date[m]
+            if(l == 1){
+              x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
+            } else if(l == 2){
+              x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
+            } else if (l == 3) {
+              x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
+            }
+            x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
+            y <- y + nrow(x2.2)
+          }
+          z <- data.frame(site = x1$site[1], lon = x1$lon[1], lat = x1$lat[1],
+                          lag = lag[j], quantile = seq(0.0,1,0.1)[k], direction = direction[l],
+                          insitu = nrow(x1.1), OISST = nrow(x2.1),
+                          cooccurrence= y, proportion = y/nrow(x1.1))
+          dat3 <- rbind(dat3, z)
         }
-        x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
-        #x3 <- rbind(x3, x2.1)
-        y <- y + nrow(x2.2)
       }
-      z <- data.frame(site = x1$site[1], events = nrow(x1.1), 
-                      cooccurrence = y, proportion = y/nrow(x1.1),
-                      lon = x1$lon[1], lat = x1$lat[1], 
-                      quantile = seq(0.0,1,0.1)[j])
-      dat3 <- rbind(dat3, z)
     }
   }
   return(dat3)
 }
 
-#mhwCO0 <- cooccurrence(mhw, mhwSST, 0) # Test to see which happen on exact same day
-mhwnCO <- cooccurrencen(mhw, mhwSST)
-write.csv(mhwnCO, "data/mhwnCO.csv", row.names = F)
-mcsnCO <- cooccurrencen(mcs, mcsSST)
-write.csv(mcsnCO, "data/mcsnCO.csv", row.names = F)
-mhwnCOb <- cooccurrencen(mhw, mhwSST, direction = "b")
-write.csv(mhwnCOb, "data/mhwnCOb.csv", row.names = F)
-mcsnCOb <- cooccurrencen(mcs, mcsSST, direction = "b")
-write.csv(mcsnCOb, "data/mcsnCOb.csv", row.names = F)
-mhwnCOa <- cooccurrencen(mhw, mhwSST, direction = "a")
-write.csv(mhwnCOa, "data/mhwnCOa.csv", row.names = F)
-mcsnCOa <- cooccurrencen(mcs, mcsSST, direction = "a")
-write.csv(mcsnCOa, "data/mcsnCOa.csv", row.names = F)
+#mhwCO0 <- cooccurrence(mhw, mhwSST, lag = 0) # Test to see which happen on exact same day
+#MHW
+# mhwCO <- cooccurrence(mhw, mhwSST) # This takes several minutes to run... cursed for loops...
+# write.csv(mhwCO, "data/mhwCO.csv", row.names = F)
+mhwCO <- read.csv("data/mhwCO.csv")
+#MCS
+# mcsCO <- cooccurrence(mcs, mcsSST)
+# write.csv(mcsCO, "data/mcsCO.csv", row.names = F)
+mcsCO <- read.csv("data/mcsCO.csv")
 
 #############################################################################
-## 5. Extracts top three MHW/ MCS events for each time series and type of data
+## 4. Extracts top three MHW/ MCS events for each time series and type of data
 
 eventLoadn <- function(dir, nCum = 5) {
   fname1 = dir(dir, pattern = "data.events", full.names = TRUE)
@@ -279,7 +233,7 @@ mcsnSST$type <- "sst"
 # mcsEC <- droplevels(mcs[mcs$site %in% sitesEC, ])
 
 #############################################################################
-## 6. Prepares data for plotting
+## 5. Prepares data for plotting
 
 # Setup up environment for plotting
 latSA <- c(-35.5, -26); lonSA <- c(14, 34)
@@ -288,37 +242,39 @@ latSA <- c(-35.5, -26); lonSA <- c(14, 34)
 load("graph/south_africa_coast.RData")
 
 #############################################################################
-## 7. Creates map of co-occurrence values
+## 6. Creates map of co-occurrence values
+
+### NB: The cooccurrence values have been calculated differently so this will no longer run...
 
 # Create graphing function
-cooccurrenceMap <- function(dat){
-  p <- ggplot() + coord_equal() + theme_bw() +
-    geom_polygon(data = south_africa_coast, aes(x = long, y = lat, group = group), 
-                 colour = "black", fill = "grey80") +
-    geom_point(data = dat, aes(x = lon, y = lat, colour = proportion), size = 3.2) +
-    scale_colour_continuous(limits = c(0.0, 0.8), low = "blue", high = "red", breaks = seq(0.2, 0.6, 0.2)) +
-    coord_map(xlim = lonSA, ylim = latSA, projection = "mercator") +
-    theme(legend.background = element_blank(),
-          legend.justification = c(1,0), legend.position = c(0.18, 0.08))
-  p
-}
-
-# Create all the graphs
-mhwCOmap <- cooccurrenceMap(mhwCO)
-ggsave("graph/mhwCOmap.pdf", width = 8, height = 6)
-mhwCObmap <- cooccurrenceMap(mhwCOb)
-ggsave("graph/mhwCObmap.pdf", width = 8, height = 6)
-mhwCOamap <- cooccurrenceMap(mhwCOa)
-ggsave("graph/mhwCOamap.pdf", width = 8, height = 6)
-mcsCOmap <- cooccurrenceMap(mcsCO)
-ggsave("graph/mcsCOmap.pdf", width = 8, height = 6)
-mcsCObmap <- cooccurrenceMap(mcsCOb)
-ggsave("graph/mcsCObmap.pdf", width = 8, height = 6)
-mcsCOamap <- cooccurrenceMap(mcsCOa)
-ggsave("graph/mcsCOamap.pdf", width = 8, height = 6)
+# cooccurrenceMap <- function(dat){
+#   p <- ggplot() + coord_equal() + theme_bw() +
+#     geom_polygon(data = south_africa_coast, aes(x = long, y = lat, group = group), 
+#                  colour = "black", fill = "grey80") +
+#     geom_point(data = dat, aes(x = lon, y = lat, colour = proportion), size = 3.2) +
+#     scale_colour_continuous(limits = c(0.0, 0.8), low = "blue", high = "red", breaks = seq(0.2, 0.6, 0.2)) +
+#     coord_map(xlim = lonSA, ylim = latSA, projection = "mercator") +
+#     theme(legend.background = element_blank(),
+#           legend.justification = c(1,0), legend.position = c(0.18, 0.08))
+#   p
+# }
+# 
+# # Create all the graphs
+# mhwCOmap <- cooccurrenceMap(mhwCO)
+# ggsave("graph/mhwCOmap.pdf", width = 8, height = 6)
+# mhwCObmap <- cooccurrenceMap(mhwCOb)
+# ggsave("graph/mhwCObmap.pdf", width = 8, height = 6)
+# mhwCOamap <- cooccurrenceMap(mhwCOa)
+# ggsave("graph/mhwCOamap.pdf", width = 8, height = 6)
+# mcsCOmap <- cooccurrenceMap(mcsCO)
+# ggsave("graph/mcsCOmap.pdf", width = 8, height = 6)
+# mcsCObmap <- cooccurrenceMap(mcsCOb)
+# ggsave("graph/mcsCObmap.pdf", width = 8, height = 6)
+# mcsCOamap <- cooccurrenceMap(mcsCOa)
+# ggsave("graph/mcsCOamap.pdf", width = 8, height = 6)
 
 #############################################################################
-## 8. Prepares data for plotting
+## 7. Prepares data for plotting
 
 coastalTemp <- SA_coastal_temps[,c(1,3,4)]
 coastalTemp$date <- as.Date(coastalTemp$date)
@@ -341,7 +297,7 @@ mhwnSST$site <- factor(mhwnSST$site, levels = siteOrder)
 mcsnSST$site <- factor(mcsnSST$site, levels = siteOrder)
 
 #############################################################################
-## 9. Creates massive line graph of all time series with top three events
+## 8. Creates massive line graph of all time series with top three events
 
 p1 <- ggplot(data = tsALL, aes(x = date, y = temp)) + bw_update +
   geom_line() +
@@ -359,14 +315,10 @@ p1
 ggsave("graph/figure2.pdf", height = 24, width = 12)
 
 #############################################################################
-# 10. Prepares data for plotting
+# 9. Prepares data for plotting
 
-mhwnCO$site <- factor(mhwnCO$site, levels = siteOrder)
-mcsnCO$site <- factor(mcsnCO$site, levels = siteOrder)
-mhwnCOb$site <- factor(mhwnCOb$site, levels = siteOrder)
-mcsnCOb$site <- factor(mcsnCOb$site, levels = siteOrder)
-mhwnCOa$site <- factor(mhwnCOa$site, levels = siteOrder)
-mcsnCOa$site <- factor(mcsnCOa$site, levels = siteOrder)
+mhwCO$site <- factor(mhwCO$site, levels = siteOrder)
+mcsCO$site <- factor(mcsCO$site, levels = siteOrder)
 
 #############################################################################
 # 11. Creates dot and line graph of co-occurrence depending on quantiles of events
@@ -374,24 +326,17 @@ mcsnCOa$site <- factor(mcsnCOa$site, levels = siteOrder)
 cooccurrenceQuantFigure <- function(dat){
   p2 <- ggplot(data = dat, aes(x = quantile, y = proportion)) + bw_update +
     geom_line() + geom_point() +
-    facet_grid(site ~ .) +
+    facet_grid(site ~ prop.b + prop.x + prop.a) +
     ylab("proportion") + xlab("quantile (%)") #+
     #theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
   p2
 }
 
-mhwnCOfig <- cooccurrenceQuantFigure(mhwnCO)
-ggsave("graph/mhwnCOfig.pdf", width = 4, height = 18)
-mcsnCOfig <- cooccurrenceQuantFigure(mcsnCO)
-ggsave("graph/mcsnCOfig.pdf", width = 4, height = 18)
-mhwnCObfig <- cooccurrenceQuantFigure(mhwnCOb)
-ggsave("graph/mhwnCObfig.pdf", width = 4, height = 18)
-mcsnCObfig <- cooccurrenceQuantFigure(mcsnCOb)
-ggsave("graph/mcsnCObfig.pdf", width = 4, height = 18)
-mhwnCOafig <- cooccurrenceQuantFigure(mhwnCOa)
-ggsave("graph/mhwnCOafig.pdf", width = 4, height = 18)
-mcsnCOafig <- cooccurrenceQuantFigure(mcsnCOa)
-ggsave("graph/mcsnCOafig.pdf", width = 4, height = 18)
+mhwCOfig <- cooccurrenceQuantFigure(mhwCO)
+ggsave("graph/mhwCOfig.pdf", width = 16, height = 18)
+mcsCOfig <- cooccurrenceQuantFigure(mcsCO)
+ggsave("graph/mcsCOfig.pdf", width = 16, height = 18)
+
 
 
 ## Note currently focussing on individual coastlines
