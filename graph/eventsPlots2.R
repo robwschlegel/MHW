@@ -142,7 +142,7 @@ mcsSST$type <- "sst"
 
 cooccurrence <- function(dat1, dat2, lag = seq(2,14,2)){
   dat3 <- data.frame()
-  direction <- c("x","b","a")
+  direction <- c("b","x","a")
   for(i in 1:length(levels(as.factor(dat1$site)))) {
     x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
     x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
@@ -152,18 +152,18 @@ cooccurrence <- function(dat1, dat2, lag = seq(2,14,2)){
     x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
     for(j in 1:length(lag)){
       for(k in 1:length(seq(0.0,1,0.1))){
-        for(l in 1:3){
+        for(l in 1:length(direction)){
           x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
           x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
           y <- 0
           #x3 <- data.frame() # For test purposes to see which events match up
           for(m in 1:nrow(x1.1)) {
             x1.2 <- x1.1$date[m]
-            if(l == 1){
-              x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
-            } else if(l == 2){
+            if(direction[l] == "b"){
               x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
-            } else if (l == 3) {
+            } else if(direction[l] == "x"){
+              x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
+            } else if (direction[l] == "a") {
               x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
             }
             x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
@@ -318,15 +318,33 @@ ggsave("graph/figure2.pdf", height = 24, width = 12)
 # 9. Prepares data for plotting
 
 mhwCO$site <- factor(mhwCO$site, levels = siteOrder)
+mhwCO$direction <- factor(mhwCO$direction, levels = c("b", "x", "a"))
+mhwCO$index <- paste(mhwCO$lag, mhwCO$direction, sep = "_")
 mcsCO$site <- factor(mcsCO$site, levels = siteOrder)
+mcsCO$direction <- factor(mcsCO$direction, levels = c("b", "x", "a"))
+mcsCO$index <- paste(mcsCO$lag, mcsCO$direction, sep = "_")
 
 #############################################################################
 # 11. Creates dot and line graph of co-occurrence depending on quantiles of events
 
+## Test for issues
+test <- mcsCO[mcsCO$site == "Gordons Bay",]
+test$index <- paste(test$lag, test$direction, sep = "_")
+test <- droplevels(test[test$direction == "x",])
+
+p2 <- ggplot(data = test, aes(x = quantile, y = proportion)) + bw_update +
+  geom_line(aes(colour = as.factor(index))) + 
+  #geom_point(aes(colour = as.factor(test$lag))) +
+  facet_grid(site ~ direction) +
+  ylab("proportion") + xlab("quantile (%)")
+p2
+
+
 cooccurrenceQuantFigure <- function(dat){
   p2 <- ggplot(data = dat, aes(x = quantile, y = proportion)) + bw_update +
-    geom_line() + geom_point() +
-    facet_grid(site ~ prop.b + prop.x + prop.a) +
+    geom_line(aes(colour = as.factor(index))) + 
+    geom_point(aes(colour = as.factor(index))) +
+    facet_grid(site ~ direction) +
     ylab("proportion") + xlab("quantile (%)") #+
     #theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
   p2
