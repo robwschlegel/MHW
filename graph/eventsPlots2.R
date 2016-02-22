@@ -30,17 +30,7 @@ source("setupParams/theme.R")
 #############################################################################
 ## CREATES:
 # "data/mhwCO.csv"
-# "data/mhwCOb.csv"
-# "data/mhwCOa.csv"
-# "data/mcsCO.csv"
-# "data/mcsCOb.csv"
-# "data/mcsCOa.csv"
-# "data/mhwnCO.csv"
-# "data/mcsnCO.csv"
-# "data/mhwnCOb.csv"
-# "data/mcsnCOb.csv"
-# "data/mhwnCOa.csv"
-# "data/mcsnCOa.csv"
+# "data/mhsCO.csv"
 # "graph/mhwCOmap.pdf"
 # "graph/mhwCObmap.pdf"
 # "graph/mhwCOamap.pdf"
@@ -48,12 +38,8 @@ source("setupParams/theme.R")
 # "graph/mcsCObmap.pdf"
 # "graph/mcsCOamap.pdf"
 # "graph/eventsALL.pdf"
-# "graph/mhwnCOfig.pdf"
-# "graph/mcsnCOfig.pdf"
-# "graph/mhwnCObfig.pdf"
-# "graph/mcsnCObfig.pdf"
-# "graph/mhwnCOafig.pdf"
-# "graph/mcsnCOafig.pdf"
+# "graph/mhwCOfig.pdf"
+# "graph/mcsCOfig.pdf"
 #############################################################################
 
 #############################################################################
@@ -67,6 +53,12 @@ load("data/OISSTdaily.Rdata")
 
 # Load metadata to get the lon/ lat values later
 load("data/metaData2.Rdata")
+
+# The coastal aggregations
+wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")
+sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna", 
+        "Mossel Bay", "Muizenberg", "Pollock Beach", "Storms River Mouth", "Tsitsikamma", "Ystervarkpunt")
+ec <- c("Eastern Beach", "Nahoon Beach", "Orient Beach", "Sodwana")
 
 #############################################################################
 ## 2. loads coastal and SST MHW/ MCS results

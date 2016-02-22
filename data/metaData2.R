@@ -76,6 +76,10 @@ east2 <- data.frame(site = "east coast", coast = "east", lon = round(mean(east$l
 coasts <- rbind(west2, south2, east2)
 names(coasts)[c(7:8,10:12)] <- c("start date", "end date", "temp days", "NA days", "NA%")
 metaData2 <- rbind(west, south, east, coasts)
+metaData2 <- data.frame(ID = seq(1, length(metaData2$site),1), metaData2)
+metaData2$lon <- round(metaData2$lon,2); metaData2$lat <- round(metaData2$lat,2)
+metaData2$depth <- NULL; metaData2$coast <- NULL; metaData2$NA.days <- NULL
+
 save(metaData2, file = "data/metaData2.Rdata")
 write.csv(metaData2, "data/metaData2.csv", row.names = F)
 
