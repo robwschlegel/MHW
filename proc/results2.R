@@ -2,17 +2,18 @@
 ## This script does:
 # 1. loads annual MHW/ MCS files;
 # 2. calculates event count, length and mean intensity for each coast for both datasets;
-# 3. Extracts top three MHW/ MCS events for each time series and type of data
-# 4. Extracts top three MHW/ MCS events for each coastal section and type of data
-# 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data
-# 6. Calculate beginning and end dates for largest events
+# 3. Load all events and extract top three MHWs/ MCSs;
+# 4. Extracts top three MHW/ MCS events for each coastal section and type of data;
+# 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data;
+# 6. Calculate beginning and end dates for largest events;
 # 7. Calculate co-occurrence between coastal sections
 
 #############################################################################
 ## DEPENDS ON:
-require(zoo); require(plyr); require(stringr)
+require(zoo); require(plyr); require(stringr); library(lubridate)
 source("setupParams/theme.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
+# "data/metaData2.csv"
 # All of the files from Eric
 #############################################################################
 
@@ -34,7 +35,7 @@ source("setupParams/theme.R")
 #############################################################################
 
 #############################################################################
-## 1. loads annual MHW/ MCS files
+## 1. loads annual and event MHW/ MCS files and metadata2
 
 # First specify coastal sections
 wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")
@@ -55,7 +56,10 @@ dir6 <- paste(getwd(), "/data/MCS/events/", sep = "")
 dir7 <- paste(getwd(), "/data/MHW/SST events/", sep = "")
 dir8 <- paste(getwd(), "/data/MCS/SST events/", sep = "")
 
-# Then load annual event stats
+# Load metadata
+load("data/metaData2.Rdata")
+
+# Load annual event stats
 annualLoad <- function(dir) {
   fname1 <-  dir(dir, full.names = TRUE)
   fname2 <-  dir(dir, full.names = FALSE)
@@ -118,7 +122,7 @@ allAnnualSSTResults <- resultsAnnualCoastal(mhwAnnualSST, mcsAnnualSST)
 write.csv(allAnnualSSTResults, "data/allAnnualSSTResults.csv")
 
 #############################################################################
-## 3. Extracts top three MHW/ MCS events for each time series and type of data
+## 3. Load all events and extract top three MHWs/ MCSs
 
 ##### 
 #These hashes are here so that this chunk can be collapsed efficiently
@@ -153,6 +157,34 @@ colNames <- c(
 )
 #####
 
+# Load events
+eventLoad <- function(dir) {
+  fname1 <-  dir(dir, full.names = TRUE)
+  fname2 <-  dir(dir, full.names = FALSE)
+  pf <- str_sub(fname2, -20, -1)
+  siteNames1 <-  unlist(strsplit(dir(dir, pattern = "data.events", full.names = FALSE), pf[1]))
+  siteNames1 <-  str_replace_all(siteNames1, "_", " ") # parse names for site column
+  dat <- data.frame()
+  for(i in 1:length(fname1)) { # A shameful for loop... in order to label sites correctly
+    x <- read.csv(fname1[i], header = FALSE, skip = 2, sep = ",",
+                  col.names = colNames)
+    x$site <-  siteNames1[i]
+    x$coast <- metaData2$coast[metaData2$site == x$site[1]]
+    x$date <-  as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-"))
+    x$month <- floor_date(as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-")), "month")
+    x$lon <- metaData2$lon[metaData2$site == x$site[1]]
+    x$lat <- metaData2$lat[metaData2$site == x$site[1]]
+    dat <- rbind(dat, x)
+  }
+  return(dat)
+}
+
+mhwEvent <- eventLoad(dir5)
+mcsEvent <- eventLoad(dir6)
+mhwEventSST <- eventLoad(dir7)
+mcsEventSST <- eventLoad(dir8)
+
+# The top three events per site
 eventLoadn <- function(dir, nCum = 5) {
   fname1 = dir(dir, pattern = "data.events", full.names = TRUE)
   fname2 = dir(dir, pattern = "data.events", full.names = FALSE)
@@ -288,57 +320,98 @@ mcsSST1dates <- eventDates(mcsSST1)
 # ggsave("graph/figure4demo.pdf")
 
 #############################################################################
-## 7. Load event data and calculate co-occurrence between coastal sections
+## 7.Calculate co-occurrence between coastal sections
 
-## NB: The way in which this is calculated for the coast needs to be considered carfeully...
+## NB: The way in which this is calculated for the coast needs to be considered carefully...
+    ## The following function is too biased for the south coast.
+    ## Rather using the indivudal co-occurrence rates and meaning them by coast.
 
-cooccurrenceCoast <- function(dat1, dat2, lag = seq(2,14,2)){
-  dat3 <- data.frame()
-  direction <- c("b","x","a")
-  for(i in 1:length(levels(as.factor(dat1$site)))) {
-    x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
-    x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
-    x1 <- x1[x1$yearStrt >= min(x2$yearStrt), ] # Subset x so that dates match up
-    x1 <- x1[x1$yearStrt <= max(x2$yearStrt), ]
-    x2 <- x2[x2$yearStrt >= min(x1$yearStrt), ]
-    x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
-    for(j in 1:length(lag)){
-      for(k in 1:length(seq(0.0,1,0.1))){
-        for(l in 1:length(direction)){
-          x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
-          x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
-          y <- 0
-          #x3 <- data.frame() # For test purposes to see which events match up
-          for(m in 1:nrow(x1.1)) {
-            x1.2 <- x1.1$date[m]
-            if(direction[l] == "b"){
-              x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
-            } else if(direction[l] == "x"){
-              x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
-            } else if (direction[l] == "a") {
-              x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
-            }
-            x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
-            y <- y + nrow(x2.2)
-          }
-          z <- data.frame(site = x1$site[1], lon = x1$lon[1], lat = x1$lat[1],
-                          lag = lag[j], quantile = seq(0.0,1,0.1)[k], direction = direction[l],
-                          insitu = nrow(x1.1), OISST = nrow(x2.1),
-                          cooccurrence= y, proportion = y/nrow(x1.1))
-          dat3 <- rbind(dat3, z)
-        }
-      }
-    }
-  }
-  return(dat3)
-}
+# cooccurrenceCoast <- function(dat1, dat2, lag = seq(2,14,2)){
+#   dat3 <- data.frame()
+#   direction <- c("b","x","a")
+#   coasts <- factor(matrix(c("west", "south", "east")), levels = c("west", "south", "east"))
+#   for(i in 1:length(levels(coasts))) {
+#     x1 <- droplevels(subset(dat1, coast == coasts[i]))
+#     x2 <- droplevels(subset(dat2, coast == coasts[i]))
+#     x1 <- x1[x1$yearStrt >= min(x2$yearStrt), ] # Subset x so that dates match up
+#     x1 <- x1[x1$yearStrt <= max(x2$yearStrt), ]
+#     x2 <- x2[x2$yearStrt >= min(x1$yearStrt), ]
+#     x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
+#     for(j in 1:length(lag)){
+#       for(k in 1:length(seq(0.0,1,0.1))){
+#         for(l in 1:length(direction)){
+#           x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
+#           x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
+#           y <- 0
+#           #x3 <- data.frame() # For test purposes to see which events match up
+#           for(m in 1:nrow(x1.1)) {
+#             x1.2 <- x1.1$date[m]
+#             if(direction[l] == "b"){
+#               x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
+#             } else if(direction[l] == "x"){
+#               x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
+#             } else if (direction[l] == "a") {
+#               x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
+#             }
+#             x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
+#             y <- y + nrow(x2.2)
+#           }
+#           z <- data.frame(coast = x1$coast[1], lon = x1$lon[1], lat = x1$lat[1],
+#                           lag = lag[j], quantile = seq(0.0,1,0.1)[k], direction = direction[l],
+#                           insitu = nrow(x1.1), OISST = nrow(x2.1),
+#                           cooccurrence= y, proportion = y/nrow(x1.1))
+#           dat3 <- rbind(dat3, z)
+#         }
+#       }
+#     }
+#   }
+#   return(dat3)
+# }
 
 #mhwCO0 <- cooccurrence(mhw, mhwSST, lag = 0) # Test to see which happen on exact same day
 #MHW
-mhwCO <- cooccurrence(mhw, mhwSST) # This takes several minutes to run... cursed for loops...
-write.csv(mhwCO, "data/mhwCO.csv", row.names = F)
-mhwCO <- read.csv("data/mhwCO.csv")
+# mhwCoastCO <- cooccurrenceCoast(mhwEvent, mhwEventSST) # This takes several minutes to run... cursed for loops...
+# write.csv(mhwCoastCO, "data/mhwCoastCO.csv", row.names = F)
+# mhwCoastCO <- read.csv("data/mhwCoastCO.csv")
 #MCS
-mcsCO <- cooccurrence(mcs, mcsSST)
-write.csv(mcsCO, "data/mcsCO.csv", row.names = F)
-mcsCO <- read.csv("data/mcsCO.csv")
+# mcsCoastCO <- cooccurrenceCoast(mcsEvent, mcsEventSST)
+# write.csv(mcsCoastCO, "data/mcsCoastCO.csv", row.names = F)
+# mcsCoastCO <- read.csv("data/mcsCoastCO.csv")
+
+mhwCoastCO <- read.csv("data/mhwCO.csv")
+mcsCoastCO <- read.csv("data/mcsCO.csv")
+
+# Add coast column
+mhwCoastCO$coast <- "x"
+mhwCoastCO$coast[mhwCoastCO$site %in% wc] <- "west"
+mhwCoastCO$coast[mhwCoastCO$site %in% sc] <- "south"
+mhwCoastCO$coast[mhwCoastCO$site %in% ec] <- "east"
+
+mcsCoastCO$coast <- "x"
+mcsCoastCO$coast[mcsCoastCO$site %in% wc] <- "west"
+mcsCoastCO$coast[mcsCoastCO$site %in% sc] <- "south"
+mcsCoastCO$coast[mcsCoastCO$site %in% ec] <- "east"
+
+mhwCoastCO <- ddply(mhwCoastCO, .(coast, lag, quantile, direction), summarize, 
+                    proportion = mean(proportion, na.rm = TRUE))
+write.csv(mhwCoastCO, "data/mhwCoastCO.csv")
+
+mcsCoastCO <- ddply(mcsCoastCO, .(coast, lag, quantile, direction), summarize, 
+                    proportion = mean(proportion, na.rm = TRUE))
+write.csv(mcsCoastCO, "data/mcsCoastCO.csv")
+
+# Some exploratory states
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="b"])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="x"])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="a"])
+
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="b"])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="x"])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="a"])
+
+#############################################################################
+## 8. Additional analyses/ computations
+
+# Quantify the occurrence of the top three MHWs and MCSs tper coast
+  # This can be used to infer climate change
+
