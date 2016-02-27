@@ -317,7 +317,7 @@ mcsCO$direction <- factor(mcsCO$direction, levels = c("b", "x", "a"))
 mcsCO$index <- paste(mcsCO$lag, mcsCO$direction, sep = "_")
 
 #############################################################################
-# 11. Creates dot and line graph of co-occurrence depending on quantiles of events
+# 10. Creates dot and line graph of co-occurrence depending on quantiles of events
 
 ## Test for issues
 test <- mcsCO[mcsCO$site == "Gordons Bay",]

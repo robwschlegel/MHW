@@ -7,6 +7,8 @@
 # 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data;
 # 6. Calculate beginning and end dates for largest events;
 # 7. Calculate co-occurrence between coastal sections
+# 8. Calcuate statistical significance between coastal sections
+# 9. Additional analyses
 
 #############################################################################
 ## DEPENDS ON:
@@ -77,7 +79,9 @@ annualLoad <- function(dir) {
     } else if(x$site[1] %in% ec) {
       x$coast <- "ec"
     }
-    x <- x[,c(25:26,1:24)]
+    x <- x[,c(25:26,1,2,3,5)]
+    colnames(x)[3:6] <- c("year","frequency","duration","intensity")
+    x[is.na(x$frequency)] <- 0
     dat <- rbind(dat, x)
   }
   dat$coast <- factor(dat$coast, levels = c("wc", "sc", "ec"))
@@ -95,22 +99,22 @@ mcsAnnualSST <- annualLoad(dir4)
 # Function used for calculations
 resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
   results <- data.frame(coast = as.factor("All"), 
-                        mhw_count = round(mean(mhw1[, 4], na.rm = T), 1), 
-                        mhw_length = round(mean(mhw1[, 9], na.rm = T), 1),
-                        mhw_intensity = round(mean(mhw1[, 7], na.rm = T), 2),
-                        mcs_count = round(mean(mcs1[, 4], na.rm = T), 1), 
-                        mcs_length = round(mean(mcs1[, 9], na.rm = T), 1),
-                        mcs_intensity = round(mean(mcs1[, 7], na.rm = T), 2))
+                        mhw_freq = round(mean(mhw1[, 4], na.rm = T), 1), 
+                        mhw_dur = round(mean(mhw1[, 5], na.rm = T), 1),
+                        mhw_intens = round(mean(mhw1[, 6], na.rm = T), 2),
+                        mcs_freq = round(mean(mcs1[, 4], na.rm = T), 1), 
+                        mcs_dur = round(mean(mcs1[, 4], na.rm = T), 1),
+                        mcs_intens = round(mean(mcs1[, 6], na.rm = T), 2))
   for(i in 1:length(levels(mhw1$coast))){
     mhw2 <- droplevels(subset(mhw1, coast == levels(mhw1$coast)[i]))
     mcs2 <- droplevels(subset(mcs1, coast == levels(mcs1$coast)[i]))
     z <- data.frame(coast = levels(mhw1$coast)[i], 
-                    mhw_count = round(mean(mhw2[, 4], na.rm = T), 1), 
-                    mhw_length = round(mean(mhw2[, 9], na.rm = T), 1),
-                    mhw_intensity = round(mean(mhw2[, 7], na.rm = T), 2),
-                    mcs_count = round(mean(mcs2[, 4], na.rm = T), 1), 
-                    mcs_length = round(mean(mcs2[, 9], na.rm = T), 1),
-                    mcs_intensity = round(mean(mcs2[, 7], na.rm = T), 2))
+                    mhw_freq = round(mean(mhw2[, 4], na.rm = T), 1), 
+                    mhw_dur = round(mean(mhw2[, 5], na.rm = T), 1),
+                    mhw_intens = round(mean(mhw2[, 6], na.rm = T), 2),
+                    mcs_freq = round(mean(mcs2[, 4], na.rm = T), 1), 
+                    mcs_dur = round(mean(mcs2[, 4], na.rm = T), 1),
+                    mcs_intens = round(mean(mcs2[, 6], na.rm = T), 2))
     results <- rbind(results, z)
   }
   return(results)
@@ -202,18 +206,18 @@ eventLoadn <- function(dir, nCum = 5) {
 
 # in situ
 mhwn <- eventLoadn(dir5, nCum = 3) # produce a data frame with mhw data...
-mhwn$event <- rep(1:3, length(levels(as.factor(mhwn$site)))) # Make sure to correct the rep() to match nCum
+mhwn$index <- rep(1:3, length(levels(as.factor(mhwn$site)))) # Make sure to correct the rep() to match nCum
 mhwn$type <- "insitu"
 mcsn <- eventLoadn(dir6, nCum = 3) # produce a data frame with mcs data...
-mcsn$event <- rep(1:3, length(levels(as.factor(mcsn$site))))
+mcsn$index <- rep(1:3, length(levels(as.factor(mcsn$site))))
 mcsn$type <- "insitu"
 # SST
 mhwnSST <- eventLoadn(dir7, nCum = 3)
-mhwnSST$event <- rep(1:3, length(levels(as.factor(mhwnSST$site))))
-mhwnSST$type <- "sst"
+mhwnSST$index <- rep(1:3, length(levels(as.factor(mhwnSST$site))))
+mhwnSST$type <- "OISST"
 mcsnSST <- eventLoadn(dir8, nCum = 3)
-mcsnSST$event <- rep(1:3, length(levels(as.factor(mcsnSST$site))))
-mcsnSST$type <- "sst"
+mcsnSST$index <- rep(1:3, length(levels(as.factor(mcsnSST$site))))
+mcsnSST$type <- "OISST"
 
 #############################################################################
 ## 4. Extracts top three MHW/ MCS events for each coastal section and type of data
@@ -267,57 +271,6 @@ mcs1dates <- eventDates(mcs1)
 write.csv(mcs1dates, "data/mcs1dates.csv")
 mhwSST1dates <- eventDates(mhwSST1)
 mcsSST1dates <- eventDates(mcsSST1)
-
-#############################################################################
-# ### Test draft of what figure 4 will look like
-# # load data
-# load("data/SACTNdaily_v4.0.Rdata")
-# load("data/OISSTdaily.Rdata")
-# 
-# # Subset data
-# mhw1ts <- droplevels(subset(SACTNdaily_v4.0, site %in% mhw1dates$site))[,c(1,3:4)] # Remove columns to match OISST
-# mcs1ts <- droplevels(subset(SACTNdaily_v4.0, site %in% mcs1dates$site))[,c(1,3:4)]
-# mhwSST1ts <- droplevels(subset(OISSTdaily, site %in% mhw1dates$site)) # in situ sites used intentionally to select OISST
-# mcsSST1ts <- droplevels(subset(OISSTdaily, site %in% mcs1dates$site))
-# 
-# # Subset dates
-# subsetDates <- function(dat1, dat2) {
-#   dat3 <- data.frame()
-#   for(i in 1:length(levels(dat1$site))){
-#     dat4 <- droplevels(subset(dat1, site == levels(dat1$site)[i]))
-#     dat5 <- droplevels(subset(dat2, site == levels(dat1$site)[i]))
-#     dates <- seq(dat5$start.date, dat5$end.date, 1)
-#     dat6 <- droplevels(subset(dat4, as.Date(date) %in% dates))
-#     dat6$coast <- dat5$coast
-#     dat3 <- rbind(dat3, dat6) 
-#   }
-#   return(dat3)
-# }
-# 
-# mhw1ts <- subsetDates(mhw1ts, mhw1dates)
-# mhw1ts$type <- as.factor("in situ")
-# mhw1ts$event <- as.factor("mhw")
-# mcs1ts <- subsetDates(mcs1ts, mcs1dates)
-# mcs1ts$type <- as.factor("in situ")
-# mcs1ts$event <- as.factor("mcs")
-# mhwSST1ts <- subsetDates(mhwSST1ts, mhw1dates) # The in situ dates are used here intentionally to extract OISST data
-# mhwSST1ts$type <- as.factor("OISST")
-# mhwSST1ts$event <- as.factor("mhw")
-# mcsSST1ts <- subsetDates(mcsSST1ts, mcs1dates)
-# mcsSST1ts$type <- as.factor("OISST")
-# mcsSST1ts$event <- as.factor("mcs")
-# 
-# # Combine for plotting
-# all1ts <- rbind(mhw1ts, mcs1ts, mhwSST1ts, mcsSST1ts)
-# # Remove east coast sites
-# all1ts <- droplevels(all1ts[all1ts$coast != "ec", ])
-# 
-# # Create figure
-# test <- ggplot(data = all1ts, aes(x = date, y = temp)) + bw_update +
-#   geom_line() +
-#   facet_wrap(event + coast ~ type, ncol = 2, scale = "free_x")
-# test
-# ggsave("graph/figure4demo.pdf")
 
 #############################################################################
 ## 7.Calculate co-occurrence between coastal sections
@@ -394,11 +347,11 @@ mcsCoastCO$coast[mcsCoastCO$site %in% ec] <- "east"
 
 mhwCoastCO <- ddply(mhwCoastCO, .(coast, lag, quantile, direction), summarize, 
                     proportion = mean(proportion, na.rm = TRUE))
-write.csv(mhwCoastCO, "data/mhwCoastCO.csv")
+# write.csv(mhwCoastCO, "data/mhwCoastCO.csv")
 
 mcsCoastCO <- ddply(mcsCoastCO, .(coast, lag, quantile, direction), summarize, 
                     proportion = mean(proportion, na.rm = TRUE))
-write.csv(mcsCoastCO, "data/mcsCoastCO.csv")
+# write.csv(mcsCoastCO, "data/mcsCoastCO.csv")
 
 # Some exploratory states
 mean(mhwCoastCO$proportion[mhwCoastCO$direction =="b"])
@@ -410,8 +363,98 @@ mean(mcsCoastCO$proportion[mcsCoastCO$direction =="x"])
 mean(mcsCoastCO$proportion[mcsCoastCO$direction =="a"])
 
 #############################################################################
-## 8. Additional analyses/ computations
+## 8. Calcuate statistical significance between coastal sections
 
-# Quantify the occurrence of the top three MHWs and MCSs tper coast
+# A function that takes a column of data and tests for homoscedasticity and normality
+# x <- mhwAnnual[6]
+# assumptions <- function(x){
+#   varx <- var(x, na.rm = T)
+#   normx <- shapiro.test(as.matrix(x))
+#   dat <- data.frame(var = varx, norm = normx$p.value)
+#   return(dat)
+# }
+
+# Check assumptions for all data
+# test <- assumptions(x)
+# test <- daply(mhwAnnual[mhwAnnual$coast == "wc",][,4:5], 
+#               .variables = colnames(mhwAnnual[,4:5]), .fun = mean())
+
+# Combine annual data
+allAnnual <- rbind(mhwAnnual, mcsAnnual)
+allAnnual$event <-rep(c("mhw", "mcs"), each = nrow(mhwAnnual))
+allAnnual$type <- "insitu"
+allAnnualSST <- rbind(mhwAnnualSST, mcsAnnualSST)
+allAnnualSST$event <-rep(c("mhw", "mcs"), each = nrow(mhwAnnualSST))
+allAnnualSST$type <- "OISST"
+allAllAnnual <- rbind(allAnnual, allAnnualSST)
+
+# Combine event data
+mhwEvent$event <- "mhw"
+mcsEvent$event <- "mcs"
+allEvent <- rbind(mhwEvent, mcsEvent)
+allEvent$type <- "insitu"
+mhwEventSST$event <- "mhw"
+mcsEventSST$event <- "mcs"
+allEventSST <- rbind(mhwEventSST, mcsEventSST)
+allEventSST$type <- "OISST"
+allAllEvent <- rbind(allEvent, allEventSST)
+
+# ANOVA for everything
+  # TukeyHSD shows which specific pairs are significant
+aovFrequency <- aov(frequency ~ coast * event * type, data = allAllAnnual)
+#summary(aovFrequency)
+  # Significant difference between the datasets only for frequency
+tukeyFrequency <- TukeyHSD(aovFrequency)
+#tukeyFrequency
+
+aovDuration <- aov(duration ~ coast * event * type, data = allAllAnnual)
+#summary(aovDuration)
+  # Significant difference between the datasets and coasts for duration
+tukeyDuration <- TukeyHSD(aovDuration)
+#tukeyDuration
+
+aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
+#summary(aovIntensity)
+# Significant difference between most things...
+tukeyIntensity <- TukeyHSD(aovIntensCum)
+#tukeyIntensity
+
+aovIntensCum <- aov(intCum ~ coast * event * type, data = allAllEvent)
+#summary(aovIntensCum)
+  # Significant difference between even more things...
+tukeyIntensCum <- TukeyHSD(aovIntensCum)
+#tukeyIntensCum
+
+## Check that data are normal. These ones are not.
+## First pull out your Residuals
+# res <- residuals(aovFrequency )
+# ## Now pull out your fitted values
+# yfit <- fitted.values(aovFrequency )
+# #window(width=8, height=3)
+# par(mfrow=c(1,3),mex=0.8)
+# ## Looking at the spread of the residuals to check Variances 
+# plot(yfit,res,xlab="Predicted values",ylab="Residuals")
+# abline(0,0,lty=3)
+# ### Looking at Normality
+# qqnorm(res,main="Model Validation Graphs")
+# qqline(res)
+# hist(res,main= "",xlab="Residuals")
+
+#
+
+# GLM for everything # Not currently using this
+# glmFrequency <- lm(frequency ~ coast * event * type, data = allAllAnnual)
+# summary(glmFrequency)
+
+#############################################################################
+## 9. Additional analyses
+
+# Quantify the occurrence of the top three MHWs and MCSs per coast
   # This can be used to infer climate change
 
+# test <- metaData2[metaData2$site == "Eastern Beach",]
+# test.date <- seq(test$start.date, test$end.date, by = 1)
+# test.date.1 <- test.date[1:floor(length(test.date)/2)]
+# test.date.2 <- test.date[(floor(length(test.date)/2)+1):length(test.date)]
+# test.mhw <- mhwn[mhwn$site == "Eastern Beach",]
+# test.first <- length(subset(test.mhw, start.date %in% test.date.1))
