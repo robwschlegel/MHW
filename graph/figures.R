@@ -79,7 +79,7 @@ f1 <- ggplot() + theme_bw() + #coord_equal() +
   geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID), size = 1.8) +
   geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID), size = 1.8) +
   labs(title = NULL, x = NULL, y = NULL) +
-  scale_colour_manual(breaks = c("west", "south", "east"), values = c("#377eb8", "#4daf4a", "#e41a1c")) +
+  scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +
   scale_y_continuous(breaks=seq(-35.0, -27.5, 2.5)) +
   scale_x_continuous(breaks=seq(15, 30, 5)) +
   ### Annotate specific things:
@@ -124,7 +124,7 @@ tsALL2$site <- factor(tsALL2$site, levels = siteOrder)
 tsALL2$event <- rep(c("MHW", "MCS"), each = nrow(tsALL))
 tsALL2$index <- paste(tsALL2$site, tsALL2$date, tsALL2$event, tsALL2$type, sep = "-")
 
-# mhwn and mcsn are not defined...
+# Run "proc/results2.R" first to populate the environment with the necessary data...
 
 mhwn$event <- "MHW"
 mhwn$index2 <- paste(mhwn$site, mhwn$month, mhwn$event, mhwn$type, sep = "-")
@@ -165,56 +165,31 @@ mcsnSST2$site <- factor(mcsn2$site, levels = siteOrder)
 
 # The figure
 f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
-  geom_line(data = tsALL2[tsALL2$type == "insitu",], colour = "black", alpha = 0.8, show.legend = F) +
+  geom_line(data = tsALL2[tsALL2$type == "insitu",], colour = "#41b6c4", alpha = 1.0, show.legend = F) +
   geom_line(data = tsALL2[tsALL2$type == "OISST",], #linetype = "dotted",
-            colour = "grey40", alpha = 0.8,  show.legend = F) +
+            colour = "#081d58", alpha = 0.8,  show.legend = F) +
   # insitu MHW
-  geom_point(data = mhwn2, aes(x = month, y = temp),
-             colour = "white", size = 2.5, show.legend = T) +
-  geom_point(data = mhwn2, aes(x = month, y = temp),
-             shape = 1, colour = "black", size = 2.7, show.legend = T) +
-  geom_text(data = mhwn2, aes(x = month, y = temp, label = index), size = 2.6) +
+  geom_point(data = mhwn2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+             colour = "black", fill = "#41b6c4", size = 2.7, show.legend = T) +
+  geom_text(data = mhwn2, aes(x = month, y = temp, label = index), size = 2.6, colour = "black") +
   # insitu MCS
-  geom_point(data = mcsn2, aes(x = month, y = temp),
-             colour = "white", size = 2.5, show.legend = T) +
-  geom_point(data = mcsn2, aes(x = month, y = temp),
-             shape = 1, colour = "black", size = 2.7, show.legend = T) +
-  geom_text(data = mcsn2, aes(x = month, y = temp, label = index), size = 2.6) +
+  geom_point(data = mcsn2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+             colour = "black", fill = "#41b6c4", size = 2.7, show.legend = T) +
+  geom_text(data = mcsn2, aes(x = month, y = temp, label = index), size = 2.6, colour = "black") +
   # OISST MHW
-  geom_point(data = mhwnSST2, aes(x = month, y = temp),
-             colour = "white", size = 2.5, show.legend = T) +
-  geom_point(data = mhwnSST2, aes(x = month, y = temp),
-             shape = 1, colour = "grey40", size = 2.7, show.legend = T) +
-  geom_text(data = mhwnSST2, aes(x = month, y = temp, label = index), colour = "grey40", size = 2.6) +
+  geom_point(data = mhwnSST2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+             colour = "black", fill = "#081d58", size = 2.7, show.legend = T) +
+  geom_text(data = mhwnSST2, aes(x = month, y = temp, label = index), colour = "white", size = 2.6) +
   # OISST MCS
-  geom_point(data = mcsnSST2, aes(x = month, y = temp),
-             colour = "white", size = 2.5, show.legend = T) +
-  geom_point(data = mcsnSST2, aes(x = month, y = temp),
-             shape = 1, colour = "grey40", size = 2.7, show.legend = T) +
-  geom_text(data = mcsnSST2, aes(x = month, y = temp, label = index), colour = "grey40", size = 2.6) +
+  geom_point(data = mcsnSST2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+             colour = "black", fill = "#081d58", size = 2.7, show.legend = T) +
+  geom_text(data = mcsnSST2, aes(x = month, y = temp, label = index), colour = "white", size = 2.6) +
   # Additional stuff
   scale_x_date(date_breaks = "1 year", date_labels = "%Y", expand = c(0.015,0)) +
   ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
   facet_grid(site ~ event)
-#f2
-ggsave("graph/figures/figure2.pdf", height = 24, width = 12)
-
-
-
-  #scale_size_manual(values = c(0.2, 0.5, 1.1)) +
-  geom_vline(data = mcsn, aes(xintercept = as.numeric(month), 
-                              size = as.factor(index)), colour = "black", alpha = 0.8, show.legend = F) +
-  geom_vline(data = mhwnSST, aes(xintercept = as.numeric(month), 
-                              size = as.factor(index)), colour = "grey40", alpha = 0.8, show.legend = F) +
-  geom_vline(data = mcsnSST, aes(xintercept = as.numeric(month), 
-                              size = as.factor(index)), colour = "grey40", alpha = 0.8, show.legend = F) +
-  scale_size_manual(values = c(0.2, 0.5, 1.1)) +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y", expand = c(0.015,0)) +
-  ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
-  facet_grid(site ~ event)
-#f2           
+# f2
 ggsave("graph/figures/figure2.pdf", height = 24, width = 12)
 
 #############################################################################
@@ -244,15 +219,18 @@ allCoastCO$index2 <- factor(allCoastCO$index2, levels = levels(as.factor(allCoas
 allCoastCO$direction <- factor(allCoastCO$direction, levels = c("b", "x", "a"))
 levels(allCoastCO$direction) <- c("before", "combined", "after")
 
+cols <- c("#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494", "#081d58")
+
 figure5 <-  ggplot(data = allCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
   geom_line(aes(colour = as.factor(lag))) + 
-  geom_point(aes(colour = as.factor(lag)), size = 0.1) +
+  # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
   facet_grid(index2 ~ direction, space = "free_y", shrink = T) +
   scale_color_grey() +
   ylab("proportion") + xlab("percentile (%)") +
+  scale_colour_manual(values = rev(cols)) +
   scale_x_continuous(breaks = seq(0.0, 1.0, 0.2)) +
-  guides(colour = guide_legend("lag (days)", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
+  guides(colour = guide_legend("lag [days]", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
   theme(axis.text = element_text(size = 7),
         legend.position = "bottom")
-#figure5
+figure5
 ggsave("graph/figures/figure5.pdf", width = 6, height = 7)

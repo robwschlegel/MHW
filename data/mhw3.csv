@@ -1,4 +1,4 @@
-"","site","month","dayStrt","event","type","coast","duration","intMean","intCum"
+"","site","month","dayStrt","index","type","coast","duration","intMean","intCum"
 "1","Sea Point",1996-01-01,4,1,"insitu","wc",40,3.081,123.2
 "2","Sea Point",2005-05-01,21,2,"insitu","wc",39,2.555,99.66
 "3","Sea Point",1975-12-01,30,3,"insitu","wc",38,2.616,99.41

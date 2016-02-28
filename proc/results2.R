@@ -194,7 +194,7 @@ eventLoadn <- function(dir, nCum = 5) {
   fname2 = dir(dir, pattern = "data.events", full.names = FALSE)
   pf <- str_sub(fname2, -20, -1)
   l1 = llply(fname1, read.csv, skip = 2, col.names = colNames) # loops avoided!
-  l1 = llply(l1, arrange, -abs(intCum)) # sort by intCum in descending order
+  l1 = llply(l1, plyr::arrange, -abs(intCum)) # sort by intCum in descending order
   top_n = function(x) head(x, nCum)
   df1 = ldply(l1, top_n) # pick the n highest ones
   siteNames1 = unlist(strsplit(dir(dir, pattern = "data.events", full.names = FALSE), pf[1]))
