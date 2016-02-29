@@ -119,24 +119,33 @@ tsALL <- ddply(tsALL, .(site, type, date), summarize,
 # Reorder sites for plotting
 siteOrder <- c("Port Nolloth", "Sea Point", "Hout Bay", "Kommetjie", "Fish Hoek", "Muizenberg", "Gordons Bay", "Hermanus", "Ystervarkpunt", "Mossel Bay", "Knysna", "Tsitsikamma West", "Storms River Mouth", "Tsitsikamma East", "Pollock Beach", "Humewood", "Hamburg", "Eastern Beach", "Orient Beach", "Nahoon Beach", "Sodwana")
 
-tsALL2 <- rbind(tsALL, tsALL)
+# Change site names for plotting
+newNames <- c("1. Port Nolloth", "2. Sea Point", "3. Hout Bay", "4. Kommetjie", "5. Fish Hoek", "6. Muizenberg", "7. Gordons Bay", "8. Hermanus", "9. Ystervarkpunt", "10. Mossel Bay", "11. Knysna", "12. Tsitsikamma West", "13. Storms River Mouth", "14. Tsitsikamma East", "15. Pollock Beach", "16. Humewood", "17. Hamburg", "18. Eastern Beach", "19. Orient Beach", "20. Nahoon Beach", "21. Sodwana")
+
+#tsALL2 <- rbind(tsALL, tsALL)
+tsALL2 <- tsALL
 tsALL2$site <- factor(tsALL2$site, levels = siteOrder)
-tsALL2$event <- rep(c("MHW", "MCS"), each = nrow(tsALL))
-tsALL2$index <- paste(tsALL2$site, tsALL2$date, tsALL2$event, tsALL2$type, sep = "-")
+#tsALL2$event <- rep(c("MHW", "MCS"), each = nrow(tsALL))
+#tsALL2$index <- paste(tsALL2$site, tsALL2$date, tsALL2$event, tsALL2$type, sep = "-")
+tsALL2$index <- paste(tsALL2$site, tsALL2$date, tsALL2$type, sep = "-")
 
 # Run "proc/results2.R" first to populate the environment with the necessary data...
 
 mhwn$event <- "MHW"
-mhwn$index2 <- paste(mhwn$site, mhwn$month, mhwn$event, mhwn$type, sep = "-")
+#mhwn$index2 <- paste(mhwn$site, mhwn$month, mhwn$event, mhwn$type, sep = "-")
+mhwn$index2 <- paste(mhwn$site, mhwn$month, mhwn$type, sep = "-")
 
 mcsn$event <- "MCS"
-mcsn$index2 <- paste(mcsn$site, mcsn$month, mcsn$event, mcsn$type, sep = "-")
+#mcsn$index2 <- paste(mcsn$site, mcsn$month, mcsn$event, mcsn$type, sep = "-")
+mcsn$index2 <- paste(mcsn$site, mcsn$month, mcsn$type, sep = "-")
 
 mhwnSST$event <- "MHW"
-mhwnSST$index2 <- paste(mhwnSST$site, mhwnSST$month, mhwnSST$event, mhwnSST$type, sep = "-")
+#mhwnSST$index2 <- paste(mhwnSST$site, mhwnSST$month, mhwnSST$event, mhwnSST$type, sep = "-")
+mhwnSST$index2 <- paste(mhwnSST$site, mhwnSST$month, mhwnSST$type, sep = "-")
 
 mcsnSST$event <- "MCS"
-mcsnSST$index2 <- paste(mcsnSST$site, mcsnSST$month, mcsnSST$event, mcsnSST$type, sep = "-")
+#mcsnSST$index2 <- paste(mcsnSST$site, mcsnSST$month, mcsnSST$event, mcsnSST$type, sep = "-")
+mcsnSST$index2 <- paste(mcsnSST$site, mcsnSST$month, mcsnSST$type, sep = "-")
 
 # Function to extract temperature during events
 eventTemp <- function(x){
@@ -163,6 +172,13 @@ mhwnSST2$site <- factor(mhwnSST2$site, levels = siteOrder)
 mcsnSST2 <- eventTemp(mcsnSST)
 mcsnSST2$site <- factor(mcsn2$site, levels = siteOrder)
 
+# Rename sites
+levels(tsALL2$site) <- newNames
+levels(mhwn2$site) <- newNames
+levels(mcsn2$site) <- newNames
+levels(mhwnSST2$site) <- newNames
+levels(mcsnSST2$site) <- newNames
+
 # The figure
 f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
   geom_line(data = tsALL2[tsALL2$type == "insitu",], colour = "#41b6c4", alpha = 1.0, show.legend = F) +
@@ -173,7 +189,7 @@ f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
              colour = "black", fill = "#41b6c4", size = 2.7, show.legend = T) +
   geom_text(data = mhwn2, aes(x = month, y = temp, label = index), size = 2.6, colour = "black") +
   # insitu MCS
-  geom_point(data = mcsn2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+  geom_point(data = mcsn2, aes(x = month, y = temp), shape = 22, alpha = 0.9,
              colour = "black", fill = "#41b6c4", size = 2.7, show.legend = T) +
   geom_text(data = mcsn2, aes(x = month, y = temp, label = index), size = 2.6, colour = "black") +
   # OISST MHW
@@ -181,16 +197,16 @@ f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
              colour = "black", fill = "#081d58", size = 2.7, show.legend = T) +
   geom_text(data = mhwnSST2, aes(x = month, y = temp, label = index), colour = "white", size = 2.6) +
   # OISST MCS
-  geom_point(data = mcsnSST2, aes(x = month, y = temp), shape = 21, alpha = 0.9,
+  geom_point(data = mcsnSST2, aes(x = month, y = temp), shape = 22, alpha = 0.9,
              colour = "black", fill = "#081d58", size = 2.7, show.legend = T) +
   geom_text(data = mcsnSST2, aes(x = month, y = temp, label = index), colour = "white", size = 2.6) +
   # Additional stuff
   scale_x_date(date_breaks = "1 year", date_labels = "%Y", expand = c(0.015,0)) +
   ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
-  facet_grid(site ~ event)
-# f2
-ggsave("graph/figures/figure2.pdf", height = 24, width = 12)
+  facet_grid(site ~ .)
+f2
+ggsave("graph/figures/figure2.pdf", height = 28, width = 12)
 
 #############################################################################
 ## 3. Figure 3
