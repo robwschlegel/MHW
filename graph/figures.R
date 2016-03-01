@@ -71,8 +71,8 @@ f1 <- ggplot() + theme_bw() + #coord_equal() +
                colour = "black", size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
   geom_polygon(data = south_africa_coast, aes(x = lon, y = lat, group = group), 
                size = 0.0, colour = NA, fill = "grey70") +
-  geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast), 
-             alpha = 0.9, size = 2.6, shape = 1) +
+  geom_point(data = metaData2, aes(x = lon, y = lat, fill = coast, colour = coast), 
+             alpha = 0.9, size = 2.6, shape = 21) +
   geom_point(data = site_pixels3, aes(x = lon, y = lat), 
              shape = 0, alpha = 1.0, size = 2.0, show.legend = FALSE) +
   geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID), size = 1.8) +
@@ -80,6 +80,7 @@ f1 <- ggplot() + theme_bw() + #coord_equal() +
   geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID), size = 1.8) +
   labs(title = NULL, x = NULL, y = NULL) +
   scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +
+  scale_fill_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +
   scale_y_continuous(breaks=seq(-35.0, -27.5, 2.5)) +
   scale_x_continuous(breaks=seq(15, 30, 5)) +
   ### Annotate specific things:
@@ -95,7 +96,7 @@ f1 <- ggplot() + theme_bw() + #coord_equal() +
     legend.direction = "horizontal",
     legend.justification = c(1,0), legend.position = c(0.65, 0.65)) +
   coord_cartesian(xlim = sa_lons, ylim = sa_lats)
-# f1
+f1
 ggsave("graph/figures/figure1.pdf", width = 8, height = 4)
 
 #############################################################################
