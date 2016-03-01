@@ -8,7 +8,8 @@
 # 6. Calculate beginning and end dates for largest events;
 # 7. Calculate co-occurrence between coastal sections
 # 8. Calcuate statistical significance between coastal sections
-# 9. Additional analyses
+# 9. Calcuate statistical significance between coastal sections for co-occurrence
+# 10. Additional analyses
 
 #############################################################################
 ## DEPENDS ON:
@@ -103,7 +104,7 @@ resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data fr
                         mhw_dur = round(mean(mhw1[, 5], na.rm = T), 1),
                         mhw_intens = round(mean(mhw1[, 6], na.rm = T), 2),
                         mcs_freq = round(mean(mcs1[, 4], na.rm = T), 1), 
-                        mcs_dur = round(mean(mcs1[, 4], na.rm = T), 1),
+                        mcs_dur = round(mean(mcs1[, 5], na.rm = T), 1),
                         mcs_intens = round(mean(mcs1[, 6], na.rm = T), 2))
   for(i in 1:length(levels(mhw1$coast))){
     mhw2 <- droplevels(subset(mhw1, coast == levels(mhw1$coast)[i]))
@@ -113,7 +114,7 @@ resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data fr
                     mhw_dur = round(mean(mhw2[, 5], na.rm = T), 1),
                     mhw_intens = round(mean(mhw2[, 6], na.rm = T), 2),
                     mcs_freq = round(mean(mcs2[, 4], na.rm = T), 1), 
-                    mcs_dur = round(mean(mcs2[, 4], na.rm = T), 1),
+                    mcs_dur = round(mean(mcs2[, 5], na.rm = T), 1),
                     mcs_intens = round(mean(mcs2[, 6], na.rm = T), 2))
     results <- rbind(results, z)
   }
@@ -447,7 +448,11 @@ tukeyIntensCum <- TukeyHSD(aovIntensCum)
 # summary(glmFrequency)
 
 #############################################################################
-## 9. Additional analyses
+## 9. Calcuate statistical significance between coastal sections for co-occurrence
+
+
+#############################################################################
+## 10. Additional analyses
 
 # Quantify the occurrence of the top three MHWs and MCSs per coast
   # This can be used to infer climate change
