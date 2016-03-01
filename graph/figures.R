@@ -18,7 +18,7 @@ source("setupParams/theme.R"); source("proc/results2.R")
 
 #############################################################################
 ## USED BY:
-# 
+#
 #############################################################################
 
 #############################################################################
@@ -39,7 +39,7 @@ metaData2$coast <- factor(metaData2$coast, levels = c("west", "south", "east"))
 load("data/site_pixels.RData")
 site_pixels2 <- read.csv("data/site_pixels2.csv")
 site_pixels[52:53,1:3] <- site_pixels2
-# Add coastal values to 
+# Add coastal values to
 site_pixels3 <- data.frame()
 for(i in 1:nrow(site_pixels)){
   x <- site_pixels[i,]
@@ -64,16 +64,16 @@ load("data/bathy/bathy.RData") # HiRes for final image
 load("data/bathy/sa_bathy.RData") # LowRes for tweaking
 
 # 1. Figure 1
-f1 <- ggplot() + theme_bw() + #coord_equal() + 
-  geom_contour(data = bathy[bathy$depth >= -399,], aes(x = lon, y = lat, z = depth), 
-               colour = "black", size = 0.4, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
-  stat_contour(data = bathy, aes(x = lon, y = lat, z = depth, alpha = ..level..), 
-               colour = "black", size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
-  geom_polygon(data = south_africa_coast, aes(x = lon, y = lat, group = group), 
+f1 <- ggplot() + theme_bw() + #coord_equal() +
+geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),
+             colour = "black", alpha = 0.85, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
+stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),
+             colour = "black", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +
+  geom_polygon(data = south_africa_coast, aes(x = lon, y = lat, group = group),
                size = 0.0, colour = NA, fill = "grey70") +
-  geom_point(data = metaData2, aes(x = lon, y = lat, fill = coast, colour = coast), 
+  geom_point(data = metaData2, aes(x = lon, y = lat, fill = coast, colour = coast),
              alpha = 0.9, size = 2.6, shape = 21) +
-  geom_point(data = site_pixels3, aes(x = lon, y = lat), 
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),
              shape = 0, alpha = 1.0, size = 2.0, show.legend = FALSE) +
   geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID), size = 1.8) +
   geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID), size = 1.8) +
@@ -239,7 +239,7 @@ levels(allCoastCO$direction) <- c("before", "combined", "after")
 cols <- c("#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494", "#081d58")
 
 figure5 <-  ggplot(data = allCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
-  geom_line(aes(colour = as.factor(lag))) + 
+  geom_line(aes(colour = as.factor(lag))) +
   # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
   facet_grid(index2 ~ direction, space = "free_y", shrink = T) +
   scale_color_grey() +
