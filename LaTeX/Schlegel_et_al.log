@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  3 MAR 2016 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  3 MAR 2016 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex
 (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex
-LaTeX2e <2015/01/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/elsarticle/elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
@@ -174,9 +174,9 @@ Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count105
-(/usr/local/texlive/texmf-local/tex/latex/html/url.sty
-Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
- names
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen115
@@ -209,6 +209,38 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2015/02/21 v2.0a fixes to LaTeX (obsolete)
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip48
+\RaggedLeftLeftskip=\skip49
+\RaggedRightLeftskip=\skip50
+\CenteringRightskip=\skip51
+\RaggedLeftRightskip=\skip52
+\RaggedRightRightskip=\skip53
+\CenteringParfillskip=\skip54
+\RaggedLeftParfillskip=\skip55
+\RaggedRightParfillskip=\skip56
+\JustifyingParfillskip=\skip57
+\CenteringParindent=\skip58
+\RaggedLeftParindent=\skip59
+\RaggedRightParindent=\skip60
+\JustifyingParindent=\skip61
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -237,7 +269,7 @@ File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip48
+\MT@outer@space=\skip62
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -251,58 +283,58 @@ File: amsgen.sty 1999/11/30 v2.0
 \ex@=\dimen119
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.s
 ty (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2015/07/30 v5724 L3 programming layer (loader) 
+Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2015/07/30 v5724 L3 programming layer (code) 
-L3 Module: l3bootstrap 2015/07/30 v5721 L3 Bootstrap code
-L3 Module: l3names 2015/07/28 v5705 L3 Namespace for primitives
+Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
+L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
 L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
 L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
-L3 Module: l3tl 2015/07/14 v5659 L3 Token lists
-L3 Module: l3str 2015/07/14 v5659 L3 Strings
-L3 Module: l3seq 2015/07/24 v5681 L3 Sequences and stacks
-L3 Module: l3int 2015/07/14 v5659 L3 Integers
+L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
+L3 Module: l3str 2015/03/01 v5545 L3 Strings
+L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
+L3 Module: l3int 2015/02/21 v5529 L3 Integers
 \c_max_int=\count114
 \l_tmpa_int=\count115
 \l_tmpb_int=\count116
 \g_tmpa_int=\count117
 \g_tmpb_int=\count118
-L3 Module: l3quark 2015/07/14 v5659 L3 Quarks
-L3 Module: l3prg 2015/07/30 v5722 L3 Control structures
+L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
+L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
 \g__prg_map_int=\count119
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
-L3 Module: l3file 2015/07/30 v5714 L3 File and I/O operations
+L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
 \l_iow_line_count_int=\count120
 \l__iow_target_count_int=\count121
 \l__iow_current_line_int=\count122
 \l__iow_current_word_int=\count123
 \l__iow_current_indentation_int=\count124
-L3 Module: l3skip 2015/07/14 v5659 L3 Dimensions and skips
+L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \c_zero_dim=\dimen120
 \c_max_dim=\dimen121
 \l_tmpa_dim=\dimen122
 \l_tmpb_dim=\dimen123
 \g_tmpa_dim=\dimen124
 \g_tmpb_dim=\dimen125
-\c_zero_skip=\skip49
-\c_max_skip=\skip50
-\l_tmpa_skip=\skip51
-\l_tmpb_skip=\skip52
-\g_tmpa_skip=\skip53
-\g_tmpb_skip=\skip54
-\c_zero_muskip=\muskip10
-\c_max_muskip=\muskip11
-\l_tmpa_muskip=\muskip12
-\l_tmpb_muskip=\muskip13
-\g_tmpa_muskip=\muskip14
-\g_tmpb_muskip=\muskip15
-L3 Module: l3keys 2015/07/26 v5684 L3 Key-value interfaces
+\c_zero_skip=\skip63
+\c_max_skip=\skip64
+\l_tmpa_skip=\skip65
+\l_tmpb_skip=\skip66
+\g_tmpa_skip=\skip67
+\g_tmpb_skip=\skip68
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
 \g__keyval_level_int=\count125
 \l_keys_choice_int=\count126
-L3 Module: l3fp 2015/07/09 v5652 L3 Floating points
+L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
 \c__fp_leading_shift_int=\count127
 \c__fp_middle_shift_int=\count128
 \c__fp_trailing_shift_int=\count129
@@ -339,7 +371,7 @@ L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_display_x_dim=\dimen134
 \l__coffin_display_y_dim=\dimen135
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
-L3 Module: l3candidates 2015/07/22 v5677 L3 Experimental additions to l3kernel
+L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
 \l__box_top_dim=\dimen136
 \l__box_bottom_dim=\dimen137
 \l__box_left_dim=\dimen138
@@ -356,14 +388,13 @@ L3 Module: l3candidates 2015/07/22 v5677 L3 Experimental additions to l3kernel
 \l__coffin_top_corner_dim=\dimen148
 \l__coffin_scaled_total_height_dim=\dimen149
 \l__coffin_scaled_width_dim=\dimen150
-L3 Module: l3luatex 2015/06/30 v5646 L3 Experimental LuaTeX-specific functions
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
-File: l3unicode-data.def 2015/07/20 v-1 L3 Unicode data
+File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2015/06/30 v5646 L3 Experimental driver: PDF mode
+File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count136
 ))
-Package: l3keys2e 2015/07/28 v5700 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2014/11/25 v5471 LaTeX2e option processing using LaTeX3 keys
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -445,7 +476,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2015/07/28 v5700 L3 Experimental document command parser
+Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count137
 \l__xparse_m_args_int=\count138
 \l__xparse_mandatory_args_int=\count139
@@ -454,12 +485,12 @@ Package: xparse 2015/07/28 v5700 L3 Experimental document command parser
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
 y
-Package: xtemplate 2015/07/28 v5700 L3 Experimental prototype document function
+Package: xtemplate 2014/11/25 v5471 L3 Experimental prototype document function
 s
 \l__xtemplate_tmp_dim=\dimen151
 \l__xtemplate_tmp_int=\count142
-\l__xtemplate_tmp_muskip=\muskip16
-\l__xtemplate_tmp_skip=\skip55
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip69
 Variant \prop_get:NoNTF already defined; not changing it on line 106
 Variant \prop_get:NoNT already defined; not changing it on line 107
 Variant \prop_get:NoNF already defined; not changing it on line 108
@@ -472,8 +503,8 @@ Package: xfrac 2014/05/04 v4728 L3 Experimental split-level fractions
 \l__xfrac_numerator_top_sep_dim=\dimen154
 \l__xfrac_slash_left_sep_dim=\dimen155
 \l__xfrac_slash_right_sep_dim=\dimen156
-\l__xfrac_slash_left_muskip=\muskip17
-\l__xfrac_slash_right_muskip=\muskip18
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
 .................................................
 . xtemplate info: "declare-object-type"
 . 
@@ -485,7 +516,7 @@ Package: xfrac 2014/05/04 v4728 L3 Experimental split-level fractions
 . Defining command \sfrac with sig. 'omom' on line 436.
 .................................................
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
@@ -504,6 +535,7 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -530,13 +562,13 @@ sts.tex))
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.te
 x
-Package: pgfrcs 2015/08/07 v3.0.1 (rcs-revision 1.31)
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2015/08/07 v3.0.1 (rcs-revision 1.15)
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/
 local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2014/07/09 v3.0.1 (rcs-revision 1.48)
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks23
 \pgfkeys@temptoks=\toks24
@@ -569,7 +601,7 @@ Driver file for pgf: pgfsys-pdftex.def
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
 ef
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
 df.def
@@ -586,7 +618,7 @@ code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v3.0.1 (rcs-revision 1.7)
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr
 /local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/
 local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
@@ -645,13 +677,13 @@ File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 \pgf@shorten@end@additional=\dimen184
 \pgf@shorten@start@additional=\dimen185
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box50
 \pgf@hbox=\box51
 \pgf@layerbox@main=\box52
@@ -659,12 +691,12 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
 \pgflinewidth=\dimen186
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
 \pgf@pt@x=\dimen187
 \pgf@pt@y=\dimen188
 \pgf@pt@temp=\dimen189
@@ -683,7 +715,7 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 \pgfarrowsep=\dimen190
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
@@ -698,7 +730,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box53
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
@@ -715,29 +747,29 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box54
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1 (rcs-revision 1.7)
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen192
 \pgf@nodesepend=\dimen193
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1 (rcs-revision 1.1)
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr
 /local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/
 texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/loca
 l/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/20
 15/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2015/
 texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen194
 \pgffor@skip=\dimen195
@@ -746,11 +778,11 @@ Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
-Package: tikz 2015/08/07 v3.0.1 (rcs-revision 1.151)
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1 (rcs-revision 1.20)
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count154
 \pgfplotmarksize=\dimen196
 )
@@ -780,30 +812,30 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1 (rcs-revision 1.2)
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1 (rcs-revision 1.7)
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count163
 \calc@Bcount=\count164
 \calc@Adimen=\dimen203
 \calc@Bdimen=\dimen204
-\calc@Askip=\skip56
-\calc@Bskip=\skip57
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count165
-\calc@Cskip=\skip58
+\calc@Cskip=\skip72
 )
 \c@@todonotes@numberoftodonotes=\count166
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip59
+\@mathmargin=\skip73
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
@@ -828,7 +860,7 @@ LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count172
 \c@MaxMatrixCols=\count173
-\dotsspace@=\muskip19
+\dotsspace@=\muskip20
 \c@parentequation=\count174
 \dspbrk@lvl=\count175
 \tag@help=\toks34
@@ -843,8 +875,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen211
 \lineht@=\dimen212
 \@envbody=\toks36
-\multlinegap=\skip60
-\multlinetaggap=\skip61
+\multlinegap=\skip74
+\multlinetaggap=\skip75
 \mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
@@ -856,47 +888,75 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux)
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen213
+\captionmargin@=\dimen214
+\captionwidth=\dimen215
+\caption@tempdima=\dimen216
+\caption@indent=\dimen217
+\caption@parindent=\dimen218
+\caption@hangindent=\dimen219
+)
+\c@ContinuedFloat=\count179
+Package caption Info: hyperref package is loaded.
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2230.
+LaTeX Info: Redefining \cref on input line 2230.
+LaTeX Info: Redefining \Cref on input line 2230.
+LaTeX Info: Redefining \crefrange on input line 2230.
+LaTeX Info: Redefining \Crefrange on input line 2230.
+LaTeX Info: Redefining \cpageref on input line 2230.
+LaTeX Info: Redefining \Cpageref on input line 2230.
+LaTeX Info: Redefining \cpagerefrange on input line 2230.
+LaTeX Info: Redefining \Cpagerefrange on input line 2230.
+LaTeX Info: Redefining \labelcref on input line 2230.
+LaTeX Info: Redefining \labelcpageref on input line 2230.
+) (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux)
 \openout1 = `Schlegel_et_al.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 50.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 57.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2013/09/01 v1.0 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 50.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    ... okay on input line 57.
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count179
-\scratchdimen=\dimen213
+\scratchcounter=\count180
+\scratchdimen=\dimen220
 \scratchbox=\box61
-\nofMPsegments=\count180
-\nofMParguments=\count181
+\nofMPsegments=\count181
+\nofMParguments=\count182
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count182
-\MPscratchDim=\dimen214
-\MPnumerator=\count183
-\makeMPintoPDFobject=\count184
+\MPscratchCnt=\count183
+\MPscratchDim=\dimen221
+\MPnumerator=\count184
+\makeMPintoPDFobject=\count185
 \everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -912,23 +972,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 57.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count185
+\c@section@level=\count186
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.out) (/Users/ajsmit/Dropb
 ox/repos/MHW/LaTeX/Schlegel_et_al.out)
 \@outlinefile=\write5
 \openout5 = `Schlegel_et_al.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 50.
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 57.
+LaTeX Info: Redefining \microtypecontext on input line 57.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -944,22 +1006,24 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 ) ABD: EveryShipout initializing macros
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 50.
-Package gensymb Info: Math companion symbols declared on input line 50.
-LaTeX Info: Redefining \degree on input line 50.
-LaTeX Info: Redefining \celsius on input line 50.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 57.
+Package gensymb Info: Math companion symbols declared on input line 57.
+LaTeX Info: Redefining \degree on input line 57.
+LaTeX Info: Redefining \celsius on input line 57.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 50.
-LaTeX Info: Redefining \ohm on input line 50.
-Package gensymb Info: Using \textohm for \ohm on input line 50.
-Package gensymb Info: Using \textmu for \micro on input line 50.
-LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+erthousand on input line 57.
+LaTeX Info: Redefining \ohm on input line 57.
+Package gensymb Info: Using \textohm for \ohm on input line 57.
+Package gensymb Info: Using \textmu for \micro on input line 57.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 90.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -972,14 +1036,13 @@ Package microtype Info: Loading generic settings for font family
 [1
 
 
-{/Users/ajsmit/Library/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
-p}]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 89.
+ine 96.
 Missing character: There is no ‚ in font cmr5!
 Missing character: There is no Ä in font cmr5!
 Missing character: There is no ô in font cmr5!
@@ -993,22 +1056,22 @@ Missing character: There is no ‚ in font cmr5!
 Missing character: There is no Ä in font cmr5!
 Missing character: There is no ô in font cmr5!
 
-Overfull \hbox (8.88902pt too wide) in paragraph at lines 89--89
+Overfull \hbox (8.88902pt too wide) in paragraph at lines 96--96
 \OT1/cmr/m/n/5 pacts/implications?  
  []
 
 
-Overfull \hbox (8.88902pt too wide) in paragraph at lines 89--89
+Overfull \hbox (8.88902pt too wide) in paragraph at lines 96--96
 \OT1/cmr/m/n/5 pacts/implications?  
  []
 
 
-Overfull \hbox (8.88902pt too wide) in paragraph at lines 89--89
+Overfull \hbox (8.88902pt too wide) in paragraph at lines 96--96
 \OT1/cmr/m/n/5 pacts/implications?  
  []
 
 
-Overfull \hbox (8.88902pt too wide) in paragraph at lines 89--89
+Overfull \hbox (8.88902pt too wide) in paragraph at lines 96--96
 \OT1/cmr/m/n/5 pacts/implications?  
  []
 
@@ -1022,24 +1085,35 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 [3]
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 102.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 95.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 102.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.58325> not available
-(Font)              size <6> substituted on input line 95.
+(Font)              size <6> substituted on input line 102.
 
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-[4] [5]
+[4] <figure1_1km_labeled.pdf, id=108, 579.16376pt x 290.08376pt>
+File: figure1_1km_labeled.pdf Graphic file (type pdf)
+<use figure1_1km_labeled.pdf>
+Package pdftex.def Info: figure1_1km_labeled.pdf used on input line 107.
+(pdftex.def)             Requested size: 345.0pt x 172.79893pt.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.4666> not available
+(Font)              size <5> substituted on input line 108.
+
+[5] [6 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure1_1km_labeled.pdf>]
 Missing character: There is no √ in font cmr10!
 Missing character: There is no º in font cmr10!
 Missing character: There is no ‚ in font cmr10!
@@ -1056,7 +1130,7 @@ Missing character: There is no ¨ in font cmr10!
 Missing character: There is no Å in font cmr10!
 Missing character: There is no √ in font cmr10!
 Missing character: There is no º in font cmr10!
-[6]
+[7]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
@@ -1082,45 +1156,108 @@ Missing character: There is no ¬ in font cmr10!
 Missing character: There is no † in font cmr10!
 Missing character: There is no ¬ in font cmr10!
 Missing character: There is no † in font cmr10!
-[7]
+[8]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-[8]
+[9]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
-[9] [10] (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl
+[10] [11]
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ∞ in font cmr10!
+[12] <figure2.pdf, id=221, 867.24pt x 2023.56pt>
+File: figure2.pdf Graphic file (type pdf)
+<use figure2.pdf>
+Package pdftex.def Info: figure2.pdf used on input line 151.
+(pdftex.def)             Requested size: 241.49895pt x 563.47437pt.
+Missing character: There is no ¬ in font cmr8!
+Missing character: There is no ∞ in font cmr8!
+Missing character: There is no ¬ in font cmr8!
+Missing character: There is no ∞ in font cmr8!
+
+LaTeX Warning: Float too large for page by 60.97435pt on input line 153.
+
+[13] [14 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure2.pdf>]
+
+LaTeX Warning: Reference `fig:Figure3' on page 1 undefined on input line 161.
+
+<figure4.png, id=244, 913.4928pt x 913.011pt>
+File: figure4.png Graphic file (type png)
+<use figure4.png>
+Package pdftex.def Info: figure4.png used on input line 169.
+(pdftex.def)             Requested size: 345.0pt x 344.81628pt.
+
+Overfull \hbox (34.58539pt too wide) in paragraph at lines 173--173
+\OT1/cmr/m/n/5 lines/lags/directions/events.  
+ []
+
+
+Overfull \hbox (34.58539pt too wide) in paragraph at lines 173--173
+\OT1/cmr/m/n/5 lines/lags/directions/events.  
+ []
+
+
+Overfull \hbox (34.58539pt too wide) in paragraph at lines 173--173
+\OT1/cmr/m/n/5 lines/lags/directions/events.  
+ []
+
+
+Overfull \hbox (34.58539pt too wide) in paragraph at lines 173--173
+\OT1/cmr/m/n/5 lines/lags/directions/events.  
+ []
+
+<figure5.pdf, id=247, 433.62pt x 505.89pt>
+File: figure5.pdf Graphic file (type pdf)
+<use figure5.pdf>
+Package pdftex.def Info: figure5.pdf used on input line 177.
+(pdftex.def)             Requested size: 345.0pt x 402.52026pt.
+[15] [16 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure4.png>] [17 </Users/ajsmi
+t/Dropbox/repos/MHW/LaTeX/figure5.pdf>] [18] [19]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
-) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+
+LaTeX Warning: Reference `Figure5' on page 1 undefined on input line 202.
+
+
+LaTeX Warning: Reference `Figure5' on page 1 undefined on input line 204.
+
+[20] [21] (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl [22]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
 (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
-(rerunfilecheck)             Checksum: DC418616A922DFE49B297CCB00CC4572;344.
+(rerunfilecheck)             Checksum: BC4EE5195FAD42E64A913994F2477840;891.
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.41675pt have occurred.
+(Font)              up to 0.5334pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 26909 strings out of 493091
- 515453 string characters out of 6134964
- 577514 words of memory out of 5000000
- 29832 multiletter control sequences out of 15000+600000
- 18842 words of font info for 109 fonts, out of 8000000 for 9000
+ 28941 strings out of 493089
+ 558291 string characters out of 6134842
+ 647389 words of memory out of 5000000
+ 31751 multiletter control sequences out of 15000+600000
+ 22476 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,76p,10514b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
+ 62i,9n,92p,10514b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
@@ -1137,13 +1274,14 @@ ts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb>
-Output written on /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf (11 
-pages, 214916 bytes).
+1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb>
+Output written on /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf (23 
+pages, 1923228 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 16445 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 17561 words of extra memory for PDF output out of 20736 (max. 10000000)
 
