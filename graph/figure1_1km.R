@@ -8,7 +8,6 @@
 
 #############################################################################
 ## DEPENDS ON:
-rotate <- function(x) t(apply(x, 2, rev))
 require(ncdf); require(colorRamps); library(reshape2); library(ggplot2)
 require(rgeos); require(maptools) # " maptools" must be loaded after "rgeos"
 require(lubridate); require(plyr); require(ggrepel); library(viridis)
@@ -28,11 +27,11 @@ setwd("/Users/ajsmit/Dropbox/repos/MHW")
 
 ################################################################################
 # Open a netCDF file
+# ncsst <- open.ncdf("/Volumes/AGULHAS/OceanData/misc_hires/jplG1SST_2f50_4900_a129.nc")
+ncsst <- open.ncdf("/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc")
 str(ncsst$dim)
-ncsst <- open.ncdf("/Volumes/AGULHAS/OceanData/misc_hires/jplG1SST_2f50_4900_a129.nc")
-
 # Get the sst etc.
-sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,1), count = c(-1,-1,1))
+sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,10), count = c(-1,-1,1))
 sst[sst == -1] <- NA
 
 # Some basic info of the lats and lons
@@ -93,17 +92,17 @@ load("data/bathy/sa_bathy.RData") # LowRes for tweaking
 
 theme_set(theme_bw())
 
-limits <- c(6,28) # for colour bar
-breaks <- seq(6, 30.2, 2) # Create breaks to be used for colour bar
+limits <- c(8,28) # for colour bar
+breaks <- seq(6, 30, 2) # Create breaks to be used for colour bar
 
 p <- ggplot(data = shore2, aes(x = long, y = lat)) +
   geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +
   geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),
-               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
+               colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
   stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),
-               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +
+               colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +
   geom_polygon(data = shore2, aes(x = long, y = lat, group = group),
-               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +
+               fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +
   # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),
   #            alpha = 0.9, size = 2.6, shape = 1) +
   geom_point(data = metaData2, aes(x = lon, y = lat),
@@ -117,17 +116,20 @@ p <- ggplot(data = shore2, aes(x = long, y = lat)) +
   geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),
             size = 1.8, colour = "ivory1") +
   coord_equal() +
-  scale_x_continuous(limits = rlon, expand = c(0, 0), breaks = seq(15, 35, 5)) +
-  scale_y_continuous(limits = rlat, expand = c(0, 0)) +
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +
   scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +
   # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +
   xlab("") +
   ylab("") +
-  guides(fill = guide_colourbar(barheight = 8.35)) +
+  guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +
   theme(panel.background = element_rect(fill = "white", colour = NA),
         panel.border = element_rect(colour = "black", size = 0.5),
         panel.grid.minor = element_line(colour = "NA"),
         panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),
+        legend.direction = "horizontal",
+        legend.justification = c(1,0),
+        legend.position = c(0.65, 0.65),
         legend.text = element_text(size = 8),
         legend.title = element_text(size = 8),
         legend.key = element_blank(),
