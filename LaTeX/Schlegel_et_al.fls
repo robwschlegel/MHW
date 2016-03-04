@@ -366,6 +366,7 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmri9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ts1-lmr9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure2.pdf
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure2.pdf
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure2.pdf
@@ -375,6 +376,11 @@ INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure4.png
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure5.pdf
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure5.pdf
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure5.pdf
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
@@ -382,10 +388,12 @@ INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.out
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.out
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx9.pfb
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi9.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr5.pfb
