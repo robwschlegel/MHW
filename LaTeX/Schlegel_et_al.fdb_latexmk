@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex Schlegel_et_al"] 1457117813 "Schlegel_et_al.aux" "Schlegel_et_al.bbl" "Schlegel_et_al" 1457117816
+["bibtex Schlegel_et_al"] 1457121017 "Schlegel_et_al.aux" "Schlegel_et_al.bbl" "Schlegel_et_al" 1457121245
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/elsarticle/elsarticle-num.bst" 1253317863 30001 6fb47de13cacd52e2c80466b180be262 ""
-  "Schlegel_et_al.aux" 1457117815 16520 ca299499ea6b3f31e7557df97d08ef9e ""
+  "Schlegel_et_al.aux" 1457121019 17007 56e9fa3a40c602bf39c00c93b7fb5dca ""
   "Schlegel_et_al.bcf" 0 -1 0 ""
   "mybibfile.bib" 1379947356 603 db7b8426cf457c724a78d0440e2f210f ""
   (generated)
   "Schlegel_et_al.blg"
   "Schlegel_et_al.bbl"
-["pdflatex"] 1457117813 "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex" "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf" "Schlegel_et_al" 1457117816
-  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux" 1457117815 16520 ca299499ea6b3f31e7557df97d08ef9e ""
-  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex" 1457117805 54686 3859569f540366f8806741871e95c2c2 ""
+["pdflatex"] 1457121017 "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex" "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf" "Schlegel_et_al" 1457121245
+  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux" 1457121019 17007 56e9fa3a40c602bf39c00c93b7fb5dca ""
+  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex" 1457121204 54911 a55027c4a812e434c02502f4f6c954d8 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -251,11 +251,11 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1446443002 3849859 8052142f2904491c497f04770f11ecd2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Schlegel_et_al.aux" 1457117815 16520 ca299499ea6b3f31e7557df97d08ef9e ""
-  "Schlegel_et_al.bbl" 1457117813 802 9a87b47b5bb060a46f0891addd618da3 "bibtex Schlegel_et_al"
-  "Schlegel_et_al.out" 1457117815 891 bc4ee5195fad42e64a913994f2477840 ""
-  "Schlegel_et_al.spl" 1457117813 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Schlegel_et_al.tex" 1457117805 54686 3859569f540366f8806741871e95c2c2 ""
+  "Schlegel_et_al.aux" 1457121019 17007 56e9fa3a40c602bf39c00c93b7fb5dca ""
+  "Schlegel_et_al.bbl" 1457121017 802 9a87b47b5bb060a46f0891addd618da3 "bibtex Schlegel_et_al"
+  "Schlegel_et_al.out" 1457121019 891 bc4ee5195fad42e64a913994f2477840 ""
+  "Schlegel_et_al.spl" 1457121207 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Schlegel_et_al.tex" 1457121204 54911 a55027c4a812e434c02502f4f6c954d8 ""
   "figure1_1km_labeled.pdf" 1456910813 1093998 008d83a8e236768b6bb93bb7004c7584 ""
   "figure2.pdf" 1456860500 101396 0e75cf9800c47efd34c0cc74c6957ff4 ""
   "figure4.png" 1456658417 576701 de6e6d2604dc29dbea035873c8e90f54 ""
@@ -263,8 +263,8 @@
   (generated)
   "Schlegel_et_al.pdf"
   "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.log"
-  "Schlegel_et_al.out"
+  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf"
   "Schlegel_et_al.aux"
   "Schlegel_et_al.log"
-  "/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf"
+  "Schlegel_et_al.out"
   "Schlegel_et_al.spl"
