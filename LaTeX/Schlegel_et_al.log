@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  4 MAR 2016 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  4 MAR 2016 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1873,7 +1873,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 203.
 
-[9] <figure2.pdf, id=220, 867.24pt x 2023.56pt>
+[9] <figure2.pdf, id=222, 867.24pt x 2023.56pt>
 File: figure2.pdf Graphic file (type pdf)
 <use figure2.pdf>
 Package pdftex.def Info: figure2.pdf used on input line 224.
@@ -1882,7 +1882,7 @@ Package pdftex.def Info: figure2.pdf used on input line 224.
 
 LaTeX Warning: Reference `fig:Figure3' on page 1 undefined on input line 234.
 
-<figure4.png, id=249, 913.4928pt x 913.011pt>
+<figure4.png, id=251, 913.4928pt x 913.011pt>
 File: figure4.png Graphic file (type png)
 <use figure4.png>
 Package pdftex.def Info: figure4.png used on input line 242.
@@ -1907,7 +1907,7 @@ Overfull \hbox (34.58626pt too wide) in paragraph at lines 246--246
 \T1/lmr/m/n/5 lines/lags/directions/events.  
  []
 
-<figure5.pdf, id=252, 433.62pt x 505.89pt>
+<figure5.pdf, id=254, 433.62pt x 505.89pt>
 File: figure5.pdf Graphic file (type pdf)
 <use figure5.pdf>
 Package pdftex.def Info: figure5.pdf used on input line 250.
@@ -1943,11 +1943,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
  ) 
 Here is how much of TeX's memory you used:
- 30237 strings out of 493089
- 575784 string characters out of 6134842
+ 30247 strings out of 493089
+ 576064 string characters out of 6134842
  671140 words of memory out of 5000000
- 32950 multiletter control sequences out of 15000+600000
- 98625 words of font info for 167 fonts, out of 8000000 for 9000
+ 32960 multiletter control sequences out of 15000+600000
+ 98495 words of font info for 166 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,92p,10521b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -1972,10 +1972,10 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
 Output written on /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf (18 
-pages, 2097954 bytes).
+pages, 2098821 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 500000)
  29849 words of extra memory for PDF output out of 29859 (max. 10000000)
 
