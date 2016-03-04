@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  4 MAR 2016 21:53
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  4 MAR 2016 21:50
+>>>>>>> db2ec09b75d447fc473f296865c284f2eaf7fb69
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2041,8 +2045,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  30245 strings out of 493089
  575418 string characters out of 6134842
+=======
+ 30247 strings out of 493089
+ 576064 string characters out of 6134842
+>>>>>>> db2ec09b75d447fc473f296865c284f2eaf7fb69
  671140 words of memory out of 5000000
  32960 multiletter control sequences out of 15000+600000
  98495 words of font info for 166 fonts, out of 8000000 for 9000
@@ -2069,7 +2078,12 @@ lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy6.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+<<<<<<< HEAD
 Output written on Schlegel_et_al.pdf (18 pages, 2098717 bytes).
+=======
+Output written on /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf (18 
+pages, 2098821 bytes).
+>>>>>>> db2ec09b75d447fc473f296865c284f2eaf7fb69
 PDF statistics:
  398 PDF objects out of 1000 (max. 8388607)
  329 compressed objects within 4 object streams
