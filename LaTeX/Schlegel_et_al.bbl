@@ -1,20 +1,415 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{Feynman1963118}
-R.~Feynman, F.~{Vernon Jr.}, The theory of a general quantum system interacting
-  with a linear dissipative system, Annals of Physics 24 (1963) 118--173.
-\newblock \href {http://dx.doi.org/10.1016/0003-4916(63)90068-X}
-  {\path{doi:10.1016/0003-4916(63)90068-X}}.
+\bibitem{IPCC2014}
+R.~K. Pachauri, L.~Meyer, J.-P. {Van Ypersele}, S.~Brinkman, L.~{Van Kesteren},
+  N.~Leprince-Ringuet, F.~{Van Boxmeer}, {Climate Change 2014 Synthesis
+  Report}.
 
-\bibitem{Dirac1953888}
-P.~Dirac, The lorentz transformation and absolute time, Physica 19~(1-–12)
-  (1953) 888--896.
-\newblock \href {http://dx.doi.org/10.1016/S0031-8914(53)80099-6}
-  {\path{doi:10.1016/S0031-8914(53)80099-6}}.
+\bibitem{Easterling2000}
+D.~R. Easterling, G.~A. Meehl, C.~Parmesan, S.~A. Changnon, T.~R. Karl, L.~O.
+  Mearns,
+  \href{http://www.sciencemag.org/cgi/doi/10.1126/science.289.5487.2068}{{Climate
+  Extremes: observations, modeling, and impacts}}, Science 289~(5487) (2000)
+  2068--2074.
+\newblock \href {http://dx.doi.org/10.1126/science.289.5487.2068}
+  {\path{doi:10.1126/science.289.5487.2068}}.
+\newline\urlprefix\url{http://www.sciencemag.org/cgi/doi/10.1126/science.289.5487.2068}
+
+\bibitem{Wernberg2013}
+T.~Wernberg, D.~A. Smale, F.~Tuya, M.~S. Thomsen, T.~J. Langlois,
+  T.~de~Bettignies, S.~Bennett, C.~S. Rousseaux,
+  \href{http://www.nature.com/articles/nclimate1627
+  http://dx.doi.org/10.1038/nclimate1627}{{An extreme climatic event alters
+  marine ecosystem structure in a global biodiversity hotspot}}, Nature Climate
+  Change 3~(1) (2013) 78--82.
+\newblock \href {http://dx.doi.org/10.1038/nclimate1627}
+  {\path{doi:10.1038/nclimate1627}}.
+\newline\urlprefix\url{http://www.nature.com/articles/nclimate1627
+  http://dx.doi.org/10.1038/nclimate1627}
+
+\bibitem{Rehage2016}
+{Knocking back invasions: variable resistance and resilience to multiple cold
+  spells in native vs. nonnative fishes}.
+
+\bibitem{Jentsch2007}
+C.~{Jentsch, A., Kreyling J. and Beierkuhnlein}, {A New Generation of
+  Climate-Change Experiments: Events, Not Trends} 9295~(November 2015).
+\newblock \href {http://dx.doi.org/10.1890/1540-9295(2007)5}
+  {\path{doi:10.1890/1540-9295(2007)5}}.
+
+\bibitem{Glickman2000}
+{American Meteorological Society},
+  \href{http://glossary.ametsoc.org/wiki/Flood}{{American Meteorological
+  Society Glossary of Meteorology}} (2011).
+\newline\urlprefix\url{http://glossary.ametsoc.org/wiki/Flood}
+
+\bibitem{Meehl2004}
+G.~a. Meehl,
+  \href{http://www.sciencemag.org/cgi/doi/10.1126/science.1098704}{{More
+  Intense, More Frequent, and Longer Lasting Heat Waves in the 21st Century}},
+  Science 305~(5686) (2004) 994--997.
+\newblock \href {http://dx.doi.org/10.1126/science.1098704}
+  {\path{doi:10.1126/science.1098704}}.
+\newline\urlprefix\url{http://www.sciencemag.org/cgi/doi/10.1126/science.1098704}
+
+\bibitem{Alexander2006}
+L.~V. Alexander, X.~Zhang, T.~C. Peterson, J.~Caesar, B.~Gleason, A.~M.~G.
+  {Klein Tank}, M.~Haylock, D.~Collins, B.~Trewin, F.~Rahimzadeh, A.~Tagipour,
+  K.~{Rupa Kumar}, J.~Revadekar, G.~Griffiths, L.~Vincent, D.~B. Stephenson,
+  J.~Burn, E.~Aguilar, M.~Brunet, M.~Taylor, M.~New, P.~Zhai, M.~Rusticucci,
+  J.~L. Vazquez-Aguirre, {Global observed changes in daily climate extremes of
+  temperature and precipitation}, Journal of Geophysical Research Atmospheres
+  111~(5).
+\newblock \href {http://dx.doi.org/10.1029/2005JD006290}
+  {\path{doi:10.1029/2005JD006290}}.
+
+\bibitem{Fischer2010}
+E.~M. Fischer, C.~Sch{\"{a}}r,
+  \href{http://www.nature.com/doifinder/10.1038/ngeo866}{{Consistent
+  geographical patterns of changes in high-impact European heatwaves}}, Nature
+  Geoscience 3~(6) (2010) 398--403.
+\newblock \href {http://dx.doi.org/10.1038/ngeo866}
+  {\path{doi:10.1038/ngeo866}}.
+\newline\urlprefix\url{http://www.nature.com/doifinder/10.1038/ngeo866}
+
+\bibitem{Fischer2011}
+E.~M. Fischer, D.~M. Lawrence, B.~M. Sanderson, {Quantifying uncertainties in
+  projections of extremes - a perturbed land surface parameter experiment},
+  Climate Dynamics 37~(7-8) (2011) 1381--1398.
+\newblock \href {http://dx.doi.org/10.1007/s00382-010-0915-y}
+  {\path{doi:10.1007/s00382-010-0915-y}}.
+
+\bibitem{Mackenzie2007}
+B.~R. Mackenzie, D.~Schiedek, {Daily ocean monitoring since the 1860s shows
+  record warming of northern European seas}, Global Change Biology 13~(7)
+  (2007) 1335--1347.
+\newblock \href {http://dx.doi.org/10.1111/j.1365-2486.2007.01360.x}
+  {\path{doi:10.1111/j.1365-2486.2007.01360.x}}.
+
+\bibitem{Selig2010}
+E.~Selig, K.~Casey, J.~F. Bruno,
+  \href{http://dx.doi.org/10.1111/j.1466-8238.2009.00522.x}{{New insights into
+  global patterns of ocean temperature anomalies: implications for coral reef
+  health and management}}, Global Ecology and Biogeography 9999~(9999).
+\newblock \href {http://dx.doi.org/10.1111/j.1466-8238.2009.00522.x}
+  {\path{doi:10.1111/j.1466-8238.2009.00522.x}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1111/j.1466-8238.2009.00522.x}
+
+\bibitem{Sura2011}
+P.~Sura, {A general perspective of extreme events in weather and climate}
+  (2011).
+\newblock \href {http://dx.doi.org/10.1016/j.atmosres.2011.01.012}
+  {\path{doi:10.1016/j.atmosres.2011.01.012}}.
+
+\bibitem{Lima2012}
+F.~P. Lima, D.~S. Wethey,
+  \href{http://www.ncbi.nlm.nih.gov/pubmed/22426225$\backslash$nhttp://dx.doi.org/10.1038/ncomms1713}{{Three
+  decades of high-resolution coastal sea surface temperatures reveal more than
+  warming}}, Nature Communications 3 (2012) 704.
+\newblock \href {http://dx.doi.org/10.1038/ncomms1713}
+  {\path{doi:10.1038/ncomms1713}}.
+\newline\urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/22426225$\backslash$nhttp://dx.doi.org/10.1038/ncomms1713}
+
+\bibitem{DeCastro2014}
+M.~DeCastro, M.~G{\~{o}}mez-Gesteira, X.~Costoya, F.~Santos, {Upwelling
+  influence on the number of extreme hot SST days along the Canary upwelling
+  ecosystem}, Journal of Geophysical Research: Oceans 119~(5) (2014)
+  3029--3040.
+\newblock \href {http://dx.doi.org/10.1002/2013JC009745}
+  {\path{doi:10.1002/2013JC009745}}.
+
+\bibitem{Black2004}
+E.~Black, M.~Blackburn, R.~G. Harrison, B.~J. Hoskins, J.~Methven,
+  \href{http://dx.doi.org/10.1256/wea.74.04}{{Factors contributing to the
+  summer 2003 European heatwave}}, Weather 59~(8) (2004) 217--223.
+\newblock \href {http://dx.doi.org/10.1256/wea.74.04}
+  {\path{doi:10.1256/wea.74.04}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1256/wea.74.04}
+
+\bibitem{Olita2007}
+A.~Olita, R.~Sorgente, S.~Natale, S.~Gaber{\v{s}}ek, A.~Ribotti, A.~Bonanno,
+  B.~Patti,
+  \href{http://www.ocean-sci.net/3/273/2007/os-3-273-2007.html}{{Effects of the
+  2003 European heatwave on the Central Mediterranean Sea: surface fluxes and
+  the dynamical response}}, Ocean Science 3~(2) (2007) 273--289.
+\newblock \href {http://dx.doi.org/10.5194/os-3-273-2007}
+  {\path{doi:10.5194/os-3-273-2007}}.
+\newline\urlprefix\url{http://www.ocean-sci.net/3/273/2007/os-3-273-2007.html}
+
+\bibitem{Garrabou2009}
+J.~Garrabou, R.~Coma, N.~Bensoussan, M.~Bally, P.~Chevaldonn??, M.~Cigliano,
+  D.~Diaz, J.~G. Harmelin, M.~C. Gambi, D.~K. Kersting, J.~B. Ledoux,
+  C.~Lejeusne, C.~Linares, C.~Marschal, T.~P??rez, M.~Ribes, J.~C. Romano,
+  E.~Serrano, N.~Teixido, O.~Torrents, M.~Zabala, F.~Zuberer, C.~Cerrano, {Mass
+  mortality in Northwestern Mediterranean rocky benthic communities: Effects of
+  the 2003 heat wave}, Global Change Biology 15~(5) (2009) 1090--1103.
+\newblock \href {http://dx.doi.org/10.1111/j.1365-2486.2008.01823.x}
+  {\path{doi:10.1111/j.1365-2486.2008.01823.x}}.
+
+\bibitem{Feng2013}
+M.~Feng, M.~J. McPhaden, S.-P. Xie, J.~Hafner,
+  \href{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3572450{\&}tool=pmcentrez{\&}rendertype=abstract}{{La
+  Ni{\~{n}}a forces unprecedented Leeuwin Current warming in 2011.}},
+  Scientific reports 3 (2013) 1277.
+\newblock \href {http://dx.doi.org/10.1038/srep01277}
+  {\path{doi:10.1038/srep01277}}.
+\newline\urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3572450{\&}tool=pmcentrez{\&}rendertype=abstract}
+
+\bibitem{Pearce2013}
+A.~F. Pearce, M.~Feng, {The rise and fall of the "marine heat wave" off Western
+  Australia during the summer of 2010/2011}, Journal of Marine Systems 111-112
+  (2013) 139--156.
+\newblock \href {http://dx.doi.org/10.1016/j.jmarsys.2012.10.009}
+  {\path{doi:10.1016/j.jmarsys.2012.10.009}}.
+
+\bibitem{Mills2012}
+K.~E. Mills, A.~J. Pershing, C.~J. Brown, Y.~Chen, F.-S. Chiang, D.~S. Holland,
+  S.~Lehuta, J.~a. Nye, J.~C. Sun, A.~C. Thomas, R.~a. Wahle, {Lessons From the
+  2012 Ocean Heat Wave in the Northwest Atlantic}, Oceanography 26~(2) (2012)
+  60--64.
+
+\bibitem{Chen2014}
+K.~Chen, G.~G. Gawarkiewicz, S.~J. Lentz, J.~M. Bane, {Diagnosing the warming
+  of the Northeastern U.S. Coastal Ocean in 2012: A linkage between the
+  atmospheric jet stream variability and ocean response}, Journal of
+  Geophysical Research: Oceans 119~(1) (2014) 218--227.
+\newblock \href {http://dx.doi.org/10.1002/2013JC009393}
+  {\path{doi:10.1002/2013JC009393}}.
+
+\bibitem{Chen2015}
+K.~Chen, G.~Gawarkiewicz, Y.-O. Kwon, W.~G. Zhang, {The role of atmospheric
+  forcing versus ocean advection during the extreme warming of the Northeast
+  U.S. continental shelf in 2012}, Journal of Geophysical Research: Oceans 120
+  (2015) 1--16.
+\newblock \href {http://dx.doi.org/10.1002/2014JC010547}
+  {\path{doi:10.1002/2014JC010547}}.
+
+\bibitem{Bond2015}
+N.~A. Bond, M.~F. Cronin, H.~Freeland, N.~Mantua, {Causes and impacts of the
+  2014 warm anomaly in the NE Pacific} (2015).
+\newblock \href {http://dx.doi.org/10.1002/2015GL063306}
+  {\path{doi:10.1002/2015GL063306}}.
+
+\bibitem{Hobday2016}
+A.~J. Hobday, L.~V. Alexander, S.~E. Perkins, D.~A. Smale, S.~C. Straub, E.~C.
+  Oliver, J.~A. Benthuysen, M.~T. Burrows, M.~G. Donat, M.~Feng, N.~J.
+  Holbrook, P.~J. Moore, H.~A. Scannell, A.~{Sen Gupta}, T.~Wernberg,
+  \href{http://www.sciencedirect.com/science/article/pii/S0079661116000057}{{A
+  hierarchical approach to defining marine heatwaves}}, Progress in
+  Oceanography 141 (2016) 227--238.
+\newblock \href {http://dx.doi.org/10.1016/j.pocean.2015.12.014}
+  {\path{doi:10.1016/j.pocean.2015.12.014}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0079661116000057}
+
+\bibitem{Gershunov2008}
+A.~Gershunov, H.~Douville, {Extensive summer hot and cold extremes under
+  current and possible future climatic conditions: Europe and North America},
+  in: Climate Extremes and Society, 2008, pp. 74--98.
+\newblock \href {http://dx.doi.org/10.1017/CBO9780511535840.007}
+  {\path{doi:10.1017/CBO9780511535840.007}}.
+
+\bibitem{Matthes2015}
+H.~Matthes, A.~Rinke, K.~Dethloff,
+  \href{http://stacks.iop.org/1748-9326/10/i=11/a=114020?key=crossref.943405a086c6db32f307f68ffb159afd}{{Recent
+  changes in Arctic temperature extremes: warm and cold spells during winter
+  and summer}}, Environmental Research Letters 10~(11) (2015) 114020.
+\newblock \href {http://dx.doi.org/10.1088/1748-9326/10/11/114020}
+  {\path{doi:10.1088/1748-9326/10/11/114020}}.
+\newline\urlprefix\url{http://stacks.iop.org/1748-9326/10/i=11/a=114020?key=crossref.943405a086c6db32f307f68ffb159afd}
+
+\bibitem{Woodward1987}
+F.~I. Woodward,
+  \href{http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=9780521282147}{{Climate
+  and Plant Distribution}}, Booksgooglecom 154~(2) (1987) 174.
+\newblock \href {http://dx.doi.org/10.2307/633873} {\path{doi:10.2307/633873}}.
+\newline\urlprefix\url{http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=9780521282147}
+
+\bibitem{Gunter1941}
+G.~Gunter, \href{http://www.esajournals.org/doi/abs/10.2307/1932218}{{Death of
+  Fishes Due to Cold on the Texas Coast, January, 1940}}, Ecology 22~(2) (1941)
+  203--208.
+\newblock \href {http://dx.doi.org/10.2307/1932218}
+  {\path{doi:10.2307/1932218}}.
+\newline\urlprefix\url{http://www.esajournals.org/doi/abs/10.2307/1932218}
+
+\bibitem{Gunter1951}
+G.~Gunter, {Destruction of Fishes and Other Organisms on the South Texas Coast
+  by the Cold Wave of January 28-February 3, 1951}, Ecology 32~(4) (1951)
+  731--736.
+
+\bibitem{Holt1983}
+S.~A. Holt, G.~J. Holt, \href{http://www.jstor.org/stable/3670832}{{Cold Death
+  of Fishes at Port Aransas, Texas: January 1982}}, The Southwestern Naturalist
+  28~(4) (1983) 464--466 CR -- Copyright {\&}{\#}169; 1983 Southwestern A.
+\newblock \href {http://dx.doi.org/10.2307/3670832}
+  {\path{doi:10.2307/3670832}}.
+\newline\urlprefix\url{http://www.jstor.org/stable/3670832}
+
+\bibitem{Crisp1964}
+D.~J. Crisp, \href{http://www.jstor.org/stable/10.2307/2355}{{The effects of
+  the severe winter of 1962-63 on marine life in Britain}}, Journal of Animal
+  Ecology 33~(1) (1964) 165--210.
+\newblock \href {http://dx.doi.org/10.2307/2355} {\path{doi:10.2307/2355}}.
+\newline\urlprefix\url{http://www.jstor.org/stable/10.2307/2355}
+
+\bibitem{OShea1985}
+T.~J. O'Shea, C.~A. Beck, R.~K. Bonde, H.~I. Kochman, D.~K. Odell,
+  \href{http://www.jstor.org/stable/3801830}{{An analysis of manatee mortality
+  patterns in Florida, 1976-81}}, The Journal of Wildlife Management 49~(1)
+  (1985) 1--11.
+\newblock \href {http://dx.doi.org/10.2307/3801830}
+  {\path{doi:10.2307/3801830}}.
+\newline\urlprefix\url{http://www.jstor.org/stable/3801830}
+
+\bibitem{Marsh1986}
+H.~Marsh, T.~J. O'Shea, R.~C. Best,
+  \href{http://www.jstor.org/stable/4313244}{{Research on Sirenians}}, Ambio
+  15~(3) (1986) 177--180.
+\newline\urlprefix\url{http://www.jstor.org/stable/4313244}
+
+\bibitem{Ellis2015}
+J.~M. Ellis, \href{http://nsuworks.nova.edu/occ{\_}stuetd/377/}{{A Quantitative
+  Assessment of the January 2010 Cold Spell Effect on Mangrove Utilizing Coral
+  Reef Fishes from Biscayne National Park, Florida}}.
+\newline\urlprefix\url{http://nsuworks.nova.edu/occ{\_}stuetd/377/}
+
+\bibitem{Firth2011}
+L.~B. Firth, A.~M. Knights, S.~S. Bell, {Air temperature and winter mortality:
+  Implications for the persistence of the invasive mussel, Perna viridis in the
+  intertidal zone of the south-eastern United States}, Journal of Experimental
+  Marine Biology and Ecology 400~(1-2) (2011) 250--256.
+\newblock \href {http://dx.doi.org/10.1016/j.jembe.2011.02.007}
+  {\path{doi:10.1016/j.jembe.2011.02.007}}.
+
+\bibitem{Kreyling2008}
+J.~Kreyling, C.~Beierkuhnlein, L.~Ellis, A.~Jentsch, {Invasibility of grassland
+  and heath communities exposed to extreme weather events - Additive effects of
+  diversity resistance and fluctuating physical environment}, Oikos 117~(10)
+  (2008) 1542--1554.
+\newblock \href {http://dx.doi.org/10.1111/j.0030-1299.2008.16653.x}
+  {\path{doi:10.1111/j.0030-1299.2008.16653.x}}.
+
+\bibitem{Firth2015}
+L.~B. Firth, N.~Mieszkowska, L.~M. Grant, L.~E. Bush, A.~J. Davies, M.~T.
+  Frost, P.~S. Moschella, M.~T. Burrows, P.~N. Cunningham, S.~R. Dye, S.~J.
+  Hawkins, {Historical comparisons reveal multiple drivers of decadal change of
+  an ecosystem engineer at the range edge}, Ecology and Evolution 5~(15) (2015)
+  3210--3222.
+\newblock \href {http://dx.doi.org/10.1002/ece3.1556}
+  {\path{doi:10.1002/ece3.1556}}.
+
+\bibitem{Laboy-nieves2001}
+E.~N. Laboy-nieves, E.~Klein, J.~E. Conde, F.~Losada, J.~J. Cruz, D.~Bone,
+  {Mass mortality of tropical marine communities in Morrocoy.pdf}, Bulletin of
+  Marine Science 68~(2) (2001) 163--179.
+
+\bibitem{Diaz2008}
+R.~Diaz, R.~Rosenberg,
+  \href{http://www.ncbi.nlm.nih.gov/pubmed/18703733}{{Spreading dead zones and
+  consequences for marine ecosystems.}}, Science 321~(5891) (2008) 926--929.
+\newblock \href {http://dx.doi.org/10.1126/science.1156401}
+  {\path{doi:10.1126/science.1156401}}.
+\newline\urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/18703733}
+
+\bibitem{Reynolds2007}
+R.~W. Reynolds, T.~M. Smith, C.~Liu, D.~B. Chelton, K.~S. Casey, M.~G. Schlax,
+  \href{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/2007JCLI1824.1
+  papers3://publication/doi/10.1175/2007JCLI1824.1}{{Daily
+  high-resolution-blended analyses for sea surface temperature}}, Journal of
+  Climate 20~(22) (2007) 5473--5496.
+\newline\urlprefix\url{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/2007JCLI1824.1
+  papers3://publication/doi/10.1175/2007JCLI1824.1}
+
+\bibitem{Hutchings2009}
+L.~Hutchings, C.~D. van~der Lingen, L.~J. Shannon, R.~J.~M. Crawford, H.~M.~S.
+  Verheye, C.~H. Bartholomae, a.~K. van~der Plas, D.~Louw, a.~Kreiner,
+  M.~Ostrowski, Q.~Fidel, R.~G. Barlow, T.~Lamont, J.~Coetzee, F.~Shillington,
+  J.~Veitch, J.~C. Currie, P.~M.~S. Monteiro,
+  \href{http://dx.doi.org/10.1016/j.pocean.2009.07.046}{{The Benguela Current:
+  An ecosystem of four components}}, Progress in Oceanography 83~(1-4) (2009)
+  15--32.
+\newblock \href {http://dx.doi.org/10.1016/j.pocean.2009.07.046}
+  {\path{doi:10.1016/j.pocean.2009.07.046}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1016/j.pocean.2009.07.046}
+
+\bibitem{Roberts2005}
+M.~J. Roberts, {Chokka squid (Loligo vulgaris reynaudii) abundance linked to
+  changes in South Africa's Agulhas Bank ecosystem during spawning and the
+  early life cycle}, ICES Journal of Marine Science 62~(1) (2005) 33--55.
+\newblock \href {http://dx.doi.org/10.1016/j.icesjms.2004.10.002}
+  {\path{doi:10.1016/j.icesjms.2004.10.002}}.
+
+\bibitem{Lutjeharms2003}
+J.~R.~E. Lutjeharms, P.~Penven, C.~Roy, {Modelling the shear edge eddies of the
+  southern Agulhas Current}, Continental Shelf Research 23~(11-13) (2003)
+  1099--1115.
+\newblock \href {http://dx.doi.org/10.1016/S0278-4343(03)00106-7}
+  {\path{doi:10.1016/S0278-4343(03)00106-7}}.
+
+\bibitem{Luning1990}
+K.~L{\"{u}}nning,
+  \href{http://scholar.google.co.za.ezproxy.ukzn.ac.za:2048/scholar?hl=en{\&}q=Satellite+versus+in+situ+measurements+at+the+air?sea+interface{\&}btnG={\&}as{\_}sdt=1,5{\&}as{\_}sdtp=
+  https://scholar.google.com.br/scholar?q=L{\%}C3{\%}BCnning+1990{\&}btnG={\&}hl=pt-BR{\&}as{\_}sdt=0{\%}2C5{\#}0}{{Seaweds:
+  their environment, biogeography and ecophysiology. Jhon Wiley and Sons}},
+  Wiley, New York (USA), 1990.
+\newline\urlprefix\url{http://scholar.google.co.za.ezproxy.ukzn.ac.za:2048/scholar?hl=en{\&}q=Satellite+versus+in+situ+measurements+at+the+air?sea+interface{\&}btnG={\&}as{\_}sdt=1,5{\&}as{\_}sdtp=
+  https://scholar.google.com.br/scholar?q=L{\%}C3{\%}BCnning+1990{\&}btnG={\&}hl=pt-BR{\&}as{\_}sdt=0{\%}2C5{\#}0}
+
+\bibitem{Smale2009}
+D.~A. Smale, T.~Wernberg,
+  \href{http://www.vliz.be/imis/imis.php?refid=144063{\&}pp=print
+  papers3://publication/uuid/3F4EF52B-247E-4406-8AD9-419D5B46A4B5}{{Satellite-derived
+  SST data as a proxy for water temperature in nearshore benthic ecology Peer
+  reviewed article}}, Marine Biology 387 (2009) 27--37.
+\newline\urlprefix\url{http://www.vliz.be/imis/imis.php?refid=144063{\&}pp=print
+  papers3://publication/uuid/3F4EF52B-247E-4406-8AD9-419D5B46A4B5}
+
+\bibitem{Castillo2010}
+K.~D. Castillo, F.~P. Lima,
+  \href{papers3://publication/uuid/214CBD69-72B9-42FC-8EBF-00467926F564}{{Comparison
+  of in situ and satellite-derived (MODIS-Aqua/Terra) methods for assessing
+  temperatures on coral reefs}}, Limnology and Oceanography Methods 8 (2010)
+  107--117.
+\newline\urlprefix\url{papers3://publication/uuid/214CBD69-72B9-42FC-8EBF-00467926F564}
+
+\bibitem{Smit2013}
+A.~J. Smit, M.~Roberts, R.~J. Anderson, F.~Dufois, S.~F.~J. Dudley, T.~G.
+  Bornman, J.~Olbers, J.~J. Bolton, {A coastal seawater temperature dataset for
+  biogeographical studies: Large biases between in situ and remotely-sensed
+  data sets around the coast of South Africa}, PLoS ONE 8~(12).
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0081944}
+  {\path{doi:10.1371/journal.pone.0081944}}.
+
+\bibitem{Wernberg2011}
+T.~Wernberg, B.~D. Russell, P.~J. Moore, S.~D. Ling, D.~A. Smale, A.~Campbell,
+  M.~A. Coleman, P.~D. Steinberg, G.~A. Kendrick, S.~D. Connell,
+  \href{http://www.sciencedirect.com/science/article/pii/S0022098111000694}{{Impacts
+  of climate change in a global hotspot for temperate marine biodiversity and
+  ocean warming}} (2011).
+\newblock \href {http://dx.doi.org/10.1016/j.jembe.2011.02.021}
+  {\path{doi:10.1016/j.jembe.2011.02.021}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0022098111000694}
+
+\bibitem{Reynolds2002}
+R.~W. Reynolds, N.~A. Rayner, T.~Smith,
+  \href{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/1520-0442(2002)015{\textless}1609:AIISAS{\textgreater}2.0.CO;2
+  papers3://publication/uuid/7532476F-59A5-492D-B57A-12B92961BA4C}{{An improved
+  in situ and satellite SST analysis for climate}}, Journal of Climate.
+\newline\urlprefix\url{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/1520-0442(2002)015{\textless}1609:AIISAS{\textgreater}2.0.CO;2
+  papers3://publication/uuid/7532476F-59A5-492D-B57A-12B92961BA4C}
+
+\bibitem{Lutjeharms2000}
+J.~R.~E. Lutjeharms, J.~Cooper, M.~Roberts,
+  \href{http://www.sciencedirect.com/science/article/pii/S0278434399000928
+  papers3://publication/uuid/8AEE7760-040F-4E0E-AE8A-FA07C224DFA4}{{Upwelling
+  at the inshore edge of the Agulhas Current}}, Continental Shelf Research
+  20~(7) (2000) 737--761.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0278434399000928
+  papers3://publication/uuid/8AEE7760-040F-4E0E-AE8A-FA07C224DFA4}
 
 \end{thebibliography}
