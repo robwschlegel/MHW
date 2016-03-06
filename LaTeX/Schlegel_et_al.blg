@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Schlegel_et_al.aux
+The style file: elsarticle-num.bst
+Database file #1: MHW.bib
+Warning--empty journal in IPCC2014
+Warning--empty author in Rehage2016
+Warning--empty journal in Rehage2016
+Warning--empty journal in Jentsch2007
+Warning--empty publisher in Gershunov2008
+Warning--empty journal in Ellis2015
+You've used 51 entries,
+            2937 wiz_defined-function locations,
+            1086 strings with 19747 characters,
+and the built_in function-call counts, 17763 in all, are:
+= -- 1693
+> -- 792
+< -- 1
++ -- 298
+- -- 247
+* -- 1657
+:= -- 2568
+add.period$ -- 88
+call.type$ -- 51
+change.case$ -- 50
+chr.to.int$ -- 0
+cite$ -- 57
+duplicate$ -- 443
+empty$ -- 1756
+format.name$ -- 286
+if$ -- 4340
+int.to.chr$ -- 0
+int.to.str$ -- 51
+missing$ -- 48
+newline$ -- 226
+num.names$ -- 50
+pop$ -- 281
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 890
+stack$ -- 0
+substring$ -- 1051
+swap$ -- 150
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 6
+while$ -- 124
+width$ -- 53
+write$ -- 504
+(There were 6 warnings)
