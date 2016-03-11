@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  6 MAR 2016 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  10 MAR 2016 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1630,33 +1630,33 @@ LaTeX Info: Redefining \labelcpageref on input line 2230.
 ) (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux)
 \openout1 = `Schlegel_et_al.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 74.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 74.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 76.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 76.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2013/09/01 v1.0 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 74.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 76.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -1686,7 +1686,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 74.
+Package hyperref Info: Link coloring OFF on input line 76.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1694,16 +1694,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count193
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 76.
+LaTeX Info: Redefining \pageref on input line 76.
+LaTeX Info: Redefining \nameref on input line 76.
 (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.out) (/Users/ajsmit/Dropb
 ox/repos/MHW/LaTeX/Schlegel_et_al.out)
 \@outlinefile=\write5
 \openout5 = `Schlegel_et_al.out'.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 74.
+LaTeX Info: Redefining \selectfont on input line 76.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1738,7 +1738,7 @@ LaTeX Info: Redefining \selectfont on input line 74.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 74.
+LaTeX Info: Redefining \microtypecontext on input line 76.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1756,59 +1756,59 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/lmr/m/n --> TS1/lmr/bx/n on input line 74.
-Package gensymb Info: Math companion symbols declared on input line 74.
-LaTeX Info: Redefining \degree on input line 74.
-LaTeX Info: Redefining \celsius on input line 74.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/bx/n on input line 76.
+Package gensymb Info: Math companion symbols declared on input line 76.
+LaTeX Info: Redefining \degree on input line 76.
+LaTeX Info: Redefining \celsius on input line 76.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 74.
-LaTeX Info: Redefining \ohm on input line 74.
-Package gensymb Info: Using \textohm for \ohm on input line 74.
-Package gensymb Info: Using \textmu for \micro on input line 74.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 100.
+erthousand on input line 76.
+LaTeX Info: Redefining \ohm on input line 76.
+Package gensymb Info: Using \textohm for \ohm on input line 76.
+Package gensymb Info: Using \textmu for \micro on input line 76.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 102.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 107.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 109.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 107.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 109.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 107
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 109
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 107
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 109
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 107.
+(Font)              <8> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 107.
+(Font)              <6> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 107.
-LaTeX Font Info:    Try loading font information for U+msa on input line 107.
+(Font)              <5> on input line 109.
+LaTeX Font Info:    Try loading font information for U+msa on input line 109.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 107.
+LaTeX Font Info:    Try loading font information for U+msb on input line 109.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 107.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 109.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1818,15 +1818,15 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 107.
+(Font)              <10> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 107.
+(Font)              <7> on input line 109.
 [1
 
 
 {/Users/ajsmit/Library/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 111.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 113.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1838,153 +1838,153 @@ Package microtype Info: Loading generic settings for font family
 [2] [3] <figure1_1km_labeled.pdf, id=190, 579.16376pt x 290.08376pt>
 File: figure1_1km_labeled.pdf Graphic file (type pdf)
 <use figure1_1km_labeled.pdf>
-Package pdftex.def Info: figure1_1km_labeled.pdf used on input line 128.
+Package pdftex.def Info: figure1_1km_labeled.pdf used on input line 130.
 (pdftex.def)             Requested size: 441.01773pt x 220.89085pt.
+[4] [5 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure1_1km_labeled.pdf>]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 133.
-[4] [5 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure1_1km_labeled.pdf>] [6] [7]
+ine 139.
+[6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 150.
+               Default added (so using `tbp') on input line 148.
 
-[8]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 187.
-
-[9]
+[7] [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 206.
+               Default added (so using `tbp') on input line 185.
 
-<figure2.pdf, id=341, 867.24pt x 2023.56pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 204.
+
+[9] <figure2.pdf, id=340, 867.24pt x 2023.56pt>
 File: figure2.pdf Graphic file (type pdf)
 <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 227.
+Package pdftex.def Info: figure2.pdf used on input line 225.
 (pdftex.def)             Requested size: 220.50887pt x 514.50345pt.
 [10] [11 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure2.pdf>] <figure3.png, id=
-370, 913.4928pt x 913.011pt>
+367, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
 <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 240.
+Package pdftex.def Info: figure3.png used on input line 238.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
 
-Overfull \hbox (34.58626pt too wide) in paragraph at lines 244--244
+Overfull \hbox (34.58626pt too wide) in paragraph at lines 242--242
 \T1/lmr/m/n/5 lines/lags/directions/events.  
  []
 
 
-Overfull \hbox (34.58626pt too wide) in paragraph at lines 244--244
+Overfull \hbox (34.58626pt too wide) in paragraph at lines 242--242
 \T1/lmr/m/n/5 lines/lags/directions/events.  
  []
 
 
-Overfull \hbox (34.58626pt too wide) in paragraph at lines 244--244
+Overfull \hbox (34.58626pt too wide) in paragraph at lines 242--242
 \T1/lmr/m/n/5 lines/lags/directions/events.  
  []
 
 
-Overfull \hbox (34.58626pt too wide) in paragraph at lines 244--244
+Overfull \hbox (34.58626pt too wide) in paragraph at lines 242--242
 \T1/lmr/m/n/5 lines/lags/directions/events.  
  []
 
-[12] [13 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure3.png>] <figure4.pdf, id=
-386, 433.62pt x 505.89pt>
+<figure4.pdf, id=370, 433.62pt x 505.89pt>
 File: figure4.pdf Graphic file (type pdf)
 <use figure4.pdf>
-Package pdftex.def Info: figure4.pdf used on input line 248.
+Package pdftex.def Info: figure4.pdf used on input line 246.
 (pdftex.def)             Requested size: 441.01773pt x 514.54974pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 249.
-[14] [15 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure4.pdf>] [16] [17] (/Users
-/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 24--34
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . nature . com / art
-icles / nclimate1627http : / / dx . doi . org / 10 . 1038 /
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 110--117
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . ncbi . nlm . nih .
- gov / pubmed / 22426225$ \ delimiter"026E30F$nhttp :
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 155--162
+(Font)              <9> on input line 247.
+[12] [13 </Users/ajsmit/Dropbox/repos/MHW/LaTeX/figure3.png>] [14 </Users/ajsmi
+t/Dropbox/repos/MHW/LaTeX/figure4.pdf>] [15] [16] [17] (/Users/ajsmit/Dropbox/r
+epos/MHW/LaTeX/Schlegel_et_al.bbl [18]
+Underfull \hbox (badness 10000) in paragraph at lines 88--91
 \T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . pubmedcentral . ni
 h . gov / articlerender . fcgi ? artid = 3572450{&}tool =
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 217--224
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / stacks . iop . org / 174
-8-[]9326 / 10 / i = 11 / a = 114020 ? key = crossref .
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . ncbi . nlm . nih .
+ gov / pubmed / 22426225$ \ delimiter"026E30F$nhttp :
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 320--327
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / ams . allenpress . com /
- perlserv / ?request = get-[]abstract{&}doi = 10 . 1175 /
- []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 356--363
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
 \T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / scholar . google . co . 
 za . ezproxy . ukzn . ac . za : 2048 / scholar ? hl = en{&}q =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--363
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
 \T1/lmtt/m/n/10 Satellite + versus + in + situ + measurements + at + the + air 
 ? sea + interface{&}btnG =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--363
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
 \T1/lmtt/m/n/10 {&}as{_}sdt = 1 ,[] 5{&}as{_}sdtp = https : / / scholar . googl
 e . com . br / scholar ? q =
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--372
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . vliz . be / imis /
- imis . php ? refid = 144063{&}pp = printpapers3 : / /
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 201--205
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . sciencedirect . co
+m / science / article / pii / S0278434399000928papers3 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--406
+Underfull \hbox (badness 10000) in paragraph at lines 217--221
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / stacks . iop . org / 174
+8-[]9326 / 10 / i = 11 / a = 114020 ? key = crossref .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--265
 \T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / ams . allenpress . com /
  perlserv / ?request = get-[]abstract{&}doi = 10 . 1175 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--406
+Underfull \hbox (badness 10000) in paragraph at lines 261--265
 \T1/lmtt/m/n/10 1520-[]0442(2002 ) 015{\T1 \ textless}1609 : AIISAS{\T1 \ textg
 reater}2 . 0 . CO ; 2papers3 :
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 408--415
-\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . sciencedirect . co
-m / science / article / pii / S0278434399000928papers3 :
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 268--273
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / ams . allenpress . com /
+ perlserv / ?request = get-[]abstract{&}doi = 10 . 1175 /
  []
 
-) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--292
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . vliz . be / imis /
+ imis . php ? refid = 144063{&}pp = printpapers3 : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--321
+\T1/lmr/m/n/10 (+20) URL []$\T1/lmtt/m/n/10 http : / / www . nature . com / art
+icles / nclimate1627http : / / dx . doi . org / 10 . 1038 /
+ []
+
+[22]) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
 (/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 291.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 (rerunfilecheck)             Checksum: AB491AF099C7DFE3ACB06B3C92B92F64;893.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 291.
  ) 
 Here is how much of TeX's memory you used:
- 31135 strings out of 493091
- 592082 string characters out of 6134964
- 668073 words of memory out of 5000000
- 33790 multiletter control sequences out of 15000+600000
- 103423 words of font info for 173 fonts, out of 8000000 for 9000
+ 31114 strings out of 493091
+ 591711 string characters out of 6134964
+ 670101 words of memory out of 5000000
+ 33779 multiletter control sequences out of 15000+600000
+ 102950 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,92p,10521b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -2010,10 +2010,10 @@ local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/lm/lmtt8.pfb>
 Output written on /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.pdf (23 
-pages, 2152232 bytes).
+pages, 2143739 bytes).
 PDF statistics:
- 727 PDF objects out of 1000 (max. 8388607)
- 647 compressed objects within 7 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 605 PDF objects out of 1000 (max. 8388607)
+ 526 compressed objects within 6 object streams
+ 113 named destinations out of 1000 (max. 500000)
  30361 words of extra memory for PDF output out of 35830 (max. 10000000)
 
