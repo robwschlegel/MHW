@@ -1,0 +1,1447 @@
+library(knitr)
+source("/Users/ajsmit/Dropbox/repos/SA_Seaweed/SA_Seaweed_doc.Rnw")
+library(vegan)
+data(sipoo)
+head(sipoo)
+out <- oecosimu(sipoo, decorana, "swap", burnin=100, thin=10, statistic="evals")
+head(out)
+out
+plot(as.ts(out))
+lag.plot(as.ts(out))
+acf(as.ts(out))
+require(lattice)#
+densityplot(out, as.table = TRUE)
+data(dune)#
+meandist <- function(x) mean(vegdist(x, "bray"))#
+mbc1 <- oecosimu(dune, meandist, "r2dtable")#
+mbc1
+system("ls -ld /usr/local /usr/local/lib /usr/local/lib/libtcl*")
+library(spatgraph)
+library(spatgraphs)
+pp3d<-list(x=runif(150), y=runif(150), z=runif(150))#
+rvec<-seq(0, 0.3, by=0.01)#
+g<-n<-NULL
+for(r in rev(rvec)){#
+  g<-spatgraph(pp=pp3d, type="geometric", #
+               par=r,#
+               preGraph=g, #
+               toroidal=TRUE)#
+  n<-c(mean(sapply(g$edges, length)), n)#
+}
+plot(rvec, n/150, type="l", ylab="K")#
+lines(rvec, 4/3*pi*rvec^3, col=2, lty=2)#
+legend("topleft", c("K estimate", "Poisson"),#
+       lty=1:2, col=1:2)
+library(igraph)
+g <- graph.ring(10)#
+values <- lapply(1:10, function(x) sample(1:10,3))#
+if (interactive()) {#
+  plot(g, vertex.shape="pie", vertex.pie=values,#
+       vertex.pie.color=list(heat.colors(5)),#
+       vertex.size=seq(10,30,length=10), vertex.label=NA)#
+}
+g <- graph.ring(10)#
+    V(g)$number <- sample(1:100, vcount(g), replace=TRUE)#
+    V(g)$color <- "grey"#
+    V(g)[ number < 50 ]$color <- "red"#
+    plot(g, layout=layout.circle, vertex.color=V(g)$color,#
+         vertex.label=V(g)$number)
+g <- graph.ring(10)#
+    E(g)$weight <- runif(ecount(g))#
+    E(g)$width <- 1#
+    E(g)[ weight >= 0.5 ]$width <- 3#
+    plot(g, layout=layout.circle, edge.width=E(g)$width, edge.color="black")
+g <- erdos.renyi.game(10, 2/10)#
+get.edgelist(g)#
+get.adjacency(g)
+help.start()
+source("http://bioconductor.org/biocLite.R")#
+biocLite("RCytoscape")
+objects()
+source("/Users/ajsmit/Dropbox/repos/Seaweed/Seaweed_doc.Rnw")
+round(2.345, 2)
+signif(7.245, 3)
+signif(7.235, 3)
+signif(2.335, 3)
+signif(2.345, 2)
+signif(2.345, 3)
+noquote(unlist(format(.Machine)))
+A1_LT <- read.table("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = TRUE)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = TRUE)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 1)
+head(A1_LT)
+?read.csv
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = TRUE, skip = 1) #
+head(A1_LT)
+LT_headers <- c("no", "date_time", "temp", "light", "null")#
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = header)    #
+head(A1_LT)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+head(A1_LT)
+LT_headers <- c("no", "date_time", "temp", "light")#
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+head(A1_LT)
+LT_headers <- c("no", "date_time", "temp", "light", "null")#
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+head(A1_LT)
+library(lubridate)
+junk <- parse_date_time(A1_LT$date_time, "%m%d%y %H%M%S", tz = "UTC", truncated = 3)
+junk <- parse_date_time(A1_LT$date_time, "%m%d%y %H%M%S", tz = "UTC+08:00", truncated = 3)
+junk <- parse_date_time(A1_LT$date_time, "%m%d%y %H%M%S", tz = "AWST", truncated = 3)
+junk
+junk <- parse_date_time(A1_LT$date_time, "%m%d%y %H%M%S", tz = "Australia/Perth", truncated = 3)
+head(junk)
+A1_LT$date_time <- parse_date_time(A1_LT$date_time, "%m%d%y %H%M%S", tz = "Australia/Perth", truncated = 3)#
+#
+head(A1_LT)
+class(A1_LT$date_time)
+plot(date_time, temp, data = A1_LT)
+?plot()
+plot(A1_LT$date_time, A1_LT$temp)
+library(ggplot2)
+p4 <- ggplot(A1_LT, aes(x=date_time, y=temp)) +#
+geom_line(aes(colour = "blue",#
+           size = 0.2)) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature"))) +#
+    theme(legend.position = c(0.8, 0.5),#
+                legend.direction = "vertical",#
+                legend.title = element_blank()) +#
+        ggtitle("d")
+p4
+p4 <- ggplot(A1_LT, aes(x=date_time, y=temp)) +#
+geom_line(aes(colour = "blue", size = 0.2)) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+p4 <- ggplot(A1_LT, aes(x=date_time, y=temp)) +#
+geom_line(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+p4 <- ggplot(A1_LT, aes(x=date_time, y=temp)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A1_LT$date_time
+summary(A1_LT$date_time)
+length(A1_LT$date_time)
+p4 <- ggplot(A1_LT, aes(x=date_time, y=light)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A2_LT$date_time <- parse_date_time(A2_LT$date_time, "%m%d%y %H%M%S", tz = "Australia/Perth", truncated = 3)#
+class(A2_LT$date_time)#
+head(A2_LT)#
+#
+p4 <- ggplot(A2_LT, aes(x=date_time, y=light)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)
+A2_LT$date_time <- parse_date_time(A2_LT$date_time, "mdy HMS", tz = "Australia/Perth", truncated = 3)#
+class(A2_LT$date_time)#
+head(A2_LT)#
+#
+p4 <- ggplot(A2_LT, aes(x=date_time, y=temp)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+A2_LT$date_time <- parse_date_time(A2_LT$date_time, "mdy HMS", tz = "Australia/Perth")#
+class(A2_LT$date_time)#
+head(A2_LT)#
+#
+p4 <- ggplot(A2_LT, aes(x=date_time, y=temp)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+A2_LT$date_time <- parse_date_time(A2_LT$date_time, "mdy IpMS", tz = "Australia/Perth")#
+class(A2_LT$date_time)#
+head(A2_LT)
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+A2_LT$date_time <- parse_date_time(A2_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+class(A2_LT$date_time)#
+head(A2_LT)
+p4 <- ggplot(A2_LT, aes(x=date_time, y=temp)) +#
+geom_point(colour = "blue", size = 0.2) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+p4
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+A3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)
+A3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+A3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2)#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- cbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+remove(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+A3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+head(A3_LT)
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+head(A2_LT)
+A3_LT <- A3_LT[1:4,]
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT[1:4,]#
+head(A3_LT)#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)
+AB_LT <- cbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[1:4,]
+remove(A3_LT)
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[1:4,]#
+head(A3_LT)
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:4]#
+head(A3_LT)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:4]#
+head(A3_LT)#
+summary(A3_LT)#
+#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- cbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+summary(A2_LT)
+summary(A3_LT)
+AB_LT <- cbind(A1_LT, A2_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+remove(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:5]#
+head(A3_LT)#
+summary(A3_LT)#
+#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- cbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+AB_LT <- cbind(A1_LT, A2_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+remove(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:5]#
+head(A3_LT)#
+summary(A3_LT)#
+#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- rbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:5]#
+head(A3_LT)#
+summary(A3_LT)#
+#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- rbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+head(A3_LT)
+col.names(A3_LT) <- LT_headers#
+head(A3_LT)
+colnames(A3_LT) <- LT_headers#
+head(A3_LT)
+remove(A1_LT, A2_LT, A3_LT, A3_LT_temp, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+AB_LT$date_time <- parse_date_time(A2_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+class(AB_LT$date_time)#
+head(AB_LT)
+rep(c("A", "B"), each = 3)
+c(rep("A", 3), rep("B", 4))
+AB_LT$ind <- c(rep("A", sum(length(A1_LT$no), length(A2_LT$no), length(A3_LT$no), length(A4_LT$no))), #
+               rep("B", sum(length(B1_LT$no), length(B2_LT$no), length(B3_LT$no), length(B4_LT$no)))
+rep("A",sum(length(A1_LT$no), length(A2_LT$no), length(A3_LT$no), length(A4_LT$no))
+)
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[,1:5]#
+colnames(A3_LT) <- LT_headers#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- rbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+#
+AB_LT$date_time <- parse_date_time(AB_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+class(AB_LT$date_time)#
+head(AB_LT)#
+#
+rep("A",sum(length(A1_LT$no), length(A2_LT$no), length(A3_LT$no), length(A4_LT$no))
+A3_LT <- A3_LT_temp[,1:5]#
+colnames(A3_LT) <- LT_headers
+AB_LT <- rbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)
+AB_LT$date_time <- parse_date_time(AB_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+class(AB_LT$date_time)#
+head(AB_LT)
+rep("A",sum(length(A1_LT$no), length(A2_LT$no), length(A3_LT$no), length(A4_LT$no)))
+AB_LT$ind <- c(rep("A",sum(length(A1_LT$no), length(A2_LT$no), length(A3_LT$no), length(A4_LT$no))), rep("B",sum(length(B1_LT$no), length(B2_LT$no), length(B3_LT$no), length(B4_LT$no))))
+AB_LT$ver <- c(rep(1, length(A1_LT$no)),#
+               rep(2, length(A2_LT$no)),#
+               rep(3, length(A3_LT$no)),#
+               rep(4, length(A4_LT$no)),#
+               rep(1, length(B1_LT$no)),#
+               rep(2, length(B2_LT$no)),#
+               rep(3, length(B3_LT$no)),#
+               rep(4, length(B4_LT$no)))
+head(AB_LT)
+AB_LT.plot <- ggplot(A2_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver, size = 0.2)) +#
+facet_grid(. ~ ind)#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver, size = 0.2)) +#
+facet_grid(. ~ ind)#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver, size = 0.2)) +#
+facet_grid(ind ~ .)#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver), size = 0.2) +#
+facet_grid(ind ~ .)#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)
+LT_headers <- c("no", "date_time", "temp", "light", "null")#
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[1:length(A1_LT$no), 1:5]#
+colnames(A3_LT) <- LT_headers#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- rbind(A1_LT, A2_LT, A3_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+#
+AB_LT$date_time <- parse_date_time(AB_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+#
+AB_LT$ind <- c(rep("A", sum(length(A1_LT$no), length(A2_LT$no), #
+                     length(A3_LT$no), length(A4_LT$no))), #
+               rep("B",sum(length(B1_LT$no), length(B2_LT$no), #
+                   length(B3_LT$no), length(B4_LT$no))))#
+#
+AB_LT$ver <- c(rep(1, length(A1_LT$no)),#
+               rep(2, length(A2_LT$no)),#
+               rep(3, length(A3_LT$no)),#
+               rep(4, length(A4_LT$no)),#
+               rep(1, length(B1_LT$no)),#
+               rep(2, length(B2_LT$no)),#
+               rep(3, length(B3_LT$no)),#
+               rep(4, length(B4_LT$no)))#
+#
+remove(A1_LT, A2_LT, A3_LT, A3_LT_temp, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+#
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+A3_LT <- A3_LT_temp[1:length(A1_LT$no), 1:5]#
+colnames(A3_LT) <- LT_headers#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)
+length(A1_LT$no)
+length(A3_LT$no)
+length(A3_LT_temp$no)
+A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...
+head(A3_LT_temp)
+length(A3_LT_temp$V1)
+LT_headers <- c("no", "date_time", "temp", "light", "null")#
+A1_LT <- read.csv("~/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A1_L9786169_RSA_Robokelp_Apr15_0.csv", header = FALSE, skip = 2, col.names = LT_headers)    #
+A2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A2_L1071221_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+# A3_LT_temp <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A3_L9910315_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2) # the formatting of this file is odd...#
+# A3_LT <- A3_LT_temp[1:length(A1_LT$no), 1:5]#
+# colnames(A3_LT) <- LT_headers#
+A4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_A4_L9775645_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+#
+B1_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B1_L1079716_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B2_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B2_L2437071_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)  #
+B3_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B3_L9775642_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B4_LT <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Temp_B4_L9910332_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_LT <- rbind(A1_LT, A2_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+#
+AB_LT$date_time <- parse_date_time(AB_LT$date_time, "mdy IMS p", tz = "Australia/Perth")#
+#
+AB_LT$ind <- c(rep("A", sum(length(A1_LT$no), length(A2_LT$no), #
+                     length(A4_LT$no))), #
+               rep("B",sum(length(B1_LT$no), length(B2_LT$no), #
+                   length(B3_LT$no), length(B4_LT$no))))#
+#
+AB_LT$ver <- c(rep(1, length(A1_LT$no)),#
+               rep(2, length(A2_LT$no)),#
+               rep(4, length(A4_LT$no)),#
+               rep(1, length(B1_LT$no)),#
+               rep(2, length(B2_LT$no)),#
+               rep(3, length(B3_LT$no)),#
+               rep(4, length(B4_LT$no)))#
+#
+remove(A1_LT, A2_LT, A4_LT, B1_LT, B2_LT, B3_LT, B4_LT)#
+#
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = ver), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = as.factor(ver), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+LT_headers <- c("no", "date_time", "x", "y", "z", "null")#
+A1_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_A1_G2395084_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A2_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_A2_G2370935_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+A3_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_A3_G9903339_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2)#
+#
+B1_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_B1_G2427311_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B2_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_B2_G10091230_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+B3_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_B3_G2370931_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)#
+#
+AB_G <- rbind(A1_G, A2_G, A3_G, B1_G, B2_G, B3_G)
+head(AB_G)
+head(A1_G)
+head(A2_G)
+head(A3_G)
+A3_G <- read.csv("/Users/ajsmit/Dropbox/Robokelp/Robokelp_logger_rawdata/Robokelp1_270415/Tilt_A3_G9903339_RSA_Robokelp_Apr15.csv", header = FALSE, skip = 2, col.names = LT_headers)
+AB_G <- rbind(A1_G, A2_G, A3_G, B1_G, B2_G, B3_G)
+AB_G$date_time <- parse_date_time(AB_G$date_time, "mdy IMS p", tz = "Australia/Perth") # parse the time so that SA time is given...
+AB_G$ind <- c(rep("A", sum(length(A1_G$no), length(A2_G$no),#
+                     length(A3_G$no))),#
+               rep("B",sum(length(B1_G$no), length(B2_G$no),#
+                   length(B3_G$no))))
+AB_G$ver <- c(rep(1, length(A1_G$no)),#
+               rep(2, length(A2_G$no)),#
+               rep(3, length(A4_G$no)),#
+               rep(1, length(B1_G$no)),#
+               rep(2, length(B2_G$no)),#
+               rep(3, length(B3_G$no)))
+AB_G$ver <- c(rep(1, length(A1_G$no)),#
+               rep(2, length(A2_G$no)),#
+               rep(3, length(A3_G$no)),#
+               rep(1, length(B1_G$no)),#
+               rep(2, length(B2_G$no)),#
+               rep(3, length(B3_G$no)))
+remove(A1_G, A2_G, A3_G, B1_G, B2_G, B3_G)
+AB_G.plot <- ggplot(AB_G, aes(x=date_time, y=z, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_G.plot
+AB_G.plot <- ggplot(AB_G, aes(x=date_time, y=z, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2, alpha = 0.4) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_G.plot
+AB_G.plot <- ggplot(AB_G, aes(x=date_time, y=y, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2, alpha = 0.4) +#
+facet_grid(ind ~ .) +#
+  xlab(expression(paste("Date/Time"))) +#
+  ylab(expression(paste("y")))#
+AB_G.plot
+AB_G.plot <- ggplot(AB_G, aes(x=date_time, y=x, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2, alpha = 0.4) +#
+facet_grid(ind ~ .) +#
+  xlab(expression(paste("Date/Time"))) +#
+  ylab(expression(paste("x")))#
+AB_G.plot
+AB_G.plot <- ggplot(AB_G, aes(x=date_time, y=z, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2, alpha = 0.4) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("z")))#
+AB_G.plot
+AB_LT.plot <- ggplot(AB_LT, aes(x=date_time, y=temp, group = ver)) +#
+geom_line(aes(colour = as.factor(ver)), size = 0.2) +#
+facet_grid(ind ~ .) +#
+    xlab(expression(paste("Date/Time"))) +#
+    ylab(expression(paste("Temperature")))#
+AB_LT.plot
+p2
+quit()
+# Generate data in the form of a sine wave#
+set.seed(1)#
+n <- 1e3#
+dat <- data.frame(#
+  x = 1:n,#
+  y = sin(seq(0, 5*pi, length.out = n)) + rnorm(n=n, mean = 0, sd=0.1)#
+)#
+#
+approxData <- data.frame(#
+  with(dat, #
+       approx(x, y, xout = seq(1, n, by = 10), method = "linear")#
+  ),#
+  method = "approx()"#
+)#
+#
+splineData <- data.frame(#
+  with(dat, #
+       spline(x, y, xout = seq(1, n, by = 10))#
+  ),#
+  method = "spline()"#
+)#
+#
+smoothData <- data.frame(#
+  x = 1:n,#
+  y = as.vector(smooth(dat$y)),#
+  method = "smooth()"#
+)#
+#
+loessData <- data.frame(#
+  x = 1:n,#
+  y = predict(loess(y~x, dat, span = 0.1)),#
+  method = "loess()"#
+)#
+#
+library(ggplot2)#
+ggplot(rbind(approxData, splineData, smoothData, loessData), aes(x, y)) + #
+  geom_point(dat = dat, aes(x, y), alpha = 0.2, col = "red") +#
+  geom_line(col = "blue") +#
+  facet_wrap(~method) +#
+  ggtitle("Interpolation and smoothing functions in R") +#
+  theme_bw(16)
+accel <- as.dataframe(time = c(3, 36, 1.2*60, 1.5*60, 3*60, 6*60, 10*24*60), freq = c(100, 10, 5, 4, 2, 1, 1/10))
+accel <- data.frame(time = c(3, 36, 1.2*60, 1.5*60, 3*60, 6*60, 10*24*60), freq = c(100, 10, 5, 4, 2, 1, 1/10))
+accel
+plot(accel$time, accel$freq)
+plot(accel$time[1:4,], accel$freq[1:4,])
+plot(accel$time[1:4], accel$freq[1:4])
+sessionInfo()
+mean(58,70,44)
+round(mean(58,70,44), 2)
+round(mean(62,100,80), 2)
+mean(62,100,80)
+marks <- c(62,100,80)
+marks <- c(58,70,44)
+marks <- c(56,14,34)
+marks <- c(70,56,68)
+marks <- c(24,44,32)
+marks <- c(62,62,51)
+marks <- c(24,12,46)
+marks <- c(78,94,74)
+marks <- c(62,66,24)
+marks <- c(88,60,66)
+marks <- c(42,36,54)
+marks <- c(42,50,52)
+mean(marks)
+require(zoo); require(lubridate)
+load("/Users/ajsmit/Dropbox/repos/tempssa_v3.0/prep/insituDaily_v3.4.RData")#
+testDat <- dplyr::filter(insituDaily_v3.4, site == "Gordons Bay")#
+testDat <- testDat[, c("date", "temp")]#
+colnames(testDat) <- c("t", "temp")#
+testDat <- na.omit(testDat[, c("t", "temp")])
+load("/Users/ajsmit/Dropbox/repos/tempssa_v3.0/prep/insituDaily_v3.4.RData")
+testDat <- dplyr::filter(insituDaily_v3.4, site == "Gordons Bay")
+testDat <- testDat[, c("date", "temp")]
+colnames(testDat) <- c("t", "temp")
+testDat <- na.omit(testDat[, c("t", "temp")])
+data <- testDat # remove...
+if (is.POSIXct(data$t)) {#
+  data.zoo <- zoo(data)#
+  } else {#
+    stop("Date must be of class 'POSIXct'")#
+    }#
+tSeries <- zoo(data$temp, data$t)#
+strt <- start(tSeries)#
+fin <- end(tSeries)#
+ser <- data.frame(t = seq(strt, fin, by = "1 day")) # create regualar time series#
+ser <- zoo(rep(NA, length(ser$t)), order.by = ser$t)#
+tSeries <- merge(ser, tSeries)[,2]
+findruns <- function(x, k) {#
+  n = length(x)#
+  runs = vector(length = n)#
+  count = 0#
+  for (i in 1:(n-k+1)) {#
+    if (all(x[i:(i+k-1)] == NA)) {#
+      count = count + 1#
+      runs[count] = i#
+    }#
+  }#
+  if (count > 0) {#
+    runs = runs[1:count]#
+  } else runs <- NULL#
+  retrun(runs)#
+}
+ls()
+head(data)
+head(tSeries)
+head(tSeries)[1]
+findruns(tSeries, 3)
+findruns <- function(x, k) {#
+  n = length(x)#
+  runs = vector(length = n)#
+  count = 0#
+  for (i in 1:(n-k+1)) {#
+    if (all(x[i:(i+k-1)] == 1)) {#
+      count = count + 1#
+      runs[count] = i#
+    }#
+  }#
+  if (count > 0) {#
+    runs = runs[1:count]#
+  } else runs <- NULL#
+  retrun(runs)#
+}#
+#
+findruns(tSeries, 3)
+(!as.vector(tSeries)) * unlist(lapply(rle(as.vector(tSeries))$lengths, seq_len))
+x <- tSeries
+n = length(x)
+n
+runs = vector(length = n)
+runs
+vector(length = 1)
+vector(length = 0)
+vector(length = 2)
+count = 0
+x <- tSeries; k <- 2
+for (i in 1:(n-k+1)) {#
+    if (all(x[i:(i+k-1)] == 1)) {#
+      count = count + 1#
+      runs[count] = i#
+    }#
+  }
+1:(n-k-1)
+length(1:(n-k-1))
+length(tSeries)
+colours()
+# Set the initial guess and other parameters#
+beta_old <- 0; beta_new <- 4; gamma <- 0.001; precision <- 0.00001#
+#
+# Derivative of the function f#
+f_prime <- function (beta) 4 * beta**3 - 9 * beta**2#
+#
+# Plot#
+dframe <- data.frame(beta = rep(beta, 2), curves = c(f(beta), f_prime(beta)), type = rep(c("f", "f'"), each = 100))#
+p <- ggplot(data = dframe, aes(x = beta, y = curves, colour = type)) + geom_line() + #
+  geom_segment(aes(x = beta_new, y = f(beta_new), xend = beta_new, yend = f_prime(beta_new), colour = 'orange'), show.legend = TRUE) +#
+  xlab(expression(beta)) + ylab('y') +#
+  theme(legend.position = c(.2, .85),#
+        legend.background = element_rect(fill = 'gray')) +#
+  scale_colour_manual(#
+    name = 'Curves and Segments', #
+    labels = c(#
+      expression(f(beta)), #
+      expression(#
+        paste(frac(df(beta), paste('d', beta)), sep = "")#
+      ),#
+      expression(#
+        bar(paste(f(beta[r]), paste(f, "'", (beta[r]), sep = "")))#
+        )#
+      ),#
+    values = c('#FF033E', '#318CE7', '#FFBF00'),#
+    guide = guide_legend(direction = "horizontal", title.position = "top",#
+                         label.position = "right",#
+                         label.theme = element_text(angle = 0, size = 10))#
+    )#
+#
+# Perform Gradient Descent#
+i <- 0 # Counter for number of iterations#
+p <- p + geom_segment(x = beta_new, y = f(beta_new), xend = beta_new, yend = f_prime(beta_new), colour = '#FFA812')#
+while (abs(beta_new - beta_old) > precision) {#
+  beta_old <- beta_new#
+  beta_new <- beta_old - gamma * f_prime(beta_old)#
+  p <- p + geom_segment(x = beta_new, y = f(beta_new), xend = beta_new, yend = f_prime(beta_new), colour = '#FFA812')#
+  i <- i + 1#
+}
+attitude
+library(lubridate)#
+library(scales) # for 'date_format' function#
+library(stringr)#
+library(plyr)
+ncURL <- "http://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.nc?SST[(2015-12-01):1:(2015-12-31)][(-45):1:(-23)][(13):1:(37)],analysis_error[(2015-12-01):1:(2015-12-31)][(-45):1:(-23)][(13):1:(37)]"
+download.file(url=ncURL, destfile="~/text.nc")
+getwd()
+download.file(url="http://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST.nc?analysed_sst[(2015-06-09T09:00:00Z)][(-89.9945):1000:(89.9945)][(-179.995):1000:(179.995)]", destfile="~/test.nc")
+ncURL <- "http://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.nc?SST[(2016-02-01T00:00:00Z):1:(2016-02-14T00:00:00Z)][(-45):1:(-23)][(13):1:(37)]"#
+#
+download.file(url=ncURL, destfile="~/Desktop/test.nc")
+ncURL <- paste(baseURL)
+latMin <- -45#
+latMax <- -23#
+latStride <- 1#
+lonMin <- 13#
+lonMax <- 37#
+lonStride <- 1#
+#
+dateStrt <- "2016-02-01T00:00:00Z"#
+dateEnd <- "2016-02-14T00:00:00Z"#
+dateStride <- 1#
+#
+baseURL <- "http://coastwatch.pfeg.noaa.gov/erddap/griddap/"#
+product <- "jplG1SST"#
+var <- "SST"#
+#
+# form URL:#
+#==============================================================================#
+# ... of this structure:#
+# "http://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.nc?SST[(2016-02-01T00:00:00Z):1:(2016-02-14T00:00:00Z)][(-45):1:(-23)][(13):1:(37)]"#
+t1 <- str_sub(dateStrt, start = 1, end = 10); t2 <- str_sub(dateEnd, start = 1, end = 10)#
+#
+fileOut <- paste(product,"_",t1,"--",t2,".nc",sep="")#
+#
+ncURL <- paste(baseURL,product,'.nc?',var,'[(',dateStrt,"):",dateStride,":(",dateEnd,")][(",latMin,"):",latStride,":(",latMax,")][(",lonMin,"):",lonStride,":(",lonMax,")]",sep="")
+ncURL
+fileOut <- paste(product,"_",t1,"--",t2,".nc",sep="")
+t1 <- str_sub(dateStrt, start = 1, end = 10); t2 <- str_sub(dateEnd, start = 1, end = 10)
+library(stringr)
+latMin <- -45#
+latMax <- -23#
+latStride <- 1#
+lonMin <- 13#
+lonMax <- 37#
+lonStride <- 1#
+#
+dateStrt <- "2016-02-01T00:00:00Z"#
+dateEnd <- "2016-02-14T00:00:00Z"#
+dateStride <- 1#
+#
+baseURL <- "http://coastwatch.pfeg.noaa.gov/erddap/griddap/"#
+product <- "jplG1SST"#
+var <- "SST"#
+#
+# form URL:#
+#==============================================================================#
+# ... of this structure:#
+# "http://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.nc?SST[(2016-02-01T00:00:00Z):1:(2016-02-14T00:00:00Z)][(-45):1:(-23)][(13):1:(37)]"#
+t1 <- str_sub(dateStrt, start = 1, end = 10); t2 <- str_sub(dateEnd, start = 1, end = 10)#
+#
+fileOut <- paste(product,"_",t1,"--",t2,".nc",sep="")
+fileOut
+##############################################################################
+## This script does:#
+# 1. Reads in MUR netCDF SST data;#
+# 2. Creates plotting parameters;#
+# 3. Plots temperatures;#
+# 4. Saves as "graph/Figure_5_MUR_v3.3.pdf"#
+##############################################################################
+#
+##############################################################################
+## DEPENDS ON:#
+rotate <- function(x) t(apply(x, 2, rev))#
+require(ncdf); require(colorRamps); library(reshape2); library(ggplot2)#
+require(rgeos); require(maptools) # " maptools" must be loaded after "rgeos"#
+require(lubridate); require(plyr); require(ggrepel); library(viridis)#
+source("setupParams/theme.R"); source("proc/results2.R")#
+#
+##############################################################################
+## USED BY:#
+# Nothing#
+##############################################################################
+#
+##############################################################################
+## CREATES:#
+##
+##############################################################################
+#
+setwd("/Users/ajsmit/Dropbox/repos/MHW")#
+#
+#################################################################################
+# Open a netCDF file#
+str(ncsst$dim)#
+# ncsst <- open.ncdf("/Volumes/AGULHAS/OceanData/misc_hires/jplG1SST_2f50_4900_a129.nc")#
+ncsst <- "/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc"#
+# Get the sst etc.#
+sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,10), count = c(-1,-1,1))#
+sst[sst == -1] <- NA
+ncsst <- "/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc"
+str(ncsst$dim)
+ncsst <- open.ncdf("/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc")#
+str(ncsst$dim)
+sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,10), count = c(-1,-1,1))
+sst[sst == -1] <- NA
+lat_min <- min(ncsst$dim$lat$vals); lat_max <- max(ncsst$dim$lat$vals)#
+lon_min <- min(ncsst$dim$lon$vals); lon_max <- max(ncsst$dim$lon$vals)#
+lat <- ncsst$dim$lat$vals#
+lon <- ncsst$dim$lon$vals#
+#
+#################################################################################
+## Prepare graphing variables and environment#
+grid <- expand.grid(lon, lat) # Matches each possible lat to each possible lon in the sequences#
+msst <- melt(sst) # Melts SST lat and lon and temp into columns#
+#
+rlat <- c(-45, -24); rlon <- c(13, 37)#
+#
+if(file.exists("C:/Users/Robert Schlegel/Documents/R/gshhg-bin-2.3.0/gshhs_f.b") == TRUE){#
+  shore <- getRgshhsMap("C:/Users/Robert Schlegel/Documents/R/gshhg-bin-2.3.0/gshhs_f.b",#
+                        xlim = rlon, ylim = rlat, level = 1, no.clip = FALSE, checkPolygons = TRUE)} else {#
+                          shore <- getRgshhsMap("/Users/ajsmit/spatial/gshhs_2.3.4/gshhg-bin-2.3.4/gshhs_f.b",#
+                                                xlim = rlon,#
+                                                ylim = rlat,#
+                                                level = 1, no.clip = FALSE,#
+                                                checkPolygons = TRUE)}#
+#
+shore2 <- fortify(shore) # Convert shore polygon into a data.frame
+metaData2 <- metaData2[-((length(metaData2$site)-2):length(metaData2$site)),] # Remove coastal means#
+metaData2$coast <- factor(metaData2$coast, levels = c("west", "south", "east"))#
+load("data/site_pixels.RData")#
+site_pixels2 <- read.csv("data/site_pixels2.csv")#
+site_pixels[52:53,1:3] <- site_pixels2#
+# Add coastal values to#
+site_pixels3 <- data.frame()#
+for(i in 1:nrow(site_pixels)){#
+  x <- site_pixels[i,]#
+  if(x$site[1] %in% wc) {#
+    x$coast <- "west"#
+  } else if(x$site[1] %in% sc) {#
+    x$coast <- "south"#
+  } else if(x$site[1] %in% ec) {#
+    x$coast <- "east"#
+  }#
+  site_pixels3 <- rbind(site_pixels3, x)#
+}#
+site_pixels3$coast <- factor(site_pixels3$coast, levels = c("west", "south", "east"))#
+#
+# Setup up environment for plotting#
+sa_lats <- c(-37, -27); sa_lons <- c(14, 34)#
+#
+# Load SA bathymetry#
+load("data/bathy/bathy.RData") # HiRes for final image#
+load("data/bathy/sa_bathy.RData") # LowRes for tweaking
+require(ncdf); require(colorRamps); library(reshape2); library(ggplot2)#
+require(rgeos); require(maptools) # " maptools" must be loaded after "rgeos"#
+require(lubridate); require(plyr); require(ggrepel); library(viridis)#
+source("setupParams/theme.R"); source("proc/results2.R")
+setwd("/Users/ajsmit/Dropbox/repos/MHW")
+metaData2 <- metaData2[-((length(metaData2$site)-2):length(metaData2$site)),] # Remove coastal means
+metaData2$coast <- factor(metaData2$coast, levels = c("west", "south", "east"))
+load("data/site_pixels.RData")#
+site_pixels2 <- read.csv("data/site_pixels2.csv")#
+site_pixels[52:53,1:3] <- site_pixels2#
+# Add coastal values to#
+site_pixels3 <- data.frame()#
+for(i in 1:nrow(site_pixels)){#
+  x <- site_pixels[i,]#
+  if(x$site[1] %in% wc) {#
+    x$coast <- "west"#
+  } else if(x$site[1] %in% sc) {#
+    x$coast <- "south"#
+  } else if(x$site[1] %in% ec) {#
+    x$coast <- "east"#
+  }#
+  site_pixels3 <- rbind(site_pixels3, x)#
+}#
+site_pixels3$coast <- factor(site_pixels3$coast, levels = c("west", "south", "east"))
+sa_lats <- c(-37, -27); sa_lons <- c(14, 34)#
+#
+# Load SA bathymetry#
+load("data/bathy/bathy.RData") # HiRes for final image#
+load("data/bathy/sa_bathy.RData") # LowRes for tweaking
+theme_set(theme_bw())#
+#
+limits <- c(6,28) # for colour bar#
+breaks <- seq(6, 30.2, 2) # Create breaks to be used for colour bar#
+#
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = rlon, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = rlat, expand = c(0, 0)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.35)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p
+ncsst <- open.ncdf("/Volumes/AGULHAS/OceanData/misc_hires/jplG1SST_2f50_4900_a129.nc")#
+# ncsst <- open.ncdf("/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc")#
+str(ncsst$dim)#
+# Get the sst etc.#
+sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,1), count = c(-1,-1,1))#
+sst[sst == -1] <- NA
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lons, expand = c(0, 0)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.35)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.35)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.35)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey90", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey90", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.20)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p#
+ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "black", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.00)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+p#
+ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+limits <- c(8,28) # for colour bar#
+   <- seq(6, 30.2, 2) # Create breaks to be used for colour bar#
+#
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 8.00)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+# p#
+ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+    geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+    geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+                 colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+    stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+                 colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+    geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+                 fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+    # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+    #            alpha = 0.9, size = 2.6, shape = 1) +#
+    geom_point(data = metaData2, aes(x = lon, y = lat),#
+               alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+    geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+               shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+    geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                    size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+    geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    coord_equal() +#
+    scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+    scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+    scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+    # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+    xlab("") +#
+    ylab("") +#
+    guides(fill = guide_colourbar(barheight = 8.00)) +#
+    theme(panel.background = element_rect(fill = "white", colour = NA),#
+          panel.border = element_rect(colour = "black", size = 0.5),#
+          panel.grid.minor = element_line(colour = "NA"),#
+          panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+          legend.direction = "horizontal",#
+          legend.justification = c(1,0), legend.position = c(0.65, 0.65)) +#
+          legend.text = element_text(size = 8),#
+          legend.title = element_text(size = 8),#
+          legend.key = element_blank(),#
+          legend.background = element_blank(),#
+          axis.ticks = element_line(size = 0.5))#
+  # p#
+  ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+    geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+    geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+                 colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+    stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+                 colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+    geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+                 fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+    # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+    #            alpha = 0.9, size = 2.6, shape = 1) +#
+    geom_point(data = metaData2, aes(x = lon, y = lat),#
+               alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+    geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+               shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+    geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                    size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+    geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    coord_equal() +#
+    scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+    scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+    scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+    # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+    xlab("") +#
+    ylab("") +#
+    guides(fill = guide_colourbar(barheight = 8.00)) +#
+    theme(panel.background = element_rect(fill = "white", colour = NA),#
+          panel.border = element_rect(colour = "black", size = 0.5),#
+          panel.grid.minor = element_line(colour = "NA"),#
+          panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+          legend.direction = "horizontal",#
+          legend.justification = c(1,0), #
+          legend.position = c(0.65, 0.65),#
+          legend.text = element_text(size = 8),#
+          legend.title = element_text(size = 8),#
+          legend.key = element_blank(),#
+          legend.background = element_blank(),#
+          axis.ticks = element_line(size = 0.5))#
+  # p#
+  ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+    geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+    geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+                 colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+    stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+                 colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+    geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+                 fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+    # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+    #            alpha = 0.9, size = 2.6, shape = 1) +#
+    geom_point(data = metaData2, aes(x = lon, y = lat),#
+               alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+    geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+               shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+    geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                    size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+    geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    coord_equal() +#
+    scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+    scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+    scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+    # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+    xlab("") +#
+    ylab("") +#
+    guides(fill = guide_colourbar(barheight = 1.00)) +#
+    theme(panel.background = element_rect(fill = "white", colour = NA),#
+          panel.border = element_rect(colour = "black", size = 0.5),#
+          panel.grid.minor = element_line(colour = "NA"),#
+          panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+          legend.direction = "horizontal",#
+          legend.justification = c(1,0),#
+          legend.position = c(0.65, 0.65),#
+          legend.text = element_text(size = 8),#
+          legend.title = element_text(size = 8),#
+          legend.key = element_blank(),#
+          legend.background = element_blank(),#
+          axis.ticks = element_line(size = 0.5))#
+  # p#
+  ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+    geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+    geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+                 colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+    stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+                 colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+    geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+                 fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+    # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+    #            alpha = 0.9, size = 2.6, shape = 1) +#
+    geom_point(data = metaData2, aes(x = lon, y = lat),#
+               alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+    geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+               shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+    geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                    size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+    geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    coord_equal() +#
+    scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+    scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+    scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+    # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+    xlab("") +#
+    ylab("") +#
+    guides(fill = guide_colourbar(barheight = 1.00, barwidth = 1.5)) +#
+    theme(panel.background = element_rect(fill = "white", colour = NA),#
+          panel.border = element_rect(colour = "black", size = 0.5),#
+          panel.grid.minor = element_line(colour = "NA"),#
+          panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+          legend.direction = "horizontal",#
+          legend.justification = c(1,0),#
+          legend.position = c(0.65, 0.65),#
+          legend.text = element_text(size = 8),#
+          legend.title = element_text(size = 8),#
+          legend.key = element_blank(),#
+          legend.background = element_blank(),#
+          axis.ticks = element_line(size = 0.5))#
+  # p#
+  ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+    geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+    geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+                 colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+    stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+                 colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+    geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+                 fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+    # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+    #            alpha = 0.9, size = 2.6, shape = 1) +#
+    geom_point(data = metaData2, aes(x = lon, y = lat),#
+               alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+    geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+               shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+    geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                    size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+    geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+              size = 1.8, colour = "ivory1") +#
+    coord_equal() +#
+    scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+    scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+    scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+    # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+    xlab("") +#
+    ylab("") +#
+    guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +#
+    theme(panel.background = element_rect(fill = "white", colour = NA),#
+          panel.border = element_rect(colour = "black", size = 0.5),#
+          panel.grid.minor = element_line(colour = "NA"),#
+          panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+          legend.direction = "horizontal",#
+          legend.justification = c(1,0),#
+          legend.position = c(0.65, 0.65),#
+          legend.text = element_text(size = 8),#
+          legend.title = element_text(size = 8),#
+          legend.key = element_blank(),#
+          legend.background = element_blank(),#
+          axis.ticks = element_line(size = 0.5))#
+  # p#
+  ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
+limits <- c(8,28) # for colour bar#
+breaks <- seq(6, 30, 2) # Create breaks to be used for colour bar#
+#
+p <- ggplot(data = shore2, aes(x = long, y = lat)) +#
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +#
+  geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),#
+               colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +#
+  stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),#
+               colour = "grey20", size = 0.1, binwidth = 1000, na.rm = TRUE, show.legend = FALSE) +#
+  geom_polygon(data = shore2, aes(x = long, y = lat, group = group),#
+               fill = "#929292", colour = "#929292", size = 0.1, show.legend = FALSE) +#
+  # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),#
+  #            alpha = 0.9, size = 2.6, shape = 1) +#
+  geom_point(data = metaData2, aes(x = lon, y = lat),#
+             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +#
+  geom_point(data = site_pixels3, aes(x = lon, y = lat),#
+             shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +#
+  geom_text(data = metaData2[-c(2:6,13,15),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  geom_text_repel(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),#
+                  size = 1.8, colour = "ivory1", segment.color = "ivory1") +#
+  geom_text(data = metaData2[c(20:21),], aes(x = lon, y = lat, label = ID),#
+            size = 1.8, colour = "ivory1") +#
+  coord_equal() +#
+  scale_x_continuous(limits = sa_lons, expand = c(0, 0), breaks = seq(15, 35, 5)) +#
+  scale_y_continuous(limits = sa_lats, expand = c(0, 0), breaks = seq(-35, -30, 5)) +#
+  scale_fill_viridis(breaks = breaks, limits = limits, expression(paste("Temp. (",degree,"C)"))) +#
+  # scale_colour_manual(breaks = c("west", "south", "east"), values = c("#8dd3c7", "#4daf4a", "#e41a1c")) +#
+  xlab("") +#
+  ylab("") +#
+  guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +#
+  theme(panel.background = element_rect(fill = "white", colour = NA),#
+        panel.border = element_rect(colour = "black", size = 0.5),#
+        panel.grid.minor = element_line(colour = "NA"),#
+        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),#
+        legend.direction = "horizontal",#
+        legend.justification = c(1,0),#
+        legend.position = c(0.65, 0.65),#
+        legend.text = element_text(size = 8),#
+        legend.title = element_text(size = 8),#
+        legend.key = element_blank(),#
+        legend.background = element_blank(),#
+        axis.ticks = element_line(size = 0.5))#
+# p#
+ggsave("graph/figures/figure1_1km.pdf", width = 8, height = 4)
