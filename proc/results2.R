@@ -1,19 +1,21 @@
 #############################################################################
 ## This script does:
 # 1. loads annual MHW/ MCS files;
-# 2. calculates event count, length and mean intensity for each coast for both datasets;
+# 2. Calculates event count, length and mean intensity for each coast for both datasets;
 # 3. Load all events and extract top three MHWs/ MCSs;
 # 4. Extracts top three MHW/ MCS events for each coastal section and type of data;
 # 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data;
 # 6. Calculate beginning and end dates for largest events;
-# 7. Calculate co-occurrence between coastal sections
-# 8. Calcuate statistical significance between coastal sections
-# 9. Calcuate statistical significance between coastal sections for co-occurrence
-# 10. Additional analyses
+# 7. Calculate co-occurrence between coastal sections;
+# 8. Calcuate statistical significance between coastal sections;
+# 9. Calcuate statistical significance between coastal sections for co-occurrence;
+# 10. Rate of increase in MHWs/ MCSs;
+# 11. R2 between in situ and OISST;
+# 12. Additional analyses
 
 #############################################################################
 ## DEPENDS ON:
-require(zoo); require(plyr); require(stringr); library(lubridate)
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable)
 source("setupParams/theme.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
@@ -95,7 +97,7 @@ mhwAnnualSST <- annualLoad(dir3)
 mcsAnnualSST <- annualLoad(dir4)
 
 #############################################################################
-## 2. calculates event count, length and mean intensity for each coast for both datasets
+## 2. Calculates event count, length and mean intensity for each coast for both datasets
 
 # Function used for calculations
 resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
@@ -247,6 +249,9 @@ write.csv(mhwSST3, "data/mhwSST3.csv")
 mcsSST3 <- topCoastn(mcsnSST, 3)
 mcsSST3 <- mcsSST3[,c(28:29,4,30:32,11,13:14)]
 write.csv(mcsSST3, "data/mcsSST3.csv")
+
+# Combine into one table for publication
+
 
 #############################################################################
 ## 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data
@@ -452,10 +457,10 @@ tukeyIntensCum <- TukeyHSD(aovIntensCum)
 
 
 #############################################################################
-## 10. Additional analyses
+## Rate of increase in MHWs/ MCSs
 
 # Quantify the occurrence of the top three MHWs and MCSs per coast
-  # This can be used to infer climate change
+# This can be used to infer climate change
 
 # test <- metaData2[metaData2$site == "Eastern Beach",]
 # test.date <- seq(test$start.date, test$end.date, by = 1)
@@ -463,3 +468,12 @@ tukeyIntensCum <- TukeyHSD(aovIntensCum)
 # test.date.2 <- test.date[(floor(length(test.date)/2)+1):length(test.date)]
 # test.mhw <- mhwn[mhwn$site == "Eastern Beach",]
 # test.first <- length(subset(test.mhw, start.date %in% test.date.1))
+
+#############################################################################
+## R2 between in situ and OISST
+
+
+#############################################################################
+## Additional analyses
+
+
