@@ -1,10 +1,10 @@
-"","site","month","dayStrt","index","type","coast","duration","intMean","intCum"
-"1","Sea Point",1996-01-01,4,1,"insitu","wc",40,3.081,123.2
-"2","Sea Point",2005-05-01,21,2,"insitu","wc",39,2.555,99.66
-"3","Sea Point",1975-12-01,30,3,"insitu","wc",38,2.616,99.41
-"4","Muizenberg",1999-12-01,1,1,"insitu","sc",98,3.166,310.3
-"5","Mossel Bay",1993-06-01,25,1,"insitu","sc",97,1.766,171.3
-"6","Muizenberg",1999-10-01,20,2,"insitu","sc",35,4.468,156.4
-"7","Nahoon Beach",1995-10-01,14,1,"insitu","ec",18,5.184,93.31
-"8","Eastern Beach",1985-12-01,27,1,"insitu","ec",19,3.325,63.18
-"9","Orient Beach",1990-06-01,25,1,"insitu","ec",12,3.799,45.59
+"","coast","site","start date","duration","intMean","intCum"
+"1","wc","Sea Point","1996-01-4",40,3.081,123.2
+"2","wc","Sea Point","2005-05-21",39,2.555,99.66
+"3","wc","Sea Point","1975-12-30",38,2.616,99.41
+"4","sc","Muizenberg","1999-12-1",98,3.166,310.3
+"5","sc","Mossel Bay","1993-06-25",97,1.766,171.3
+"6","sc","Muizenberg","1999-10-20",35,4.468,156.4
+"7","ec","Nahoon Beach","1995-10-14",18,5.184,93.31
+"8","ec","Eastern Beach","1985-12-27",19,3.325,63.18
+"9","ec","Orient Beach","1990-06-25",12,3.799,45.59

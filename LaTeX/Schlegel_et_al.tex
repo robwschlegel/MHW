@@ -18,6 +18,7 @@
   \usepackage{textcomp} % directly use the degree (and some other) symbol
 \fi
 
+\usepackage{fixltx2e}
 \usepackage[]{graphicx}
 \usepackage{ragged2e}  % for '\RaggedRight' macro (allows hyphenation)
 \usepackage[pdftex]{color}
@@ -179,11 +180,11 @@ Given that the anthropogenic forcing of climate change is predicted to increase 
 
 \section{Results}
 
-\subsection{Events}\todo{Need to insert the results of the ANOVA/ Tukey HSD tests in the following two paragraphs.}
-One can see in \Cref{table2} that the \emph{in situ} time series show that the typically cooler west coast experiences the most MHWs per year, and that these are longer and more intense on average than those along the other two coastal sections. Whereas the east coast experiences slightly more MCSs per year than the other two coastal sections, it is the volatile south coast that experiences the longest and most intense MCSs, on average.
+\subsection{Events}
+One can see in \Cref{table2} that the \emph{in situ} time series show that the typically cooler west coast experiences the most MHWs per year, and that these are longer and more intense on average than those along the other two coastal sections. Whereas the east coast experiences slightly more MCSs per year than the other two coastal sections, it is the volatile south coast that experiences the longest and most intense MCSs. There is no significant difference between the annual count of events for each coastal section (df = 2, F = 0.727, \emph{p} = 0.48) or between the count of MHWs and MCSs (df = 1, F = 0.732, \emph{p} = 0.39). There is a significant difference between the coastal sections for the duration of events (df = 2, F = 8.907, \emph{p} < 0.01) but no significant difference between the event types themselves (df = 1, F = 0.722, \emph{p} = 0.39). The intensity of events is significantly different between each coastal section (df = 2, F = 57.55, \emph{p} < 0.01) and the type of events (df = 1, F = 5372, \emph{p} < 0.01).
 
 \begin{table}[]
-\caption{\small The mean (sd) annual values for event frequency, duration and intensity for MHWs and MCSs for each coastal section as calculated from the \emph{in situ} time series. All individual events were first aggregated into annual means before being averaged into overall mean values for each coastal section.}
+\caption{\small The mean(sd) annual values for event frequency, duration and intensity for MHWs and MCSs for each coastal section as calculated from the \emph{in situ} time series. All individual events were first aggregated into annual means before being averaged into overall mean values for each coastal section.}
 \label{table2}
 \centering
 \tiny
@@ -191,18 +192,18 @@ One can see in \Cref{table2} that the \emph{in situ} time series show that the t
 \hline
  coast & MHW [count] & duration [days] & intensity [\degree C] & MCS [count] & duration [days] & intensity [\degree C] \\
  \hline
-  all & 1.6 & 9.3 & 2.65 & 1.5 & 9.0 & 2.79 \\
-  west & 1.8 & 9.1 & 2.86 & 1.5 & 8.5 & 2.32 \\
-  south & 1.5 & 9.1 & 2.50 & 1.5 & 9.7 & 3.08 \\
-  east & 1.5 & 7.7 & 2.85 & 1.6 & 7.1 & 2.37 \\
+  all & 1.6(1.8) & 9.3(5.1) & 2.65(0.79) & 1.5(1.7) & 9.0(5.1) & 2.79(1.09) \\ 
+  west & 1.8(1.9) & 9.1(3.9) & 2.86(0.90) & 1.5(1.9) & 8.5(5.2) & 2.32(0.58) \\ 
+  south & 1.5(1.8) & 9.8(6.1) & 2.50(0.65) & 1.5(1.6) & 9.7(5.5) & 3.08(1.22) \\ 
+  east & 1.5(1.7) & 7.7(2.2) & 2.85(0.89) & 1.6(1.6) & 7.1(1.9) & 2.37(0.67) \\ 
   \hline
   \end{tabular}
 \end{table}
 
-Results from the analysis of the OISST data (\Cref{table3}) are significantly different than that of the \emph{in situ} data for most metrics. The mean annual frequency and duration of MHWs and MCSs are greater for all coastal sections whereas the intensity of both events type on all coastal sections are less than the results of the \emph{in situ} data. With this in mind we still see that the pattern of MHW and MCS event sizes along the coastline differs from the \emph{in situ} data, too. The largest annual number of MHWs is here occurring on the warmer east coast whereas the longest MHWs are occurring on the volatile south coast with the most intense events nearly split between the west and south coasts respectively. The cooler west coast sees the most frequent occurrence of MCSs with the OISST data. The longest MCSs are occurring on the south coast, same as the \emph{in situ} data; however the most intense MCSs are seen off the east coast.
+Results from the analysis of the OISST data (\Cref{table3}) show that there is a significant difference from the \emph{in situ} data for count (df = 1, F = 50.272, \emph{p} < 0.01) and duration (df = 1, F = 17.575, \emph{p} < 0.01) of events but not mean intensity (df = 1, F = 0.117, \emph{p} = 0.73). The mean annual count and duration of MHWs and MCSs are greater than their \emph{in situ} counterparts for all coastal sections whereas the intensity of both event types on all coastal sections are less than the results of the \emph{in situ} data. With this in mind we still see that the pattern of MHW and MCS event sizes along the coastline differs from the \emph{in situ} data, too. The largest annual number of MHWs in the OISST data occur on the warmer east coast whereas the longest MHWs are occurring on the volatile south coast with the most intense events nearly split between the west and south coasts respectively. The cooler west coast sees the most frequent occurrence of MCSs with the OISST data. The longest MCSs are occurring on the south coast, same as the \emph{in situ} data; however the most intense MCSs are seen off the east coast. There is no significant difference between the annual count of events per coast (df = 2, F = 0.542, \emph{p} = 0.58) or event type (df = 1, F = 0.155, \emph{p} = 0.69). The duration of the events in the different coastal sections differe significantly from one another (df = 2, F = 9.534, \emph{p} < 0.01) whereas the duration of the event types does not (df = 1, F = 0.055, \emph{p} = 0.81). Lastly, as with the \emph{in situ} data, the intensity of events differs significantly between each coastal section (df = 2, F = 16.17, \emph{p} < 0.01) and the type of event (df = 1, F = 17645, \emph{p} < 0.01).
 
 \begin{table}[]
-\caption{\small The mean (sd) annual values for event frequency, duration and intensity for MHWs and MCSs for each coastal section as calculated from the OISST time series. All individual events were first aggregated into annual means before being averaged into overall mean values for each coastal section.}
+\caption{\small The mean(sd) annual values for event frequency, duration and intensity for MHWs and MCSs for each coastal section as calculated from the OISST time series. All individual events were first aggregated into annual means before being averaged into overall mean values for each coastal section.}
 \label{table3}
 \centering
 \tiny
@@ -210,29 +211,117 @@ Results from the analysis of the OISST data (\Cref{table3}) are significantly di
 \hline
  coast & MHW [count] & duration [days] & intensity [\degree C] & MCS [count] & duration [days] & intensity [\degree C] \\
  \hline
-  all & 2.2 & 10.2 & 1.72 & 2.2 & 10.2 & 1.83 \\
-  west & 2.1 & 10.9 & 1.75 & 2.3 & 9.8 & 1.87 \\
-  south & 2.2 & 10.6 & 1.74 & 2.1 & 10.7 & 1.79 \\
-  east & 2.5 & 8.3 & 1.64 & 2.2 & 9.4 & 1.93 \\
+  all & 2.2(2.1) & 10.2(5.4) & 1.72(0.33) & 2.2(2.6) & 10.2(5.1) & 1.83(0.52) \\ 
+  west & 2.1(1.8) & 10.9(6.7) & 1.75(0.41) & 2.3(2.7) & 9.8(6.6) & 1.87(0.61) \\ 
+  south & 2.2(2.1) & 10.6(5.5) & 1.74(0.29) & 2.1(2.7) & 10.7(5.0) & 1.79(0.45) \\ 
+  east & 2.5(2.3) & 8.3(2.4) & 1.64(0.33) & 2.2(2.2) & 9.4(3.4) & 1.93(0.61) \\ 
   \hline
   \end{tabular}
 \end{table}
 
-\subsection{Top three events}\todo{I am going to include a table for the top three events rather than list them.}
-The mean annual statistics shown in \Cref{table2} and \Cref{table3} represent the events occurring along the coastline; however, examining the largest MHWs and MCSs aid in our understanding of which coastlines may have the most extreme events. The ranking of these events is based on the cumulative intensity statistic as explained in \Cref{table2}. The three largest MHWs that occurred within the \emph{in situ} dataset were all on the south coast at 310.30\degree C, 171.30\degree C and 156.4\degree C in the years 1999, 1993 and 1999 respectively (\Cref{fig:Figure2}), showing that 1999 was a particularly hot year. The size of the south coast events are larger than those occurring along the west coast (123.20\degree C in 1996, 99.66\degree C in 2005 and 99.41\degree C in 1975), with the largest three MHWs on the east coast being much smaller than those occurring on the south coast (93.31\degree C in 1995, 63.18\degree C in 1985 and 45.59\degree C in 1990). The cumulative intensity of the entire coastline and each section individually may be calculated for both datasets from \Cref{table2} and \Cref{table3} by multiplying the mean event length by the mean intensity. Here we see from the \emph{in situ} data the cumulative intensity of MHWs for the entire coast is 42.13\degree C, meaning that the largest MHWs seen on the south and west coasts are massively larger than the coastal average.
+\subsection{Top three events}\todo{Still need to add significant differences}
+The mean annual statistics shown in \Cref{table2} and \Cref{table3} give a broad view of the events occurring along the coastline; however, examining the largest MHWs and MCSs aids in our understanding of which coastlines may have the most extreme events. The ranking of these events is based on the cumulative intensity statistic as explained in \Cref{table1}. The three largest MHWs that occurred within the \emph{in situ} dataset were all on the south coast (\Cref{table4}), showing that 1999 was a particularly hot year. The size of the south coast events are larger than those occurring along the west coast, with the largest three MHWs on the east coast being much smaller than those occurring on the south coast (\Cref{table4}). The cumulative intensity of the entire coastline and each section individually may be calculated for both datasets from \Cref{table2} and \Cref{table3} by multiplying the duration by the intensity. When calculating the mean cumulative intensity of MHWs from the \emph{in situ} data for the entire coastline by the individual events and not the annual means we see that mean is 26.11(\degree C x days) with a standard deviation of 24.37(\degree C x days), meaning that the largest MHWs seen on the south and west coasts are significantly larger than the coastal average.
+
+\begin{table}[]
+\caption{\small The three largest MHWs per coast from the \emph{in situ} data. The coast column shows in which coastal section the event occurred. The site column gives the name of the site, as seen in \Cref{fig:Figure2}, which gives the index number necessary to find it's location along the coastline in \Cref{fig:Figure1}. The start date column gives the day on which the event began and the duration (days) column shows how many days the event lasted for. The intMean column shows the mean intensity of the event and the intCum column shows the cummulative intensity, as caluclated in \Cref{table1}.}
+\label{table4}
+\centering
+\tiny
+\begin{tabular}{llcccc}
+\hline
+ coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+  \hline
+  west & Sea Point & 1996-01-04 & 40 & 3.08 & 123.20 \\ 
+  west & Sea Point & 2005-05-21 & 39 & 2.56 & 99.66 \\ 
+  west & Sea Point & 1975-12-30 & 38 & 2.62 & 99.41 \\ 
+  south & Muizenberg & 1999-12-01 & 98 & 3.17 & 310.30 \\ 
+  south & Mossel Bay & 1993-06-25 & 97 & 1.77 & 171.30 \\ 
+  south & Muizenberg & 1999-10-20 & 35 & 4.47 & 156.40 \\ 
+  east & Nahoon Beach & 1995-10-14 & 18 & 5.18 & 93.31 \\ 
+  east & Eastern Beach & 1985-12-27 & 19 & 3.33 & 63.18 \\ 
+  east & Orient Beach & 1990-06-25 & 12 & 3.80 & 45.59 \\ 
+   \hline
+   \end{tabular}
+\end{table}
 
 \begin{figure}
 \centering \includegraphics[width=0.50\textwidth]{figure2.pdf}
-\caption{The daily temperature values for each \emph{in situ} time series (grey) used in this study and the corresponding OISST time series (black) extracted for comparison as seen in \Cref{fig:Figure1}. The left column shows the top three MHWs (indicated by circles with the rank inside) for each site as judged by greatest cumulative intensity. The left column shows the top three MCSs for each site and dataset. The coastal sections to which each site belong may be seen in \Cref{table1} and are delimited here by...} \label{fig:Figure2}
+\caption{The daily temperature values for each \emph{in situ} time series (grey) used in this study and the corresponding OISST time series (black) extracted for comparison as seen in \Cref{fig:Figure1}. The top three MHWs are indicated by circles (with the rank inside) for each site as judged by greatest cumulative intensity. The top three MCSs for each site are indicated by squares (with the rank inside). Sites 1 -- 4 represent the west coast, sites 5 -- 17 represent the south coast and sites 18 -- 21 represent the south coast.} \label{fig:Figure2}
 \end{figure}
 
-As with the MHWs, the largest three MCSs from the \emph{in situ} data were also found on the south coast at -183.70\degree C in 1984, -155.61\degree C in 1992 and -150.10\degree C in 2000. Maintaining the pattern seen with the MHWs, the largest heat waves on the west coast were the next largest three events for the entire coastline (-126.60\degree C in 1990, -110.90\degree C in 1983 and -85.04\degree C in 2000) with the three largest events from the east coast being smaller than the other two coastal sections (-55.20\degree C in 2004, -48.44\degree C in 1984 and -45.13\degree C in 1995). The mean cumulative intensity for MCSs was -39.62\degree C over the entire coastline.
+As with the MHWs, the largest three MCSs from the \emph{in situ} data were also found on the south coast (\Cref{table5}). Maintaining the pattern seen with the MHWs, the largest heat waves on the west coast were the next largest three events for the entire coastline with the three largest events from the east coast being smaller than the other two coastal sections (\Cref{table5}). The mean cumulative intensity for MCSs over the entire coastline was 26.45(\degree C x days) with a standard deviation of 24.25(\degree C x days).
 
-As can be seen in \Cref{fig:Figure2}, the three largest events occurring for each time series within the OISST dataset are largely different from the \emph{in situ} dataset and show a greater amount of co-occurrence for neighbouring coastal stations than the corresponding \emph{in situ} time series. The pattern seen in the \emph{in situ} data of the largest MHWs and MCSs occurring on the south, west and east coasts respectively is also not repeated with the OISST dataset. The cumulative intensity of the largest MHW in this dataset is 120.40\degree C and occurred on the south coast in 1992. The three largest MHWs from the west coast (115.60\degree C in 1992, 113.50\degree C in 1992 and 107.40\degree C in 2004) were larger than the second and third largest events from the south coast (101.60\degree C in 2004, 99.05\degree C in 1994) and the three largest MHWs from the east coast again came in below the other coasts at 45.34\degree C in 2006 and the next two heat waves tying at 41.12\degree C both in 2000. The coastal average was 40.59\degree C.
+\begin{table}[]
+\caption{\small The three largest MCSs per coast from the \emph{in situ} data. Column descriptions may be found in the caption for \Cref{table4}.}
+\label{table5}
+\centering
+\tiny
+\begin{tabular}{llcccc}
+\hline
+ coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+  \hline
+  west & Sea Point & 1990-06-23 & 44 & 2.88 & 126.60 \\ 
+  west & Sea Point & 1983-06-10 & 39 & 2.84 & 110.90 \\ 
+  west & Sea Point & 2000-11-28 & 23 & 3.70 & 85.04 \\ 
+  south & Muizenberg & 1984-07-14 & 63 & 2.92 & 183.70 \\ 
+  south & Muizenberg & 1992-03-24 & 56 & 2.78 & 155.60 \\ 
+  south & Ystervarkpunt & 2000-05-11 & 51 & 2.94 & 150.10 \\ 
+  east & Sodwana & 2004-02-12 & 17 & 3.25 & 55.20 \\ 
+  east & Orient Beach & 1984-03-31 & 13 & 3.73 & 48.44 \\ 
+  east & Orient Beach & 1995-12-6 & 15 & 3.01 & 45.13 \\ 
+  \hline
+  \end{tabular}
+\end{table}
 
-The largest cold wave from the OISST dataset occurred on the south coast in 1984 and reached a cumulative intensity \degree C of -254.2\degree C. The largest MCS occurring on the west coast came in second at -211.90\degree C in 2010. The second and third largest MCSs on the south coast (both -167.30\degree C in 1982) were larger than the second and third largest MCSs on the west coast (-166.30\degree C and -154.90\degree C both in 2010). The three largest MCSs on the east coast, like with both datasets and both types of events, were smaller than the other two coasts. The first and second largest east coast events both occurred in 2010 and reached a cumulative intensity of -92.85\degree C with the third largest event occurring in 1984 at -87.26\degree C. The coastal average was -45.75\degree C.
+As can be seen in \Cref{fig:Figure2}, the three largest events occurring for each time series within the OISST dataset are largely different from the \emph{in situ} dataset and show a greater amount of co-occurrence for neighbouring coastal stations than the corresponding \emph{in situ} time series. The pattern seen in the \emph{in situ} data of the largest MHWs and MCSs occurring on the south, west and east coasts respectively is also not repeated with the OISST dataset. Whereas the largest MHW occurred on the south coast in the OISST data, the three largest MHWs from the west coast were larger than the second and third largest events from the south coast (\Cref{table6}). The three largest MHWs from the east coast again came in below the other coasts(\Cref{table6}). The coastal average for the MHWs from the OISST data was smaller than its \emph{in situ} counterpart at 18.65(\degree C x days) and a standard deviation of 15.10(\degree C x days).
 
-The range of dates across which these MHWs and MCSs occurred in the \emph{in situ} data may be seen concurrently with the temperature values from the same OISST time series in \Cref{fig:Figure3}. One may see that when the largest events were occurring in the \emph{in situ} data, nothing of note was occurring within the OISST data.
+\begin{table}[]
+\caption{\small The three largest MHWs per coast from the OISST data. Column descriptions may be found in the caption for \Cref{table4}.}
+\label{table6}
+\centering
+\tiny
+\begin{tabular}{llcccc}
+\hline
+ coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+  \hline
+  west & Sea Point & 1992-01-21 &  39 & 2.96 & 115.60 \\ 
+  west & Hout Bay & 1992-01-20 &  36 & 3.15 & 113.50 \\ 
+  west & Kommetjie & 2004-10-29 &  53 & 2.03 & 107.40 \\ 
+  south & Knysna & 1992-05-3 &  50 & 2.41 & 120.40 \\ 
+  south & Fish Hoek & 2004-10-30 &  53 & 1.92 & 101.60 \\ 
+  south & Pollock Beach & 1994-03-27 &  31 & 3.19 & 99.05 \\ 
+  east & Nahoon Beach & 2006-10-21 &  25 & 1.81 & 45.34 \\ 
+  east & Eastern Beach & 2000-06-24 &  26 & 1.58 & 41.12 \\ 
+  east & Orient Beach & 2000-06-24 &  26 & 1.58 & 41.12 \\ 
+  \hline
+  \end{tabular}
+\end{table}
+
+The largest MCSs from the OISST data (\Cref{table7}) are much less clearly ranked than their \emph{in situ} counterparts (\Cref{table5}). The three largest MCSs on the east coast, like with both datasets and both types of events, were smaller than the other two coasts (\Cref{table7}). The first and second largest east coast events both occurred in 2010 making this a particularly warm year. The coastal average and standard deviation for the cummulative intenstiy of the MCSs from the OISST data were much closer to their \emph{in situ} counterparts than the MHWs were at 23.17(\degree C x days) and 23.49(\degree C x days).
+
+\begin{table}[]
+\caption{\small The three largest MCSs per coast from the OISST data. Column descriptions may be found in the caption for \Cref{table4}.}
+\label{table7}
+\centering
+\tiny
+\begin{tabular}{llcccc}
+\hline
+ coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+  \hline
+  west & Kommetjie & 2010-12-13 &  54 & -3.92 & -211.90 \\ 
+  west & Hout Bay & 2010-12-25 &  41 & -4.06 & -166.30 \\ 
+  west & Sea Point & 2010-12-25 &  41 & -3.78 & -154.90 \\ 
+  south & Hamburg & 1984-02-5 &  65 & -3.91 & -254.20 \\ 
+  south & Storms River Mouth & 1982-03-13 &  60 & -2.79 & -167.30 \\ 
+  south & Tsitsikamma East & 1982-03-13 &  60 & -2.79 & -167.30 \\ 
+  east & Eastern Beach & 2010-12-26 &  32 & -2.90 & -92.85 \\ 
+  east & Orient Beach & 2010-12-26 &  32 & -2.90 & -92.85 \\ 
+  east & Eastern Beach & 1984-02-24 &  22 & -3.97 & -87.26 \\ 
+  \hline
+  \end{tabular}
+\end{table}
+
+The temperature values on the dates of the largest MHW and MCS for the west and south coasts from the \emph{in situ} data may be seen concurrently with the temperature values from the same OISST time series in \Cref{fig:Figure3}. One may see that when the largest events were occurring in the \emph{in situ} data, nothing of note was occurring within the OISST data.
 
 \begin{figure}
 \centering \includegraphics[width=1.0\textwidth]{figure3.png}

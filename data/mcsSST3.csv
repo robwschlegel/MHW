@@ -1,10 +1,10 @@
-"","site","month","dayStrt","index","type","coast","duration","intMean","intCum"
-"1","Kommetjie",2010-12-01,13,1,"OISST","wc",54,-3.924,-211.9
-"2","Hout Bay",2010-12-01,25,1,"OISST","wc",41,-4.056,-166.3
-"3","Sea Point",2010-12-01,25,1,"OISST","wc",41,-3.778,-154.9
-"4","Hamburg",1984-02-01,5,1,"OISST","sc",65,-3.911,-254.2
-"5","Storms River Mouth",1982-03-01,13,1,"OISST","sc",60,-2.789,-167.3
-"6","Tsitsikamma East",1982-03-01,13,1,"OISST","sc",60,-2.789,-167.3
-"7","Eastern Beach",2010-12-01,26,1,"OISST","ec",32,-2.902,-92.85
-"8","Orient Beach",2010-12-01,26,1,"OISST","ec",32,-2.902,-92.85
-"9","Eastern Beach",1984-02-01,24,2,"OISST","ec",22,-3.966,-87.26
+"","coast","site","start date","duration","intMean","intCum"
+"1","wc","Kommetjie","2010-12-13",54,-3.924,-211.9
+"2","wc","Hout Bay","2010-12-25",41,-4.056,-166.3
+"3","wc","Sea Point","2010-12-25",41,-3.778,-154.9
+"4","sc","Hamburg","1984-02-5",65,-3.911,-254.2
+"5","sc","Storms River Mouth","1982-03-13",60,-2.789,-167.3
+"6","sc","Tsitsikamma East","1982-03-13",60,-2.789,-167.3
+"7","ec","Eastern Beach","2010-12-26",32,-2.902,-92.85
+"8","ec","Orient Beach","2010-12-26",32,-2.902,-92.85
+"9","ec","Eastern Beach","1984-02-24",22,-3.966,-87.26

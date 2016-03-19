@@ -102,30 +102,44 @@ mcsAnnualSST <- annualLoad(dir4)
 # Function used for calculations
 resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
   results <- data.frame(coast = as.factor("All"), 
-                        mhw_freq = round(mean(mhw1[, 4], na.rm = T), 1), 
+                        mhw_freq = round(mean(mhw1[, 4], na.rm = T), 1),
+                        mhw_freq_sd = round(sd(mhw1[, 4], na.rm = T), 1),
                         mhw_dur = round(mean(mhw1[, 5], na.rm = T), 1),
+                        mhw_dur_sd = round(sd(mhw1[, 5], na.rm = T), 1),
                         mhw_intens = round(mean(mhw1[, 6], na.rm = T), 2),
-                        mcs_freq = round(mean(mcs1[, 4], na.rm = T), 1), 
+                        mhw_intens_sd = round(sd(mhw1[, 6], na.rm = T), 2),
+                        mcs_freq = round(mean(mcs1[, 4], na.rm = T), 1),
+                        mcs_freq_sd = round(sd(mcs1[, 4], na.rm = T), 1),
                         mcs_dur = round(mean(mcs1[, 5], na.rm = T), 1),
-                        mcs_intens = round(mean(mcs1[, 6], na.rm = T), 2))
+                        mcs_dur_sd = round(sd(mcs1[, 5], na.rm = T), 1),
+                        mcs_intens = round(mean(mcs1[, 6], na.rm = T), 2),
+                        mcs_intens_sd = round(sd(mcs1[, 6], na.rm = T), 2))
   for(i in 1:length(levels(mhw1$coast))){
     mhw2 <- droplevels(subset(mhw1, coast == levels(mhw1$coast)[i]))
     mcs2 <- droplevels(subset(mcs1, coast == levels(mcs1$coast)[i]))
     z <- data.frame(coast = levels(mhw1$coast)[i], 
-                    mhw_freq = round(mean(mhw2[, 4], na.rm = T), 1), 
+                    mhw_freq = round(mean(mhw2[, 4], na.rm = T), 1),
+                    mhw_freq_sd = round(sd(mhw2[, 4], na.rm = T), 1),
                     mhw_dur = round(mean(mhw2[, 5], na.rm = T), 1),
+                    mhw_dur_sd = round(sd(mhw2[, 5], na.rm = T), 1),
                     mhw_intens = round(mean(mhw2[, 6], na.rm = T), 2),
-                    mcs_freq = round(mean(mcs2[, 4], na.rm = T), 1), 
+                    mhw_intens_sd = round(sd(mhw2[, 6], na.rm = T), 2),
+                    mcs_freq = round(mean(mcs2[, 4], na.rm = T), 1),
+                    mcs_freq_sd = round(sd(mcs2[, 4], na.rm = T), 1),
                     mcs_dur = round(mean(mcs2[, 5], na.rm = T), 1),
-                    mcs_intens = round(mean(mcs2[, 6], na.rm = T), 2))
+                    mcs_dur_sd = round(sd(mcs2[, 5], na.rm = T), 1),
+                    mcs_intens = round(mean(mcs2[, 6], na.rm = T), 2),
+                    mcs_intens_sd = round(sd(mcs2[, 6], na.rm = T), 2))
     results <- rbind(results, z)
   }
   return(results)
 }
 
 allAnnualResults <- resultsAnnualCoastal(mhwAnnual, mcsAnnual)
+xtable(allAnnualResults)
 write.csv(allAnnualResults, "data/allAnnualResults.csv")
 allAnnualSSTResults <- resultsAnnualCoastal(mhwAnnualSST, mcsAnnualSST)
+xtable(allAnnualSSTResults)
 write.csv(allAnnualSSTResults, "data/allAnnualSSTResults.csv")
 
 #############################################################################
@@ -234,24 +248,28 @@ topCoastn <- function(dat, nCum){
   ecoast <- arrange(droplevels(dat[dat$site %in% ec,]), -abs(intCum))
   ecoast$coast <- "ec"
   result <- rbind(head(wcoast, nCum), head(scoast, nCum), head(ecoast, nCum))
+  result <- result[,c(32,28:29,4,11,13:14)]
+  result$month <- format(result$month, "%Y-%m")
+  result$'start date' <- paste(result$month, result$dayStrt, sep = "-")
+  result <- result[,c(1,2,8,5:7)]
   return(result)
 }
 
 mhw3 <- topCoastn(mhwn, 3)
-mhw3 <- mhw3[,c(28:29,4,30:32,11,13:14)]
+xtable(mhw3)
 write.csv(mhw3, "data/mhw3.csv")
 mcs3 <- topCoastn(mcsn, 3)
-mcs3 <- mcs3[,c(28:29,4,30:32,11,13:14)]
+xtable(mcs3)
 write.csv(mcs3, "data/mcs3.csv")
 mhwSST3 <- topCoastn(mhwnSST, 3)
-mhwSST3 <- mhwSST3[,c(28:29,4,30:32,11,13:14)]
+xtable(mhwSST3)
 write.csv(mhwSST3, "data/mhwSST3.csv")
 mcsSST3 <- topCoastn(mcsnSST, 3)
-mcsSST3 <- mcsSST3[,c(28:29,4,30:32,11,13:14)]
+xtable(mcsSST3)
 write.csv(mcsSST3, "data/mcsSST3.csv")
 
 # Combine into one table for publication
-
+  # Currently keeping them seperate as I think it looks less cluttered
 
 #############################################################################
 ## 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data
@@ -263,20 +281,22 @@ mcsSST1 <- topCoastn(mcsnSST, 1)
 
 #############################################################################
 ## 6. Calculate beginning and end dates for largest events
+  
+## NB: The code from which this is calculated was changed so this no longer runs, but it is unneccessary anyway...
 
-eventDates <- function(dat){
-  dat$start.date <- as.Date(paste(dat$yearStrt, dat$monthStrt, dat$dayStrt, sep = "/"), "%Y/%m/%d")
-  dat$end.date <- as.Date(paste(dat$yearEnd, dat$monthEnd, dat$dayEnd, sep = "/"), "%Y/%m/%d")
-  dat <- dat[,c(28,31:34,11,13:14)]
-  return(dat)
-}
-
-mhw1dates <- eventDates(mhw1)
-write.csv(mhw1dates, "data/mhw1dates.csv")
-mcs1dates <- eventDates(mcs1)
-write.csv(mcs1dates, "data/mcs1dates.csv")
-mhwSST1dates <- eventDates(mhwSST1)
-mcsSST1dates <- eventDates(mcsSST1)
+# eventDates <- function(dat){
+#   dat$start.date <- as.Date(paste(dat$yearStrt, dat$monthStrt, dat$dayStrt, sep = "/"), "%Y/%m/%d")
+#   dat$end.date <- as.Date(paste(dat$yearEnd, dat$monthEnd, dat$dayEnd, sep = "/"), "%Y/%m/%d")
+#   dat <- dat[,c(28,31:34,11,13:14)]
+#   return(dat)
+# }
+# 
+# mhw1dates <- eventDates(mhw1)
+# write.csv(mhw1dates, "data/mhw1dates.csv")
+# mcs1dates <- eventDates(mcs1)
+# write.csv(mcs1dates, "data/mcs1dates.csv")
+# mhwSST1dates <- eventDates(mhwSST1)
+# mcsSST1dates <- eventDates(mcsSST1)
 
 #############################################################################
 ## 7.Calculate co-occurrence between coastal sections
@@ -405,29 +425,51 @@ allEventSST <- rbind(mhwEventSST, mcsEventSST)
 allEventSST$type <- "OISST"
 allAllEvent <- rbind(allEvent, allEventSST)
 
-# ANOVA for everything
-  # TukeyHSD shows which specific pairs are significant
-aovFrequency <- aov(frequency ~ coast * event * type, data = allAllAnnual)
+## ANOVA for in situ
+aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
 #summary(aovFrequency)
-  # Significant difference between the datasets only for frequency
 tukeyFrequency <- TukeyHSD(aovFrequency)
 #tukeyFrequency
-
-aovDuration <- aov(duration ~ coast * event * type, data = allAllAnnual)
+aovDuration <- aov(duration ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
 #summary(aovDuration)
-  # Significant difference between the datasets and coasts for duration
 tukeyDuration <- TukeyHSD(aovDuration)
 #tukeyDuration
-
-aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
+aovIntensity <- aov(intensity ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
 #summary(aovIntensity)
-# Significant difference between most things...
-tukeyIntensity <- TukeyHSD(aovIntensCum)
+tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
 
+## ANOVA for OISST
+aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
+#summary(aovFrequency)
+tukeyFrequency <- TukeyHSD(aovFrequency)
+#tukeyFrequency
+aovDuration <- aov(duration ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
+#summary(aovDuration)
+tukeyDuration <- TukeyHSD(aovDuration)
+#tukeyDuration
+aovIntensity <- aov(intensity ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
+#summary(aovIntensity)
+tukeyIntensity <- TukeyHSD(aovIntensity)
+#tukeyIntensity
+
+## ANOVA for everything
+aovFrequency <- aov(frequency ~ coast * event * type, data = allAllAnnual)
+#summary(aovFrequency)
+tukeyFrequency <- TukeyHSD(aovFrequency)
+#tukeyFrequency
+aovDuration <- aov(duration ~ coast * event * type, data = allAllAnnual)
+#summary(aovDuration)
+tukeyDuration <- TukeyHSD(aovDuration)
+#tukeyDuration
+aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
+#summary(aovIntensity)
+tukeyIntensity <- TukeyHSD(aovIntensity)
+#tukeyIntensity
+
+## ANOVA for cummulative intensity
 aovIntensCum <- aov(intCum ~ coast * event * type, data = allAllEvent)
 #summary(aovIntensCum)
-  # Significant difference between even more things...
 tukeyIntensCum <- TukeyHSD(aovIntensCum)
 #tukeyIntensCum
 
