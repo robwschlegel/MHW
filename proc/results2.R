@@ -11,7 +11,7 @@
 # 9. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
 # 10. Rate of increase in MHWs/ MCSs;
 # 11. R2 between in situ and OISST;
-# 12. Additional analyses
+# 12. Co-occurrence within datasets and coastal sections
 
 #############################################################################
 ## DEPENDS ON:
@@ -63,6 +63,9 @@ dir8 <- paste(getwd(), "/data/MCS/SST events/", sep = "")
 
 # Load metadata
 load("data/metaData2.Rdata")
+
+# Clean Metadata for inclusion as a table in the paper
+
 
 # Load annual event stats
 annualLoad <- function(dir) {
@@ -761,6 +764,5 @@ sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
 
 
 #############################################################################
-## 12. Additional analyses
-
+## 12. Co-occurrence within datasets and coastal sections
 
