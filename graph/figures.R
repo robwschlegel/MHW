@@ -9,7 +9,7 @@
 
 #############################################################################
 ## DEPENDS ON:
-require(ggplot2); require(lubridate); require(plyr); require(ggrepel)
+require(ggplot2); require(lubridate); require(plyr); require(ggrepel); require(RColorBrewer)
 source("setupParams/theme.R"); source("proc/results2.R")
 # "data/metaData2.Rdata"
 # "graph/sa_shore.Rdata"
@@ -97,7 +97,7 @@ stat_contour(data = bathy[bathy$depth < -250,], aes(x = lon, y = lat, z = depth,
     legend.justification = c(1,0), legend.position = c(0.65, 0.65)) +
   coord_cartesian(xlim = sa_lons, ylim = sa_lats)
 f1
-ggsave("graph/figures/figure1.pdf", width = 8, height = 4)
+ggsave("LaTeX/figure1.pdf", width = 8, height = 4)
 
 #############################################################################
 ## 2. Figure 2
@@ -207,7 +207,7 @@ f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
   facet_grid(site ~ .)
 f2
-ggsave("graph/figures/figure2.pdf", height = 28, width = 12)
+ggsave("LaTeX/figure2.pdf", height = 28, width = 12)
 
 #############################################################################
 ## 3. Figure 3
@@ -217,37 +217,69 @@ ggsave("graph/figures/figure2.pdf", height = 28, width = 12)
 
 #############################################################################
 ## 4. Figure 4
-# OISST coastal images
+# Co-occurrence MHW figure
+# Run "proc/results2.R" first to populate the environment with the necessary data...
 
-## Still need OISST data from AJ
+# Add index for plotting
+mhwCoastCO$index <- paste(mhwCoastCO$lag, mhwCoastCO$direction, sep = "_")
+
+# Correct order of windows
+mhwCoastCO$direction <- factor(mhwCoastCO$direction, levels = c("b", "x", "a"))
+levels(mhwCoastCO$direction) <- c("before", "combined", "after")
+
+# Correct site order
+mhwCoastCO$site <- factor(mhwCoastCO$site, levels = siteOrder)
+
+# Rename sites
+levels(mhwCoastCO$site) <- newNames
+
+figure4 <-  ggplot(data = mhwCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
+  geom_line(aes(colour = as.factor(lag))) +
+  # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
+  facet_grid(site ~ direction) +
+  #scale_color_grey() +
+  ylab("proportion") + xlab("percentile (%)") +
+  scale_colour_brewer(palette = "YlOrRd", direction = -1) +
+  scale_x_continuous(breaks = seq(0.0, 1.0, 0.2)) +
+  scale_y_continuous(breaks = seq(0.0, 1.0, 0.25), limits = c(0,1)) +
+  guides(colour = guide_legend("lag [days]", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
+  theme(axis.text = element_text(size = 7),
+        legend.position = "bottom")
+figure4
+ggsave("LaTeX/figure4.pdf", width = 12, height = 28)
 
 #############################################################################
 ## 5. Figure 5
-# Co-occurrence figure
-mhwCoastCO <- read.csv("data/mhwCoastCO.csv")
-mhwCoastCO$event <- "MHW"
-mcsCoastCO <- read.csv("data/mcsCoastCO.csv")
-mcsCoastCO$event <- "MCS"
-allCoastCO <- rbind(mhwCoastCO, mcsCoastCO)
-allCoastCO$index <- paste(allCoastCO$lag, allCoastCO$direction, sep = "_")
-allCoastCO$coast <- factor(allCoastCO$coast, levels = c("west", "south", "east"))
-allCoastCO$index2 <- paste(allCoastCO$event, allCoastCO$coast, sep = ": ")
-allCoastCO$index2 <- factor(allCoastCO$index2, levels = levels(as.factor(allCoastCO$index2))[c(3,2,1,6,5,4)])
-allCoastCO$direction <- factor(allCoastCO$direction, levels = c("b", "x", "a"))
-levels(allCoastCO$direction) <- c("before", "combined", "after")
+# Co-occurrence MCS figure
+# Run "proc/results2.R" first to populate the environment with the necessary data...
 
+# The blue colours to use
 cols <- c("#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494", "#081d58")
 
-figure5 <-  ggplot(data = allCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
+# Add index for plotting
+mcsCoastCO$index <- paste(mcsCoastCO$lag, mcsCoastCO$direction, sep = "_")
+
+# Correct order of windows
+mcsCoastCO$direction <- factor(mcsCoastCO$direction, levels = c("b", "x", "a"))
+levels(mcsCoastCO$direction) <- c("before", "combined", "after")
+
+# Correct site order
+mcsCoastCO$site <- factor(mcsCoastCO$site, levels = siteOrder)
+
+# Rename sites
+levels(mcsCoastCO$site) <- newNames
+
+figure5 <-  ggplot(data = mcsCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
   geom_line(aes(colour = as.factor(lag))) +
   # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
-  facet_grid(index2 ~ direction, space = "free_y", shrink = T) +
-  scale_color_grey() +
+  facet_grid(site ~ direction) +
+  #scale_color_grey() +
   ylab("proportion") + xlab("percentile (%)") +
   scale_colour_manual(values = rev(cols)) +
   scale_x_continuous(breaks = seq(0.0, 1.0, 0.2)) +
+  scale_y_continuous(breaks = seq(0.0, 1.0, 0.25), limits = c(0,1)) +
   guides(colour = guide_legend("lag [days]", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
   theme(axis.text = element_text(size = 7),
         legend.position = "bottom")
 figure5
-ggsave("graph/figures/figure5.pdf", width = 6, height = 7)
+ggsave("LaTeX/figure5.pdf", width = 12, height = 28)
