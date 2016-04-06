@@ -74,13 +74,11 @@
 % \bibliographystyle{elsarticle-num-names}
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\bibpunct{(}{)}{;}{a}{}{,} % Disable this line when wanting to repopulate the .bbl file
-
 \begin{document}
 
 \begin{frontmatter}
 
-\title{Co-occurrence of marine heat waves and cold spells in nearshore and offshore regions along South Africa}
+\title{Co-occurrence of marine heatwaves and cold-spells between nearshore and offshore regions of South Africa}
 
 %% or include affiliations in footnotes:
 \author[firstaddress]{Robert W. Schlegel\corref{mycorrespondingauthor}}
@@ -95,18 +93,18 @@
 
 \address[firstaddress]{Department of Biodiversity and Conservation Biology, University of the Western Cape, Private Bag X17, Bellville 7535, South Africa}
 
-\address[secondaddress]{ARC Centre of Excellence for Climate System Science, The University of New South Wales, Sydney, Australia}
+\address[secondaddress]{ARC Centre of Excellence for Climate System Science, Australia}
 
 \address[thirdaddress]{Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Australia}
 
 \address[fourthaddress]{UWA Oceans Institute and School of Plant Biology, The University of Western Australia, Crawley, 6009 Western Australia, Australia}
 
 \begin{abstract}
-The term marine heat wave (MHW) was first coined in 2013 with no central definition having been agreed upon before. This lack of a definition had led to an inability of different research groups to compare their findings on this phenomenon before 2013. In order to assuage this issue, a research team has recently created a definition for MHWs that will be valid anywhere in the world. We have taken this algorithm and applied it to the \emph{in situ} time series available for the coast of South Africa that are longer than 10 years and with at least 90\% complete daily records. It was also decided to apply the algorithm to cool temperatures and investigate the presence of marine cold spells (MCSs). We found that MHWs and MCSs can be found along the entire stretch of South Africa's coastline and with some temporal and spatial agreement between the largest events detected. MHWs occur more often, last longer than MCSs and have greater cumulative intensities. There was little variance in the cumulative intensity [\degree C \texttimes~days] around the mean for MHWs and MCSs however, several were much larger and there tended to be specific time series that displayed more dramatic results than others. The coastline was further divided into three sections (west, south, and east) to investigate the effect of geography on MHWs and MCSs and it was found that the south coast experiences more, longer and more intense MHWs and MCSs than the other two coastlines. The mechanism driving the higher intensity of events on the south coast, which is much greater than the other coasts, requires further study. The largest three MHWs of most time series along the coast of South Africa have occurred in the second half of the time series whereas the largest three MCSs have occurred in the first half. These same calculations were conducted for offshore temperatures from NOAA optimally interpolated sea surface temperature (OISST) data, too. It was found that the proportion of co-occurrence between \emph{in situ} and OISST data ranged from 0.5--0.0 for each coastline with co-occurrence rates being the largest on the south coast. Few time series showed co-occurrence amongst the 50\% largest events.
+The term marine heatwave (MHW) was first coined in 2013 with no central definition having been agreed upon before. This lack of a definition had led to an inability of different research groups to compare their findings on this phenomenon before 2013. In order to assuage this issue, a research team has recently created a definition for MHWs that will be valid anywhere in the world. We have taken this algorithm and applied it to the \emph{in situ} time series available for the coast of South Africa that are longer than 10 years and with at least 90\% complete daily records. It was also decided to apply the algorithm to cool temperatures and investigate the presence of marine cold-spells (MCSs). We found that MHWs and MCSs can be found along the entire stretch of South Africa's coastline and with some temporal and spatial agreement between the largest events detected. MHWs occur more often, last longer and have greater cumulative intensities than MCSs. There was little variance in the cumulative intensity [\degree C \texttimes~days] for MHWs and MCSs however, several were much larger and there tended to be specific time series that displayed more dramatic results than others. The coastline was further divided into three sections (west, south, and east) to investigate the effect of geography and differing oceanographic conditions on MHWs and MCSs and it was found that the south coast experiences more, longer and more intense MHWs and MCSs than the other two coastlines. The mechanism driving the higher intensity of events on the south coast, which is much greater than the other coasts, requires further study. The largest three MHWs of most time series along the coast of South Africa have occurred in the second half of the time series whereas the largest three MCSs have occurred in the first half. These same calculations were conducted for offshore temperatures from NOAA Optimally Interpolated sea surface temperature (OISST) data at the nearest locations to the \emph{in situ} stations. It was found that the proportion of co-occurrence between \emph{in situ} and OISST data ranged from 0.5--0.0 for each coastline with co-occurrence rates being the largest on the south coast. Few time series showed co-occurrence amongst the 50\% largest events.
 \end{abstract}
 
 \begin{keyword}
-marine heat waves \sep marine cold spells \sep OISST \sep \emph{in situ} data \sep co-occurrence \sep climate change \sep extreme events \sep South Africa \sep coastal
+marine heatwaves \sep marine cold-spells \sep remotely-sensed SST \sep \emph{in situ} data \sep co-occurrence \sep climate change \sep extreme events \sep South Africa \sep coastal
 \end{keyword}
 
 \end{frontmatter}
@@ -115,39 +113,41 @@ marine heat waves \sep marine cold spells \sep OISST \sep \emph{in situ} data \s
 
 \section{Introduction}
 
-Over the past three decades, global-scale anthropogenically mediated warming has negatively affected marine and terrestrial realms with far reaching consequences for humanity and natural ecological functioning. Although climate change is generally understood as a gradual long-term rise in global mean surface temperature \citep{IPCC2014}, which will continue for decades or centuries, it is generally the associated increase in frequency and severity of extreme events that affects humans and ecosystems alike in the short-term \citep{Easterling2000}. Impacts are often sudden with catastrophic consequences. Such extreme events include droughts, floods, wind storms, tropical cyclones, heat waves and cold spells. `Pulse' events exceeding certain thresholds of frequency, intensity (extremeness), duration, timing and rate of onset (abruptness) can drive punctuated perturbations to species distributions, which eventually modify the structure and function of ecosystems \citep{Wernberg2013, Rehage2016}, and the recognition to focus more on events and less on trends has emerged as a recent direction of climate change research \citep{Jentsch2007}. The focus of this paper is on marine thermal events that are extreme with respect to the seasonal climatology. They may be anomalously warm (marine heat waves, MHW; \emph{sensu} Hobday et al. 2016), or anomalously cold (marine cold spells, MCS; introduced here). While MHWs are becoming reasonably well known by virtue of their increasing frequency and intensity, there is less information about the ecological effects of extreme cold events. There is also a paucity of information about their drivers.
+Over the past three decades, global-scale anthropogenically mediated warming has negatively affected marine and terrestrial realms with far reaching consequences for humanity and natural ecological functioning. Although climate change is generally understood as a gradual long-term rise in global mean surface temperature \citep{IPCC2014}, which will continue for decades or centuries, it is generally the associated increase in frequency and severity of extreme events that affects humans and ecosystems alike in the short-term \citep{Easterling2000}. Impacts of extreme events are often sudden with catastrophic consequences. Such extreme events include droughts, floods, wind storms, tropical cyclones, heatwaves and cold-spells. `Pulse' events exceeding certain thresholds of frequency, intensity, duration, timing and rate of onset (abruptness) can drive punctuated perturbations to species distributions, which eventually modify the structure and function of ecosystems \citep{Wernberg2013, Rehage2016}, and the recognition to focus more on extreme events and less on the background mean state has emerged as a recent direction of climate change research \citep{Jentsch2007}. The focus of this paper is on marine temperature events that are extreme with respect to the seasonal climatology. They may be anomalously warm (marine heatwaves, MHWs; \emph{sensu} \citet{Hobday2016}), or anomalously cold (marine cold-spells, MCSs; introduced here). While MHWs are becoming reasonably well known by virtue of their increasing frequency and intensity, there is less information about the ecological effects of extreme cold events. There is also a paucity of information about their drivers.
 
-The concept of heat waves is usually applied to atmospheric phenomena where vague definitions such as ``a period of abnormally and uncomfortably hot and usually humid weather'' are invoked \cite{Glickman2000}, but there are also precise definitions based on statistical properties and other metrics of the temperature record that are relative to location and time of year (e.g. \cite{Meehl2004, Alexander2006, Fischer2010, Fischer2011}). Recent years have seen investigations of heat waves in the ocean due to them becoming more frequent over time (e.g. \cite{Mackenzie2007, Selig2010, Sura2011, Lima2012, DeCastro2014}). Well documented marine heat waves (MHW) have occurred in the Mediterranean in 2003 (e.g. \cite{Black2004, Olita2007, Garrabou2009}), off the coast of Western Australia in 2011 (e.g. \cite{Feng2013, Pearce2013, Wernberg2013}), in the north west Atlantic Ocean in 2012 (e.g. \cite{Mills2012, Chen2014, Chen2015} and now the ``Blob'' from 2014 to 2016 in the north east Pacific Ocean \cite{Bond2015}. The extreme temperatures from these events, and others like them, may have wide ranging negative impacts upon the local ecology for the regions in which they occur. For example, the 2003 Mediterranean heat wave may have affected up to 80\% of the gorgonian fan colonies in certain areas of this sea \cite{Garrabou2009}, whereas the 2011 event off the west coast of Australia has been recognized as being a driving factor in the regime shift there from temperate kelp forests to the beginnings of a coral reef system \cite{Wernberg2013}. Because the inquiry into MHWs is a relatively new endeavour none of these studies provided adequate definitions for what constitutes a MHW, and to that end Hobday et al. (2016) \cite{Hobday2016} have defined it as ``a prolonged discrete anomalously warm water event that can be described by its duration, intensity, rate of evolution, and spatial extent''. By applying the MHW definition to the aforementioned events, Hobday et al. (2016) \cite{Hobday2016} were able to derive statistical features of the MHWs, such as their frequency along a time series and maximum and cumulative intensity. Whereas extreme hot events may be demonstrably damaging to organisms and ecosystems, extreme cold events also have the potential to negatively impact organisms and ecosystems.
+The concept of heatwaves is usually applied to atmospheric phenomena where vague definitions such as ``a period of abnormally and uncomfortably hot weather'' are invoked \cite{Glickman2000}, but there are also precise definitions based on statistical properties and other metrics of the temperature record that are relative to location and time of year (e.g. \cite{Meehl2004, Alexander2006, Fischer2010, Fischer2011, Perkins2013}). Recent years have seen investigations of heatwaves in the ocean due to them becoming more frequent over time (e.g. \cite{Mackenzie2007, Selig2010, Sura2011, Lima2012, DeCastro2014}). Well documented marine heatwaves (MHW) have occurred in the Mediterranean in 2003 (e.g. \cite{Black2004, Olita2007, Garrabou2009}), off the coast of Western Australia in 2011 (e.g. \cite{Feng2013, Pearce2013, Wernberg2013}), in the north west Atlantic Ocean in 2012 (e.g. \cite{Mills2012, Chen2014, Chen2015}) and now the ``Blob'' from 2014 to 2016 in the north east Pacific Ocean \cite{Bond2015}. The extreme temperatures from these events, and others like them, may have wide ranging negative impacts upon the local ecology for the regions in which they occur. For example, the 2003 Mediterranean heatwave may have affected up to 80\% of the gorgonian fan colonies in certain areas of this sea \cite{Garrabou2009}, whereas the 2011 event off the west coast of Australia has been recognized as being a driving factor in the regime shift there from temperate kelp forests to the beginnings of a coral reef system \cite{Wernberg2013}. Because the inquiry into MHWs is a relatively new endeavour none of these studies provided adequate definitions for what constitutes a MHW, and to that end \citet{Hobday2016} have defined it as ``a prolonged discrete anomalously warm water event that can be described by its duration, intensity, rate of evolution, and spatial extent''. By applying the MHW definition to the aforementioned events, \citet{Hobday2016} were able to derive statistical features of the MHWs, such as their frequency along a time series and maximum and cumulative intensity. Whereas extreme hot events may be demonstrably damaging to organisms and ecosystems, extreme cold events also have the potential to negatively impact organisms and ecosystems.
 
-MCSs are analogous to MHWs, but they are of opposite sign. MCSs are projected to become less frequent under future climatic scenarios, but there are also examples of them becoming more frequent in some localities \cite{Gershunov2008, Matthes2015}. They are frequently lethal \cite{Woodward1987} and are known to have caused mass fish \cite{Gunter1941, Gunter1951, Holt1983} and invertebrate \cite{Gunter1951, Crisp1964} kills, the death of juvenile and sub-adult manatees \cite{OShea1985, Marsh1986} as well as affecting organismal physiological tolerances, life history strategies, and habitat requirements \cite{Ellis2015}. Cold temperatures are therefore very important in setting species distribution limits, particularly limiting their range north- or southwards towards high latitudes \cite{Firth2011}, and the timing of the onset of the growing season \cite{Jentsch2007}. At an ecosystem level there is still a paucity of information on effects of MCSs, but it is easy to postulate how population-level consequences might aggregate to drive whole ecosystem responses (e.g. \cite{Kreyling2008, Rehage2016}). Indeed, the range contractions of ecosystem engineer species such as mussels have been shown to relate to MCSs (e.g. \cite{Firth2011, Firth2015}).
+Marine cold-spells (MCSs) are analogous to MHWs, but describe anomalously cold events rather than warm events. MCSs are projected to become less frequent under future climatic scenarios, but there are also examples of them becoming more frequent in some localities \cite{Gershunov2008, Matthes2015}. They are frequently lethal \cite{Woodward1987} and are known to have caused mass fish \cite{Gunter1941, Gunter1951, Holt1983} and invertebrate \cite{Gunter1951, Crisp1964} kills, the death of juvenile and sub-adult manatees \cite{OShea1985, Marsh1986} as well as affecting organismal physiological tolerances, life history strategies, and habitat requirements \cite{Ellis2015}. Cold temperatures are therefore very important in setting species distribution limits, particularly limiting their range north- or southwards towards high latitudes \cite{Firth2011}, and the timing of the onset of the growing season \cite{Jentsch2007}. At an ecosystem level there is still a paucity of information on effects of MCSs, but it is easy to postulate how population-level consequences might aggregate to drive whole ecosystem responses (e.g. \cite{Kreyling2008, Rehage2016}). Indeed, the range contractions of ecosystem engineer species such as mussels have been shown to relate to MCSs (e.g. \cite{Firth2011, Firth2015}).
 
-Some of the MCSs known to have had impacts on populations and ecosystems were caused by atmospheric cold spells that affect the intertidal biota (e.g. \cite{Gunter1941, Firth2011}) and not by seawater. Here we focus on MCSs measured in seawater. This may imply local events (i.e. extreme atmospheric cold spells that perturb the seawater locally) or broad-scale drivers. The driver of the MCSs localised to the coast, as we have already suggested, is hypothesised to be coastal weather phenomena. But what mechanism might explain coastal MCSs originating from offshore or by oceanic processes? Large-scale atmospheric-oceanographic coupling is very likely being affected by global warming, which is projected to cause the intensification of upwelling favourable winds and consequently the intensification and increasing frequency of upwelling (see Garciá-Reyes et al. 2015 for a review of this and alternative hypotheses). The question then is, could an intensification of upwelling be attributed to coastal MCSs, or are they linked to local coastal atmospheric forcing? Little research yet exists that investigates this question other than to link anoxia and other negative factors from problematic phytoplankton blooms caused by extreme upwelling events to create lethal conditions for species living within upwelling regions (e.g. \cite{Laboy-nieves2001}). Whereas anoxia is a problem attributable to phytoplankton blooms themselves \cite{Diaz2008} and not the extreme cold temperatures \textit{per se}, if a relationship can be shown between MCSs and anoxia resulting from algal blooms it would provide extremely valuable insight into how coastal ecosystems respond to climatic change. Furthermore, since mass mortalities and ecosystem change may result directly from MCSs, a mechanistic understanding of their drivers will be invaluable. To this end it serves as a constructive first step to study the prevalence of MCSs with respect to different kinds of oceanic forcing mechanisms.
+Some of the MCSs known to have had impacts on populations and ecosystems were caused by atmospheric cold-spells that affect the intertidal biota (e.g. \cite{Gunter1941, Firth2011}) and not by seawater. Here we focus on MCSs measured in seawater. This may imply local events (i.e. extreme atmospheric cold-spells that perturb the seawater locally) or broad-scale drivers. The driver of the MCSs localised to the coast, as we have already suggested, is hypothesised to be coastal weather phenomena. But what mechanism might explain coastal MCSs originating from offshore or by oceanic processes? Large-scale atmospheric-oceanographic coupling is very likely being affected by global warming, which is projected to cause the intensification of upwelling favourable winds and consequently the intensification and increasing frequency of upwelling (see Garciá-Reyes et al. 2015 for a review of this and alternative hypotheses). The question then is, could an intensification of upwelling be attributed to coastal MCSs, or are they linked to local coastal atmospheric forcing? Little research yet exists that investigates this question other than to link anoxia and other negative factors from problematic phytoplankton blooms caused by extreme upwelling events to create lethal conditions for species living within upwelling regions (e.g. \cite{Laboy-nieves2001}). Whereas anoxia is a problem attributable to phytoplankton blooms themselves \cite{Diaz2008} and not the extreme cold temperatures \textit{per se}, if a relationship can be shown between MCSs and anoxia resulting from algal blooms it would provide extremely valuable insight into how coastal ecosystems respond to climatic change. Furthermore, since mass mortalities and ecosystem change may result directly from MCSs, a mechanistic understanding of their drivers will be invaluable. To this end it serves as a constructive first step to study the prevalence of MCSs with respect to different kinds of oceanic forcing mechanisms.
 
-Hobday et al. (2016) \cite{Hobday2016} applied their MHW framework to \sfrac{1}{4}\degree~NOAA optimally interpolated sea surface temperature (hereafter referred to as OISST; \cite{Reynolds2007}) data, but warned users to be cognisant that different data sets would provide different kinds of information pertaining to the heat waves. Our aims here are two-fold. Firstly, we apply the MHW (MCS) definition to datasets of \emph{in situ} and gridded SST temperature time series collected at different scales along the South African coast for three different coastal sections, each variously forced by the Agulhas and Benguela Currents and regional aspects of the coastal bathymetry and geomorphology. These regional drivers of the thermal regime (east, south and west coast) coupled with local modifications (coastal vs. offshore) can be expected to impart different thermal signatures on the temperature data sets and manifest in differences in the metrics of MHWs (MCSs). Secondly, we aim to discuss the significance of MHWs (MCSs) within the context of the data sets’ inherent differences and the various dynamical properties that then emerge because of the regional oceanographic context, so as to provide a mechanistic understanding of the nature and origin of MHWs (MCSs) in three oceanographically distinct ocean/coastal regions.
+\citet{Hobday2016} applied their MHW framework to \sfrac{1}{4}\degree~NOAA optimally interpolated sea surface temperature (hereafter referred to as OISST; \cite{Reynolds2007}) data, but warned users to be cognisant that different data sets would provide different kinds of information pertaining to the heatwaves. Our aims here are two-fold. Firstly, we apply the MHW (MCS) definition to datasets of \emph{in situ} and gridded SST temperature time series collected at different sites along the South African coast for three different coastal sections, each variously forced by the Agulhas and Benguela Currents and exhibiting regional aspects of the coastal bathymetry and geomorphology. These regional drivers of the thermal regime (east, south and west coast) coupled with local modifications (coastal vs. offshore) can be expected to impart different thermal signatures on the temperature data sets and manifest in differences in the metrics of MHWs (MCSs). Secondly, we aim to discuss the significance of MHWs (MCSs) within the context of the data sets’ inherent differences and the various dynamical properties that then emerge because of the regional oceanographic context, so as to provide a mechanistic understanding of the nature and origin of MHWs (MCSs) in three oceanographically distinct ocean/coastal regions.
 
 To add a mechanistic understanding of the drivers of MHWs (MCSs) manifesting in the coastal environment, we hypothesised that coastal MHW (MCS) events could either be coupled with synoptic scale processes perturbing the offshore region at scales of 100s of kms, or originate solely at a local scale as isolated incidents. Investigating the former possibility required the assessment of concurrent gridded SSTs derived from daily OISST data product, extracted for the bounding boxes in \Cref{fig:Figure1}, averaged spatially, and lagged or led by a number of days relative to the onset of the events at the coast. This analysis centres around the top three MHWs (MCSs) ranked with respect to cumulative intensity for each of 21 coastal sites. The rates of co-occurrence of coastal with mesoscale MHWs (MCSs) are used in part to understand how many of the extreme events detected in all three coastal sections originate at the coast or are artefacts of warming (cooling) in the respective currents. We think that this approach will yield considerable insight into the nature and variability of the thermal regime of nearshore seawater.
 
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{figure1_1km_labeled.pdf}
-\caption{Map of South Africa showing the bathymetry (only the 250m isobath is indicated), the location of the \emph{in situ} thermal time series shown with circles and approximations of the pixels used along the shore-normal transects from the daily \sfrac{1}{4}\degree~NOAA OISST \cite{Reynolds2007} shown with black boxes. The SST field was derived from the JPL G1SST 1 km blended SST product and shows the state of the ocean on 2016-02-14. Sites 5, 6 and 7 are to the east of the Cape Peninsula and are situated along the shores of False Bay. The Agulhas Current along the east coast of the country is visualized here in a yellowish colour as a jet of relatively warmer water projecting in a south-westerly direction, and hugging the continental shelf. The blueish patches north of the Cape Peninsula represent upwelled water. Some upwelled water may also be present around Sites 14 (Tsitsikamma) and 15--16 (Port Elizabeth).} \label{fig:Figure1}
+\caption{Map of southern Africa showing the bathymetry (only the 250m isobath is indicated), the location of the \emph{in situ} thermal time series shown with circles and approximations of the pixels used along the shore-normal transects from the daily \sfrac{1}{4}\degree~NOAA OISST \cite{Reynolds2007} shown with black boxes. The SST field was derived from the JPL G1SST 1 km blended SST product and shows the state of the ocean on 2016-02-14. Sites 5, 6 and 7 are to the east of the Cape Peninsula and are situated along the shores of False Bay. The Agulhas Current along the east coast of the country is visualized here in a yellowish colour as a jet of relatively warmer water projecting in a south-westerly direction, and hugging the continental shelf. The blueish patches north of the Cape Peninsula represent upwelled water. Some upwelled water may also be present around Sites 14 (Tsitsikamma) and 15--16 (Port Elizabeth).} \label{fig:Figure1}
 \end{figure}
 
 \section{Methods}
 \subsection{Study region}
-The variety of oceanographic features around the \emph{ca}. 2,700 km long South African coastline provides a natural testing bed for the potential effects of different forcing mechanisms on the occurrence of MHWs and MCSs. Annual mean (SD) coastal seawater temperatures range from 12.3 (1.2)\degree C at the western limit near the Namibian border (Site 1) to 24.4 (2.0)\degree C in the east near the Mozambican border (Site 21), and our study sites were selected to cover this full range (\Cref{fig:Figure1}). We classify the coastline into three regions based on their major oceanographic features, their temperature characteristics, and aspects of the underlying continental shelf. The first is the west coast region dominated by the Benguela Current, which forms an Eastern Boundary Upwelling System (EBUS) \cite{Hutchings2009}. Seasonal upwelling is maintained by prevailing south-easterly trade winds. Evenly low temperatures are especially noticeable at upwelling cells over a relatively narrow continental shelf in the region northwards of the Cape Peninsula to Cape Columbine. The west coast defines a cool temperate regime, with the range of monthly mean temperatures at most sections intermediate between cold temperate and warm temperate \cite{Luning1990}. The second region is the warm temperate (\emph{sensu}  \cite{Luning1990}) east coast where the influence of the south-westerly flowing warm Agulhas Current flowing tightly along the narrow continental shelf (except for the Natal Bight) is strongly felt. This stretch of coastline is spatially homogeneous with respect to temperature and characterised by a moderate amount of seasonal variation. Although the Agulhas Current retroflects back into the southern Indian Ocean \cite{Hutchings2009} just south of the much wider and cooler Agulhas Bank \cite{Roberts2005}, its influence extends as far west as False Bay (Sites 5--21; \Cref{fig:Figure1}). The third coastal region is that overlying the Agulhas Bank. Although also warm temperate, it experiences a much larger range in annual temperature and variability compared the west and east coast regions, which is in part influenced by the retention and cooling of Agulhas Current water on the bank, the presence of some current-driven upwelling cells along this coastline (Sites 15--17) \cite{Roberts2005}, and because of the effects of embayments and capes throughout the region.
+The variety of oceanographic features around the \emph{ca}. 2,700 km long South African coastline provides a natural testing bed for the potential effects of different ocean forcing mechanisms on the occurrence of MHWs and MCSs. Annual mean (standard deviation; hereafter referred to as "sd") coastal seawater temperatures range from 12.3 (1.2)\degree C at the western limit near the Namibian border (Site 1) to 24.4 (2.0)\degree C in the east near the Mozambican border (Site 21), and our study sites were selected to cover this full range (\Cref{fig:Figure1}). We classify the coastline into three regions based on their major oceanographic features, their temperature characteristics, and aspects of the underlying continental shelf. The first is the west coast region dominated by the Benguela Current, which forms an Eastern Boundary Upwelling System (EBUS) \cite{Hutchings2009}. Seasonal upwelling is maintained by prevailing south-easterly trade winds. Evenly low temperatures are especially noticeable at upwelling cells over a relatively narrow continental shelf in the region northwards of the Cape Peninsula to Cape Columbine. The west coast defines a cool temperate regime, with the range of monthly mean temperatures at most sections intermediate between cold temperate and warm temperate \cite{Luning1990}. The second region is the warm temperate (\emph{sensu}  \cite{Luning1990}) east coast where the influence of the south-westerly flowing warm Agulhas Current flowing tightly along the narrow continental shelf (except for the Natal Bight) is strongly felt. This stretch of coastline is spatially homogeneous with respect to temperature and characterised by a moderate amount of seasonal variation. Although the Agulhas Current retroflects back into the southern Indian Ocean \cite{Hutchings2009} just south of the much wider and cooler Agulhas Bank \cite{Roberts2005}, its influence regularly extends as far west as False Bay (Sites 5--21; \Cref{fig:Figure1}). The third coastal region is that overlying the Agulhas Bank. Although also warm temperate, it experiences a much larger range in annual temperature and variability compared the west and east coast regions, which is in part influenced by the retention and cooling of Agulhas Current water on the bank, the presence of some current-driven upwelling cells along this coastline (Sites 15--17) \cite{Roberts2005}, and because of the effects of embayments and capes throughout the region.
 
 \subsection{Temperature data}
-We use two sources of seawater temperature data. The first dataset is comprised of 127 records of \emph{in situ} temperature records of daily measurements for up to 40 years in duration with a mean duration of \emph{ca}. 19 years. Whereas these \emph{in situ} time series are generally shorter than the recommended 30 year minimum \cite{Hobday2016} and have some small amounts of missing data, it is our opinion that the benefit of using \emph{in situ} data over satellite data is that they give a better representation of the thermal characteristics near the coastline, a region where satellite SST measurements have been shown to perform poorly (e.g. \cite{Smale2009, Castillo2010}). In a South African context, Smit et al. (2013) \cite{Smit2013} have shown that satellite SST data display a warm bias as large as 6\degree C over \emph{in situ} temperatures in the nearshore environment. In an attempt to compromise between the proscribed requirements in Hobday et al. (2016) \cite{Hobday2016} of a 30 year minimum and no missing data, all time series under 10 years in length were eliminated. Next, our 127 time series were screened and those missing more than 10\% of their daily values were removed, leaving a total of 21 time series. Care was taken to select continuous series with as few as possible consecutive missing values, since having regions in the data with more than two consecutive missing data points interferes with the identification of the anomalous events (see below). These stations were classified into three coastal sections defined by properties of their oceanography and biogeography \cite{Smit2013}. The meta data for these time series and the coastal sections they were aggregated into may be found in \Cref{tableS1} and the site localities are displayed spatially in \Cref{fig:Figure1}.
+We use two sources of seawater temperature data. The first dataset is comprised of 127 records of \emph{in situ} temperature records of daily measurements for up to 40 years in duration with a mean duration of \emph{ca}. 19 years. Whereas these \emph{in situ} time series are generally shorter than the recommended 30 year minimum \cite{Hobday2016} and have some small amounts of missing data, it is our opinion that the benefit of using \emph{in situ} data over satellite data is that they give a better representation of the temperatures felt by coastal ecosystems as well as the thermal characteristics near the coastline, a region where satellite SST measurements have been shown to perform poorly (e.g. \cite{Smale2009, Castillo2010}). In a South African context, \citet{Smit2013} have shown that satellite SST data display a warm bias as large as 6\degree C over \emph{in situ} temperatures in the nearshore environment. In an attempt to compromise between the proscribed requirements in \citet{Hobday2016} of a 30 year minimum and making use of this valuable dataset, all time series under 10 years in length were eliminated. We found 10 years to be the minimum length required in order to generate a robust estimate of the climatology required for the identification of MHWs and MCSs. Next, the remaining time series were further screened and those missing more than 10\% of their daily values were removed, leaving a total of 21 time series. Care was taken to select continuous series with as few as possible consecutive missing values, since having regions in the data with more than two consecutive missing data points interferes with the identification of the anomalous events (see below). These stations were classified into three coastal sections defined by properties of their oceanography and biogeography \cite{Smit2013}. Details on the selected time series, including location, duration, and the coastal sections they were aggregated into may be found in \Cref{tableS1} and the site localities are displayed spatially in \Cref{fig:Figure1}.
 
-The second set of temperature data used in this study are the daily \sfrac{1}{4}\degree~NOAA optimally interpolated sea surface temperature (OISST; \cite{Reynolds2007}) derived from the Advanced Very High Resolution Radiometer (AVHRR). To compare the OISST and \emph{in situ} time series, shore-normal transects were drawn from each of the 21 sites extending to the 200m isobath. The OISST data were then extracted at each of the roughly 25~\texttimes~25 km pixels along these transects, shown as black boxes in \Cref{fig:Figure1}. Where the shelf was less than 25 km wide (Sites 17--21) the nearest `ocean pixel' to the \emph{in situ} time series coordinate was used. The individual time series within each pixel were then averaged along each transect corresponding to the 21 \emph{in situ} sites. This produced 21 OISST time series that could then be analysed for MHWs (MCSs) in the same way as the \emph{in situ} data. Note that the OISST time series had valid data covering 1982--2014 which did not match exactly the coverage by individual \emph{in situ} sites.
+The second set of temperature data used in this study are the daily \sfrac{1}{4}\degree~NOAA optimally interpolated sea surface temperature (OISST; \cite{Reynolds2007}) derived from the Advanced Very High Resolution Radiometer (AVHRR). To compare the OISST and \emph{in situ} time series, shore-normal transects were drawn from each of the 21 sites extending to the 200m isobath. The OISST data were then extracted at each of the roughly 25~\texttimes~25 km pixels along these transects, shown as black boxes in \Cref{fig:Figure1}. Where the shelf was less than 25 km wide (Sites 17--21) the nearest `ocean pixel' to the \emph{in situ} time series coordinate was used. The individual time series within each pixel were then averaged along each transect corresponding to the 21 \emph{in situ} sites. This produced 21 OISST time series that could then be analysed for MHWs (MCSs) in the same way as the \emph{in situ} data. Note that the OISST time series had valid data covering 1982--2014 which did not match exactly the coverage by individual \emph{in situ} sites.\todo{A reviewer may question why we did this shore-normal average across the shelf, instead of simply using the nearest OISST pixel to the in-situ site location. I don't think we have an answer do we? We perhaps should also run the MHW analysis with the nearest pixel as a "sensitivity test" to show (hopefully) that the detected MHWs are not sensitive to this definition of "offshore SST" from the OISST dataset.-Eric}
 
 \subsection{Defining and calculating MHWs and MCSs}
-MHWs are ``discrete prolonged anomalously warm water events in a particular location.'' Here we introduce the opposite but analogous concept of a Marine Cold Spell (MCS), which is calculated in the same manner as a MHW, except that events are detected as deviations below a seasonally varying anomalously low threshold relative to the site’s climatology. Although MCS intensities are calculated as negative values (i.e. anomalies) they are reported here as absolute values.
+MHWs are defined here following \citet{Hobday2016} as ``discrete prolonged anomalously warm water events in a particular location.'' Here we introduce the analogous concept of a Marine Cold-Spell (MCS), which are defined in the same manner as MHWs with the exception of being "anomalously cold water events".
 
-A Python script (https://github.com/ecjoliver/marineHeatWaves; see Hobday et al. (2016) \cite{Hobday2016}) was used to calculate the MHWs and MCSs for both the \emph{in situ} and OISST time series, producing the metrics in \Cref{table1}. The individual events detected and their attendant statistics were meaned into a series of annual values. These annual values were then meaned for each coastal section for later comparison.
+First, a climatological mean and 90th and 10th percentiles were calculated for each day of the year by pooling all data within an 11-day window across all years. MHWs (MCSs) were detected as periods of time when temperatures exceeded the 90th (10th) percentile for at least five days. The implication was therefore that MHWs (MCSs) could develop outside of the warm (cold) season (i.e. winter (summer) months). Since our \emph{in situ} time series were of differing lengths we calculated the climatology over all available years; in the case of the OISST data, climatologies were calculated over a fixed 33-year base period (1982--2015). Furthermore, discrete events with well-defined start and end dates but with `breaks' between events lasting $\leq$2 days followed by subsequent $\geq$5 day events were considered as continuous events. After the events were defined, a set of metrics (\Cref{table1}) were calculated including maximum and mean intensity (measured as anomalies relative to the climatological mean), duration (time between start and end dates), and cumulative intensity (the integrated intensity over the duration of the event, analogous to degree-heating-days). Although MCS intensities are calculated as negative values (i.e. anomalies) they are reported here as absolute values.
+
+A Python script (https://github.com/ecjoliver/marineHeatWaves; see \citet{Hobday2016}) was used to calculate the MHWs and MCSs for both the \emph{in situ} and OISST time series. The individual events detected and their metrics were meaned into a series of annual values. These annual values were then meaned for each coastal section for later comparison.
 
 \begin{table}[]
-\caption{\small Metrics of MHWs and their descriptions as used by Hobday et al. (2016) \cite{Hobday2016}. In the case of MCSs, values are calculated with respect to the 10th percentile and absolute intensity values are reported.}
+\caption{\small Metrics of MHWs and their descriptions as used by \citet{Hobday2016}. In the case of MCSs, values are calculated with respect to the 10th percentile and absolute intensity values are reported.}
 \label{table1}
 \centering
 \tiny
@@ -164,13 +164,10 @@ A Python script (https://github.com/ecjoliver/marineHeatWaves; see Hobday et al.
   \end{tabular}
 \end{table}
 
-To detect the individual events, a climatological mean and 90th and 10th percentiles were calculated for each day of the year by pooling all data within an 11-day window across all years. MHWs (MCSs) were detected as periods of time when temperatures exceeded the 90th (10th) percentile for at least five days. The implication is therefore that MHWs (MCSs) could develop in winter (summer) months. Since our \emph{in situ} time series are of differing lengths we calculated the climatology over all available years; in the case of the OISST data, climatologies were calculated over a 30-year base period from 1982--2012. Furthermore, the algorithm found discrete events with well-defined start and end dates, but `breaks' between events lasting $\leq$2 days followed by subsequent $\geq$5 day events were considered as continuous events. Once events were defined, a set of metrics were calculated including maximum and mean intensity (measured as anomalies relative to the climatological mean), duration (time between start and end dates), and cumulative intensity (the integrated intensity over the duration of the event, analogous to degree-heating-days).
+Because MHWs (MCSs) are calculated by percentiles, rather than absolute definitions such as periods with temperatures above an arbitrary fixed temperature threshold, any time of year could be shown to be experiencing a MHW (MCS). This is an important consideration as unusually warm waters occurring during the winter months of a year, the time when many species need cold water for effective spawning spore release, can have a negative effect on the recruitment success of that population for the year \cite{Wernberg2011}.
 
-Because MHWs (MCSs) are thus calculated by percentiles rather than maximum values centred around a window of time with respect to the Julian day, any time of year could be shown to be experiencing a MHW (MCS). This is an important consideration as unusually warm waters occurring during the winter months of a year, the time when many species need cold water for effective spawning spore release, can have a negative effect on the recruitment success of that population for the year \cite{Wernberg2011}.
-
-It is important to understand that MHWs can result from a combination of atmospheric forcing and oceanic processes, but that the approach here aims only to shed light on the oceanic drivers by virtue of the inclusion of mesoscale OISST data linked with the coastal \emph{in situ} data sets.
-
-In order to better understand the potential impact mesoscale phenomena have on coastal events, the rates of co-occurrence between the MHWs (MCSs) found within each time series between the two datasets were compared. This was initially done by taking each event (warm and cold) within an \emph{in situ} time series and looking for an event occurring within the OISST time series at the same site within a certain period of time before the \emph{in situ} date. These co-occurrence proportions were then used to describe how often the mesoscale oceanography off the coast pre-empted the extreme events occurring along the coastline. All events occurring on dates outside of the dates occurring within the matching time series were removed from this calculation. The sum of events found to occur within the same time frame were then divided by the total number of \emph{in situ} events checked against the OISST data to produce a co-occurrence proportion. The proportions of co-occurrence were then recalculated controlling for the amount of lag used when comparing the two different datasets for concurrent events, as well as the directionality used for this comparison. In other words, a range of lag from 2--14 was used for each site to see how far apart events generally occurred and the lag period used was also applied only after the \emph{in situ} date, as well as both before and after the date, effectively doubling the range of the lag. This allowed us to see how often the \emph{in situ} event pre-empted the mesoscale event as well as seeing broadly the amounts of co-occurrence occurring between the two data sets.
+\subsection{Detecting co-occurrence of coastal and offshore events}
+In order to better understand the potential impact mesoscale phenomena have on coastal events, the rates of co-occurrence between the MHWs (MCSs) found within each time series between the two datasets were calculated. This was initially done by taking each event (warm and cold) within an \emph{in situ} time series and looking for an event occurring within the OISST time series at the same site within a certain period of time before the \emph{in situ} date. These co-occurrence proportions were then used to describe how often the mesoscale oceanography off the coast led the extreme events occurring along the coastline. All events occurring on dates outside of the dates occurring within the matching time series were removed from this calculation. The sum of events found to occur within the same time frame were then divided by the total number of \emph{in situ} events that occurred during the time period shared with the OISST data (which varies from station to station) to produce a co-occurrence proportion. The proportions of co-occurrence were then recalculated controlling for the size of the lag window used when comparing the two different datasets for concurrent events, as well as the directionality used for this comparison. In other words, a range of window sizes from 2--14 were used for each site to see how far apart events generally occurred and the lag period used was also applied only after the \emph{in situ} date, as well as both before and after the date, effectively doubling the range of the lag. This allowed us to see how often the \emph{in situ} event led the mesoscale event as well as seeing broadly the amounts of co-occurrence occurring between the two data sets.
 
 Besides controlling for the length and direction of lag, the size of the events themselves (ranked by cumulative intensity) were compared. This was accomplished by controlling the pool of events with which to compare the datasets per site in steps of 10th percentiles. This progressively removed smaller events until only the larger events were being compared. This allowed us to track the co-occurrence of only the largest events, reducing the overall proportion of co-occurrence found within each site as caused by the smaller events occurring at similar times as large events.
 
@@ -181,7 +178,7 @@ Given that the anthropogenic forcing of climate change is predicted to increase 
 \section{Results}
 
 \subsection{Events}
-One can see in \Cref{table2} that the \emph{in situ} time series showed that the typically cooler west coast experienced the most MHWs per year, and that these were longer and more intense on average than those along the other two coastal sections. Whereas the east coast experienced slightly more MCSs per year than the other two coastal sections, it is the volatile south coast that experienced the longest and most intense MCSs. There was no significant difference between the annual count of events for each coastal section (F=0.727, df\textsubscript{1}=2, df\textsubscript{2}=926, \emph{p}=0.48) or between the count of MHWs and MCSs (F=0.732, df\textsubscript{1}=1, df\textsubscript{2}=926, \emph{p}=0.39). There was a significant difference between the coastal sections for the duration of the events (F=8.907, df\textsubscript{1}=2, df\textsubscript{2}=594, \emph{p}<0.01) but no significant difference between the event types (i.e. MHWs and MCSs) themselves (F=0.722, df\textsubscript{1}=1, df\textsubscript{2}=594, \emph{p}=0.39). The intensity of events was significantly different between each coastal section (F=57.55, df\textsubscript{1}=2, df\textsubscript{2}=594, \emph{p}<0.01) and the type of events (F=5372, df\textsubscript{1}=1, df\textsubscript{2}=594, \emph{p}<0.01). Note that the degrees of freedom in the results for the count of events and duration/ intensity differ as there are many years from the data in which there were no events. These were given as "0" values for the count results as this value has meaning in this context however, any years in which no events occurred had their duration and intensity results listed as "NA" rather than "0" as this would be incorrect.
+One can see in \Cref{table2} that the \emph{in situ} time series showed that the typically cooler west coast experienced the most MHWs per year, and that these were longer and more intense on average than those along the other two coastal sections. Whereas the east coast experienced slightly more MCSs per year than the other two coastal sections, it is the volatile south coast that experienced the longest and most intense MCSs. There was no significant difference between the annual count of events for each coastal section (F=0.727, df\textsubscript{1}=2, df\textsubscript{2}=926, \emph{p}=0.48) or between the count of MHWs and MCSs (F=0.732, df\textsubscript{1}=1, df\textsubscript{2}=926, \emph{p}=0.39). There was a significant difference between the coastal sections for the duration of events (F=8.907, df\textsubscript{1}=2, df\textsubscript{2}=594, \emph{p}<0.01) but the difference in duration of MHWs and MCSs was not significant (F=0.722, df\textsubscript{1}=1, df\textsubscript{2}=594, \emph{p}=0.39). The intensity of events was significantly different between each coastal section (F=57.55, df\textsubscript{1}=2, df\textsubscript{2}=594, \emph{p}<0.01) and the type of events (F=5372, df\textsubscript{1}=1, df\textsubscript{2}=594, \emph{p}<0.01). Note that the degrees of freedom in the results for the count of events and duration/ intensity differ as there are many years from the data in which there were no events. These were given as "0" values for the count results as this value has meaning in this context however, any years in which no events occurred had their duration and intensity results listed as "NA".
 
 \begin{table}[]
 \caption{\small The mean(sd) annual values for event frequency, duration and intensity for MHWs and MCSs for each coastal section as calculated from the \emph{in situ} time series. All individual events were first aggregated into annual means before being averaged into overall mean values for each coastal section.}
@@ -190,7 +187,7 @@ One can see in \Cref{table2} that the \emph{in situ} time series showed that the
 \tiny
 \begin{tabular}{lcccccc}
 \hline
- coast & MHW [count] & duration [days] & intensity [\degree C] & MCS [count] & duration [days] & intensity [\degree C] \\
+ coast & MHW [count] & duration [days] & mean intensity [\degree C] & MCS [count] & duration [days] & mean intensity [\degree C] \\
  \hline
   all & 1.6(1.8) & 9.3(5.1) & 2.65(0.79) & 1.5(1.7) & 9.0(5.1) & 2.79(1.09) \\ 
   west & 1.8(1.9) & 9.1(3.9) & 2.86(0.90) & 1.5(1.9) & 8.5(5.2) & 2.32(0.58) \\ 
@@ -209,7 +206,7 @@ Results from the analysis of the OISST data (\Cref{table3}) show that there was 
 \tiny
 \begin{tabular}{lcccccc}
 \hline
- coast & MHW [count] & duration [days] & intensity [\degree C] & MCS [count] & duration [days] & intensity [\degree C] \\
+ coast & MHW [count] & duration [days] & mean intensity [\degree C] & MCS [count] & duration [days] & mean intensity [\degree C] \\
  \hline
   all & 2.2(2.1) & 10.2(5.4) & 1.72(0.33) & 2.2(2.6) & 10.2(5.1) & 1.83(0.52) \\ 
   west & 2.1(1.8) & 10.9(6.7) & 1.75(0.41) & 2.3(2.7) & 9.8(6.6) & 1.87(0.61) \\ 
@@ -220,16 +217,16 @@ Results from the analysis of the OISST data (\Cref{table3}) show that there was 
 \end{table}
 
 \subsection{Top three events}
-The mean annual statistics shown in \Cref{table2} and \Cref{table3} give a broad overview of the events occurring along the coastline however, examining the largest MHWs and MCSs better aids in our understanding of which coastal sections show the most variability. The ranking of these events is based on the cumulative intensity (\degree C x days) statistic as explained in \Cref{table1}. The three largest MHWs that occurred within the \emph{in situ} dataset were all on the south coast (\Cref{table4}). Two of these events occurred during 1999, making it a particularly hot year. The size of the south coast events are larger than those occurring along the west coast, with the largest three MHWs on the east coast being much smaller than those occurring on the south coast (\Cref{table4}). The cumulative intensity of the entire coastline and each section individually may be calculated for both datasets from \Cref{table2} and \Cref{table3} by multiplying the duration by the intensity. When calculating the mean cumulative intensity of MHWs from the \emph{in situ} data for the entire coastline by the individual events and not the annual means we see that mean(sd) is 26.11(24.37)(\degree C x days).
+The mean annual statistics shown in \Cref{table2} and \Cref{table3} give a broad overview of the events occurring along the coastline however, examining the largest MHWs and MCSs better aids in our understanding of which coastal sections show the most intensity. The ranking of these events is based on the cumulative intensity (\degree C x days) metric as explained in \Cref{table1}. The three largest MHWs that occurred within the \emph{in situ} dataset were all on the south coast (\Cref{table4}). Two of these events occurred during 1999, making it a particularly hot year. The size of the south coast events are larger than those occurring along the west coast, with the largest three MHWs on the east coast being much smaller than those occurring on the south coast (\Cref{table4}). This is unsurprising as one may see in \cref{table4} that the duration of events on the south coast are longer that those on the west and east coasts. The cumulative intensity of the entire coastline and each section individually may be calculated for both datasets from \Cref{table2} and \Cref{table3} by multiplying the duration by the intensity. When calculating the mean cumulative intensity of MHWs from the \emph{in situ} data for the entire coastline by the individual events and not the annual means we see that mean(sd) is 26.11(24.37)(\degree C x days).
 
 \begin{table}[]
-\caption{\small The three largest MHWs per coast from the \emph{in situ} data. The coast column shows in which coastal section the event occurred. The site column gives the name of the site, as seen in \Cref{fig:Figure2}, which gives the index number necessary to find it's location along the coastline in \Cref{fig:Figure1}. The start date column gives the day on which the event began and the duration (days) column shows how many days the event lasted for. The intMean column shows the mean intensity of the event and the intCum column shows the cumulative intensity, as calculated in \Cref{table1}.}
+\caption{\small The three largest MHWs per coast from the \emph{in situ} data. The coast column shows in which coastal section the event occurred. The site column gives the name of the site, as seen in \Cref{fig:Figure2}, which gives the index number necessary to find it's location along the coastline in \Cref{fig:Figure1}. The start date column gives the day on which the event began and the duration (days) column shows how many days the event lasted for. The mean intensity and cumulative intensity columns are explained in \Cref{table1}.}
 \label{table4}
 \centering
 \tiny
 \begin{tabular}{llcccc}
 \hline
- coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+ coast & site & start date & duration [days] & mean intensity [\degree C] & cumulative intensity [\degree C x days] \\ 
   \hline
   west & Sea Point & 1996-01-04 & 40 & 3.08 & 123.20 \\ 
   west & Sea Point & 2005-05-21 & 39 & 2.56 & 99.66 \\ 
@@ -246,10 +243,10 @@ The mean annual statistics shown in \Cref{table2} and \Cref{table3} give a broad
 
 \begin{figure}
 \centering \includegraphics[width=0.6\textwidth]{figure2.pdf}
-\caption{The daily temperature values for each \emph{in situ} time series (grey) used in this study and the corresponding OISST time series (black) extracted for comparison as seen in \Cref{fig:Figure1}. The top three MHWs are indicated by circles (with the rank inside) for each site as judged by greatest cumulative intensity. The top three MCSs for each site are indicated by squares (with the rank inside). Sites 1 -- 4 represent the west coast, sites 5 -- 17 represent the south coast and sites 18 -- 21 represent the east coast.} \label{fig:Figure2}
+\caption{The daily temperature values for each \emph{in situ} time series (light blue) used in this study and the corresponding OISST time series (dark blue) extracted for comparison as seen in \Cref{fig:Figure1}. The top three MHWs are indicated by circles (with the rank inside) for each site as judged by greatest cumulative intensity. The top three MCSs for each site are indicated by squares (with the rank inside). Sites 1 -- 4 represent the west coast, sites 5 -- 17 represent the south coast and sites 18 -- 21 represent the east coast.} \label{fig:Figure2}
 \end{figure}
 
-As with the MHWs, the largest three MCSs from the \emph{in situ} data were also found on the south coast (\Cref{table5}). Maintaining the pattern seen with the MHWs, the largest MCSs on the west coast were the next largest three events for the entire coastline with the three largest MCSs from the east coast being smaller than the other two coastal sections (\Cref{table5}). The mean(sd) cumulative intensity (\degree C x days) for MCSs over the entire coastline was 26.45(24.25)(\degree C x days). The cumulative intensity (\degree C x days) of events from each of the coastal sections in the \emph{in situ} data were found to be significantly different (F=7.377, df\textsubscript{1}=2, df\textsubscript{2}=1444, \emph{p}<0.01) as well as the events themselves (F=1753, df\textsubscript{1}=1, df\textsubscript{2}=1444, \emph{p}<0.01).
+As with the MHWs, the largest three MCSs from the \emph{in situ} data were also found on the south coast (\Cref{table5}). Maintaining the pattern seen with the MHWs, the largest MCSs on the west coast were the next largest three events for the entire coastline with the three largest MCSs from the east coast being smaller than the other two coastal sections (\Cref{table5}). The pattern of the largest south coast events having a greater duration than the other coasts persists with the MCSs but is less pronounced. The mean(sd) cumulative intensity (\degree C x days) for MCSs over the entire coastline was 26.45(24.25)(\degree C x days). The cumulative intensity (\degree C x days) of events from each of the coastal sections in the \emph{in situ} data were found to be significantly different (F=7.377, df\textsubscript{1}=2, df\textsubscript{2}=1444, \emph{p}<0.01) as well as the events themselves (F=1753, df\textsubscript{1}=1, df\textsubscript{2}=1444, \emph{p}<0.01).
 
 \begin{table}[]
 \caption{\small The three largest MCSs per coast from the \emph{in situ} data. Column descriptions may be found in the caption for \Cref{table4}.}
@@ -258,7 +255,7 @@ As with the MHWs, the largest three MCSs from the \emph{in situ} data were also 
 \tiny
 \begin{tabular}{llcccc}
 \hline
- coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+ coast & site & start date & duration [days] & mean intensity [\degree C] & cumulative intensity [\degree C x days] \\ 
   \hline
   west & Sea Point & 1990-06-23 & 44 & 2.88 & 126.60 \\ 
   west & Sea Point & 1983-06-10 & 39 & 2.84 & 110.90 \\ 
@@ -273,7 +270,7 @@ As with the MHWs, the largest three MCSs from the \emph{in situ} data were also 
   \end{tabular}
 \end{table}
 
-As can be seen in \Cref{fig:Figure2}, the three largest events occurring for each time series within the OISST dataset are largely different from the \emph{in situ} dataset and show a greater amount of co-occurrence for neighbouring coastal stations than the corresponding \emph{in situ} time series. This apparent difference in the cumulative intensity (\degree C x days) of events between the two datasets is significant (F=8.857, df\textsubscript{1}=1, df\textsubscript{2}=4493, \emph{p}<0.01). The pattern seen in the \emph{in situ} data of the largest MHWs and MCSs occurring on the south, west and east coasts respectively is not repeated with the OISST dataset. Whereas the largest MHW occurred on the south coast in the OISST data, the three largest MHWs from the west coast were larger than the second and third largest events from the south coast (\Cref{table6}). The three largest MHWs from the east coast again came in below the other coasts(\Cref{table6}). The mean(sd) cumulative intensity (\degree C x days) over the entire coastline for the MHWs from the OISST dataset was markedly lower than its \emph{in situ} counterpart at 18.65(15.10)(\degree C x days).
+As can be seen in \Cref{fig:Figure2}, the three largest events occurring for each time series within the OISST dataset are often different from the \emph{in situ} dataset and show a greater amount of co-occurrence for neighbouring coastal stations than the corresponding \emph{in situ} time series. This apparent difference in the cumulative intensity (\degree C x days) of events between the two datasets is significant (F=8.857, df\textsubscript{1}=1, df\textsubscript{2}=4493, \emph{p}<0.01). The pattern seen in the \emph{in situ} data of the largest MHWs and MCSs occurring on the south, west and east coasts respectively is not repeated with the OISST dataset. Whereas the largest MHW occurred on the south coast in the OISST data, the three largest MHWs from the west coast were larger than the second and third largest events from the south coast (\Cref{table6}). The three largest MHWs from the east coast again came in below the other coasts(\Cref{table6}). The mean(sd) cumulative intensity (\degree C x days) over the entire coastline for the MHWs from the OISST dataset was markedly lower than its \emph{in situ} counterpart at 18.65(15.10)(\degree C x days).
 
 \begin{table}[]
 \caption{\small The three largest MHWs per coast from the OISST data. Column descriptions may be found in the caption for \Cref{table4}.}
@@ -282,7 +279,7 @@ As can be seen in \Cref{fig:Figure2}, the three largest events occurring for eac
 \tiny
 \begin{tabular}{llcccc}
 \hline
- coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+ coast & site & start date & duration [days] & mean intensity [\degree C] & cumulative intensity [\degree C x days] \\ 
   \hline
   west & Sea Point & 1992-01-21 &  39 & 2.96 & 115.60 \\ 
   west & Hout Bay & 1992-01-20 &  36 & 3.15 & 113.50 \\ 
@@ -297,7 +294,7 @@ As can be seen in \Cref{fig:Figure2}, the three largest events occurring for eac
   \end{tabular}
 \end{table}
 
-The largest MCSs from the OISST data (\Cref{table7}) are much less clearly ranked than their \emph{in situ} counterparts (\Cref{table5}). The three largest MCSs on the east coast, like with both datasets and both types of events, were smaller than the other two coasts (\Cref{table7}). All of the coastal sections show that at least two of their largest MCSs occurred at the same time at different sites. The coastal mean(sd) cumulative intensity (\degree C x days) of the MCSs from the OISST data were much closer to their \emph{in situ} counterparts at 23.17(23.49)(\degree C x days). The difference in the cumulative intensity (\degree C x days) of events between the coastal sections in the OISST dataset were not found to be significant (F=0.503, df\textsubscript{1}=2, df\textsubscript{2}=3049, \emph{p}=0.60) however, the difference between the MHWs and MCSs was (F=3472, df\textsubscript{1}=1, df\textsubscript{2}=3049, \emph{p}<0.01).
+The largest MCSs from the OISST data (\Cref{table7}) do not belong to the same coastal sections as their \emph{in situ} counterparts (\Cref{table5}). The three largest MCSs on the east coast, with both datasets and both types of events, were smaller than the other two coasts (\Cref{table7}). All of the coastal sections show that at least two of their largest MCSs occurred at the same time at different sites. The coastal mean(sd) cumulative intensity (\degree C x days) of the MCSs from the OISST data were much closer to their \emph{in situ} counterparts at 23.17(23.49)(\degree C x days). The difference in the cumulative intensity (\degree C x days) of events between the coastal sections in the OISST dataset were not found to be significant (F=0.503, df\textsubscript{1}=2, df\textsubscript{2}=3049, \emph{p}=0.60) however, the difference between the MHWs and MCSs was (F=3472, df\textsubscript{1}=1, df\textsubscript{2}=3049, \emph{p}<0.01).
 
 \begin{table}[]
 \caption{\small The three largest MCSs per coast from the OISST data. Column descriptions may be found in the caption for \Cref{table4}.}
@@ -306,7 +303,7 @@ The largest MCSs from the OISST data (\Cref{table7}) are much less clearly ranke
 \tiny
 \begin{tabular}{llcccc}
 \hline
- coast & site & start date & duration [days] & intMean [\degree C] & intCum [\degree C x days] \\ 
+ coast & site & start date & duration [days] & mean intensity [\degree C] & cumulative intensity [\degree C x days] \\ 
   \hline
   west & Kommetjie & 2010-12-13 &  54 & 3.92 & 211.90 \\ 
   west & Hout Bay & 2010-12-25 &  41 & 4.06 & 166.30 \\ 
@@ -325,13 +322,13 @@ The temperature values from the dates of the largest MHW and MCS for the west an
 
 \begin{figure}
 \centering \includegraphics[width=1.0\textwidth]{figure3.png}
-\caption{The temperature profiles of the largest MHW and MCS from the south and west coasts respectively. The left column shows the \emph{in situ} event while the right column shows the OISST temperature values occurring on the same dates. The top row shows the largest MHW that occurred on the south coast while the second row shows the largest MHW that occurred on the west coast. The bottom two rows show the largest MCS from the \emph{in situ} that occurred on the south and west coasts respectively.} \label{fig:Figure3}
+\caption{The temperature values from the \emph{in situ} and OISST data during the largest MHW and MCS from the south and west coasts respectively from the \emph{in situ} data. The left column shows the \emph{in situ} temperature values during the event while the right column shows the OISST temperature values occurring on the same dates. The top row shows the largest MHW that occurred on the south coast while the second row shows the largest MHW that occurred on the west coast. The bottom two rows show the largest \emph{in situ} MCS that occurred on the south and west coasts respectively.} \label{fig:Figure3}
 \end{figure}
 
 \subsection{Co-occurrence rates}
-The proportion of co-occurrence found for MHWs and MCSs between the datasets for each site may be seen in \Cref{fig:Figure4} and \Cref{fig:Figure5} respectively. When using the lag windows before and after the \emph{in situ} event and comparing all events (0\textsuperscript{th} percentile) we see that as the width of lag increased from 2 to 14 days the mean(sd) proportion of co-occurrence for all sites increased linearly for MHWs (0.09(0.07) to 0.38(0.20)) and MCSs (0.10(0.05) to 0.30(0.13)). Using these same constraints we see that south coast sites had the largest mean(sd) increase in co-occurrence for MHWs (0.10(0.07) to 0.45(0.18)) and MCSs (0.11(0.06) to 0.34(0.14)) whereas the west coast sites showed the smallest increase for MHWs (0.07(0.03) to 0.28(0.06)) and MCSs (0.08(0.04) to 0.19(0.02)). With all variables controlled for in the same manner, the co-occurrence rates between the different coastal sections were not significantly different for MHWs at a 2 day lag (F=0.799, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.46) or a 14 day lag (F=2.374, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.12). There were no significant differences between the coastal sections for MCSs at a 2 day lag (F=0.671, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.52) or 14 day lag (F=2.357, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.12).
+The proportion of co-occurrence found for MHWs and MCSs between the datasets for each site may be seen in \Cref{fig:Figure4} and \Cref{fig:Figure5} respectively. When using the lag windows before and after the \emph{in situ} event and comparing all events we see that as the width of the lag window increased from 2 to 14 days the mean proportion of co-occurrence for all sites increased linearly for MHWs (0.09 to 0.38 and MCSs (0.10 to 0.30). Using these same constraints we see that south coast sites had the largest mean increase in co-occurrence for MHWs (0.10 to 0.45) and MCSs (0.11 to 0.34) whereas the west coast sites showed the smallest increase for MHWs (0.07to 0.28) and MCSs (0.08 to 0.19). With all variables controlled for in the same manner, the co-occurrence rates between the different coastal sections were not significantly different for MHWs at a 2 day lag (F=0.799, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.46) or a 14 day lag (F=2.374, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.12). There were no significant differences between the coastal sections for MCSs at a 2 day lag (F=0.671, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.52) or 14 day lag (F=2.357, df\textsubscript{1}=2, df\textsubscript{2}=18, \emph{p}=0.12).
 
-The directionality of the lag also affected the co-occurrence of events. Comparing all events (0\textsuperscript{th} percentile) within a 14 day lag window before the \emph{in situ} event gave higher mean(sd) rates of co-occurrence for MHWs (0.22(0.13)) than for the same lag window after the \emph{in situ} event for MHWs (0.18(0.10). This same comparison for MCSs showed that the lag window before the \emph{in situ} event (0.16(0.09)) had slightly lower rates of co-occurrence than the lag window after the \emph{in situ} event (0.17(0.08). When the smaller events were screened from comparison and only the largest half of the events were used (50\textsuperscript{th} percentile), the difference in mean(sd) co-occurrence proportions for MHWs event lessened at 0.16(011) before the \emph{in situ} event and 0.15(0.12) after. The mean(sd) co-occurrence proportion of MCSs at this level was less when using a lag window before the \emph{in situ} event at 0.05(0.08) than for a lag window after at 0.08(0.08).
+The directionality of the lag window also affected the co-occurrence of events. Comparing all events within a 14 day lag window before the \emph{in situ} event gave higher mean(sd) rates of co-occurrence for MHWs (0.22(0.13)) than for the same lag window after the \emph{in situ} event for MHWs (0.18(0.10). This same comparison for MCSs showed that the lag window before the \emph{in situ} event (0.16(0.09)) had slightly lower rates of co-occurrence than the lag window after the \emph{in situ} event (0.17(0.08). When the smaller events were screened from comparison and only the largest half of the events were used (50\textsuperscript{th} percentile), the difference in mean(sd) co-occurrence proportions for MHWs event lessened at 0.16(011) before the \emph{in situ} event and 0.15(0.12) after. The mean(sd) co-occurrence proportion of MCSs at this level was less when using a lag window before the \emph{in situ} event at 0.05(0.08) than for a lag window after at 0.08(0.08).
 
 There was no co-occurrence for the largest MCSs between the datasets, whereas several of the time series on the south coast showed co-occurrence for their most extreme MHWs. Interestingly, the rates of co-occurrence for these largest MHWs was greater when the \emph{in situ} event preceded the OISST event.
 
@@ -346,43 +343,43 @@ There was no co-occurrence for the largest MCSs between the datasets, whereas se
 \end{figure}
 
 \subsection{Decadal trends in MHWs and MCSs}\todo{Perhaps the trends here would be better shown as a table?}
-It was found that the mean(sd) decadal trend in occurrence of MHWs in the OISST dataset is 0.5(0.3)~dec$^{-1}$ across all sites and -0.7(0.6)~dec$^{-1}$ for MCSs. The decadal trends in MHW occurrence increase as one moves from the west to east coasts with the mean(sd) decadal MHW trend on the west coast being 0.3(0.3)~dec$^{-1}$, the south coast being 0.5(0.3)~dec$^{-1}$ and the east coast coming in at 0.6(0.2)~dec$^{-1}$. Just as MHWs are occurring more frequently per decade on the east coast than the west, MCSs are decreasing more frequently on the east coast than the west. The decadal trend in MCSs on the west coast is -0.1(0.6)~dec$^{-1}$, -0.8(0.5)~dec$^{-1}$ on the south coast and -0.9(0.2)~dec$^{-1}$ on the east coast.
+In order to calculate the decadal trends in MHW and MCS count, linear models were fitted to the annual count values for each 30+ year time series. The slope of this line was then multiplied by ten to produce the following decadal trend values and show whether after 30+ years MHWs/ MCSs are increasing or decreasing. As the OISST data set is over 30 years in length, decadal values were calculated for each OISST time series. It was found that the mean(sd) decadal trend for MHW occurrence in the OISST dataset was 0.5(0.3)~dec$^{-1}$ across all sites and -0.7(0.6)~dec$^{-1}$ for MCSs. The decadal trends in MHW occurrence increase as one moves from the colder Benguela fed west coast to warmer Agulhas fuelled east coast with the mean(sd) decadal MHW trend on the west coast being 0.3(0.3)~dec$^{-1}$, the south coast being 0.5(0.3)~dec$^{-1}$ and the east coast coming in at 0.6(0.2)~dec$^{-1}$. Just as MHWs are occurring more frequently per decade on the east coast than the west, MCSs are decreasing more frequently on the east coast than the west. The decadal trend in MCSs on the west coast is -0.1(0.6)~dec$^{-1}$, -0.8(0.5)~dec$^{-1}$ on the south coast and -0.9(0.2)~dec$^{-1}$ on the east coast.
 
-Of the 21 \emph{in situ} time series, only 4 of them were long enough to calculate decadal trends. Of these four time series the mean(sd) decadal trend for MHWs was found to be 0.3(0.5)~dec$^{-1}$ and -0.1(0.5)~dec$^{-1}$ for MCSs. There were two sites from the west coast and two from the south, excluding the east coast from a possible calculation of decadal change in MHWs and MCSs. The mean(sd) decadal trend for MHWs (MCSs) on the west coast was 0.1(0.5)~dec$^{-1}$ (-0.2(0.7)~dec$^{-1}$) and 0.5(0.5)~dec$^{-1}$ (0.1(0.4)~dec$^{-1}$) on the south.
+Of the 21 \emph{in situ} time series, only 4 of them reached the 30+ year requirement. Of these four time series the mean(sd) decadal trend for MHWs was found to be 0.3(0.5)~dec$^{-1}$ and -0.1(0.5)~dec$^{-1}$ for MCSs. There were two sites from the west coast and two from the south, excluding the east coast from a possible calculation of decadal change for \emph{in situ} MHWs and MCSs. The mean(sd) decadal trend for MHWs (MCSs) on the west coast was 0.1(0.5)~dec$^{-1}$ (-0.2(0.7)~dec$^{-1}$) and 0.5(0.5)~dec$^{-1}$ (0.1(0.4)~dec$^{-1}$) on the south.
 
-The other 17 \emph{in situ} time series had the sum of the annual count of events in the first half of each time series compared against the sum of the annual count of events in the second half. This produced a proportion value that could be used as an indicator as to how many more MHWs or MCSs were occurring in the second half of the time series. The mean(sd) proportion of MHWs occurring in the second half of the shorter time series was 1.7(1.3) whereas the proportion of MCSs was 0.8(0.6). The general pattern seen in the longer time series of increasing MHW occurrence and decreasing MCS occurrence was not seen in these shorter data. The mean(sd) proportion of MHWs (MCSs) in the second half of the time series on the west coast was 1.5(0.6) (1.8(0.6)), 2.1(1.4) (0.5(0.3)) on the south coast and 0.7(0.4) (1.0(0.8)) on the east coast.
+For the remaining 17 \emph{in situ} time series we calculated the the sum of the annual count of events in the first half of each time series compared against the sum of the annual count of events in the second half. This produced a proportion value that could be used as an indicator as to how many more MHWs or MCSs were occurring in the second half of the time series. The mean(sd) proportion of MHWs occurring in the second half of the shorter time series was 1.7(1.3) whereas the proportion of MCSs was 0.8(0.6), meaning that more of the MHWs are occurring in the second half of time series than the first, and vice versa for the MCSs. The shorter time series on the south coast showed the pattern of having more MHWs in the second half of the time series at 2.1(1.4) and fewer MCSs in the second half at 0.5(0.3). The short west coast time series had more MHWs in the second half at 1.5(0.6) as well as more MCSs at 1.8(0.6). The east coast had fewer MHWs at 0.7(0.4) in the second half of the shorter time series with the proportion of MCSs in being roughly split between the first and second half of the time series at 1.0(0.8).
 
 \section{Discussion}
 
 \subsection{Events}
-Having never been calculated before, it was not yet known that every time series from each coastal section of South Africa experiences on average more than one MHW and one MCS per year. It was surprising to find that the mean intensity of MCSs on the south coast was significantly larger (\emph{p}<0.01) than the west coast, which is in an EBUS. From these results we may now hypothesise that there is an additional driver on the south coast affecting the extreme events there that is not present on the other two coastal sections. It was assumed that the east coast would experience the fewest and least intense events. Whereas the duration (days) of its events were significantly shorter than the south coast (\emph{p}<0.01), the frequency and mean intensity of its MHWs and MCSs were not the smallest found. This means that every portion of the coastline has the potential to experience an event strong enough to affect its species assemblage and/or local ecology.
+Though it could be expected due to the design of the \citet{Hobday2016} MHW framework, it was not yet known that every time series from each coastal section of South Africa has experienced on average more than one MHW and one MCS per year. It was surprising to find that the mean intensity of MCSs on the south coast was significantly larger (\emph{p}<0.01) than the west coast, which is in an EBUS. From these results we may now hypothesise that there is an additional driver on the south coast affecting the extreme events there that is not present on the other two coastal sections. It was assumed that the east coast would experience the fewest and least intense events. Whereas the duration (days) of its events were significantly shorter than the south coast (\emph{p}<0.01), the frequency and mean intensity of its MHWs and MCSs were not the smallest found. This means that every portion of the coastline has the potential to experience an event strong enough to affect its species assemblage and/or local ecology.
 
-The difference between the \emph{in situ} and OISST datasets was also striking. One may see in \Cref{table2} and \Cref{table3} that the patterns presented by the data are intrinsically different, it is not simply a matter of the statistical significance between the values. The OISST data showed many weak events occurring often whereas the \emph{in situ} dataset showed fewer, stronger events. This implies that the events that occurred in the different datasets were unrelated, and any co-occurrence was largely due to chance. Besides this difference, both datasets tended to show that the south coast had longer and more intense results than the other two coastal sections, but this too is not a consistent result. Before calculating the proportions of co-occurrence, it was already clear from these results that the events that occurred within the OISST data would differ from the \emph{in situ} data.
+The difference between the \emph{in situ} and OISST datasets was also striking. One may see in \Cref{table2} and \Cref{table3} that the patterns presented by the data are intrinsically different, it is not simply a matter of the statistical significance between the values. The OISST data showed many weak events occurring often whereas the \emph{in situ} dataset showed fewer, stronger events. This implies that a large number of the events occurring between these two datasets are unrelated and that some other variable may be having a more pronounced effect on the coast than ocean temperature. Besides this difference, both datasets tended to show that the south coast had longer and more intense results than the other two coastal sections, but this too is not a consistent result. Before calculating the proportions of co-occurrence, it was already clear from these results that the events that occurred within the OISST data would differ from the \emph{in situ} data.
 
 Another important difference found between the datasets was that MHWs were shown to be longer and more intense in the \emph{in situ} dataset, whereas the OISST dataset shows MCSs being longer and more intense. This also supports the argument that the events detected by these two datasets were not the same, even when they were found to occur within similar time frames. It is also counter-intuitive to what we expected to find. One would assume that as the \emph{in situ} data are measured at \emph{ca}. 5m deep on average, which is below the bulk surface layer (\emph{ca}. 0.5m) that the OISST data measure \cite{Reynolds2002}, they would be predisposed to picking up cold upwelling events and less exposed to thermal heating, which would appear as larger MCSs and smaller MHWs compared to the OISST data. The cause of this discrepancy warrants further research.
 
-This apparent discrepancy also places doubt on the use of MCSs as a proxy for upwelling. If the \emph{in situ} data had recorded longer and/or more intense MCSs than the OISST data it would have shown that the MCS algorithm was detecting more extreme cold events near the coastline, where upwelling is known to occur \cite{Hutchings2009, Lutjeharms2000}. Instead the results show that offshore MCS are, on average, longer and more intense. It is the suggestion of the authors that using the MCS algorithm to detect upwelling be done with extreme caution. The MCS algorithm detects cold events based on their intensity outside of a locally produced climatology, and because most upwelling occurs at seasonally predictable times, the cold events detected here are likely due to other factors.
+This apparent discrepancy also places doubt on the use of MCSs as a proxy for upwelling. If the \emph{in situ} data had recorded longer and/or more intense MCSs than the OISST data it would have shown that the MCS algorithm was detecting more extreme cold events near the coastline, where upwelling is known to occur \cite{Hutchings2009, Lutjeharms2000}. Instead the results show that offshore MCS are, on average, longer and more intense. It is the suggestion of the authors that using the MCS algorithm to detect upwelling be done with extreme caution. The MCS algorithm detects cold events based on their intensity outside of a locally produced climatology, and because most upwelling occurs at seasonally predictable times, the cold events detected here are likely due to other factors. Aside from this observation, upwelling events should have notable properties, such as rate of onset and duration of peak intensity, which set them apart from other events that may cause colder water to occur at the surface. Further work on the definition of the characteristics of upwelling events could be coupled with the MCS algorithm for accurate use in upwelling detection in historical temperature time series.
 
 \subsection{Top three events}
-It was hypothesised that the south coast would experience the most extreme events as measured by cumulative intensity, but it was unanticipated that these events would be so much larger than the other two coastal sections. Conversely, it was hypothesised that the east coast would experience the least extreme events however and this proved to be correct.
+It was hypothesised that the south coast would experience the most extreme events as measured by cumulative intensity, but it was unanticipated that these events would be so much larger than the other two coastal sections. Conversely, it was hypothesised that the east coast would experience the least extreme events and this proved to be correct.
 
-The disagreement between the \emph{in situ} and OISST datasets continued into the detection of the top three events along the coastline. The pattern of event sizes within the \emph{in situ} data are very clear in that the south coast is much more volatile than the west and east coasts in that order. The OISST data are less conclusive on whether the south or west coast experiences the most extreme events, but it is apparent from all of the analyses from both datasets that the east coast experiences very few extreme MHWs or MCSs. Indeed, these findings support the hypothesis that the east coast is the most stable of the three coasts as both datasets show the most extreme events occurring here to only be a factor of two greater than the coastal mean for cumulative intensity.
+The disagreement between the \emph{in situ} and OISST datasets continued into the detection of the top three events along the coastline. The pattern of event sizes within the \emph{in situ} data are very clear in that events on the south coast are much more extreme than the west and east coasts in that order. The OISST data are less conclusive on whether the south or west coast experiences the most extreme events, but it is apparent from all of the analyses from both datasets that the east coast experiences very few extreme MHWs or MCSs. Indeed, these findings support the hypothesis that the east coast is the most stable of the three coasts as both datasets show the most extreme events occurring here to only be a factor of two greater than the coastal mean for cumulative intensity.
 
-The sites along the south coast could be further divided into those within False Bay (Sites 5--7) and those on the Agulhas Bank (Sites 8--17). False Bay, which is ~50 km across, is situated within the transition zone between the Benguela and Agulhas Currents \cite{Smit2013}. Many satellite temperatures products therefore inadequately resolve the SST within this body of water (cite.). This is problematic as it is important to precisely monitor the large ranges in temperature this area experiences (cite.) as it is important both ecologically (cite.) and to the many stakeholders that use this embayment. Two of the three largest MHWs and MCSs from the \emph{in situ} dataset were recorded within False Bay, whereas only one large MHW and no MCSs were detected with the OISST dataset. This illustrates the problem of using satellite temperature data for coastal ecology.
+The sites along the south coast could be further divided into those within False Bay (Sites 5--7) and those on the Agulhas Bank (Sites 8--17). False Bay, which is \textasciitilde 50 km across, is situated within the transition zone between the Benguela and Agulhas Currents \cite{Smit2013}. Many satellite temperatures products therefore inadequately resolve the SST within this body of water (cite.). This is problematic as it is important to precisely monitor the large ranges in temperature this area experiences (cite.) as it is important both ecologically (cite.) and to the many stakeholders that use this embayment. Two of the three largest MHWs and MCSs from the \emph{in situ} dataset were recorded within False Bay, whereas only one large MHW and no MCSs were detected with the OISST dataset. This illustrates the problem of using satellite temperature data for coastal ecology.
 
-The example of the discrepancies for the size of the events recorded in False Bay also serves to illustrate the usefulness of satellite SST data to detect events near the coastline. For example, Roberts (2004) \cite{Roberts2005} argues for a wind forced coastal upwelling cell near Tsitsikamma (Sites 12--14). That these three sites show greater cumulative intensities for MCSs than all but one time series for the OISST dataset supports the hypothesis of such a coastal upwelling cell. This is an intriguing use of the MCS algorithm to validate multiple competing hypotheses that as of yet may not have been able to be tested in any other way.
+The example of the discrepancies for the size of the events recorded in False Bay also serves to illustrate the usefulness of satellite SST data to detect events near the coastline. For example, Roberts (2004) \cite{Roberts2005} argues for a wind forced coastal upwelling cell near Tsitsikamma (Sites 12--14). That these three sites show greater cumulative intensities for MCSs than all but one time series from the OISST dataset may support the hypothesis of such a coastal upwelling cell. Though as mentioned earlier, the current MCS algorithm should not be taken as showing upwelling events. More research is necessary if upwelling hypotheses like the aforementioned may be investigated in this manner. This would be an intriguing use of the MCS algorithm to validate multiple competing hypotheses that as of yet may not have been able to be tested in any other way.
 
-Another imporant consideration was the co-occurrence of the most extreme events between and within time series. As one may see in \Cref{table4} and \Cref{table5}, none of the top three MHWs or MCSs for any of the coastal sections from the \emph{in situ} dataset were the same. They were all inidvidually different events occurring at different times. The OISST dataset tells an entirely different story in that all but one of the coastal sections for both MHWs and MCSs, had at least two of the three top events occurring at the same time. This means that the largest events detected in the OISST data were occurring over a broad area at the same time whereas the \emph{in situ} events were isolated not only in time, but in the location in which they were occurring. This further reinfocres our conclusion that the events detected by the different datasets are intinsically different from one another.
+Another important consideration was the co-occurrence of the most extreme events between and within time series. As one may see in \Cref{table4} and \Cref{table5}, none of the top three MHWs or MCSs for any of the coastal sections from the \emph{in situ} dataset were the same. They were all individually different events occurring at different times. The OISST dataset tells an entirely different story in that all but one of the coastal sections for both MHWs and MCSs, had at least two of the three top events occurring at the same time. This means that the largest events detected in the OISST data were occurring over a broad area at the same time whereas the \emph{in situ} events were isolated not only in time, but in the location in which they were occurring. This further reinforces our conclusion that the events detected by the different datasets are often intrinsically different from one another.
 
 \subsection{Co-occurrence rates}\todo{I'm still planning on calculating the rate of co-occurrence for events within each dataset and coastal section to show quantitatively how well the different coastal sections match up.-Rob}
-As one may see in \Cref{fig:Figure4}, when looking at the the lag window before the \emph{in situ} events occurred, the rates of co-occurrence for MCSs are much lower than for the MHWs. This shows that if these events are indeed related, more MHWs are being caused by meso-scale activity than MCSs, as was expected. This finding is supported further by comparing the rates of co-occurrence for MCS lagged before and after the \emph{in situ} event occurred. More MCS from the OISST data are shown to occur after the \emph{in situ} events for all coastal sections. The co-occurrence rates of MHWs before and after the \emph{in situ} events are similar.
+As one may see in \Cref{fig:Figure4}, when looking at the lag window before the \emph{in situ} events occurred, the rates of co-occurrence for MCSs are much lower than for the MHWs. This shows that if these events are indeed related, more MHWs are being caused by meso-scale activity than MCSs, as was expected. This finding is supported further by comparing the rates of co-occurrence for MCS lagged before and after the \emph{in situ} event occurred. More MCS from the OISST data are shown to occur after the \emph{in situ} events for all coastal sections. The co-occurrence rates of MHWs before and after the \emph{in situ} events are similar.
 
 One may also infer from the results that the proportions of co-occurrence for time series on the south coast being much larger than the other two coasts is caused by the much higher level of influence from meso-scale phenomena occurring on the Agulhas Bank. We also see that there is a higher proportion of co-occurrence for the larger MHWs and MCSs on the south coast when a lag window after the \emph{in situ} event is used (\Cref{fig:Figure4}). This supports the argument that events originating in the nearshore are then propagating out onto the Agulhas Bank and affecting the oceanography there more often than meso-scale events originating on the Agulhas Bank are affecting the nearshore environment. The overall low rates of co-occurrence for all three coastal sections reinforces the argument that it is not the meso-scale phenomena of the open ocean around the coastline that is causing extreme events in the nearshore.
 
 The very low proportion of co-occurrence between the datasets, and the decline in the proportion as the smaller events are screened out is strong evidence against the hypothesis that meso-scale activity, both warm and cold, is causing nearshore extreme thermal events. The small increases in co-occurrence for some sites as only larger events were compared does imply that there is some relationship between the inshore and offshore, but that some other variable(s) is having a greater effect on the inshore. This is likely atmospheric forcing (cite.).
 
 \subsection{Climate change}
-As MHWs and MCSs are temperature related phenomena we would be remiss not to discuss the potential of our findings in relation to climate change. The count of the MHWs and MCSs that occurred along the coastline is less telling in this regard than the trend in these events themselves. Although all but 4 of the \emph{in situ} time series used in this investigation are too short to draw adequate conclusions on the decadal trends seen in MHWs and MCSs, the OISST data are not. And as hypothesised these data showed positive decadal trends for MHWs and negative trends for MCSs. Meaning that over the past 33 years of satellite observation, MHWs have been increasing every decade for each coastal section while MCSs have been decreasing. Similar though less conslcuisve patterns were found in the shorter \emph{in situ} time series as well. As the algorithm used to calculate these events is based on percentiles, it stands to reason that as the mean temperature of South Africa's coastal waters increases by 0.1\degree C per decade on average (Schlegel and Smit, in review)\todo{Not sure how to reference this...}, there will be an increase in MHWs and a decrease in MCSs. The gradual mean increase in temperature will cause the algorithm used here to be biased in its detection of MHWs as time progresses simply because temperatures are generally warmer in the later half of the time series therefore, the chances of the algorithm detecting a MHW increases because the base temperature from which the MHW will be fluctuating from will be greater than the beginning of the time series. Ultimately, for the species and ecosystems experiencing this increase in duress, the semantic argument of the viability of percentiles provides little solace. \todo{Nice concluding statement here!}
+As MHWs and MCSs are temperature related phenomena we would be remiss not to discuss the potential of our findings in relation to climate change. The count of the MHWs and MCSs that occurred along the coastline is less telling in this regard than the trend in these events themselves. Although all but 4 of the \emph{in situ} time series used in this investigation are too short to draw adequate conclusions on the decadal trends seen in MHWs and MCSs, the OISST data are not. And as hypothesised these data showed positive decadal trends for MHWs and negative trends for MCSs. Meaning that over the past 33 years of satellite observation, MHWs have been increasing every decade for each coastal section while MCSs have been decreasing \todo{Insert Eric's two new figures here}. Similar though less conclusive patterns were found in the shorter \emph{in situ} time series as well. As the algorithm used to calculate these events is based on percentiles, it stands to reason that as the mean temperature of South Africa's coastal waters has been increasing by 0.1\degree C per decade on average since the early 1970's (Schlegel and Smit, in review)\todo{Not sure how to reference this...}, there will be an increase in MHWs and a decrease in MCSs. The gradual mean increase in temperature will cause the algorithm used here to be biased in its detection of MHWs as time progresses simply because temperatures are generally warmer in the later half of the time series therefore, the chances of the algorithm detecting a MHW increases because the base temperature from which the MHW will be fluctuating from will be greater than the beginning of the time series. Ultimately, for the species and ecosystems experiencing this increase in duress, the semantic argument of the viability of percentiles provides little solace. \todo{Nice concluding statement here!}
 
 \section{Conclusion}
 Given that the MHW algorithm is based on the percentiles found within each time series and not on arbitrarily decided minimum or maximum thresholds, one will always find a certain number of MHWs and MCSs in any time series. This is evident in the results of our analysis (\Cref{table2} and \Cref{table3}) in that every time series used from both datasets experiences on average at least one MHW and MCS per year. Within each dataset, but not between, the count of events are similar throughout the coastline, regardless of the local oceanographic and geographic properties. It is the cumulative intensity of the events occurring on the different coastal sections that most clearly defines them. We expected to see the most intense MCSs on the west coast as this is part of an EBUS however, the south coast, a region dominated by the warmer Agulhas Current, but with some influence from the colder Benguela, had both the most intense and longest MHWs and MCS in the \emph{in situ} data. Even though it had been hypothesized that the south coast would have intense events, the magnitude of intensity of the events that occurred here over the other coastlines was surprising.
@@ -391,8 +388,8 @@ We have also shown that MCSs are not a good indicator for upwelling. As upwellin
 
 As the rates of co-occurrence between \emph{in situ} and OISST data are generally low, and the magnitude and co-occurrence of events within the different datasets differ from one another, we infer that some other force outside of meso-scale phenomena is contributing to extreme inshore events. This is likely due to atmospheric forcing and warrants further research to better understand what is driving the occurrence and intensity of these events.
 
-\section*{Acknowledgments}
-The authors would like to thank DAFF, DEA, EKZNW, KZNSB, SAWS and SAEON for contributing all of the raw data used in this study. Without it, this article and the SACTN would not be possible. This research was supported by NRF Grant (CPRR14072378735). The authors report no financial conflicts of interests. The data and analyses used in this paper may be found at https://github.com/schrob040/MHW.
+\section*{Acknowledgements}
+The authors would like to thank DAFF, DEA, EKZNW, KZNSB, SAWS and SAEON for contributing all of the raw data used in this study. Without it, this article and the South African Coastal Temperature Network (SACTN) would not be possible. This research was supported by NRF Grant (CPRR14072378735). This paper makes a contribution to the objectives of the Australian Research Council Centre of Excellence for Climate System Science (ARCCSS). The authors report no financial conflicts of interests. The data and analyses used in this paper may be found at https://github.com/schrob040/MHW.
 
 \section*{Supplementary}
 \subsection*{Meta-data}
@@ -435,340 +432,14 @@ Further meta-data for each time series and source listed in geographic order alo
   \end{tabular}
 \end{table}
 
-%
-%==============================================================================
 \section*{References}
 
-% \bibliography{MHW} % Comment out when manually copying the references from the MHW.bbl file
-\begin{thebibliography}{50} % Delete all of this when using the MHW.bbl file
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+% Disable the following line when wanting to repopulate the .bbl file from the .bib file
+%\bibpunct{(}{)}{;}{a}{}{,} % Not certain this line is necessary...
 
-\bibitem[{Alexander et~al.(2006)Alexander, Zhang, Peterson, Caesar, Gleason,
-  {Klein Tank}, Haylock, Collins, Trewin, Rahimzadeh, Tagipour, {Rupa Kumar},
-  Revadekar, Griffiths, Vincent, Stephenson, Burn, Aguilar, Brunet, Taylor,
-  New, Zhai, Rusticucci, and Vazquez-Aguirre}]{Alexander2006}
-Alexander, L.~V., Zhang, X., Peterson, T.~C., Caesar, J., Gleason, B., {Klein
-  Tank}, A. M.~G., Haylock, M., Collins, D., Trewin, B., Rahimzadeh, F.,
-  Tagipour, A., {Rupa Kumar}, K., Revadekar, J., Griffiths, G., Vincent, L.,
-  Stephenson, D.~B., Burn, J., Aguilar, E., Brunet, M., Taylor, M., New, M.,
-  Zhai, P., Rusticucci, M., Vazquez-Aguirre, J.~L., 2006. {Global observed
-  changes in daily climate extremes of temperature and precipitation}. Journal
-  of Geophysical Research Atmospheres 111~(5).
-
-\bibitem[{{American Meteorological Society}(2011)}]{Glickman2000}
-{American Meteorological Society}, 2011. {American Meteorological Society
-  Glossary of Meteorology}.
-\newline\urlprefix\url{http://glossary.ametsoc.org/wiki/Flood}
-
-\bibitem[{Black et~al.(2004)Black, Blackburn, Harrison, Hoskins, and
-  Methven}]{Black2004}
-Black, E., Blackburn, M., Harrison, R.~G., Hoskins, B.~J., Methven, J., 2004.
-  {Factors contributing to the summer 2003 European heatwave}. Weather 59~(8),
-  217--223.
-\newline\urlprefix\url{http://dx.doi.org/10.1256/wea.74.04}
-
-\bibitem[{Bond et~al.(2015)Bond, Cronin, Freeland, and Mantua}]{Bond2015}
-Bond, N.~A., Cronin, M.~F., Freeland, H., Mantua, N., 2015. {Causes and impacts
-  of the 2014 warm anomaly in the NE Pacific}.
-
-\bibitem[{Castillo and Lima(2010)}]{Castillo2010}
-Castillo, K.~D., Lima, F.~P., 2010. {Comparison of in situ and
-  satellite-derived (MODIS-Aqua/Terra) methods for assessing temperatures on
-  coral reefs}. Limnology and Oceanography Methods 8, 107--117.
-\newline\urlprefix\url{papers3://publication/uuid/214CBD69-72B9-42FC-8EBF-00467926F564}
-
-\bibitem[{Chen et~al.(2015)Chen, Gawarkiewicz, Kwon, and Zhang}]{Chen2015}
-Chen, K., Gawarkiewicz, G., Kwon, Y.-O., Zhang, W.~G., 2015. {The role of
-  atmospheric forcing versus ocean advection during the extreme warming of the
-  Northeast U.S. continental shelf in 2012}. Journal of Geophysical Research:
-  Oceans 120, 1--16.
-
-\bibitem[{Chen et~al.(2014)Chen, Gawarkiewicz, Lentz, and Bane}]{Chen2014}
-Chen, K., Gawarkiewicz, G.~G., Lentz, S.~J., Bane, J.~M., 2014. {Diagnosing the
-  warming of the Northeastern U.S. Coastal Ocean in 2012: A linkage between the
-  atmospheric jet stream variability and ocean response}. Journal of
-  Geophysical Research: Oceans 119~(1), 218--227.
-
-\bibitem[{Crisp(1964)}]{Crisp1964}
-Crisp, D.~J., 1964. {The effects of the severe winter of 1962-63 on marine life
-  in Britain}. Journal of Animal Ecology 33~(1), 165--210.
-\newline\urlprefix\url{http://www.jstor.org/stable/10.2307/2355}
-
-\bibitem[{DeCastro et~al.(2014)DeCastro, G{\~{o}}mez-Gesteira, Costoya, and
-  Santos}]{DeCastro2014}
-DeCastro, M., G{\~{o}}mez-Gesteira, M., Costoya, X., Santos, F., 2014.
-  {Upwelling influence on the number of extreme hot SST days along the Canary
-  upwelling ecosystem}. Journal of Geophysical Research: Oceans 119~(5),
-  3029--3040.
-
-\bibitem[{Diaz and Rosenberg(2008)}]{Diaz2008}
-Diaz, R., Rosenberg, R., 2008. {Spreading dead zones and consequences for
-  marine ecosystems.} Science 321~(5891), 926--929.
-\newline\urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/18703733}
-
-\bibitem[{Easterling et~al.(2000)Easterling, Meehl, Parmesan, Changnon, Karl,
-  and Mearns}]{Easterling2000}
-Easterling, D.~R., Meehl, G.~A., Parmesan, C., Changnon, S.~A., Karl, T.~R.,
-  Mearns, L.~O., 2000. {Climate Extremes: observations, modeling, and impacts}.
-  Science 289~(5487), 2068--2074.
-\newline\urlprefix\url{http://www.sciencemag.org/cgi/doi/10.1126/science.289.5487.2068}
-
-\bibitem[{Ellis(2015)}]{Ellis2015}
-Ellis, J.~M., 2015. {A Quantitative Assessment of the January 2010 Cold Spell
-  Effect on Mangrove Utilizing Coral Reef Fishes from Biscayne National Park,
-  Florida}.
-\newline\urlprefix\url{http://nsuworks.nova.edu/occ{\_}stuetd/377/}
-
-\bibitem[{Feng et~al.(2013)Feng, McPhaden, Xie, and Hafner}]{Feng2013}
-Feng, M., McPhaden, M.~J., Xie, S.-P., Hafner, J., 2013. {La Ni{\~{n}}a forces
-  unprecedented Leeuwin Current warming in 2011.} Scientific reports 3, 1277.
-\newline\urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3572450{\&}tool=pmcentrez{\&}rendertype=abstract}
-
-\bibitem[{Firth et~al.(2011)Firth, Knights, and Bell}]{Firth2011}
-Firth, L.~B., Knights, A.~M., Bell, S.~S., 2011. {Air temperature and winter
-  mortality: Implications for the persistence of the invasive mussel, Perna
-  viridis in the intertidal zone of the south-eastern United States}. Journal
-  of Experimental Marine Biology and Ecology 400~(1-2), 250--256.
-
-\bibitem[{Firth et~al.(2015)Firth, Mieszkowska, Grant, Bush, Davies, Frost,
-  Moschella, Burrows, Cunningham, Dye, and Hawkins}]{Firth2015}
-Firth, L.~B., Mieszkowska, N., Grant, L.~M., Bush, L.~E., Davies, A.~J., Frost,
-  M.~T., Moschella, P.~S., Burrows, M.~T., Cunningham, P.~N., Dye, S.~R.,
-  Hawkins, S.~J., 2015. {Historical comparisons reveal multiple drivers of
-  decadal change of an ecosystem engineer at the range edge}. Ecology and
-  Evolution 5~(15), 3210--3222.
-
-\bibitem[{Fischer et~al.(2011)Fischer, Lawrence, and Sanderson}]{Fischer2011}
-Fischer, E.~M., Lawrence, D.~M., Sanderson, B.~M., 2011. {Quantifying
-  uncertainties in projections of extremes - a perturbed land surface parameter
-  experiment}. Climate Dynamics 37~(7-8), 1381--1398.
-
-\bibitem[{Fischer and Sch{\"{a}}r(2010)}]{Fischer2010}
-Fischer, E.~M., Sch{\"{a}}r, C., 2010. {Consistent geographical patterns of
-  changes in high-impact European heatwaves}. Nature Geoscience 3~(6),
-  398--403.
-\newline\urlprefix\url{http://www.nature.com/doifinder/10.1038/ngeo866}
-
-\bibitem[{Garrabou et~al.(2009)Garrabou, Coma, Bensoussan, Bally,
-  Chevaldonn{\'{e}}, Cigliano, Diaz, Harmelin, Gambi, Kersting, Ledoux,
-  Lejeusne, Linares, Marschal, P{\'{e}}rez, Ribes, Romano, Serrano, Teixido,
-  Torrents, Zabala, Zuberer, and Cerrano}]{Garrabou2009}
-Garrabou, J., Coma, R., Bensoussan, N., Bally, M., Chevaldonn{\'{e}}, P.,
-  Cigliano, M., Diaz, D., Harmelin, J.~G., Gambi, M.~C., Kersting, D.~K.,
-  Ledoux, J.~B., Lejeusne, C., Linares, C., Marschal, C., P{\'{e}}rez, T.,
-  Ribes, M., Romano, J.~C., Serrano, E., Teixido, N., Torrents, O., Zabala, M.,
-  Zuberer, F., Cerrano, C., 2009. {Mass mortality in Northwestern Mediterranean
-  rocky benthic communities: Effects of the 2003 heat wave}. Global Change
-  Biology 15~(5), 1090--1103.
-
-\bibitem[{Gershunov and Douville(2008)}]{Gershunov2008}
-Gershunov, A., Douville, H., 2008. {Extensive summer hot and cold extremes
-  under current and possible future climatic conditions: Europe and North
-  America}. In: Climate Extremes and Society. pp. 74--98.
-
-\bibitem[{Gunter(1941)}]{Gunter1941}
-Gunter, G., 1941. {Death of Fishes Due to Cold on the Texas Coast, January,
-  1940}. Ecology 22~(2), 203--208.
-\newline\urlprefix\url{http://www.esajournals.org/doi/abs/10.2307/1932218}
-
-\bibitem[{Gunter(1951)}]{Gunter1951}
-Gunter, G., 1951. {Destruction of Fishes and Other Organisms on the South Texas
-  Coast by the Cold Wave of January 28-February 3, 1951}. Ecology 32~(4),
-  731--736.
-
-\bibitem[{Hobday et~al.(2016)Hobday, Alexander, Perkins, Smale, Straub, Oliver,
-  Benthuysen, Burrows, Donat, Feng, Holbrook, Moore, Scannell, {Sen Gupta}, and
-  Wernberg}]{Hobday2016}
-Hobday, A.~J., Alexander, L.~V., Perkins, S.~E., Smale, D.~A., Straub, S.~C.,
-  Oliver, E.~C., Benthuysen, J.~A., Burrows, M.~T., Donat, M.~G., Feng, M.,
-  Holbrook, N.~J., Moore, P.~J., Scannell, H.~A., {Sen Gupta}, A., Wernberg,
-  T., feb 2016. {A hierarchical approach to defining marine heatwaves}.
-  Progress in Oceanography 141, 227--238.
-\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0079661116000057}
-
-\bibitem[{Holt and Holt(1983)}]{Holt1983}
-Holt, S.~A., Holt, G.~J., 1983. {Cold Death of Fishes at Port Aransas, Texas:
-  January 1982}. The Southwestern Naturalist 28~(4), 464--466 CR -- Copyright
-  {\&}{\#}169; 1983 Southwestern A.
-\newline\urlprefix\url{http://www.jstor.org/stable/3670832}
-
-\bibitem[{Hutchings et~al.(2009)Hutchings, van~der Lingen, Shannon, Crawford,
-  Verheye, Bartholomae, van~der Plas, Louw, Kreiner, Ostrowski, Fidel, Barlow,
-  Lamont, Coetzee, Shillington, Veitch, Currie, and Monteiro}]{Hutchings2009}
-Hutchings, L., van~der Lingen, C.~D., Shannon, L.~J., Crawford, R. J.~M.,
-  Verheye, H. M.~S., Bartholomae, C.~H., van~der Plas, a.~K., Louw, D.,
-  Kreiner, a., Ostrowski, M., Fidel, Q., Barlow, R.~G., Lamont, T., Coetzee,
-  J., Shillington, F., Veitch, J., Currie, J.~C., Monteiro, P. M.~S., 2009.
-  {The Benguela Current: An ecosystem of four components}. Progress in
-  Oceanography 83~(1-4), 15--32.
-\newline\urlprefix\url{http://dx.doi.org/10.1016/j.pocean.2009.07.046}
-
-\bibitem[{Jentsch et~al.(2007)Jentsch, Kreyling, and
-  Beierkuhnlein}]{Jentsch2007}
-Jentsch, A., Kreyling, J., Beierkuhnlein, C., 2007. {A New Generation of
-  Climate-Change Experiments: Events, Not Trends} 9295~(November 2015).
-
-\bibitem[{Kreyling et~al.(2008)Kreyling, Beierkuhnlein, Ellis, and
-  Jentsch}]{Kreyling2008}
-Kreyling, J., Beierkuhnlein, C., Ellis, L., Jentsch, A., 2008. {Invasibility of
-  grassland and heath communities exposed to extreme weather events - Additive
-  effects of diversity resistance and fluctuating physical environment}. Oikos
-  117~(10), 1542--1554.
-
-\bibitem[{Laboy-nieves et~al.(2001)Laboy-nieves, Klein, Conde, Losada, Cruz,
-  and Bone}]{Laboy-nieves2001}
-Laboy-nieves, E.~N., Klein, E., Conde, J.~E., Losada, F., Cruz, J.~J., Bone,
-  D., 2001. {Mass mortality of tropical marine communities in Morrocoy.pdf}.
-  Bulletin of Marine Science 68~(2), 163--179.
-
-\bibitem[{Lima and Wethey(2012)}]{Lima2012}
-Lima, F.~P., Wethey, D.~S., 2012. {Three decades of high-resolution coastal sea
-  surface temperatures reveal more than warming}. Nature Communications 3, 704.
-\newline\urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/22426225$\backslash$nhttp://dx.doi.org/10.1038/ncomms1713}
-
-\bibitem[{L{\"{u}}nning(1990)}]{Luning1990}
-L{\"{u}}nning, K., 1990. {Seaweds: their environment, biogeography and
-  ecophysiology. Jhon Wiley and Sons}. Wiley, New York (USA).
-\newline\urlprefix\url{http://scholar.google.co.za.ezproxy.ukzn.ac.za:2048/scholar?hl=en{\&}q=Satellite+versus+in+situ+measurements+at+the+air?sea+interface{\&}btnG={\&}as{\_}sdt=1,5{\&}as{\_}sdtp=
-  https://scholar.google.com.br/scholar?q=L{\"{u}}nning+1990{\&}btnG={\&}hl=pt-BR{\&}as{\_}sdt=0,5{\#}0}
-
-\bibitem[{Lutjeharms et~al.(2000)Lutjeharms, Cooper, and
-  Roberts}]{Lutjeharms2000}
-Lutjeharms, J. R.~E., Cooper, J., Roberts, M., 2000. {Upwelling at the inshore
-  edge of the Agulhas Current}. Continental Shelf Research 20~(7), 737--761.
-\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0278434399000928
-  papers3://publication/uuid/8AEE7760-040F-4E0E-AE8A-FA07C224DFA4}
-
-\bibitem[{Mackenzie and Schiedek(2007)}]{Mackenzie2007}
-Mackenzie, B.~R., Schiedek, D., 2007. {Daily ocean monitoring since the 1860s
-  shows record warming of northern European seas}. Global Change Biology
-  13~(7), 1335--1347.
-
-\bibitem[{Marsh et~al.(1986)Marsh, O'Shea, and Best}]{Marsh1986}
-Marsh, H., O'Shea, T.~J., Best, R.~C., 1986. {Research on Sirenians}. Ambio
-  15~(3), 177--180.
-\newline\urlprefix\url{http://www.jstor.org/stable/4313244}
-
-\bibitem[{Matthes et~al.(2015)Matthes, Rinke, and Dethloff}]{Matthes2015}
-Matthes, H., Rinke, A., Dethloff, K., 2015. {Recent changes in Arctic
-  temperature extremes: warm and cold spells during winter and summer}.
-  Environmental Research Letters 10~(11), 114020.
-\newline\urlprefix\url{http://stacks.iop.org/1748-9326/10/i=11/a=114020?key=crossref.943405a086c6db32f307f68ffb159afd}
-
-\bibitem[{Meehl(2004)}]{Meehl2004}
-Meehl, G.~a., 2004. {More Intense, More Frequent, and Longer Lasting Heat Waves
-  in the 21st Century}. Science 305~(5686), 994--997.
-\newline\urlprefix\url{http://www.sciencemag.org/cgi/doi/10.1126/science.1098704}
-
-\bibitem[{Mills et~al.(2012)Mills, Pershing, Brown, Chen, Chiang, Holland,
-  Lehuta, Nye, Sun, Thomas, and Wahle}]{Mills2012}
-Mills, K.~E., Pershing, A.~J., Brown, C.~J., Chen, Y., Chiang, F.-S., Holland,
-  D.~S., Lehuta, S., Nye, J.~a., Sun, J.~C., Thomas, A.~C., Wahle, R.~a., 2012.
-  {Lessons From the 2012 Ocean Heat Wave in the Northwest Atlantic}.
-  Oceanography 26~(2), 60--64.
-
-\bibitem[{Olita et~al.(2007)Olita, Sorgente, Natale, Gaber{\v{s}}ek, Ribotti,
-  Bonanno, and Patti}]{Olita2007}
-Olita, A., Sorgente, R., Natale, S., Gaber{\v{s}}ek, S., Ribotti, A., Bonanno,
-  A., Patti, B., 2007. {Effects of the 2003 European heatwave on the Central
-  Mediterranean Sea: surface fluxes and the dynamical response}. Ocean Science
-  3~(2), 273--289.
-\newline\urlprefix\url{http://www.ocean-sci.net/3/273/2007/os-3-273-2007.html}
-
-\bibitem[{O'Shea et~al.(1985)O'Shea, Beck, Bonde, Kochman, and
-  Odell}]{OShea1985}
-O'Shea, T.~J., Beck, C.~A., Bonde, R.~K., Kochman, H.~I., Odell, D.~K., 1985.
-  {An analysis of manatee mortality patterns in Florida, 1976-81}. The Journal
-  of Wildlife Management 49~(1), 1--11.
-\newline\urlprefix\url{http://www.jstor.org/stable/3801830}
-
-\bibitem[{Pachauri et~al.(2014)Pachauri, Meyer, {Van Ypersele}, Brinkman, {Van
-  Kesteren}, Leprince-Ringuet, and {Van Boxmeer}}]{IPCC2014}
-Pachauri, R.~K., Meyer, L., {Van Ypersele}, J.-P., Brinkman, S., {Van
-  Kesteren}, L., Leprince-Ringuet, N., {Van Boxmeer}, F., 2014. {Climate Change
-  2014 Synthesis Report}.
-
-\bibitem[{Pearce and Feng(2013)}]{Pearce2013}
-Pearce, A.~F., Feng, M., 2013. {The rise and fall of the "marine heat wave" off
-  Western Australia during the summer of 2010/2011}. Journal of Marine Systems
-  111-112, 139--156.
-
-\bibitem[{Rehage et~al.(2016)Rehage, Blanchard, Boucek, Lorenz, and
-  Robinson}]{Rehage2016}
-Rehage, J.~S., Blanchard, J.~R., Boucek, R.~E., Lorenz, J.~J., Robinson, M.,
-  2016. {Knocking back invasions: variable resistance and resilience to
-  multiple cold spells in native vs. nonnative fishes}. Ecosphere 00~(00),
-  e01268.
-
-\bibitem[{Reynolds et~al.(2002)Reynolds, Rayner, and Smith}]{Reynolds2002}
-Reynolds, R.~W., Rayner, N.~A., Smith, T., 2002. {An improved in situ and
-  satellite SST analysis for climate}. Journal of Climate.
-\newline\urlprefix\url{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/1520-0442(2002)015{\textless}1609:AIISAS{\textgreater}2.0.CO;2
-  papers3://publication/uuid/7532476F-59A5-492D-B57A-12B92961BA4C}
-
-\bibitem[{Reynolds et~al.(2007)Reynolds, Smith, Liu, Chelton, Casey, and
-  Schlax}]{Reynolds2007}
-Reynolds, R.~W., Smith, T.~M., Liu, C., Chelton, D.~B., Casey, K.~S., Schlax,
-  M.~G., 2007. {Daily high-resolution-blended analyses for sea surface
-  temperature}. Journal of Climate 20~(22), 5473--5496.
-\newline\urlprefix\url{http://ams.allenpress.com/perlserv/?request=get-abstract{\&}doi=10.1175/2007JCLI1824.1
-  papers3://publication/doi/10.1175/2007JCLI1824.1}
-
-\bibitem[{Roberts(2005)}]{Roberts2005}
-Roberts, M.~J., 2005. {Chokka squid (Loligo vulgaris reynaudii) abundance
-  linked to changes in South Africa's Agulhas Bank ecosystem during spawning
-  and the early life cycle}. ICES Journal of Marine Science 62~(1), 33--55.
-
-\bibitem[{Selig et~al.(2010)Selig, Casey, and Bruno}]{Selig2010}
-Selig, E., Casey, K., Bruno, J.~F., 2010. {New insights into global patterns of
-  ocean temperature anomalies: implications for coral reef health and
-  management}. Global Ecology and Biogeography 9999~(9999).
-\newline\urlprefix\url{http://dx.doi.org/10.1111/j.1466-8238.2009.00522.x}
-
-\bibitem[{Smale and Wernberg(2009)}]{Smale2009}
-Smale, D.~A., Wernberg, T., 2009. {Satellite-derived SST data as a proxy for
-  water temperature in nearshore benthic ecology Peer reviewed article}. Marine
-  Biology 387, 27--37.
-\newline\urlprefix\url{http://www.vliz.be/imis/imis.php?refid=144063{\&}pp=print
-  papers3://publication/uuid/3F4EF52B-247E-4406-8AD9-419D5B46A4B5}
-
-\bibitem[{Smit et~al.(2013)Smit, Roberts, Anderson, Dufois, Dudley, Bornman,
-  Olbers, and Bolton}]{Smit2013}
-Smit, A.~J., Roberts, M., Anderson, R.~J., Dufois, F., Dudley, S. F.~J.,
-  Bornman, T.~G., Olbers, J., Bolton, J.~J., 2013. {A coastal seawater
-  temperature dataset for biogeographical studies: Large biases between in situ
-  and remotely-sensed data sets around the coast of South Africa}. PLoS ONE
-  8~(12).
-
-\bibitem[{Sura(2011)}]{Sura2011}
-Sura, P., 2011. {A general perspective of extreme events in weather and
-  climate}.
-
-\bibitem[{Wernberg et~al.(2011)Wernberg, Russell, Moore, Ling, Smale, Campbell,
-  Coleman, Steinberg, Kendrick, and Connell}]{Wernberg2011}
-Wernberg, T., Russell, B.~D., Moore, P.~J., Ling, S.~D., Smale, D.~A.,
-  Campbell, A., Coleman, M.~A., Steinberg, P.~D., Kendrick, G.~A., Connell,
-  S.~D., 2011. {Impacts of climate change in a global hotspot for temperate
-  marine biodiversity and ocean warming}.
-\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0022098111000694}
-
-\bibitem[{Wernberg et~al.(2013)Wernberg, Smale, Tuya, Thomsen, Langlois,
-  de~Bettignies, Bennett, and Rousseaux}]{Wernberg2013}
-Wernberg, T., Smale, D.~A., Tuya, F., Thomsen, M.~S., Langlois, T.~J.,
-  de~Bettignies, T., Bennett, S., Rousseaux, C.~S., 2013. {An extreme climatic
-  event alters marine ecosystem structure in a global biodiversity hotspot}.
-  Nature Climate Change 3~(1), 78--82.
-\newline\urlprefix\url{http://www.nature.com/articles/nclimate1627
-  http://dx.doi.org/10.1038/nclimate1627}
-
-\bibitem[{Woodward(1987)}]{Woodward1987}
-Woodward, F.~I., 1987. {Climate and Plant Distribution}. Booksgooglecom
-  154~(2), 174.
-\newline\urlprefix\url{http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=9780521282147}
-
-\end{thebibliography} % Delete this line when using the MHW.bbl file as well
+\bibliography{MHW} % Comment out when manually copying the references from the MHW.bbl file
+% Delete all of the following when using the MHW.bib file with the above line
+% No one here but us chickens...
+% Delete the above line when copying in the MHW.bib file as well
 
 \end{document}
