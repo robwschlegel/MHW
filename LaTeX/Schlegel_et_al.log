@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  7 APR 2016 19:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  7 APR 2016 20:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2001,20 +2001,20 @@ Overfull \hbox (91.57846pt too wide) in paragraph at lines 417--447
  [][] 
  []
 
-(./Schlegel_et_al.bbl [24] [25] [26] [27] [28])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+[24] [25] [26] [27] [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
  [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
  (./Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 (rerunfilecheck)             Checksum: E2DBEF64D1EB617A79194BBBBA34549F;1064.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 765.
  ) 
 Here is how much of TeX's memory you used:
- 28643 strings out of 494910
- 523604 string characters out of 6178755
+ 28640 strings out of 494910
+ 523562 string characters out of 6178755
  629736 words of memory out of 5000000
  30957 multiletter control sequences out of 15000+600000
  100099 words of font info for 182 fonts, out of 8000000 for 9000
@@ -2036,7 +2036,7 @@ pe1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr
 ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mtt8.pfb>
-Output written on Schlegel_et_al.pdf (29 pages, 2428848 bytes).
+Output written on Schlegel_et_al.pdf (29 pages, 2428853 bytes).
 PDF statistics:
  731 PDF objects out of 1000 (max. 8388607)
  632 compressed objects within 7 object streams
