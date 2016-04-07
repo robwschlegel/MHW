@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{52}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -100,6 +100,13 @@ Fischer, E.~M., Lawrence, D.~M., Sanderson, B.~M., 2011. {Quantifying
 Fischer, E.~M., Sch{\"{a}}r, C., 2010. {Consistent geographical patterns of
   changes in high-impact European heatwaves}. Nature Geoscience 3~(6),
   398--403.
+
+\bibitem[{Garc{\'{i}}a-Reyes et~al.(2015)Garc{\'{i}}a-Reyes, Sydeman, Schoeman,
+  Rykaczewski, Black, Smit, and Bograd}]{Garcia-Reyes2015}
+Garc{\'{i}}a-Reyes, M., Sydeman, W.~J., Schoeman, D.~S., Rykaczewski, R.~R.,
+  Black, B.~a., Smit, A.~J., Bograd, S.~J., 2015. {Under Pressure: Climate
+  Change, Upwelling, and Eastern Boundary Upwelling Ecosystems}. Frontiers in
+  Marine Science 2~(December), 1--10.
 
 \bibitem[{Garrabou et~al.(2009)Garrabou, Coma, Bensoussan, Bally,
   Chevaldonn{\'{e}}, Cigliano, Diaz, Harmelin, Gambi, Kersting, Ledoux,
