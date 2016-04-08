@@ -1,6 +1,6 @@
 #############################################################################
 ## This script does:
-# 1. loads annual MHW/ MCS files;
+# 1. load annual MHW/ MCS files and clean meta-data for publication;
 # 2. Calculates event count, length and mean intensity for each coast for both datasets;
 # 3. Load all events and extract top three MHWs/ MCSs;
 # 4. Extracts top three MHW/ MCS events for each coastal section and type of data;
@@ -10,7 +10,7 @@
 # 8. Calculate co-occurrence between coastal sections;
 # 9. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
 # 10. Rate of increase in MHWs/ MCSs;
-# 11. R2 between in situ and OISST;
+# 11. R2 between in situ and OISST time series;
 # 12. Co-occurrence within datasets and coastal sections
 
 #############################################################################
@@ -61,12 +61,6 @@ dir6 <- paste(getwd(), "/data/MCS/events/", sep = "")
 dir7 <- paste(getwd(), "/data/MHW/SST events/", sep = "")
 dir8 <- paste(getwd(), "/data/MCS/SST events/", sep = "")
 
-# Load metadata
-load("data/metaData2.Rdata")
-
-# Clean Metadata for inclusion as a table in the paper
-
-
 # Load annual event stats
 annualLoad <- function(dir) {
   fname1 <-  dir(dir, full.names = TRUE)
@@ -98,6 +92,23 @@ mhwAnnual <- annualLoad(dir1)
 mcsAnnual <- annualLoad(dir2)
 mhwAnnualSST <- annualLoad(dir3)
 mcsAnnualSST <- annualLoad(dir4)
+
+# Load metadata
+load("data/metaData2.Rdata")
+
+# Clean Metadata for inclusion as a table in the paper
+metaData3 <- metaData2
+metaData3$site <- as.character(metaData3$site)
+metaData3$start.date <- as.character(metaData3$start.date)
+metaData3$end.date <- as.character(metaData3$end.date)
+row.names(metaData3) <- NULL
+metaData3 <- metaData3[c(1:4,22,5:17,23,18:21,24),c(1:5,7:9,11:15)]
+metaData3[c(5,19,24),1] <- "coast"
+metaData3[c(5,19,24),2] <- "mean"
+metaData3[c(5,19,24),c(4:7)] <- NA
+metaData3$length <- round(metaData3$length/365,1) # Conert to year
+colnames(metaData3)[c(6:9)] <- c("start date", "end date", "duration (years)", "NA %")
+xtable(metaData3, auto = TRUE)
 
 #############################################################################
 ## 2. Calculates event count, length and mean intensity for each coast for both datasets
@@ -760,7 +771,7 @@ sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
 
 
 #############################################################################
-## 11. R2 between in situ and OISST
+## 11. R2 between in situ and OISST time series
 
 
 #############################################################################

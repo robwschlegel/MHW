@@ -120,8 +120,12 @@ tsALL <- ddply(tsALL, .(site, type, date), summarize,
 # Reorder sites for plotting
 siteOrder <- c("Port Nolloth", "Sea Point", "Hout Bay", "Kommetjie", "Fish Hoek", "Muizenberg", "Gordons Bay", "Hermanus", "Ystervarkpunt", "Mossel Bay", "Knysna", "Tsitsikamma West", "Storms River Mouth", "Tsitsikamma East", "Pollock Beach", "Humewood", "Hamburg", "Eastern Beach", "Orient Beach", "Nahoon Beach", "Sodwana")
 
-# Change site names for plotting
-newNames <- c("1. Port Nolloth", "2. Sea Point", "3. Hout Bay", "4. Kommetjie", "5. Fish Hoek", "6. Muizenberg", "7. Gordons Bay", "8. Hermanus", "9. Ystervarkpunt", "10. Mossel Bay", "11. Knysna", "12. Tsitsikamma West", "13. Storms River Mouth", "14. Tsitsikamma East", "15. Pollock Beach", "16. Humewood", "17. Hamburg", "18. Eastern Beach", "19. Orient Beach", "20. Nahoon Beach", "21. Sodwana")
+# Change site names for plotting on the side of the facets
+newNames1 <- c("1. Port \n Nolloth", "2. Sea \n Point", "3. Hout \n Bay", "4. Kommetjie", "5. Fish \n Hoek", "6. Muizenberg", "7. Gordons \n Bay", "8. Hermanus", "9. Yster- \n varkpunt", "10. Mossel \n Bay", "11. Knysna", "12. Tsitsikamma \n West", "13. Storms River \n Mouth", "14. Tsitsikamma \n East", "15. Pollock \n Beach", "16. Humewood", "17. Hamburg", "18. Eastern \n Beach", "19. Orient \n Beach", "20. Nahoon \n Beach", "21. Sodwana")
+# Change site names for plotting on the top of the facets
+newNames2 <- c("1. PortNolloth", "2. Sea Point", "3. Hout Bay", "4. Kommetjie", "5. Fish Hoek", "6. Muizenberg", "7. Gordons Bay", "8. Hermanus", "9. Yster varkpunt", "10. Mossel Bay", "11. Knysna", "12. Tsitsikamma West", "13. Storms River Mouth", "14. Tsitsikamma East", "15. Pollock Beach", "16. Humewood", "17. Hamburg", "18. Eastern Beach", "19. Orient Beach", "20. Nahoon Beach", "21. Sodwana")
+# Change site names for plotting only numbers
+newNames3 <- c("1. ", "2. ", "3. ", "4. ", "5. ", "6. ", "7. ", "8. ", "9. ", "10. ", "11. ", "12. ", "13. ", "14. ", "15. ", "16. ", "17. ", "18. ", "19. ", "20. ", "21. ")
 
 #tsALL2 <- rbind(tsALL, tsALL)
 tsALL2 <- tsALL
@@ -174,11 +178,11 @@ mcsnSST2 <- eventTemp(mcsnSST)
 mcsnSST2$site <- factor(mcsn2$site, levels = siteOrder)
 
 # Rename sites
-levels(tsALL2$site) <- newNames
-levels(mhwn2$site) <- newNames
-levels(mcsn2$site) <- newNames
-levels(mhwnSST2$site) <- newNames
-levels(mcsnSST2$site) <- newNames
+levels(tsALL2$site) <- newNames2
+levels(mhwn2$site) <- newNames2
+levels(mcsn2$site) <- newNames2
+levels(mhwnSST2$site) <- newNames2
+levels(mcsnSST2$site) <- newNames2
 
 # The figure
 f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
@@ -202,12 +206,13 @@ f2 <- ggplot(data = tsALL2, aes(x = date, y = temp)) + bw_update +
              colour = "black", fill = "#081d58", size = 2.7, show.legend = T) +
   geom_text(data = mcsnSST2, aes(x = month, y = temp, label = index), colour = "white", size = 2.6) +
   # Additional stuff
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y", expand = c(0.015,0)) +
+  scale_y_continuous(breaks = c(15,25)) +
+  scale_x_date(date_breaks = "5 years", date_labels = "%Y", expand = c(0.015,0)) +
   ylab(expression(paste("Temperature (", degree~C, ")"))) + xlab("Date") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
-  facet_grid(site ~ .)
+  facet_wrap(~site, ncol = 3)
 f2
-ggsave("LaTeX/figure2.pdf", height = 28, width = 12)
+ggsave("LaTeX/figure2.pdf", height = 6, width = 10)
 
 #############################################################################
 ## 3. Figure 3
@@ -231,22 +236,36 @@ levels(mhwCoastCO$direction) <- c("before", "combined", "after")
 mhwCoastCO$site <- factor(mhwCoastCO$site, levels = siteOrder)
 
 # Rename sites
-levels(mhwCoastCO$site) <- newNames
+levels(mhwCoastCO$site) <- newNames3
+
+# Add label column
+mhwCoastCO$label <- paste(mhwCoastCO$site, mhwCoastCO$direction, sep = "")
+
+# Create correct order for labels for plotting... not glamorous
+labelOrder <- c("1. before", "1. combined", "1. after", "2. before", "2. combined", "2. after", "3. before", "3. combined", "3. after", "4. before", "4. combined", "4. after", "5. before", "5. combined", "5. after", "6. before", "6. combined", "6. after", "7. before", "7. combined", "7. after", "8. before", "8. combined", "8. after", "9. before", "9. combined", "9. after", "10. before", "10. combined", "10. after", "11. before", "11. combined", "11. after", "12. before", "12. combined", "12. after", "13. before", "13. combined", "13. after", "14. before", "14. combined", "14. after", "15. before", "15. combined", "15. after", "16. before", "16. combined", "16. after", "17. before", "17. combined", "17. after", "18. before", "18. combined", "18. after", "19. before", "19. combined", "19. after", "20. before", "20. combined", "20. after", "21. before", "21. combined", "21. after")
+
+# Correct label order
+mhwCoastCO$label <- factor(mhwCoastCO$label, levels = labelOrder)
+
+# Data.frame of labels
+test <- paste(rep(newNames, each = 3), rep(c("before", "combined", "after"),21))
+test <- paste(mhwCoastCO$site, mhwCoastCO$direction, sep = "")
 
 figure4 <-  ggplot(data = mhwCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
   geom_line(aes(colour = as.factor(lag))) +
   # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
-  facet_grid(site ~ direction) +
+  facet_wrap(~ label, ncol = 9) +
+  #label_both(labels = mhwCoastCO$label) +
   #scale_color_grey() +
   ylab("proportion") + xlab("percentile (%)") +
   scale_colour_brewer(palette = "YlOrRd", direction = -1) +
   scale_x_continuous(breaks = seq(0.0, 1.0, 0.2)) +
-  scale_y_continuous(breaks = seq(0.0, 1.0, 0.25), limits = c(0,1)) +
+  scale_y_continuous(breaks = c(0.25, 0.50, 0.75), limits = c(0,1)) +
   guides(colour = guide_legend("lag [days]", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
   theme(axis.text = element_text(size = 7),
         legend.position = "bottom")
 figure4
-ggsave("LaTeX/figure4.pdf", width = 12, height = 28)
+ggsave("LaTeX/figure4.pdf", height = 8, width = 12)
 
 #############################################################################
 ## 5. Figure 5
@@ -267,19 +286,25 @@ levels(mcsCoastCO$direction) <- c("before", "combined", "after")
 mcsCoastCO$site <- factor(mcsCoastCO$site, levels = siteOrder)
 
 # Rename sites
-levels(mcsCoastCO$site) <- newNames
+levels(mcsCoastCO$site) <- newNames3
+
+# Add label column
+mcsCoastCO$label <- paste(mcsCoastCO$site, mcsCoastCO$direction, sep = "")
+
+# Correct label order
+mcsCoastCO$label <- factor(mcsCoastCO$label, levels = labelOrder)
 
 figure5 <-  ggplot(data = mcsCoastCO, aes(x = quantile, y = proportion, group = index)) + bw_update +
   geom_line(aes(colour = as.factor(lag))) +
   # geom_point(aes(colour = as.factor(lag)), size = 0.1) +
-  facet_grid(site ~ direction) +
+  facet_wrap(~ label, ncol = 9) +
   #scale_color_grey() +
   ylab("proportion") + xlab("percentile (%)") +
   scale_colour_manual(values = rev(cols)) +
   scale_x_continuous(breaks = seq(0.0, 1.0, 0.2)) +
-  scale_y_continuous(breaks = seq(0.0, 1.0, 0.25), limits = c(0,1)) +
+  scale_y_continuous(breaks = c(0.25, 0.50, 0.75), limits = c(0,1)) +
   guides(colour = guide_legend("lag [days]", nrow = 1, byrow = T, override.aes = list(size = 1.5))) +
   theme(axis.text = element_text(size = 7),
         legend.position = "bottom")
 figure5
-ggsave("LaTeX/figure5.pdf", width = 12, height = 28)
+ggsave("LaTeX/figure5.pdf", height = 8, width = 12)
