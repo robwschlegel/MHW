@@ -28,7 +28,7 @@ setwd("/Users/ajsmit/Dropbox/repos/MHW")
 ################################################################################
 # Open a netCDF file
 # ncsst <- open.ncdf("/Volumes/AGULHAS/OceanData/misc_hires/jplG1SST_2f50_4900_a129.nc")
-ncsst <- open.ncdf("/Users/ajsmit/Desktop/jplG1SST_2016-02-01--2016-02-14.nc")
+ncsst <- open.ncdf("/Users/ajsmit/spatial/G1SST/jplG1SST_2016-02-01--2016-02-14.nc")
 str(ncsst$dim)
 # Get the sst etc.
 sst <- get.var.ncdf(ncsst, "SST", start = c(1,1,10), count = c(-1,-1,1))
@@ -89,14 +89,14 @@ load("data/bathy/sa_bathy.RData") # LowRes for tweaking
 
 theme_set(theme_bw())
 
-limits <- c(8,28) # for colour bar
+limits <- c(12,28) # for colour bar
 breaks <- seq(6, 30, 2) # Create breaks to be used for colour bar
 
 
 # The main map
 #==============================================================================
 sa <- ggplot(data = south_africa_coast, aes(x = lon, y = lat)) + bw_update +
-  #geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +
+  geom_raster(data = grid, aes(x = Var1, y = Var2, fill = msst$value)) +
   geom_contour(data = bathy[bathy$depth >= -250,], aes(x = lon, y = lat, z = depth),
                colour = "grey20", alpha = 0.7, size = 0.2, binwidth = 200, na.rm = TRUE, show.legend = FALSE) +
   stat_contour(data = sa_bathy[sa_bathy$depth < -250,], aes(x = lon, y = lat, z = depth, alpha = ..level..),
@@ -106,7 +106,7 @@ sa <- ggplot(data = south_africa_coast, aes(x = lon, y = lat)) + bw_update +
   # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),
   #            alpha = 0.9, size = 2.6, shape = 1) +
   geom_point(data = metaData2, aes(x = lon, y = lat),
-             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +
+             alpha = 0.9, size = 2.6, shape = 1, colour = "ivory") +
   geom_point(data = site_pixels3, aes(x = lon, y = lat),
              shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +
   geom_text(data = metaData2[-c(2:6,13,15,18,19),], aes(x = lon, y = lat, label = ID),
@@ -123,13 +123,13 @@ sa <- ggplot(data = south_africa_coast, aes(x = lon, y = lat)) + bw_update +
   xlab("") +
   ylab("") +
   guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +
-  theme(panel.background = element_rect(fill = "white", colour = NA),
+  theme(panel.background = element_rect(fill = "ivory", colour = NA),
         panel.border = element_rect(colour = "black", size = 0.5),
         panel.grid.minor = element_line(colour = "NA"),
-        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),
+        panel.grid.major = element_line(colour = "ivory", size = 0.2, linetype = "dotted"),
         legend.direction = "horizontal",
         legend.justification = c(1,0),
-        legend.position = c(0.65, 0.75),
+        legend.position = c(0.65, 0.80),
         legend.text = element_text(size = 8),
         legend.title = element_text(size = 8),
         legend.key = element_blank(),
@@ -151,11 +151,11 @@ fb <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
   # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),
   #            alpha = 0.9, size = 2.6, shape = 1) +
   geom_point(data = metaData2[c(2:6),], aes(x = lon, y = lat),
-             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +
+             alpha = 0.9, size = 2.6, shape = 1, colour = "black") +
   # geom_point(data = site_pixels3, aes(x = lon, y = lat),
   #            shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +
   geom_text(data = metaData2[c(2:6),], aes(x = lon, y = lat, label = ID),
-            size = 1.8, colour = "ivory1") +
+            size = 1.8, colour = "black") +
   coord_equal() +
   coord_map(xlim = fb_lons, ylim = fb_lats, projection = "mercator") + 
   scale_x_continuous(breaks = c(18.2, 18.7)) +
@@ -165,10 +165,10 @@ fb <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
   xlab("") +
   ylab("") +
   guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +
-  theme(panel.background = element_rect(fill = "white", colour = NA),
-        panel.border = element_rect(colour = "black", size = 0.5),
+  theme(panel.background = element_rect(fill = "ivory", colour = NA),
+        panel.border = element_rect(colour = "ivory", size = 0.5),
         panel.grid.minor = element_line(colour = "NA"),
-        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),
+        panel.grid.major = element_line(colour = "ivory", size = 0.2, linetype = "dotted"),
         legend.direction = "horizontal",
         legend.justification = c(1,0),
         legend.position = c(0.65, 0.65),
@@ -176,7 +176,8 @@ fb <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
         legend.title = element_text(size = 8),
         legend.key = element_blank(),
         legend.background = element_blank(),
-        axis.ticks = element_line(size = 0.5))
+        axis.text = element_text(colour = "ivory"),
+        axis.ticks = element_line(size = 0.5, colour = "ivory"))
 fb
 
 # Hamburg inset
@@ -192,11 +193,11 @@ ham <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
   # geom_point(data = metaData2, aes(x = lon, y = lat, colour = coast),
   #            alpha = 0.9, size = 2.6, shape = 1) +
   geom_point(data = metaData2[c(17:20),], aes(x = lon, y = lat),
-             alpha = 0.9, size = 2.6, shape = 1, colour = "white") +
+             alpha = 0.9, size = 2.6, shape = 1, colour = "black") +
   # geom_point(data = site_pixels3, aes(x = lon, y = lat),
   #            shape = 0, alpha = 1.0, size = 1.2, show.legend = FALSE) +
   geom_text(data = metaData2[c(17:20),], aes(x = lon, y = lat, label = ID),
-            size = 1.8, colour = "ivory1") +
+            size = 1.8, colour = "black") +
   coord_equal() +
   coord_map(xlim = ham_lons, ylim = ham_lats, projection = "mercator") + 
   scale_x_continuous(breaks = c(27.5, 27.9)) +
@@ -206,10 +207,10 @@ ham <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
   xlab("") +
   ylab("") +
   guides(fill = guide_colourbar(barheight = 1.00, barwidth = 10)) +
-  theme(panel.background = element_rect(fill = "white", colour = NA),
-        panel.border = element_rect(colour = "black", size = 0.5),
+  theme(panel.background = element_rect(fill = "ivory", colour = NA),
+        panel.border = element_rect(colour = "ivory", size = 0.5),
         panel.grid.minor = element_line(colour = "NA"),
-        panel.grid.major = element_line(colour = "grey20", size = 0.2, linetype = "dotted"),
+        panel.grid.major = element_line(colour = "ivory", size = 0.2, linetype = "dotted"),
         legend.direction = "horizontal",
         legend.justification = c(1,0),
         legend.position = c(0.65, 0.65),
@@ -217,7 +218,8 @@ ham <- ggplot(data = sa_shore, aes(x = lon, y = lat)) + bw_update +
         legend.title = element_text(size = 8),
         legend.key = element_blank(),
         legend.background = element_blank(),
-        axis.ticks = element_line(size = 0.5))
+        axis.text = element_text(colour = "ivory"),
+        axis.ticks = element_line(size = 0.5, colour = "ivory"))
 ham
 
 # Compile and save

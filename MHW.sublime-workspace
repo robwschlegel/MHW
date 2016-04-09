@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"open.",
+				"open.ncdf"
+			],
+			[
 				"eigFun",
 				"eigFunList"
 			],
@@ -316,49 +320,25 @@
 	"buffers":
 	[
 		{
-			"file": "graph/figure1_1km.R",
+			"file": "proc/results.R",
 			"settings":
 			{
-				"buffer_size": 6684,
+				"buffer_size": 7911,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "graph/figures.R",
+			"file": "/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 11604,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "LaTeX/Schlegel_et_al.tex",
-			"settings":
-			{
-				"buffer_size": 54669,
+				"buffer_size": 2269,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+	"build_system": "Packages/LaTeXing/LaTeX.sublime-build",
 	"build_system_choices":
 	[
-		[
-			[
-				[
-					"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
-					""
-				],
-				[
-					"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
-					"Clean up Files"
-				]
-			],
-			[
-				"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
-				"Clean up Files"
-			]
-		],
 		[
 			[
 				[
@@ -501,30 +481,6 @@
 			[
 				"Packages/Pandown/Pandown HTML.sublime-build",
 				""
-			]
-		],
-		[
-			[
-				[
-					"Packages/User/LaTeX.sublime-build",
-					""
-				],
-				[
-					"Packages/User/LaTeX.sublime-build",
-					"Primary Quick Build"
-				],
-				[
-					"Packages/User/LaTeX.sublime-build",
-					"Choose Quick Build"
-				],
-				[
-					"Packages/User/LaTeX.sublime-build",
-					"Clean up Files"
-				]
-			],
-			[
-				"Packages/User/LaTeX.sublime-build",
-				"Choose Quick Build"
 			]
 		],
 		[
@@ -731,25 +687,13 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 354.0,
-		"last_filter": "Send",
+		"height": 392.0,
+		"last_filter": "insta",
 		"selected_items":
 		[
 			[
-				"Send",
-				"SendText+: Choose Program"
-			],
-			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"git",
@@ -853,6 +797,10 @@
 			],
 			[
 				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
 				"Package Control: Install Package"
 			],
 			[
@@ -968,7 +916,7 @@
 				"Set Syntax: Enhanced-R Console"
 			]
 		],
-		"width": 521.0
+		"width": 746.0
 	},
 	"console":
 	{
@@ -992,15 +940,18 @@
 	"expanded_folders":
 	[
 		"/Users/ajsmit/Dropbox/repos/MHW",
-		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX"
+		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX",
+		"/Users/ajsmit/Dropbox/repos/MHW/load"
 	],
 	"file_history":
 	[
-		"/Users/ajsmit/Downloads/elsarticle-template/elsarticle-template.tex",
-		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX/elsarticle-template.tex",
-		"/Users/ajsmit/Dropbox/repos/tempssa_v3.0/func/Colour_palettes.R",
-		"/Users/ajsmit/Dropbox/repos/MHW/MHW.sublime-workspace",
+		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.tex",
+		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.blg",
+		"/Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.bbl",
 		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ajsmit/Desktop/SANHO PE data/PE2008_LAT2003.CHT",
+		"/Users/ajsmit/Dropbox/repos/MHW/graph/figure1_1km.R",
+		"/Users/ajsmit/Dropbox/repos/MHW/MHW.sublime-workspace",
 		"/Users/ajsmit/Dropbox/repos/NCL/ERSSTv3/ERSSTv3_regress.ncl",
 		"/Users/ajsmit/Dropbox/repos/NCL/Pathfinder/Create_Pathfinder_1_deg_netCDF.ncl",
 		"/Users/ajsmit/Dropbox/repos/NCL/ERSSTv4/Create_über_netCDF.ncl",
@@ -1121,9 +1072,7 @@
 		"/Users/ajsmit/Dropbox/repos/Seaweed/Seaweed_doc_analysis_browns.R",
 		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
 		"/Users/ajsmit/Desktop/junk.Rnw",
-		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/LaTeX.sublime-build",
-		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-license.json",
-		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/MarkdownEditing/MultiMarkdown.sublime-settings"
+		"/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/LaTeX.sublime-build"
 	],
 	"find":
 	{
@@ -1142,30 +1091,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"Cd",
-			"~\\texttimes~days",
-			"besides ",
-			"super",
-			"pixel",
-			"\\degree C",
-			"et al.,",
-			"etal",
-			"Smit",
-			" in situ",
-			"Figure 5",
-			"Figure 4",
-			"Figure 3",
-			"Figure 2",
-			"Figure 1",
-			"in situ",
-			"(°C x days)",
-			"in situ",
-			"mymainaddress",
 			"grey90",
-			"red",
-			"lightcoral",
-			"red",
-			"grey40",
 			"sst47",
 			"_sst47",
 			"rc_mo",
@@ -1269,7 +1195,30 @@
 			"rda1.fw.vegan",
 			"rda.full",
 			"rda.0",
-			"Usel.frame"
+			"Usel.frame",
+			"eigFunList.sel",
+			"mctests.eigFunList",
+			"PCNM.l",
+			"weightsList",
+			"neighbour",
+			"neiList",
+			"lw4",
+			"nb4",
+			"PCNM.pos",
+			"map.PCNM",
+			"rda.full",
+			"rda.S2.res",
+			"rda.S2",
+			" sites",
+			"Usel.frame2",
+			"testrda.E",
+			"rda.S2.res",
+			"rda.full2",
+			"rda.S2",
+			"PCNM.l.sel$vectors",
+			"pca.S",
+			"memList",
+			"full1"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1309,232 +1258,33 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "graph/figure1_1km.R",
-					"semi_transient": false,
+					"file": "proc/results.R",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 6684,
+						"buffer_size": 7911,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3894,
-								6476
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountSyntax": "plain text",
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"r_box_status": false,
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1367.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "graph/figures.R",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11604,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2233,
-								4577
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountSyntax": "r extended",
-							"bh_regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"r_box_status": false,
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 625.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "LaTeX/Schlegel_et_al.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 54669,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								54535,
-								54535
+								1030,
+								1030
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
+							"WordCountSyntax": "r extended",
 							"bh_regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1545,11 +1295,6 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1560,30 +1305,146 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/SublimeLinter/Tomorrow-Night-Bright (SL).tmTheme",
+							"r_box_status": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/ajsmit/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1985,
+								1985
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"WordCountShouldRun": false,
+							"WordCountSyntax": "json",
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
+							"color_scheme": "Packages/User/SublimeLinter/Tomorrow-Night-Bright (SL).tmTheme",
 							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 14423.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1636,7 +1497,7 @@
 	{
 		"height": 120.0
 	},
-	"pinned_build_system": "Packages/User/LaTeX.sublime-build",
+	"pinned_build_system": "Packages/LaTeXing/LaTeX.sublime-build",
 	"project": "MHW.sublime-project",
 	"replace":
 	{
