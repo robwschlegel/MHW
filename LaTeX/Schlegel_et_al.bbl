@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{50}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -57,10 +57,6 @@ DeCastro, M., G{\~{o}}mez-Gesteira, M., Costoya, X., Santos, F., 2014.
   {Upwelling influence on the number of extreme hot SST days along the Canary
   upwelling ecosystem}. Journal of Geophysical Research: Oceans 119~(5),
   3029--3040.
-
-\bibitem[{Diaz and Rosenberg(2008)}]{Diaz2008}
-Diaz, R., Rosenberg, R., 2008. {Spreading dead zones and consequences for
-  marine ecosystems.} Science 321~(5891), 926--929.
 
 \bibitem[{Easterling et~al.(2000)Easterling, Meehl, Parmesan, Changnon, Karl,
   and Mearns}]{Easterling2000}
@@ -170,18 +166,12 @@ Kreyling, J., Beierkuhnlein, C., Ellis, L., Jentsch, A., 2008. {Invasibility of
   effects of diversity resistance and fluctuating physical environment}. Oikos
   117~(10), 1542--1554.
 
-\bibitem[{Laboy-nieves et~al.(2001)Laboy-nieves, Klein, Conde, Losada, Cruz,
-  and Bone}]{Laboy-nieves2001}
-Laboy-nieves, E.~N., Klein, E., Conde, J.~E., Losada, F., Cruz, J.~J., Bone,
-  D., 2001. {Mass mortality of tropical marine communities in Morrocoy.pdf}.
-  Bulletin of Marine Science 68~(2), 163--179.
-
 \bibitem[{Lima and Wethey(2012)}]{Lima2012}
 Lima, F.~P., Wethey, D.~S., 2012. {Three decades of high-resolution coastal sea
   surface temperatures reveal more than warming}. Nature Communications 3, 704.
 
-\bibitem[{L{\"{u}}nning(1990)}]{Luning1990}
-L{\"{u}}nning, K., 1990. {Seaweds: their environment, biogeography and
+\bibitem[{L{\"{u}}ning(1990)}]{Luning1990}
+L{\"{u}}ning, K., 1990. {Seaweds: their environment, biogeography and
   ecophysiology. Jhon Wiley and Sons}. Wiley, New York (USA).
 
 \bibitem[{Lutjeharms et~al.(2000)Lutjeharms, Cooper, and
