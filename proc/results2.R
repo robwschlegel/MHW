@@ -391,6 +391,20 @@ aovIntensity <- aov(intensity ~ coast * event, data = allAllAnnual[allAllAnnual$
 tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
 
+## ANOVA for MHWs
+aovFrequency <- aov(frequency ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
+#summary(aovFrequency)
+tukeyFrequency <- TukeyHSD(aovFrequency)
+#tukeyFrequency
+aovDuration <- aov(duration ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
+#summary(aovDuration)
+tukeyDuration <- TukeyHSD(aovDuration)
+#tukeyDuration
+aovIntensity <- aov(intensity ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
+#summary(aovIntensity)
+tukeyIntensity <- TukeyHSD(aovIntensity)
+#tukeyIntensity
+
 ## ANOVA for everything
 aovFrequency <- aov(frequency ~ coast * event * type, data = allAllAnnual)
 #summary(aovFrequency)
@@ -417,7 +431,7 @@ aovIntensCum <- aov(intCum ~ coast * event, data = allAllEvent[allAllEvent$type 
 tukeyIntensCum <- TukeyHSD(aovIntensCum)
 #tukeyIntensCum
 
-## ANOVA for  in situ cummulative intensity
+## ANOVA for all cummulative intensity
 aovIntensCum <- aov(intCum ~ coast * event * type, data = allAllEvent)
 #summary(aovIntensCum)
 tukeyIntensCum <- TukeyHSD(aovIntensCum)
@@ -773,7 +787,27 @@ sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
 #############################################################################
 ## 11. R2 between in situ and OISST time series
 
+# Load time series for both datasets
+load("prep/SA_coastal_temps.RData")
+SA_coastal_temps$date <- as.Date(SA_coastal_temps$date)
+load("data/OISSTdaily.Rdata")
+
+resultsR2 <- data.frame()
+for(i in 1:length(levels(SA_coastal_temps$site))) {
+  x <- subset(SA_coastal_temps, site == levels(SA_coastal_temps$site)[i])
+  y <- subset(OISSTdaily, site == levels(SA_coastal_temps$site)[i])
+  x <- x[x$date %in% y$date,]
+  y <- y[y$date %in% x$date,]
+  z <- data.frame(site = as.character(x$site[1]), R2 = round(coef(lm(y$temp~x$temp))[2],2))
+  resultsR2 <- rbind(resultsR2, z)
+}
+
+# Add column for plotting
+row.names(resultsR2) <- NULL
+resultsR2$R22 <- paste0("R^2 ==", format(resultsR2$R2, digits=2))
 
 #############################################################################
 ## 12. Co-occurrence within datasets and coastal sections
+
+
 
