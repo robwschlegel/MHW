@@ -15,7 +15,7 @@
 
 #############################################################################
 ## DEPENDS ON:
-require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable)
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr)
 source("setupParams/theme.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
@@ -418,6 +418,51 @@ aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
 #summary(aovIntensity)
 tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
+
+### AJS:
+# Been playing a bit with the 'magrittr' package...
+mod1 <- aov(frequency ~ event * type * coast, data = allAllAnnual)
+summary(mod1)
+mod1.Tukey <- TukeyHSD(mod1)
+
+# reveal only the significant differences:
+mod1.Tukey$`event` %>% # event only
+  data.frame(comp = row.names(mod1.Tukey$`event`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`type` %>% # type only
+  data.frame(comp = row.names(mod1.Tukey$`type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`coast` %>% # coast only
+  data.frame(comp = row.names(mod1.Tukey$`coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`event:type` %>%
+  data.frame(comp = row.names(mod1.Tukey$`event:type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`type:coast` %>%
+  data.frame(comp = row.names(mod1.Tukey$`type:coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`event:type:coast` %>%
+  data.frame(comp = row.names(mod1.Tukey$`event:type:coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+print(model.tables(mod1, "means"),digits = 3)
+boxplot(frequency ~ event * type, data = allAllAnnual)
+
+# I'm not really using these, as everything here is already encapsulated in the above analysis:
+allAllAnnual %>%
+  dplyr::filter(type == "insitu") %>%
+  aov(frequency ~ event * coast, data = .) %>%
+  summary
+
+allAllAnnual %>%
+  dplyr::filter(type == "OISST") %>%
+  aov(frequency ~ event * coast, data = .) %>%
+  summary
 
 ## ANOVA for in situ cummulative intensity
 aovIntensCum <- aov(intCum ~ coast * event, data = allAllEvent[allAllEvent$type == "insitu",])
