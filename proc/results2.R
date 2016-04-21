@@ -24,7 +24,7 @@ source("setupParams/theme.R")
 
 #############################################################################
 ## USED BY:
-# 
+#
 #############################################################################
 
 #############################################################################
@@ -44,8 +44,8 @@ source("setupParams/theme.R")
 
 # First specify coastal sections
 wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")
-sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna", 
-        "Mossel Bay", "Muizenberg", "Pollock Beach", "Tsitsikamma West", 
+sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna",
+        "Mossel Bay", "Muizenberg", "Pollock Beach", "Tsitsikamma West",
         "Storms River Mouth", "Tsitsikamma East", "Ystervarkpunt")
 ec <- c("Eastern Beach", "Nahoon Beach", "Orient Beach", "Sodwana")
 
@@ -115,7 +115,7 @@ xtable(metaData3, auto = TRUE)
 
 # Function used for calculations
 resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
-  results <- data.frame(coast = as.factor("All"), 
+  results <- data.frame(coast = as.factor("All"),
                         mhw_freq = round(mean(mhw1[, 4], na.rm = T), 1),
                         mhw_freq_sd = round(sd(mhw1[, 4], na.rm = T), 1),
                         mhw_dur = round(mean(mhw1[, 5], na.rm = T), 1),
@@ -131,7 +131,7 @@ resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data fr
   for(i in 1:length(levels(mhw1$coast))){
     mhw2 <- droplevels(subset(mhw1, coast == levels(mhw1$coast)[i]))
     mcs2 <- droplevels(subset(mcs1, coast == levels(mcs1$coast)[i]))
-    z <- data.frame(coast = levels(mhw1$coast)[i], 
+    z <- data.frame(coast = levels(mhw1$coast)[i],
                     mhw_freq = round(mean(mhw2[, 4], na.rm = T), 1),
                     mhw_freq_sd = round(sd(mhw2[, 4], na.rm = T), 1),
                     mhw_dur = round(mean(mhw2[, 5], na.rm = T), 1),
@@ -159,7 +159,7 @@ write.csv(allAnnualSSTResults, "data/allAnnualSSTResults.csv")
 #############################################################################
 ## 3. Load all events and extract top three MHWs/ MCSs
 
-##### 
+#####
 #These hashes are here so that this chunk can be collapsed efficiently
 colNames <- c(
   "eventNo", # Event number,
@@ -295,7 +295,7 @@ mcsSST1 <- topCoastn(mcsnSST, 1)
 
 #############################################################################
 ## 6. Calculate beginning and end dates for largest events
-  
+
 ## NB: The code from which this is calculated was changed so this no longer runs, but it is unneccessary anyway...
 
 # eventDates <- function(dat){
@@ -304,7 +304,7 @@ mcsSST1 <- topCoastn(mcsnSST, 1)
 #   dat <- dat[,c(28,31:34,11,13:14)]
 #   return(dat)
 # }
-# 
+#
 # mhw1dates <- eventDates(mhw1)
 # write.csv(mhw1dates, "data/mhw1dates.csv")
 # mcs1dates <- eventDates(mcs1)
@@ -326,7 +326,7 @@ mcsSST1 <- topCoastn(mcsnSST, 1)
 
 # Check assumptions for all data
 # test <- assumptions(x)
-# test <- daply(mhwAnnual[mhwAnnual$coast == "wc",][,4:5], 
+# test <- daply(mhwAnnual[mhwAnnual$coast == "wc",][,4:5],
 #               .variables = colnames(mhwAnnual[,4:5]), .fun = mean())
 
 # Combine annual data
@@ -419,11 +419,75 @@ aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
 tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
 
-### AJS:
-# Been playing a bit with the 'magrittr' package...
+### START AJS...
+# I used a series of planned comparisons (general linear hypotheses) as specific contrasts. It is unnecessary to test each and every posiible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
+# first for the count data; the factors are...
+# type (in situ and OISST)
+# event (MHW and MCS)
+# coast (wc, sc and ec)
+# We want to test...
+# 1. is there is diff. in the number of MHWs btw the in situ and OISST data?
+# 2. is there is diff. in the number of MCSs btw the in situ and OISST data?
+# 3. do in situ and OISST data yield the same number of events?
+# 4. within the in situ data, is there a diff in the number of MHWs and MCSs?
+# 5. within the OISST data, is there a diff in the number of MHWs and MCSs?
+# these are encoded by the following contrasts and analysed as general linear hypotheses:
+allAllAnnual$c1 <- interaction(allAllAnnual$type, allAllAnnual$event)
+levels(allAllAnnual$c1) # gives the order of the four combinations
+allAllAnnual$c2 <- interaction(allAllAnnual$type, allAllAnnual$event, allAllAnnual$coast)
+levels(allAllAnnual$c2)
+(mod1 <- aov(frequency ~ c1, data = allAllAnnual))
+summary(mod1)
+summary.lm(mod1) # a more useful output
+contrasts(allAllAnnual$c1)
+library(multcomp) # for general linear hypotheses (glht)
+cntrMat1 <- rbind("in situ-OISST (MCS)"=c(1, -1, 0, 0), # 1.
+                 "in situ-OISST (MHW)"=c(0, 0, 1, -1), # 2.
+                 "in situ-OISST (overall)"=c(1, -1, 1,-1), # 3.
+                 "MHW-MCS (in situ)"=c(-1, 0, 1, 0), # 4.
+                 "MHW-MCS (OISST)"=c(0, -1, 0, 1))# 5.
+mod1.glht <- glht(mod1, linfct = mcp(c1 = cntrMat1), alternative = "two.sided")
+summary(mod1.glht, test = adjusted("none"))
+# 6. within the in situ data, is there a difference in MCSs between coasts (wc vs sc)?
+# 7. within the in situ data, is there a difference in MCSs between coasts (wc vs ec)?
+# 8. within the in situ data, is there a difference in MHWs between coasts (wc vs sc)?
+# 9. within the in situ data, is there a difference in MHWs between coasts (wc vs ec)?
+# 10. within the OISST data, is there a difference in MCSs between coasts (wc vs sc)?
+# 11. within the OISST data, is there a difference in MCSs between coasts (wc vs ec)?
+# 12. within the OISST data, is there a difference in MHWs between coasts (wc vs sc)?
+# 13. within the OISST data, is there a difference in MHWs between coasts (wc vs ec)?
+(mod2 <- aov(frequency ~ c2, data = allAllAnnual))
+summary(mod2)
+summary.lm(mod2) # a different output
+cntrMat2 <- rbind("wc-sc (in situ, MCS)"=c(1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0), # 6.
+                  "wc-ec (in situ, MCS)"=c(1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0), # 7.
+                  "wc-sc (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0), # 8.
+                  "wc-ec (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0), # 9.
+                  "wc-sc (OISST, MCS)"=c(0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0), # 10.
+                  "wc-ec (OISST, MCS)"=c(0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0), # 11.
+                  "wc-sc (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0), # 12.
+                  "wc-ec (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1), # 13.
+                  "MHW-MCS (in situ, wc)"=c(-1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0), # 14.
+                  "MHW-MCS (in situ, sc)"=c(0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0, 0), # 15.
+                  "MHW-MCS (in situ, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1, 0), # 16.
+                  "MHW-MCS (OISST, wc)"=c(0, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0), # 17.
+                  "MHW-MCS (OISST, sc)"=c(0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0), # 18.
+                  "MHW-MCS (OISST, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1))# 19.
+mod2.glht <- glht(mod2, linfct = mcp(c2 = cntrMat2), alternative = "two.sided")
+summary(mod2.glht, test = adjusted("none")) # a bonferroni adjustment can be applied if needed, but I specified orthogonal contrasts as far as possible.
+
+# Below is a plain vanilla approach with unplanned ad-hoc comparisons, i.e. every combination of factor levels is compared to every other combination. Since the contrasts are still orthogonal there should not be problems with inflated type I errors, but the above is more efficient as it demonstrates more thought in the selection of hypotheses. Just for fun I have also been playing a bit with the 'magrittr' package and pipes...
 mod1 <- aov(frequency ~ event * type * coast, data = allAllAnnual)
 summary(mod1)
 mod1.Tukey <- TukeyHSD(mod1)
+
+mod1.Tukey$`type:event` %>% # event only
+  data.frame(comp = row.names(mod1.Tukey$`type:event`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod1.Tukey$`type:event:coast` %>% # event only
+  data.frame(comp = row.names(mod1.Tukey$`type:event:coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
 
 # reveal only the significant differences:
 mod1.Tukey$`event` %>% # event only
@@ -438,31 +502,70 @@ mod1.Tukey$`coast` %>% # coast only
   data.frame(comp = row.names(mod1.Tukey$`coast`)) %>%
   dplyr::filter(p.adj <= 0.05)
 
-mod1.Tukey$`event:type` %>%
+mod1.Tukey$`event:type` %>% # OISST has more MCS and MHW
   data.frame(comp = row.names(mod1.Tukey$`event:type`)) %>%
   dplyr::filter(p.adj <= 0.05)
 
-mod1.Tukey$`type:coast` %>%
-  data.frame(comp = row.names(mod1.Tukey$`type:coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`event:type:coast` %>%
+mod1.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
   data.frame(comp = row.names(mod1.Tukey$`event:type:coast`)) %>%
   dplyr::filter(p.adj <= 0.05)
 
 print(model.tables(mod1, "means"),digits = 3)
 boxplot(frequency ~ event * type, data = allAllAnnual)
 
-# I'm not really using these, as everything here is already encapsulated in the above analysis:
-allAllAnnual %>%
-  dplyr::filter(type == "insitu") %>%
-  aov(frequency ~ event * coast, data = .) %>%
-  summary
+# now duration:
+mod2 <- aov(duration ~ event * type * coast, data = allAllAnnual)
+summary(mod2)
+mod2.Tukey <- TukeyHSD(mod2)
 
-allAllAnnual %>%
-  dplyr::filter(type == "OISST") %>%
-  aov(frequency ~ event * coast, data = .) %>%
-  summary
+# reveal only the significant differences:
+mod2.Tukey$`event` %>% # event only
+  data.frame(comp = row.names(mod2.Tukey$`event`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod2.Tukey$`type` %>% # type only
+  data.frame(comp = row.names(mod2.Tukey$`type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod2.Tukey$`coast` %>% # coast only
+  data.frame(comp = row.names(mod2.Tukey$`coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod2.Tukey$`event:type` %>% # OISST has more MCSs
+  data.frame(comp = row.names(mod2.Tukey$`event:type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod2.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
+  data.frame(comp = row.names(mod2.Tukey$`event:type:coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+# now duration:
+mod3 <- aov(intensity ~ event * type * coast, data = allAllAnnual)
+summary(mod3)
+mod3.Tukey <- TukeyHSD(mod3)
+
+# reveal only the significant differences:
+mod3.Tukey$`event` %>% # event only
+  data.frame(comp = row.names(mod3.Tukey$`event`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod3.Tukey$`type` %>% # type only
+  data.frame(comp = row.names(mod3.Tukey$`type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod3.Tukey$`coast` %>% # coast only
+  data.frame(comp = row.names(mod3.Tukey$`coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod3.Tukey$`event:type` %>% # OISST has more MCSs
+  data.frame(comp = row.names(mod3.Tukey$`event:type`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+mod3.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
+  data.frame(comp = row.names(mod3.Tukey$`event:type:coast`)) %>%
+  dplyr::filter(p.adj <= 0.05)
+
+### END AJS...
 
 ## ANOVA for in situ cummulative intensity
 aovIntensCum <- aov(intCum ~ coast * event, data = allAllEvent[allAllEvent$type == "insitu",])
@@ -489,7 +592,7 @@ tukeyIntensCum <- TukeyHSD(aovIntensCum)
 # yfit <- fitted.values(aovFrequency )
 # #window(width=8, height=3)
 # par(mfrow=c(1,3),mex=0.8)
-# ## Looking at the spread of the residuals to check Variances 
+# ## Looking at the spread of the residuals to check Variances
 # plot(yfit,res,xlab="Predicted values",ylab="Residuals")
 # abline(0,0,lty=3)
 # ### Looking at Normality
@@ -578,11 +681,11 @@ mcsCoastCO$coast[mcsCoastCO$site %in% wc] <- "west"
 mcsCoastCO$coast[mcsCoastCO$site %in% sc] <- "south"
 mcsCoastCO$coast[mcsCoastCO$site %in% ec] <- "east"
 
-# mhwCoastCO <- ddply(mhwCoastCO, .(coast, lag, quantile, direction), summarize, 
+# mhwCoastCO <- ddply(mhwCoastCO, .(coast, lag, quantile, direction), summarize,
 #                     proportion = mean(proportion, na.rm = TRUE))
 # write.csv(mhwCoastCO, "data/mhwCoastCO.csv")
 
-# mcsCoastCO <- ddply(mcsCoastCO, .(coast, lag, quantile, direction), summarize, 
+# mcsCoastCO <- ddply(mcsCoastCO, .(coast, lag, quantile, direction), summarize,
 #                     proportion = mean(proportion, na.rm = TRUE))
 # write.csv(mcsCoastCO, "data/mcsCoastCO.csv")
 
@@ -726,7 +829,7 @@ for(i in 1:length(levels(as.factor(allLong$site)))){
     for(k in 1:length(levels(as.factor(dat2$event)))){
       dat3 <- subset(dat2, event == levels(as.factor(dat2$event))[k])
       lmodel <- lm(dat3$frequency ~ seq(1:length(dat3$frequency)))
-      dat4 <- data.frame(site = dat3$site[1], coast = dat3$coast[1], type = dat3$type[1], 
+      dat4 <- data.frame(site = dat3$site[1], coast = dat3$coast[1], type = dat3$type[1],
                          event = dat3$event[1], trend = round(as.numeric(coef(lmodel)[2]*10),1))
       trends <- rbind(trends, dat4)
     }
@@ -795,7 +898,7 @@ for(i in 1:length(levels(as.factor(isShort$site)))){
     dat2.1 <- dat2[dat2$year %in% dat1.date.1,]
     dat2.2 <- dat2[dat2$year %in% dat1.date.2,]
     prop <- sum(dat2.2$frequency)/sum(dat2.1$frequency)
-    dat4 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1], 
+    dat4 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
                        event = dat2$event[1], prop = round(prop,2))
     shorts <- rbind(shorts, dat4)
   }
