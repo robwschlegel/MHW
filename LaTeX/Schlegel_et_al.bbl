@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -143,6 +143,10 @@ Hobday, A.~J., Alexander, L.~V., Perkins, S.~E., Smale, D.~A., Straub, S.~C.,
 Holt, S.~A., Holt, G.~J., 1983. {Cold Death of Fishes at Port Aransas, Texas:
   January 1982}. The Southwestern Naturalist 28~(4), 464--466 CR -- Copyright
   {\&}{\#}169; 1983 Southwestern A.
+
+\bibitem[{Hothorn et~al.(2008)Hothorn, Bretz, and Westfall}]{Hothorn2008}
+Hothorn, T., Bretz, F., Westfall, P., 2008. Simultaneous inference in general
+  parametric models. Biometrical Journal 50~(3), 346--363.
 
 \bibitem[{Hutchings et~al.(2009)Hutchings, van~der Lingen, Shannon, Crawford,
   Verheye, Bartholomae, van~der Plas, Louw, Kreiner, Ostrowski, Fidel, Barlow,

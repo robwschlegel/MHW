@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  21 APR 2016 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  21 APR 2016 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1977,96 +1977,95 @@ Package pdftex.def Info: figure1_1km_inset_map_labeled.pdf used on input line 1
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 152.
 
-[7] [8]
+[7] [8] [9]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 190.
-
-[9]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 221.
+               Default added (so using `tbp') on input line 192.
 
 [10]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 259.
+               Default added (so using `tbp') on input line 223.
 
-<figure2.pdf, id=436, 722.7pt x 433.62pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 261.
+
+<figure2.pdf, id=438, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 298.
+Package pdftex.def Info: figure2.pdf used on input line 300.
 (pdftex.def)             Requested size: 688.5567pt x 413.13425pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 299.
-
-<figure3.png, id=440, 913.4928pt x 913.011pt>
+(Font)              <9> on input line 301.
+ [11] [12 <./figure2.pdf>] <figure3.png, id=465, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 307.
+Package pdftex.def Info: figure3.png used on input line 309.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
- [11] [12 <./figure2.pdf>] [13 <./figure3.png>] <figure4.pdf, id=476, 433.62pt 
-x 578.16pt>
+ [13]
+[14 <./figure3.png>] <figure4.pdf, id=483, 433.62pt x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
 
 <use figure4.pdf>
-Package pdftex.def Info: figure4.pdf used on input line 320.
+Package pdftex.def Info: figure4.pdf used on input line 322.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
 
 
-LaTeX Warning: Float too large for page by 41.50014pt on input line 323.
+LaTeX Warning: Float too large for page by 41.50014pt on input line 325.
 
-<figure5.pdf, id=481, 433.62pt x 578.16pt>
+<figure5.pdf, id=488, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
-Package pdftex.def Info: figure5.pdf used on input line 326.
+Package pdftex.def Info: figure5.pdf used on input line 328.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
- [14] [15 <./figure4.pdf>] [16 <./figure5.pdf>] [17]
-<MHW_MCS_mean.png, id=515, 727.0362pt x 503.7219pt>
+ [15] [16 <./figure4.pdf>] [17 <./figure5.pdf>]
+<MHW_MCS_mean.png, id=517, 727.0362pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
  <use MHW_MCS_mean.png>
-Package pdftex.def Info: MHW_MCS_mean.png used on input line 342.
+Package pdftex.def Info: MHW_MCS_mean.png used on input line 344.
 (pdftex.def)             Requested size: 441.01773pt x 305.5559pt.
 
-[18 <./MHW_MCS_mean.png>] <MHW_MCS_trend.png, id=525, 742.9356pt x 502.2765pt>
+<MHW_MCS_trend.png, id=521, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
-
-<use MHW_MCS_trend.png>
-Package pdftex.def Info: MHW_MCS_trend.png used on input line 350.
+ <use MHW_MCS_trend.png>
+Package pdftex.def Info: MHW_MCS_trend.png used on input line 352.
 (pdftex.def)             Requested size: 441.01773pt x 298.16463pt.
- [19 <./MHW_MCS_trend.png>] [20]
+
+[18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 371.
- [21] [22] [23]
+ine 373.
+ [22] [23]
+[24]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 411.
+               Default added (so using `tbp') on input line 413.
 
 
-Overfull \hbox (20.69366pt too wide) in paragraph at lines 416--446
+Overfull \hbox (20.69366pt too wide) in paragraph at lines 418--448
  [][] 
  []
 
-(./Schlegel_et_al.bbl [24] [25] [26] [27]) [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
+(./Schlegel_et_al.bbl [25] [26] [27] [28]) [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
  (./Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 458.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 458.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 (rerunfilecheck)             Checksum: A7582E449A86F39EE909C2E0D806CCA4;1136.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 31252 strings out of 493091
- 592877 string characters out of 6134964
- 671807 words of memory out of 5000000
- 33881 multiletter control sequences out of 15000+600000
- 106178 words of font info for 174 fonts, out of 8000000 for 9000
+ 31275 strings out of 493091
+ 593157 string characters out of 6134964
+ 673807 words of memory out of 5000000
+ 33884 multiletter control sequences out of 15000+600000
+ 107348 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,92p,10483b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
+cal/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
 15/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/
 fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
 dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
@@ -2088,10 +2087,10 @@ l/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/lm/lmtt8.pfb>
-Output written on Schlegel_et_al.pdf (28 pages, 2338178 bytes).
+Output written on Schlegel_et_al.pdf (29 pages, 2341250 bytes).
 PDF statistics:
- 708 PDF objects out of 1000 (max. 8388607)
- 609 compressed objects within 7 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
+ 124 named destinations out of 1000 (max. 500000)
  30400 words of extra memory for PDF output out of 35830 (max. 10000000)
 
