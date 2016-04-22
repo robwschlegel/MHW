@@ -370,8 +370,8 @@ sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "m
 t.test(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"],
        allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"])
 # MCS
-t.test(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"],
-       allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"])
+t.test(abs(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"]),
+       abs(allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"]))
 
 ## ANOVA for in situ
 aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
@@ -904,11 +904,17 @@ for(i in 1:length(levels(as.factor(isShort$site)))){
     dat2.1 <- dat2[dat2$year %in% dat1.date.1,]
     dat2.2 <- dat2[dat2$year %in% dat1.date.2,]
     prop <- sum(dat2.2$frequency)/sum(dat2.1$frequency)
-    dat4 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
+    dat3 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
                        event = dat2$event[1], prop = round(prop,2))
-    shorts <- rbind(shorts, dat4)
+    shorts <- rbind(shorts, dat3)
   }
 }
+
+## ANOVA for event count proportions for short time series
+aovShorts <- aov(prop ~ event * coast, data = shorts)
+#summary(aovShorts)
+tukeyIntensCum <- TukeyHSD(aovShorts)
+#tukeyIntensCum
 
 ## Short stats
 # MHW all
@@ -937,6 +943,31 @@ sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "sc"])
 mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
 sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
 
+## Short counts for ANOVA
+shortCount <- data.frame()
+for(i in 1:length(levels(as.factor(isShort$site)))){
+  dat1 <- subset(isShort, site == levels(as.factor(isShort$site))[i])
+  dat1.1 <- subset(metaData2, site == levels(as.factor(isShort$site))[i])
+  dat1.date <- seq(year(dat1.1$start.date), year(dat1.1$end.date), by = 1)
+  dat1.date.1 <- dat1.date[1:(length(dat1.date)/2)]
+  dat1.date.2 <- dat1.date[(ceiling(length(dat1.date)/2)+1):length(dat1.date)]
+  for(j in 1:length(levels(as.factor(dat1$event)))){
+    dat2 <- subset(dat1, event == levels(as.factor(dat1$event))[j])
+    dat2.1 <- dat2[dat2$year %in% dat1.date.1,]
+    dat2.2 <- dat2[dat2$year %in% dat1.date.2,]
+    dat3 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
+                       event = dat2$event[1], count = sum(dat2.1$frequency), half = "first")
+    dat4 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
+                       event = dat2$event[1], count = sum(dat2.2$frequency), half = "second")
+    shortCount <- rbind(shortCount, dat3, dat4)
+  }
+}
+
+## ANOVA for event counts in first vs. second halves of short time series
+aovShortCount <- aov(count ~ half * event * coast, data = shortCount)
+#summary(aovShortCount)
+tukeyIntensCum <- TukeyHSD(aovShortCount)
+#tukeyIntensCum
 
 #############################################################################
 ## 11. R2 between in situ and OISST time series
