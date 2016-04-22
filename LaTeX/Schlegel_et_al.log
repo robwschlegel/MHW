@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  21 APR 2016 19:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.2)  22 APR 2016 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Schlegel_et_al.tex
 (./Schlegel_et_al.tex
-LaTeX2e <2015/01/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/elsarticle/elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
@@ -196,9 +196,9 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count105
 
-(/usr/local/texlive/texmf-local/tex/latex/html/url.sty
-Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
- names
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen115
@@ -246,14 +246,14 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@posthook=\toks19
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
@@ -403,7 +403,7 @@ Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00B8 (decimal 184)
@@ -434,7 +434,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -515,7 +515,7 @@ Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+File: ts1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -651,7 +651,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2015/06/22 v2.0b fixes to LaTeX (obsolete)
+Package: fixltx2e 2015/02/21 v2.0a fixes to LaTeX (obsolete)
 
 
 Package fixltx2e Warning: fixltx2e is not required with releases after 2015
@@ -758,7 +758,7 @@ Now handling font encoding LGR ...
 ... processing UTF-8 mapping file for font encoding LGR
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/greek-inputenc/lgrenc.dfu
-File: lgrenc.dfu 2015/08/05 1.6 UTF-8 support for Greek
+File: lgrenc.dfu 2014/09/14 1.5 UTF-8 support for Greek
    defining Unicode char U+00A8 (decimal 168)
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00AF (decimal 175)
@@ -852,10 +852,6 @@ File: lgrenc.dfu 2015/08/05 1.6 UTF-8 support for Greek
    defining Unicode char U+03CC (decimal 972)
    defining Unicode char U+03CD (decimal 973)
    defining Unicode char U+03CE (decimal 974)
-   defining Unicode char U+03D0 (decimal 976)
-   defining Unicode char U+03D1 (decimal 977)
-   defining Unicode char U+03D5 (decimal 981)
-   defining Unicode char U+03D6 (decimal 982)
    defining Unicode char U+03D8 (decimal 984)
    defining Unicode char U+03D9 (decimal 985)
    defining Unicode char U+03DA (decimal 986)
@@ -865,10 +861,6 @@ File: lgrenc.dfu 2015/08/05 1.6 UTF-8 support for Greek
    defining Unicode char U+03DF (decimal 991)
    defining Unicode char U+03E0 (decimal 992)
    defining Unicode char U+03E1 (decimal 993)
-   defining Unicode char U+03F0 (decimal 1008)
-   defining Unicode char U+03F1 (decimal 1009)
-   defining Unicode char U+03F4 (decimal 1012)
-   defining Unicode char U+03F5 (decimal 1013)
    defining Unicode char U+1F00 (decimal 7936)
    defining Unicode char U+1F01 (decimal 7937)
    defining Unicode char U+1F02 (decimal 7938)
@@ -1152,37 +1144,37 @@ File: amsgen.sty 1999/11/30 v2.0
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2015/07/30 v5724 L3 programming layer (loader) 
+Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2015/07/30 v5724 L3 programming layer (code) 
-L3 Module: l3bootstrap 2015/07/30 v5721 L3 Bootstrap code
-L3 Module: l3names 2015/07/28 v5705 L3 Namespace for primitives
+Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
+L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
 L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
 L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
-L3 Module: l3tl 2015/07/14 v5659 L3 Token lists
-L3 Module: l3str 2015/07/14 v5659 L3 Strings
-L3 Module: l3seq 2015/07/24 v5681 L3 Sequences and stacks
-L3 Module: l3int 2015/07/14 v5659 L3 Integers
+L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
+L3 Module: l3str 2015/03/01 v5545 L3 Strings
+L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
+L3 Module: l3int 2015/02/21 v5529 L3 Integers
 \c_max_int=\count119
 \l_tmpa_int=\count120
 \l_tmpb_int=\count121
 \g_tmpa_int=\count122
 \g_tmpb_int=\count123
-L3 Module: l3quark 2015/07/14 v5659 L3 Quarks
-L3 Module: l3prg 2015/07/30 v5722 L3 Control structures
+L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
+L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
 \g__prg_map_int=\count124
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
-L3 Module: l3file 2015/07/30 v5714 L3 File and I/O operations
+L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
 \l_iow_line_count_int=\count125
 \l__iow_target_count_int=\count126
 \l__iow_current_line_int=\count127
 \l__iow_current_word_int=\count128
 \l__iow_current_indentation_int=\count129
-L3 Module: l3skip 2015/07/14 v5659 L3 Dimensions and skips
+L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \c_zero_dim=\dimen130
 \c_max_dim=\dimen131
 \l_tmpa_dim=\dimen132
@@ -1195,16 +1187,16 @@ L3 Module: l3skip 2015/07/14 v5659 L3 Dimensions and skips
 \l_tmpb_skip=\skip68
 \g_tmpa_skip=\skip69
 \g_tmpb_skip=\skip70
-\c_zero_muskip=\muskip10
-\c_max_muskip=\muskip11
-\l_tmpa_muskip=\muskip12
-\l_tmpb_muskip=\muskip13
-\g_tmpa_muskip=\muskip14
-\g_tmpb_muskip=\muskip15
-L3 Module: l3keys 2015/07/26 v5684 L3 Key-value interfaces
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
 \g__keyval_level_int=\count130
 \l_keys_choice_int=\count131
-L3 Module: l3fp 2015/07/09 v5652 L3 Floating points
+L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
 \c__fp_leading_shift_int=\count132
 \c__fp_middle_shift_int=\count133
 \c__fp_trailing_shift_int=\count134
@@ -1241,7 +1233,7 @@ L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_display_x_dim=\dimen144
 \l__coffin_display_y_dim=\dimen145
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
-L3 Module: l3candidates 2015/07/22 v5677 L3 Experimental additions to l3kernel
+L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
 \l__box_top_dim=\dimen146
 \l__box_bottom_dim=\dimen147
 \l__box_left_dim=\dimen148
@@ -1258,19 +1250,18 @@ L3 Module: l3candidates 2015/07/22 v5677 L3 Experimental additions to l3kernel
 \l__coffin_top_corner_dim=\dimen158
 \l__coffin_scaled_total_height_dim=\dimen159
 \l__coffin_scaled_width_dim=\dimen160
-L3 Module: l3luatex 2015/06/30 v5646 L3 Experimental LuaTeX-specific functions
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
-File: l3unicode-data.def 2015/07/20 v-1 L3 Unicode data
+File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2015/06/30 v5646 L3 Experimental driver: PDF mode
+File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count141
 ))
-Package: l3keys2e 2015/07/28 v5700 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2014/11/25 v5471 LaTeX2e option processing using LaTeX3 keys
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2015/07/28 v5700 L3 Experimental document command parser
+Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count142
 \l__xparse_m_args_int=\count143
 \l__xparse_mandatory_args_int=\count144
@@ -1279,11 +1270,11 @@ Package: xparse 2015/07/28 v5700 L3 Experimental document command parser
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
 y
-Package: xtemplate 2015/07/28 v5700 L3 Experimental prototype document function
+Package: xtemplate 2014/11/25 v5471 L3 Experimental prototype document function
 s
 \l__xtemplate_tmp_dim=\dimen161
 \l__xtemplate_tmp_int=\count147
-\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_muskip=\muskip17
 \l__xtemplate_tmp_skip=\skip71
 Variant \prop_get:NoNTF already defined; not changing it on line 106
 Variant \prop_get:NoNT already defined; not changing it on line 107
@@ -1297,8 +1288,8 @@ Package: xfrac 2014/05/04 v4728 L3 Experimental split-level fractions
 \l__xfrac_numerator_top_sep_dim=\dimen164
 \l__xfrac_slash_left_sep_dim=\dimen165
 \l__xfrac_slash_right_sep_dim=\dimen166
-\l__xfrac_slash_left_muskip=\muskip17
-\l__xfrac_slash_right_muskip=\muskip18
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
 .................................................
 . xtemplate info: "declare-object-type"
 . 
@@ -1330,7 +1321,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisrulewidth=\dimen179
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
@@ -1379,13 +1370,13 @@ sts.tex))
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2015/08/07 v3.0.1 (rcs-revision 1.31)
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2015/08/07 v3.0.1 (rcs-revision 1.15)
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2014/07/09 v3.0.1 (rcs-revision 1.48)
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks28
 \pgfkeys@temptoks=\toks29
@@ -1419,7 +1410,7 @@ Driver file for pgf: pgfsys-pdftex.def
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
 ef
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
 df.def
@@ -1436,7 +1427,7 @@ code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v3.0.1 (rcs-revision 1.7)
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
@@ -1495,13 +1486,13 @@ File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 \pgf@shorten@end@additional=\dimen207
 \pgf@shorten@start@additional=\dimen208
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box52
 \pgf@hbox=\box53
 \pgf@layerbox@main=\box54
@@ -1509,12 +1500,12 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
 \pgflinewidth=\dimen209
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
 \pgf@pt@x=\dimen210
 \pgf@pt@y=\dimen211
 \pgf@pt@temp=\dimen212
@@ -1533,7 +1524,7 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 \pgfarrowsep=\dimen213
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
@@ -1548,7 +1539,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box55
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
@@ -1565,22 +1556,22 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box56
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1 (rcs-revision 1.7)
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen215
 \pgf@nodesepend=\dimen216
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1 (rcs-revision 1.1)
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
@@ -1588,7 +1579,7 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1 (rcs-revision 1.1)
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen217
@@ -1598,11 +1589,11 @@ Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
-Package: tikz 2015/08/07 v3.0.1 (rcs-revision 1.151)
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1 (rcs-revision 1.20)
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count163
 \pgfplotmarksize=\dimen219
 )
@@ -1632,11 +1623,11 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1 (rcs-revision 1.2)
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1 (rcs-revision 1.7)
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
@@ -1704,7 +1695,7 @@ LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count182
 \c@MaxMatrixCols=\count183
-\dotsspace@=\muskip19
+\dotsspace@=\muskip20
 \c@parentequation=\count184
 \dspbrk@lvl=\count185
 \tag@help=\toks39
@@ -1952,8 +1943,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 
-{/Users/ajsmit/Library/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
-p}]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 118.
 
 
@@ -1977,93 +1967,88 @@ Package pdftex.def Info: figure1_1km_inset_map_labeled.pdf used on input line 1
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 152.
 
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 170.
 [7] [8] [9]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 192.
-
-[10]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 223.
+               Default added (so using `tbp') on input line 194.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 261.
+               Default added (so using `tbp') on input line 222.
 
-<figure2.pdf, id=438, 722.7pt x 433.62pt>
+[10] [11] <figure2.pdf, id=441, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 300.
+Package pdftex.def Info: figure2.pdf used on input line 294.
 (pdftex.def)             Requested size: 688.5567pt x 413.13425pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 301.
- [11] [12 <./figure2.pdf>] <figure3.png, id=465, 913.4928pt x 913.011pt>
+(Font)              <9> on input line 295.
+
+<figure3.png, id=445, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 309.
+Package pdftex.def Info: figure3.png used on input line 303.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
- [13]
-[14 <./figure3.png>] <figure4.pdf, id=483, 433.62pt x 578.16pt>
+ [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=484, 433.62pt 
+x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
 
 <use figure4.pdf>
-Package pdftex.def Info: figure4.pdf used on input line 322.
+Package pdftex.def Info: figure4.pdf used on input line 316.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
 
 
-LaTeX Warning: Float too large for page by 41.50014pt on input line 325.
+LaTeX Warning: Float too large for page by 41.50014pt on input line 319.
 
-<figure5.pdf, id=488, 433.62pt x 578.16pt>
+<figure5.pdf, id=489, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
-Package pdftex.def Info: figure5.pdf used on input line 328.
+Package pdftex.def Info: figure5.pdf used on input line 322.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
  [15] [16 <./figure4.pdf>] [17 <./figure5.pdf>]
-<MHW_MCS_mean.png, id=517, 727.0362pt x 503.7219pt>
+<MHW_MCS_mean.png, id=520, 727.0362pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
  <use MHW_MCS_mean.png>
-Package pdftex.def Info: MHW_MCS_mean.png used on input line 344.
+Package pdftex.def Info: MHW_MCS_mean.png used on input line 338.
 (pdftex.def)             Requested size: 441.01773pt x 305.5559pt.
 
-<MHW_MCS_trend.png, id=521, 742.9356pt x 502.2765pt>
+<MHW_MCS_trend.png, id=524, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
  <use MHW_MCS_trend.png>
-Package pdftex.def Info: MHW_MCS_trend.png used on input line 352.
+Package pdftex.def Info: MHW_MCS_trend.png used on input line 346.
 (pdftex.def)             Requested size: 441.01773pt x 298.16463pt.
 
-[18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 373.
- [22] [23]
+[18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21] [22] [23]
 [24]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 413.
+               Default added (so using `tbp') on input line 407.
 
 
-Overfull \hbox (20.69366pt too wide) in paragraph at lines 418--448
+Overfull \hbox (20.69366pt too wide) in paragraph at lines 412--442
  [][] 
  []
 
 (./Schlegel_et_al.bbl [25] [26] [27] [28]) [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 454.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 454.
  (./Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 454.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 454.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 (rerunfilecheck)             Checksum: A7582E449A86F39EE909C2E0D806CCA4;1136.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 454.
  ) 
 Here is how much of TeX's memory you used:
- 31275 strings out of 493091
- 593157 string characters out of 6134964
- 673807 words of memory out of 5000000
- 33884 multiletter control sequences out of 15000+600000
- 107348 words of font info for 183 fonts, out of 8000000 for 9000
+ 30647 strings out of 493089
+ 581593 string characters out of 6134842
+ 675815 words of memory out of 5000000
+ 33241 multiletter control sequences out of 15000+600000
+ 107697 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,92p,10483b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,92p,10483b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
 15/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/
@@ -2087,10 +2072,10 @@ l/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/lm/lmtt8.pfb>
-Output written on Schlegel_et_al.pdf (29 pages, 2341250 bytes).
+Output written on Schlegel_et_al.pdf (29 pages, 2345838 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 124 named destinations out of 1000 (max. 500000)
+ 721 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 132 named destinations out of 1000 (max. 500000)
  30400 words of extra memory for PDF output out of 35830 (max. 10000000)
 

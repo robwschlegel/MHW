@@ -15,7 +15,9 @@
 
 #############################################################################
 ## DEPENDS ON:
-require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr); library(multcomp)
+# setwd("/Users/ajsmit/Dropbox/̧repos/MHW/proc") # for when I work in Sublime Text 3; not needed in RStudio
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable)
+library(magrittr); library(multcomp)
 source("setupParams/theme.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
@@ -560,61 +562,7 @@ mod1.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
   data.frame(comp = row.names(mod1.Tukey$`event:type:coast`)) %>%
   dplyr::filter(p.adj <= 0.05)
 
-print(model.tables(mod1, "means"),digits = 3)
-boxplot(frequency ~ event * type, data = allAllAnnual)
-
-# now duration:
-mod2 <- aov(duration ~ event * type * coast, data = allAllAnnual)
-summary(mod2)
-mod2.Tukey <- TukeyHSD(mod2)
-
-# reveal only the significant differences:
-mod2.Tukey$`event` %>% # event only
-  data.frame(comp = row.names(mod2.Tukey$`event`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod2.Tukey$`type` %>% # type only
-  data.frame(comp = row.names(mod2.Tukey$`type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod2.Tukey$`coast` %>% # coast only
-  data.frame(comp = row.names(mod2.Tukey$`coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod2.Tukey$`event:type` %>% # OISST has more MCSs
-  data.frame(comp = row.names(mod2.Tukey$`event:type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod2.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
-  data.frame(comp = row.names(mod2.Tukey$`event:type:coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-# now duration:
-mod3 <- aov(intensity ~ event * type * coast, data = allAllAnnual)
-summary(mod3)
-mod3.Tukey <- TukeyHSD(mod3)
-
-# reveal only the significant differences:
-mod3.Tukey$`event` %>% # event only
-  data.frame(comp = row.names(mod3.Tukey$`event`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod3.Tukey$`type` %>% # type only
-  data.frame(comp = row.names(mod3.Tukey$`type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod3.Tukey$`coast` %>% # coast only
-  data.frame(comp = row.names(mod3.Tukey$`coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod3.Tukey$`event:type` %>% # OISST has more MCSs
-  data.frame(comp = row.names(mod3.Tukey$`event:type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod3.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
-  data.frame(comp = row.names(mod3.Tukey$`event:type:coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
+# The same thing can be done for the durationa and intensity data (omitted here).
 ### END AJS...
 
 ## ANOVA for in situ cummulative intensity
