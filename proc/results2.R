@@ -15,7 +15,7 @@
 
 #############################################################################
 ## DEPENDS ON:
-require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr)
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr); library(multcomp)
 source("setupParams/theme.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
@@ -420,7 +420,7 @@ tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
 
 ### START AJS...
-# I used a series of planned comparisons (general linear hypotheses) as specific contrasts. It is unnecessary to test each and every possible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
+# I used a series of planned comparisons (generalized linear hypothesis test) as specific contrasts. It is unnecessary to test each and every possible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
 # first for the count data; the factors are...
 # type (in situ and OISST)
 # event (MHW and MCS)
@@ -433,48 +433,98 @@ tukeyIntensity <- TukeyHSD(aovIntensity)
 # 5. within the OISST data, is there a diff in the number of MHWs and MCSs?
 # these are encoded by the following contrasts and analysed as general linear hypotheses:
 allAllAnnual$c1 <- interaction(allAllAnnual$type, allAllAnnual$event)
-levels(allAllAnnual$c1) # gives the order of the four combinations
+levels(allAllAnnual$c1) # gives the order of the four combinations; used for specifying contrasts
 allAllAnnual$c2 <- interaction(allAllAnnual$type, allAllAnnual$event, allAllAnnual$coast)
 levels(allAllAnnual$c2)
 (mod1 <- aov(frequency ~ c1, data = allAllAnnual))
+print(model.tables(mod1, "means"),digits = 3)
+boxplot(frequency ~ c1, data = allAllAnnual)
 summary(mod1)
 summary.lm(mod1) # a more useful output
 contrasts(allAllAnnual$c1)
-library(multcomp) # for general linear hypotheses (glht)
+library(multcomp) # for generalized linear hypothesis test (glht)
 cntrMat1 <- rbind("in situ-OISST (MCS)"=c(1, -1, 0, 0), # 1.
                  "in situ-OISST (MHW)"=c(0, 0, 1, -1), # 2.
                  "in situ-OISST (overall)"=c(1, -1, 1,-1), # 3.
                  "MHW-MCS (in situ)"=c(-1, 0, 1, 0), # 4.
                  "MHW-MCS (OISST)"=c(0, -1, 0, 1))# 5.
 mod1.glht <- glht(mod1, linfct = mcp(c1 = cntrMat1), alternative = "two.sided")
-summary(mod1.glht, test = adjusted("none"))
-# 6. within the in situ data, is there a difference in MCSs between coasts (wc vs sc)?
-# 7. within the in situ data, is there a difference in MCSs between coasts (wc vs ec)?
-# 8. within the in situ data, is there a difference in MHWs between coasts (wc vs sc)?
-# 9. within the in situ data, is there a difference in MHWs between coasts (wc vs ec)?
-# 10. within the OISST data, is there a difference in MCSs between coasts (wc vs sc)?
-# 11. within the OISST data, is there a difference in MCSs between coasts (wc vs ec)?
-# 12. within the OISST data, is there a difference in MHWs between coasts (wc vs sc)?
-# 13. within the OISST data, is there a difference in MHWs between coasts (wc vs ec)?
+library(sandwich)
+# with sandwich estimator to account for the small differences in heterogeneity between the c1 factors (see plot above)
+mod1a.glht <- glht(mod1, linfct = mcp(c1 = cntrMat1), alternative = "two.sided", vcov = sandwich)
+summary(mod1a.glht)
+summary(mod1a.glht, test = adjusted("none"))
+coef(mod1a.glht)
+confint(mod1a.glht) # confidence intervals of the difference between the contrasts
+plot(mod1.glht)
+plot(mod1a.glht)
+## 6. within the in situ data, is there a difference in MCSs between coasts (wc vs sc)?
+## 7. within the in situ data, is there a difference in MCSs between coasts (wc vs ec)?
+## 8. within the in situ data, is there a difference in MCSs between coasts (sc vs ec)?
+# 9. within the in situ data, is there a difference in MHWs between coasts (wc vs sc)?
+# 10. within the in situ data, is there a difference in MHWs between coasts (wc vs ec)?
+# 11. within the in situ data, is there a difference in MHWs between coasts (sc vs ec)?
+## 12. within the OISST data, is there a difference in MCSs between coasts (wc vs sc)?
+## 13. within the OISST data, is there a difference in MCSs between coasts (wc vs ec)?
+## 14. within the OISST data, is there a difference in MCSs between coasts (sc vs ec)?
+# 15. within the OISST data, is there a difference in MHWs between coasts (wc vs sc)?
+# 16. within the OISST data, is there a difference in MHWs between coasts (wc vs ec)?
+# 17. within the OISST data, is there a difference in MHWs between coasts (sc vs ec)?
+## 18. within in situ and wc, are the number of cold and warm events the same?
+## 19. within in situ and sc, are the number of cold and warm events the same?
+## 20. within in situ and ec, are the number of cold and warm events the same?
+# 21. within OISST and wc, are the number of cold and warm events the same?
+# 22. within OISST and sc, are the number of cold and warm events the same?
+# 23. within OISST and ec, are the number of cold and warm events the same?
 (mod2 <- aov(frequency ~ c2, data = allAllAnnual))
 summary(mod2)
 summary.lm(mod2) # a different output
 cntrMat2 <- rbind("wc-sc (in situ, MCS)"=c(1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0), # 6.
                   "wc-ec (in situ, MCS)"=c(1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0), # 7.
-                  "wc-sc (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0), # 8.
-                  "wc-ec (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0), # 9.
-                  "wc-sc (OISST, MCS)"=c(0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0), # 10.
-                  "wc-ec (OISST, MCS)"=c(0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0), # 11.
-                  "wc-sc (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0), # 12.
-                  "wc-ec (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1), # 13.
-                  "MHW-MCS (in situ, wc)"=c(-1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0), # 14.
-                  "MHW-MCS (in situ, sc)"=c(0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0, 0), # 15.
-                  "MHW-MCS (in situ, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1, 0), # 16.
-                  "MHW-MCS (OISST, wc)"=c(0, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0), # 17.
-                  "MHW-MCS (OISST, sc)"=c(0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0), # 18.
-                  "MHW-MCS (OISST, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1))# 19.
-mod2.glht <- glht(mod2, linfct = mcp(c2 = cntrMat2), alternative = "two.sided")
+                  "sc-ec (in situ, MCS)"=c(0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0), # 8.
+
+                  "wc-sc (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0), # 9.
+                  "wc-ec (in situ, MHW)"=c(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0), # 10.
+                  "sc-ec (in situ, MHW)"=c(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, -1, 0), # 11.
+
+                  "wc-sc (OISST, MCS)"=c(0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0), # 12.
+                  "wc-ec (OISST, MCS)"=c(0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0), # 13.
+                  "sc-ec (OISST, MCS)"=c(0, 0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0), # 14.
+
+                  "wc-sc (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0), # 15.
+                  "wc-ec (OISST, MHW)"=c(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1), # 16.
+                  "sc-ec (OISST, MHW)"=c(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, -1), # 17.
+
+                  "MHW-MCS (in situ, wc)"=c(-1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0), # 18.
+                  "MHW-MCS (in situ, sc)"=c(0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0, 0), # 19.
+                  "MHW-MCS (in situ, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1, 0), # 20.
+
+                  "MHW-MCS (OISST, wc)"=c(0, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0), # 21.
+                  "MHW-MCS (OISST, sc)"=c(0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0), # 22.
+                  "MHW-MCS (OISST, ec)"=c(0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1))# 23.
+mod2.glht <- glht(mod2, linfct = mcp(c2 = cntrMat2), alternative = "two.sided", vcov = sandwich)
 summary(mod2.glht, test = adjusted("none")) # a bonferroni adjustment can be applied if needed, but I specified orthogonal contrasts as far as possible.
+coef(mod2.glht)
+confint(mod2.glht)
+
+# now for duration:
+(mod3 <- aov(duration ~ c1, data = allAllAnnual))
+mod3a.glht <- glht(mod3, linfct = mcp(c1 = cntrMat1), alternative = "two.sided", vcov = sandwich)
+summary(mod3a.glht, test = adjusted("none"))
+
+(mod4 <- aov(duration ~ c2, data = allAllAnnual))
+mod4a.glht <- glht(mod4, linfct = mcp(c2 = cntrMat2), alternative = "two.sided", vcov = sandwich)
+summary(mod4a.glht, test = adjusted("none"))
+
+# ... and intensity:
+(mod5 <- aov(abs(intensity) ~ c1, data = allAllAnnual))
+boxplot(abs(intensity) ~ c1, data = allAllAnnual)
+mod5a.glht <- glht(mod5, linfct = mcp(c1 = cntrMat1), alternative = "two.sided", vcov = sandwich)
+summary(mod5a.glht, test = adjusted("none")) # --> Note that it is important to use abs(intensity)
+
+(mod6 <- aov(abs(intensity) ~ c2, data = allAllAnnual))
+mod6a.glht <- glht(mod6, linfct = mcp(c2 = cntrMat2), alternative = "two.sided", vcov = sandwich)
+summary(mod6a.glht, test = adjusted("none"))
 
 # Below is a plain vanilla approach with unplanned ad-hoc comparisons, i.e. every combination of factor levels is compared to every other combination. Since the contrasts are still orthogonal there should not be problems with inflated type I errors, but the above is more efficient as it demonstrates more thought in the selection of hypotheses. Just for fun I have also been playing a bit with the 'magrittr' package and pipes...
 mod1 <- aov(frequency ~ event * type * coast, data = allAllAnnual)
