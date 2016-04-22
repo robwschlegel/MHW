@@ -365,6 +365,14 @@ sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "m
 mean(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T)
 sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T)
 
+## t-test for differences in cummulative intensity between datasets for MHW and MCS
+# MHW
+t.test(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"],
+       allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"])
+# MCS
+t.test(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"],
+       allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"])
+
 ## ANOVA for in situ
 aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
 #summary(aovFrequency)
