@@ -422,7 +422,7 @@ tukeyIntensity <- TukeyHSD(aovIntensity)
 #tukeyIntensity
 
 ### START AJS...
-# I used a series of planned comparisons (generalized linear hypothesis test) as specific contrasts. It is unnecessary to test each and every posiible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
+# I used a series of planned comparisons (generalized linear hypothesis test) as specific contrasts. It is unnecessary to test each and every possible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
 # first for the count data; the factors are...
 # type (in situ and OISST)
 # event (MHW and MCS)
