@@ -1,0 +1,899 @@
+clim
+clim[[2]] <- array(NA, T)
+clim_end
+floor(clim_start)
+clim_start <- as.POSIXct(paste(clim_start), "01", "01", sep = "")
+clim_start <- as.POSIXct(paste(clim_start), "1", "1", sep = "")
+clim_start <- as.POSIXct(ymd(paste(clim_start), "1", "1", sep = ""))
+clim_start
+clim_start <- as.POSIXct(ymd(c(clim_start, 1, 1)))
+clim_start
+clim_start <- ifelse ((leap_year(t1[1,1]) && max(t1[1,2]) == 366 ||#
+                       !leap_year(t1[1,1]) && max(t1[1,2]) == 365), t1[1,1], t1[2,1])
+clim_start <- as.POSIXct(ymd(c(clim_start, 1, 1)))
+clim_start
+clim_start <- as.POSIXct(c(clim_start, 1, 1))
+clim_start
+clim_start <- ifelse ((leap_year(t1[1,1]) && max(t1[1,2]) == 366 ||#
+                       !leap_year(t1[1,1]) && max(t1[1,2]) == 365), t1[1,1], t1[2,1])#
+clim_end <- ifelse ((leap_year(t2[2,1]) && max(t2[2,2]) == 366 ||#
+                       !leap_year(t2[2,1]) && max(t2[2,2]) == 365), t2[2,1], t2[1,1])#
+clim_start <- as.POSIXct(c(clim_start, 1, 1))
+clim_start <- ifelse ((leap_year(t1[1,1]) && max(t1[1,2]) == 366 ||#
+                       !leap_year(t1[1,1]) && max(t1[1,2]) == 365), t1[1,1], t1[2,1])#
+clim_end <- ifelse ((leap_year(t2[2,1]) && max(t2[2,2]) == 366 ||#
+                       !leap_year(t2[2,1]) && max(t2[2,2]) == 365), t2[2,1], t2[1,1])#
+clim_start <- parse_date_time(c(clim_start, 1, 1), "ymd")
+clim_start
+clim_start <- parse_date_time(paste(quote(clim_start), "01", "01", sep = "-"), "ymd")
+clim_start <- ifelse ((leap_year(t1[1,1]) && max(t1[1,2]) == 366 ||#
+                       !leap_year(t1[1,1]) && max(t1[1,2]) == 365), t1[1,1], t1[2,1])#
+clim_end <- ifelse ((leap_year(t2[2,1]) && max(t2[2,2]) == 366 ||#
+                       !leap_year(t2[2,1]) && max(t2[2,2]) == 365), t2[2,1], t2[1,1])#
+clim_start <- parse_date_time(paste(quote(clim_start), "01", "01", sep = "-"), "ymd")
+clim_start
+clim_start <- ifelse ((leap_year(t1[1,1]) && max(t1[1,2]) == 366 ||#
+                       !leap_year(t1[1,1]) && max(t1[1,2]) == 365), t1[1,1], t1[2,1])
+clim_start
+quote(clim_start)
+paste(clim_start, "01", "01", sep = "-")
+clim_start <- parse_date_time(paste(clim_start, "01", "01", sep = "-"), "ymd")
+clim_start
+clim_end <- parse_date_time(paste(clim_end, "12", "31", sep = "-"), "ymd")
+clim_end
+parse_date_time(1973, "ymd")
+parse_date_time("1973", "ymd")
+parse_date_time(1973-01-01, "ymd")
+parse_date_time("1973-01-01", "ymd")
+floor(1965)
+as.POSIXct(1987)
+as.POSIXct(1987, origin = "GMT")
+clim_start:clim_end
+seq(clim_start:clim_end, by = 1)
+seq(clim_start, clim_end, by = 1)
+tSeries1$doy[clim_start:clim_end+1]
+require(ggplot2); require(lubridate); require(plyr); require(ggrepel)#
+source("setupParams/theme.R"); source("proc/results2.R")
+library(readr); library(stringr); library(plyr); library(reshape2)#
+#
+dirIn <- "/Users/ajsmit/Dropbox/repos/Tides/data"#
+#
+# read in 1978 to 2010:#
+fName1 <- dir(dirIn, full.names = TRUE, pattern = "_LAT2003.CHT") # PE2008_LAT2003.CHT is problematic#
+fName1 <- fName1[-29] # drop the 2008 data#
+l1 = ldply(fName1, read.fwf, widths = c(-2,4,3,-1,rep(c(3,-1),24))) # loops avoided!#
+colnames(l1) <- c("year", "julDay", seq(1:24))#
+#
+# read in the problematic 2008 data:#
+fName1b <- read.table("/Users/ajsmit/Dropbox/repos/Tides/data/PE2008_LAT2003.CHT", sep = "\t", skip = 1)[,2:26]#
+l2 <- data.frame(rep(2008, len = nrow(fName1b)), fName1b)#
+colnames(l2) <- c("year", "julDay", seq(1:24))#
+#
+# read in 2011, 2012 and 2013:#
+fName2 <- dir(dirIn, full.names = TRUE, pattern = "PE.....CHT")#
+l3 = ldply(fName2, read.fwf, widths = c(-2,4,rep(c(3),25),-1)) # loops avoided!#
+colnames(l3) <- c("year", "julDay", seq(1:24))#
+#
+# combine:#
+tideDat <- rbind(l1, l2, l3)#
+#
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# remove rows of 999s:#
+tideDat <- tideDat[!tideDat$julDay == 999,] # correct: no 1996 present
+head(tideDat)
+unique(tideDat$year)
+is.leapyear(1996)
+is.leapyear = function(year){#
+  return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))#
+}#
+#
+is.leapyear(1996)
+yr1996 <- data.frame(year = rep(1996, len = 366), julDay = seq(1:366))
+yr1996
+yr1999 <- data.frame(year = rep(1999, len = 365), julDay = seq(1:365))
+rbind(tideDat, yr1996)
+missingDat <- array(888, dim=c(nrow(yr1996)+nrow(yr1999),24))
+missingDat
+colnames(missingDat) <- seq(1:24)
+missingDat <- cbind(rbind(yr1996, yr1999), missingDat)
+head(missingDat)
+rbind(tideDat, missingDat)
+tideDat <- rbind(tideDat, missingDat)
+unique(tideDat$year)
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+head(tideDat2,100)#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")
+head(tideDat2)
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing
+head(tideDat2)
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))
+head(tideDat2)
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.
+library(plyr); library(reshape2); library(lubridate
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.
+library(lubridate)
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.
+head(tideDat2,100)
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+head(tideMon)
+tideMon$tide_month
+tideMon$date_month
+tideDay$date_day
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.4, col = "gray20") +#
+        # geom_line(data = tideday, aes(x = date, y = level), col = "black") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level), col = "red", size = 0.2) +#
+        # stat_smooth(data = tideDay, method = "lm", aes(x = date, y = level), col = "black", size = 0.2) +#
+        # stat_smooth(data = trend.zoo, method = "lm", aes(x = x, y = y), col = "red", fill = "red") +#
+        # geom_line(data = as.data.frame(stldata1$time.series),#
+        #           aes(y = trend, x = tideMon$x), col = "blue") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+# ts1#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.4, col = "gray20") +#
+        # geom_line(data = tideday, aes(x = date, y = level), col = "black") +#
+        # stat_smooth(data = tideMon, method = "lm", aes(x = date, y = level), col = "gray20", size = 0.2) +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level), col = "red", size = 0.2) +#
+        # stat_smooth(data = trend.zoo, method = "lm", aes(x = x, y = y), col = "red", fill = "red") +#
+        # geom_line(data = as.data.frame(stldata1$time.series),#
+        #           aes(y = trend, x = tideMon$x), col = "blue") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+# ts1#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# reshape and order the data into a time series:#
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+head(tideDat2,100)#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+#
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.4, col = "gray20") +#
+        # geom_line(data = tideday, aes(x = date, y = level), col = "black") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level), col = "red", size = 0.2) +#
+        # stat_smooth(data = tideDay, method = "lm", aes(x = date, y = level), col = "black", size = 0.2) +#
+        # stat_smooth(data = trend.zoo, method = "lm", aes(x = x, y = y), col = "red", fill = "red") +#
+        # geom_line(data = as.data.frame(stldata1$time.series),#
+        #           aes(y = trend, x = tideMon$x), col = "blue") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+# ts1#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.4, col = "gray20") +#
+        # geom_line(data = tideday, aes(x = date, y = level), col = "black") +#
+        # stat_smooth(data = tideMon, method = "lm", aes(x = date, y = level), col = "gray20", size = 0.2) +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level), col = "red", size = 0.2) +#
+        # stat_smooth(data = trend.zoo, method = "lm", aes(x = x, y = y), col = "red", fill = "red") +#
+        # geom_line(data = as.data.frame(stldata1$time.series),#
+        #           aes(y = trend, x = tideMon$x), col = "blue") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+# ts1#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw()#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)#
+#
+lm1 <- lm(level ~ index(date), data = tideMon)#
+summary(lm1)
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        ggtitle("MSL [cm]: monthly means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        ggtitle("MSL [cm]: daily means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+lm1 <- lm(level ~ index(date), data = tideMon)#
+summary(lm1)#
+#
+coef(lm1)[2] * 12 * 10
+lm1 <- lm(level ~ date, data = tideMon)
+lm1 <- lm(level ~ index(date_month), data = tideMon)
+# HEIGHT OF TIDE IN cm ABOVE THE CHART DATUM FOR THAT YEAR.#
+#
+# the rate of mean sea-level rise relative to the land, referred to herein as relative mean sea level (RMSL)#
+#
+library(plyr); library(reshape2); library(lubridate)#
+#
+dirIn <- "/Users/ajsmit/Dropbox/repos/Tides/data"#
+#
+# read in 1978 to 2010:#
+fName1 <- dir(dirIn, full.names = TRUE, pattern = "_LAT2003.CHT") # PE2008_LAT2003.CHT is problematic#
+fName1 <- fName1[-29] # drop the 2008 data#
+l1 = ldply(fName1, read.fwf, widths = c(-2,4,3,-1,rep(c(3,-1),24))) # loops avoided!#
+colnames(l1) <- c("year", "julDay", seq(1:24))#
+#
+# read in the problematic 2008 data:#
+fName1b <- read.table("/Users/ajsmit/Dropbox/repos/Tides/data/PE2008_LAT2003.CHT", sep = "\t", skip = 1)[,2:26]#
+l2 <- data.frame(rep(2008, len = nrow(fName1b)), fName1b)#
+colnames(l2) <- c("year", "julDay", seq(1:24))#
+#
+# read in 2011, 2012 and 2013:#
+fName2 <- dir(dirIn, full.names = TRUE, pattern = "PE.....CHT")#
+l3 = ldply(fName2, read.fwf, widths = c(-2,4,rep(c(3),25),-1)) # loops avoided!#
+colnames(l3) <- c("year", "julDay", seq(1:24))#
+#
+# combine:#
+tideDat <- rbind(l1, l2, l3)#
+#
+# remove rows of 999s:#
+tideDat <- tideDat[!tideDat$julDay == 999,] # correct: no 1996 present#
+#
+# 1996 and 1999 data missing entirely; this is creating problems below...#
+## first check if leap year?#
+is.leapyear = function(year){#
+  return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))#
+}#
+#
+is.leapyear(1996)#
+#
+yr1996 <- data.frame(year = rep(1996, len = 366), julDay = seq(1:366))#
+yr1999 <- data.frame(year = rep(1999, len = 365), julDay = seq(1:365))#
+missingDat <- array(888, dim=c(nrow(yr1996)+nrow(yr1999),24))#
+colnames(missingDat) <- seq(1:24)#
+missingDat <- cbind(rbind(yr1996, yr1999), missingDat)#
+head(missingDat)#
+tideDat <- rbind(tideDat, missingDat)#
+#
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# reshape and order the data into a time series:#
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+#
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        ggtitle("MSL [cm]: monthly means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.4, col = "gray50") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level), col = "red", size = 0.2) +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        ggtitle("MSL [cm]: daily means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+lm1 <- lm(level ~ index(date_month), data = tideMon)
+library(zoo)
+lm1 <- lm(level ~ index(date_month), data = tideMon)
+summary(lm1)
+coef(lm1)[2] * 12 * 10
+lm2 <- lm(level ~ index(date_day), data = tideDay)#
+summary(lm2)#
+coef(lm2)[2] * 12 * 10
+ts.zoo <- zoo(tideMon$level, tideMon$date_month)#
+ts.zoo <- na.approx(ts.zoo) # because STL cannot deal with NAs#
+ts.ts <- ts(ts.zoo, start = c(1978, 6), frequency = 12)
+plot(ts.zoo)
+plot(ts.ts)
+stldata.a <- stl(ts.ts, s.window = "periodic", robust = TRUE)#
+plot(stldata.a)
+plot(ts.ts, col = "gray", main = "MSL trends (un-trimmed)",#
+     ylab = "MSL [cm]", xlab = "Date")#
+lines(stldata.a$time.series[, 2], col = "blue", lwd = 2, ylab = "Trend")#
+lines(stldata.b$time.series[, 2], col = "purple", lwd = 2, ylab = "Trend")#
+lines(stldata.c$time.series[, 2], col = "orange", lwd = 2, ylab = "Trend")
+stldata.b <- stl(ts.ts, s.window = 7, robust = TRUE) # smaller s.window values allows the seasonal component to be assymetrical across years#
+stldata.c <- stl(ts.ts, s.window = 12, robust = TRUE)#
+head(stldata.c)#
+#
+par(mfrow = c(1, 1))#
+# Plotting untrimmed data:#
+plot(ts.ts, col = "gray", main = "MSL trends (un-trimmed)",#
+     ylab = "MSL [cm]", xlab = "Date")#
+lines(stldata.a$time.series[, 2], col = "blue", lwd = 2, ylab = "Trend")#
+lines(stldata.b$time.series[, 2], col = "purple", lwd = 2, ylab = "Trend")#
+lines(stldata.c$time.series[, 2], col = "orange", lwd = 2, ylab = "Trend")
+library(TideHarmonics)
+library(plyr); library(reshape2); library(lubridate)#
+#
+dirIn <- "/Users/ajsmit/Dropbox/repos/Tides/data"#
+#
+# read in 1978 to 2010:#
+fName1 <- dir(dirIn, full.names = TRUE, pattern = "_LAT2003.CHT") # PE2008_LAT2003.CHT is problematic#
+fName1 <- fName1[-29] # drop the 2008 data#
+l1 = ldply(fName1, read.fwf, widths = c(-2,4,3,-1,rep(c(3,-1),24))) # loops avoided!#
+colnames(l1) <- c("year", "julDay", seq(1:24))#
+#
+# read in the problematic 2008 data:#
+fName1b <- read.table("/Users/ajsmit/Dropbox/repos/Tides/data/PE2008_LAT2003.CHT", sep = "\t", skip = 1)[,2:26]#
+l2 <- data.frame(rep(2008, len = nrow(fName1b)), fName1b)#
+colnames(l2) <- c("year", "julDay", seq(1:24))#
+#
+# read in 2011, 2012 and 2013:#
+fName2 <- dir(dirIn, full.names = TRUE, pattern = "PE.....CHT")#
+l3 = ldply(fName2, read.fwf, widths = c(-2,4,rep(c(3),25),-1)) # loops avoided!#
+colnames(l3) <- c("year", "julDay", seq(1:24))#
+#
+# combine:#
+tideDat <- rbind(l1, l2, l3)#
+#
+# remove rows of 999s:#
+tideDat <- tideDat[!tideDat$julDay == 999,] # correct: no 1996 present#
+#
+# 1996 and 1999 data missing entirely; this is creating problems below...#
+## first check if leap year?#
+is.leapyear = function(year){#
+  return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))#
+}#
+is.leapyear(1996)#
+#
+## and then assemble an array of missing values:#
+yr1996 <- data.frame(year = rep(1996, len = 366), julDay = seq(1:366))#
+yr1999 <- data.frame(year = rep(1999, len = 365), julDay = seq(1:365))#
+missingDat <- array(888, dim=c(nrow(yr1996)+nrow(yr1999),24))#
+colnames(missingDat) <- seq(1:24)#
+missingDat <- cbind(rbind(yr1996, yr1999), missingDat)#
+tideDat <- rbind(tideDat, missingDat)#
+#
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# fit a normal vanilla linear model:#
+library(zoo)#
+lm1 <- lm(level ~ index(date_month), data = tideMon)#
+summary(lm1)#
+## and the rate of change per year in mm is:#
+coef(lm1)[2] * 12 * 10#
+#
+tideMon_sub <- subset(tideMon, date_month >= as.POSIXct("2009-01-01 SAST"))#
+lm1b <- lm(level ~ index(date_month), data = tideMon_sub)#
+summary(lm1)#
+## and the rate of change per year in mm is:#
+coef(lm1)[2] * 12 * 10#
+#
+## do the same for the daily data:#
+lm2 <- lm(level ~ index(date_day), data = tideDay)#
+summary(lm2)#
+coef(lm2)[2] * 12 * 10#
+#
+# reshape and order the data into a time series:#
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+#
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.1, col = "black") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 100, col = "red",#
+                 label = paste(round(coef(lm1)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: monthly means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.pdf", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.1, col = "black") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 25,  col = "red",#
+                 label = paste(round(coef(lm2)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: daily means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+library(plyr); library(reshape2); library(lubridate)#
+#
+dirIn <- "/Users/ajsmit/Dropbox/repos/Tides/data"#
+#
+# read in 1978 to 2010:#
+fName1 <- dir(dirIn, full.names = TRUE, pattern = "_LAT2003.CHT") # PE2008_LAT2003.CHT is problematic#
+fName1 <- fName1[-29] # drop the 2008 data#
+l1 = ldply(fName1, read.fwf, widths = c(-2,4,3,-1,rep(c(3,-1),24))) # loops avoided!#
+colnames(l1) <- c("year", "julDay", seq(1:24))#
+#
+# read in the problematic 2008 data:#
+fName1b <- read.table("/Users/ajsmit/Dropbox/repos/Tides/data/PE2008_LAT2003.CHT", sep = "\t", skip = 1)[,2:26]#
+l2 <- data.frame(rep(2008, len = nrow(fName1b)), fName1b)#
+colnames(l2) <- c("year", "julDay", seq(1:24))#
+#
+# read in 2011, 2012 and 2013:#
+fName2 <- dir(dirIn, full.names = TRUE, pattern = "PE.....CHT")#
+l3 = ldply(fName2, read.fwf, widths = c(-2,4,rep(c(3),25),-1)) # loops avoided!#
+colnames(l3) <- c("year", "julDay", seq(1:24))#
+#
+# combine:#
+tideDat <- rbind(l1, l2, l3)#
+#
+# remove rows of 999s:#
+tideDat <- tideDat[!tideDat$julDay == 999,] # correct: no 1996 present#
+#
+# 1996 and 1999 data missing entirely; this is creating problems below...#
+## first check if leap year?#
+is.leapyear = function(year){#
+  return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))#
+}#
+is.leapyear(1996)#
+#
+## and then assemble an array of missing values:#
+yr1996 <- data.frame(year = rep(1996, len = 366), julDay = seq(1:366))#
+yr1999 <- data.frame(year = rep(1999, len = 365), julDay = seq(1:365))#
+missingDat <- array(888, dim=c(nrow(yr1996)+nrow(yr1999),24))#
+colnames(missingDat) <- seq(1:24)#
+missingDat <- cbind(rbind(yr1996, yr1999), missingDat)#
+tideDat <- rbind(tideDat, missingDat)#
+#
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# fit a normal vanilla linear model:#
+library(zoo)#
+lm1 <- lm(level ~ index(date_month), data = tideMon)#
+summary(lm1)#
+## and the rate of change per year in mm is:#
+coef(lm1)[2] * 12 * 10#
+#
+tideMon_sub <- subset(tideMon, date_month >= as.POSIXct("2009-01-01 SAST"))#
+lm1b <- lm(level ~ index(date_month), data = tideMon_sub)#
+summary(lm1b)#
+## and the rate of change per year in mm is:#
+coef(lm1b)[2] * 12 * 10#
+#
+## do the same for the daily data:#
+lm2 <- lm(level ~ index(date_day), data = tideDay)#
+summary(lm2)#
+coef(lm2)[2] * 12 * 10#
+#
+tideDay_sub <- subset(tideDay, date_day >= as.POSIXct("2009-01-01 SAST"))#
+lm2b <- lm(level ~ index(date_day), data = tideDay_sub)#
+summary(lm2b)#
+## and the rate of change per year in mm is:#
+coef(lm2b)[2] * 12 * 10#
+#
+# reshape and order the data into a time series:#
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+#
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.2, col = "gray50") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        stat_smooth(data = tideMon_sub, method = "lm", aes(x = date_month, y = level),#
+                    col = "blue", size = 0.2, fill = "turquoise") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 100, col = "red",#
+                 label = paste(round(coef(lm1)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 92, col = "blue",#
+                 label = paste(round(coef(lm1b)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: monthly means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.jpg", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.1, col = "gray50") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        stat_smooth(data = tideDay_sub, method = "lm", aes(x = date_day, y = level),#
+                    col = "blue", size = 0.2, fill = "turquoise") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 25,  col = "red",#
+                 label = paste(round(coef(lm2)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 0, col = "blue",#
+                 label = paste(round(coef(lm2b)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: daily means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+head(tideDat)
+library(plyr); library(reshape2); library(lubridate)#
+#
+dirIn <- "/Users/ajsmit/Dropbox/repos/Tides/data"#
+#
+# read in 1978 to 2010:#
+fName1 <- dir(dirIn, full.names = TRUE, pattern = "_LAT2003.CHT") # PE2008_LAT2003.CHT is problematic#
+fName1 <- fName1[-29] # drop the 2008 data#
+l1 = ldply(fName1, read.fwf, widths = c(-2,4,3,-1,rep(c(3,-1),24))) # loops avoided!#
+colnames(l1) <- c("year", "julDay", seq(1:24))#
+#
+# read in the problematic 2008 data:#
+fName1b <- read.table("/Users/ajsmit/Dropbox/repos/Tides/data/PE2008_LAT2003.CHT", sep = "\t", skip = 1)[,2:26]#
+l2 <- data.frame(rep(2008, len = nrow(fName1b)), fName1b)#
+colnames(l2) <- c("year", "julDay", seq(1:24))#
+#
+# read in 2011, 2012 and 2013:#
+fName2 <- dir(dirIn, full.names = TRUE, pattern = "PE.....CHT")#
+l3 = ldply(fName2, read.fwf, widths = c(-2,4,rep(c(3),25),-1)) # loops avoided!#
+colnames(l3) <- c("year", "julDay", seq(1:24))#
+#
+# combine:#
+tideDat <- rbind(l1, l2, l3)#
+#
+# remove rows of 999s:#
+tideDat <- tideDat[!tideDat$julDay == 999,] # correct: no 1996 present#
+#
+# 1996 and 1999 data missing entirely; this is creating problems below...#
+## first check if leap year?#
+is.leapyear = function(year){#
+  return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))#
+}#
+is.leapyear(1996)#
+#
+## and then assemble an array of missing values:#
+yr1996 <- data.frame(year = rep(1996, len = 366), julDay = seq(1:366))#
+yr1999 <- data.frame(year = rep(1999, len = 365), julDay = seq(1:365))#
+missingDat <- array(888, dim=c(nrow(yr1996)+nrow(yr1999),24))#
+colnames(missingDat) <- seq(1:24)#
+missingDat <- cbind(rbind(yr1996, yr1999), missingDat)#
+tideDat <- rbind(tideDat, missingDat)#
+#
+# replace the missing values with NAs:#
+tideDat[tideDat == 888] <- NA#
+#
+# fit a normal vanilla linear model:#
+library(zoo)#
+lm1 <- lm(level ~ index(date_month), data = tideMon)#
+summary(lm1)#
+## and the rate of change per year in mm is:#
+coef(lm1)[2] * 12 * 10#
+#
+tideMon_sub <- subset(tideMon, date_month >= as.POSIXct("2009-01-01 SAST"))#
+lm1b <- lm(level ~ index(date_month), data = tideMon_sub)#
+summary(lm1b)#
+## and the rate of change per year in mm is:#
+coef(lm1b)[2] * 12 * 10#
+#
+## do the same for the daily data:#
+lm2 <- lm(level ~ index(date_day), data = tideDay)#
+summary(lm2)#
+coef(lm2)[2] * 12 * 10#
+#
+tideDay_sub <- subset(tideDay, date_day >= as.POSIXct("2009-01-01 SAST"))#
+lm2b <- lm(level ~ index(date_day), data = tideDay_sub)#
+summary(lm2b)#
+## and the rate of change per year in mm is:#
+coef(lm2b)[2] * 12 * 10#
+#
+# reshape and order the data into a time series:#
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing#
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))#
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDat2$date_day <- floor_date(tideDat2$date, "day") # 1996 inserted...? Problem.#
+tideMon <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to month#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+#
+library(ggplot2)#
+ts1 <- ggplot(data = tideMon, aes(x = date_month, y = level)) + geom_line(size = 0.2, col = "gray50") +#
+        stat_smooth(data = tideMon, method = "lm", aes(x = date_month, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        stat_smooth(data = tideMon_sub, method = "lm", aes(x = date_month, y = level),#
+                    col = "blue", size = 0.2, fill = "turquoise") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 100, col = "red",#
+                 label = paste(round(coef(lm1)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 92, col = "blue",#
+                 label = paste(round(coef(lm1b)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: monthly means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendMonth.jpg", height = 3, width = 6)#
+#
+ts1 <- ggplot(data = tideDay, aes(x = date_day, y = level)) + geom_line(size = 0.1, col = "gray50") +#
+        stat_smooth(data = tideDay, method = "lm", aes(x = date_day, y = level),#
+                    col = "red", size = 0.2, fill = "pink") +#
+        stat_smooth(data = tideDay_sub, method = "lm", aes(x = date_day, y = level),#
+                    col = "blue", size = 0.2, fill = "turquoise") +#
+        xlab("Year") + ylab("MSL [cm]") + theme_bw() +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 25,  col = "red",#
+                 label = paste(round(coef(lm2)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        annotate("text", x = as.POSIXct("2010-01-01 SAST"), y = 0, col = "blue",#
+                 label = paste(round(coef(lm2b)[2] * 12 * 10, 2), "mm/yr", sep = " ")) +#
+        ggtitle("MSL [cm]: daily means")#
+ggsave("/Users/ajsmit/Dropbox/repos/Tides/trendDay.pdf", height = 3, width = 6)
+head(tideDat2)
+tideDat2 <- melt(tideDat, id = c("year", "julDay"), value.name = "level", variable.name = "hr")#
+tideDat2 <- plyr::arrange(tideDat2, year, julDay) # 1996 still correctly missing
+head(tideDat2)
+tideDat2$date <- as.POSIXct(strptime(with(tideDat2, paste(year, julDay, hr)), "%Y %j %H"))
+head(tideDat2)
+tideHour <- tideDat2[c("date", "level"), ]
+head(tideHour)
+tideHour <- data.frame(tideDat2$date, tideDat2$level)
+head(tideHour)
+tideHour <- data.frame(date = tideDat2$date, level = tideDat2$level)
+head(tideHour)
+head(tideMon)
+head(tideDay)
+tideHour <- data.frame(date_hour = tideDat2$date, level = tideDat2$level)
+hfit1 <- ftide(tideHour$level, tideHour$data_hour, smsl = TRUE)
+hfit1 <- ftide(tideHour$level, tideHour$date_hour, smsl = TRUE)
+hfit1
+plot(hfit1)
+plot(hfit1, t1, t2, split)
+t1 <- as.POSIXct("2012-12-31 23:00", tz = "UTC")#
+t2 <- as.POSIXct("2013-01-02 14:00", tz = "UTC")#
+plot(hfit1, t1, t2)
+t1 <- as.POSIXct("2012-12-31 23:00", tz = "UTC")#
+t2 <- as.POSIXct("2013-01-31 14:00", tz = "UTC")#
+plot(hfit1, t1, t2)
+plot(hfit1, t1, t2, split = TRUE)
+hfit1 <- ftide(tideHour$level, tideHour$date_hour, hc4, smsl = TRUE)#
+hfit1#
+t1 <- as.POSIXct("2012-12-31 23:00", tz = "UTC")#
+t2 <- as.POSIXct("2013-01-31 14:00", tz = "UTC")#
+plot(hfit1, t1, t2, split = TRUE)
+plot(hfit1, t1, t2)
+coef(hfit1)
+plot(hfit1, t1, t2, split = TRUE)
+plot(hfit1, t1, t2)
+tideHour.zoo <- zoo(tideHour$level, tideHour$date_hour)
+tideHour.zoo <- na.approx(tideHour.zoo) # because STL cannot deal with NAs tideHour.tideHour <- tideHour(tideHour.zoo,
+tideHour.df <- data.frame(date = as.Date(time(tideHour.zoo)), level = as.vector(tideHour.zoo)) tideHour.df$level <- tideHour.df$level - mean(tideHour.df$level) # convert to anomaly
+as.Date(time(tideHour.zoo))
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideDay <- ddply(tideDat2, .(date_day), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+tideDay <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+tideDay.zoo <- zoo(tideDay$level, tideDay$date_hour)
+tideDay.zoo <- zoo(tideDay$level, tideDay$date_day)
+tideDay.zoo <- zoo(tideDay$level, tideDay$date_month)
+tideDay.zoo <- na.approx(tideDay.zoo) # because STL cannot deal with NAs tideDay.tideDay <- tideDay(tideDay.zoo, start = c(1972, 9), frequency = 12)
+tideDay.df <- data.frame(date = as.Date(time(tideDay.zoo)), level = as.vector(tideDay.zoo)) tideDay.df$level <- tideDay.df$level - mean(tideDay.df$level) # convert to anomaly
+as.Date(time(tideDay.zoo))
+as.vector(tideDay.zoo)
+tideDay.df <- data.frame(date = as.Date(time(tideDay.zoo)), level = as.vector(tideDay.zoo))
+tideDay.df$level <- tideDay.df$level - mean(tideDay.df$level) # convert to anomaly
+lm.null <- lm(level ~ 1, data = tideDay.df)#
+summary(lm.null) # the mean temperature is 16.5 degr. C
+head(tideDay)
+tideDay.df <- data.frame(date = as.Date(time(tideDay.zoo)), level = as.vector(tideDay.zoo))
+head(tideDay)
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideMonth <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+tideMonth.zoo <- zoo(tideMonth$level, tideMonth$date_month)#
+tideMonth.zoo <- na.approx(tideMonth.zoo) # because STL cannot deal with NAs tideMonth.tideMonth <- tideMonth(tideMonth.zoo, start = c(1972, 9), frequency = 12)#
+tideMonth.df <- data.frame(date = as.Date(time(tideMonth.zoo)), level = as.vector(tideMonth.zoo)) #
+# tideMonth.df$level <- tideMonth.df$level - mean(tideMonth.df$level) # convert to anomaly#
+head(tideMonth)
+lm.null <- lm(level ~ 1, data = tideMonth.df)
+summary(lm.null)
+lm1 <- lm(level ~ date_month, data = tideMonth.df)
+lm1 <- lm(level ~ date, data = tideMonth.df)
+summary(lm1)
+lm1b <- lm(level ~ index(date), data = tideMonth.df)#
+summary(lm1b)
+index(date)
+date
+index(tideMonth.df$date)
+tideMonth.df$date
+tideMonth.df
+tideMonth.zoo
+plot(tideMonth.zoo)
+tideMonth <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+tideMonth
+as.Date(time(tideMonth$date_month))
+tideMonth.df <- data.frame(date = as.Date(time(tideMonth$date_month)), level = as.vector(tideMonth$level))
+tideMonth.df
+head(tideMonth)
+lm.null <- lm(level ~ 1, data = tideMonth.df)#
+summary(lm.null) # the mean SL is 113.239 cm
+lm1 <- lm(level ~ date, data = tideMonth.df)#
+summary(lm1)
+lm1b <- lm(level ~ index(date), data = tideMonth.df)#
+summary(lm1b)
+library(nlme)
+gls1.null <- gls(level ~ 1, data = tideMonth.df, method = "ML") #
+summary(gls1.null)
+gls1.null <- gls(level ~ 1, data = tideMonth.df, method = "ML", na.action = na.omit)
+summary(gls1.null)
+na.omit(tideMonth.df)
+tideMonth.df
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.
+tideDat2
+tideMonth <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day
+tideMonth
+tideMonth.df <- data.frame(date = as.Date(time(tideMonth$date_month)), level = as.vector(tideMonth$level))
+head(tideMonth.df)
+as.Date(tideMonth$date_month)
+tideDat2$date_month <- floor_date(tideDat2$date, "month") # 1996 inserted...? Problem.#
+tideMonth <- ddply(tideDat2, .(date_month), summarize, level = mean(level, na.rm = TRUE)) # mean hr data to day#
+# tideMonth.zoo <- zoo(tideMonth$level, tideMonth$date_month)#
+# tideMonth.zoo <- na.approx(tideMonth.zoo) # because STL cannot deal with NAs tideMonth.tideMonth <- tideMonth(tideMonth.zoo, start = c(1972, 9), frequency = 12)#
+tideMonth.df <- data.frame(date = as.Date(tideMonth$date_month), level = as.vector(tideMonth$level)) #
+# tideMonth.df$level <- tideMonth.df$level - mean(tideMonth.df$level) # convert to anomaly#
+head(tideMonth.df)
+lm.null <- lm(level ~ 1, data = tideMonth.df)#
+summary(lm.null) # the mean SL is 112.2578 cm
+lm1 <- lm(level ~ date, data = tideMonth.df)#
+summary(lm1)
+lm1b <- lm(level ~ index(date), data = tideMonth.df)#
+summary(lm1b) # identical to when not using index() function
+tideMonth.df$date
+index(tideMonth.df$date)
+lm.null <- lm(level ~ 1, data = tideMonth.df, na.action = NULL)#
+summary(lm.null) # the mean SL is 112.2578 cm
+nrow(tideMonth)
+tideMonth.df <- data.frame(date = as.Date(tideMonth$date_month), level = as.vector(tideMonth$level), #
+                           index = seq(1:nrow(tideMonth)))
+head(tideMonth.df)
+lm1 <- lm(level ~ index, data = tideMonth.df, na.action = na.omit)#
+summary(lm1)
+lm1b <- lm(level ~ index(date), data = tideMonth.df)#
+summary(lm1b)
+gls1.null <- gls(level ~ 1, data = tideMonth.df, method = "ML")
+gls1.null <- gls(level ~ 1, data = tideMonth.df, method = "ML", na.action = na.omit)
+summary(gls1.null)
+gls1 <- gls(level ~ index(date), data = tideMonth.df, method = "ML")
+gls1 <- gls(level ~ index(date), data = tideMonth.df, method = "ML", na.action = na.omit)
+summary(gls1)
+gls1b <- gls(level ~ index, data = tideMonth.df, method = "ML", na.action = na.omit) #
+summary(gls1b)
+gls1 <- gls(level ~ index, data = tideMonth.df, method = "ML", na.action = na.omit) #
+summary(gls1)#
+#
+gls1b <- gls(level ~ index(date), data = tideMonth.df, method = "ML", na.action = na.omit) #
+summary(gls1b)
+summary(lm1)
+na.omit(tideMonth.df)
+tideDat2$date_month <- floor_date(tideDat2$date, "month")
+tideDat2
+tideMonth.df <- data.frame(date = as.Date(tideMonth$date_month), level = as.vector(tideMonth$level), #
+                           index = seq(1:nrow(tideMonth)))
+head(tideMonth.df)
+tideMonth.df
+na.omit(tideMonth.df)
+lm1 <- lm(level ~ index, data = tideMonth.df, na.action = na.omit)#
+summary(lm1)#
+#
+lm1b <- lm(level ~ index(date), data = tideMonth.df)#
+summary(lm1b)
+gls1 <- gls(level ~ index, data = tideMonth.df, method = "ML", na.action = na.omit) #
+summary(gls1)
+anova(gls1.null, gls1) # The latter fits best.
+coef(gls1)
+coef(gls1)[2] * 12 * 10
+plot(x = index(tideMonth.df$date), y = tideMonth.df$level, pch = 1, cex = 0.1, col = "blue",#
+     xlab = "Date", ylab = "MSL [cm]", main = "MSL time series")
+lines(x = index(tideMonth.df$date), y = tideMonth.df$level)
+lines(fitted(gls1), col = "blue")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = "blue",#
+     xlab = "Date", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level)#
+lines(fitted(gls1), col = "blue")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = "red",#
+     xlab = "Date", ylab = "MSL [cm]", main = "MSL time series")
+lines(x = tideMonth.df$index, y = tideMonth.df$level)
+lines(fitted(gls1), col = "blue")
+par(mfrow = c(2,2))#
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = "red",#
+     xlab = "Date", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level)#
+lines(fitted(gls1), col = "blue")#
+plot(resid(gls1, type = "normalized"), pch = 1, cex = 0.1, col = "red",#
+xlab = "Month", ylab = "Residuals", main = "Normalised residuals")#
+lines(resid(gls1, type = "normalized"))#
+acf(resid(gls1), main = "ACF of gls1")#
+pacf(resid(gls1), main = "Partial ACF of gls1")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = "red",#
+     xlab = "Month since start of series", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level)#
+lines(fitted(gls1), col = "blue")#
+plot(resid(gls1, type = "normalized"), pch = 1, cex = 0.1, col = "red",#
+xlab = "Month since start of series", ylab = "Residuals", main = "Normalised residuals")#
+lines(resid(gls1, type = "normalized"))#
+acf(resid(gls1), main = "ACF of gls1")#
+pacf(resid(gls1), main = "Partial ACF of gls1")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = NULL,#
+     xlab = "Month since start of series", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level)#
+lines(fitted(gls1), col = "blue")#
+plot(resid(gls1, type = "normalized"), pch = 1, cex = 0.1, col = "red",#
+xlab = "Month since start of series", ylab = "Residuals", main = "Normalised residuals")#
+lines(resid(gls1, type = "normalized"))#
+acf(resid(gls1), main = "ACF of gls1")#
+pacf(resid(gls1), main = "Partial ACF of gls1")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = NULL,#
+     xlab = "Month since start of series", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level)#
+lines(fitted(gls1), col = "blue")#
+plot(resid(gls1, type = "normalized"), pch = 1, cex = 0.1, col = NULL,#
+xlab = "Month since start of series", ylab = "Residuals", main = "Normalised residuals")#
+lines(resid(gls1, type = "normalized"))#
+acf(resid(gls1), main = "ACF of gls1")#
+pacf(resid(gls1), main = "Partial ACF of gls1")
+plot(x = tideMonth.df$index, y = tideMonth.df$level, pch = 1, cex = 0.1, col = NULL,#
+     xlab = "Month since start of series", ylab = "MSL [cm]", main = "MSL time series")#
+lines(x = tideMonth.df$index, y = tideMonth.df$level, col = "grey50")#
+lines(fitted(gls1), col = "blue")#
+plot(resid(gls1, type = "normalized"), pch = 1, cex = 0.1, col = NULL,#
+xlab = "Month since start of series", ylab = "Residuals", main = "Normalised residuals")#
+lines(resid(gls1, type = "normalized"), col = "grey50")#
+acf(resid(gls1), main = "ACF of gls1")#
+pacf(resid(gls1), main = "Partial ACF of gls1")
+library(lmtest)#
+dwtest(lm1, alt = "two.sided") # Yes, lots of autocorrelation
+bgtest(lm1, 5) # Again, yes!
+gls2 <- update(gls1, correlation = corARMA(p = 3, q = 0)) #
+summary(gls2)
+summary(lm.null)
+coef(lm.null)
+coef(lm.null)[1]
+coef(lm.null)[[1]]
+summary(lm1)
+citation()
+version()
+install.packages("AEM", repos="http://R-Forge.R-project.org")
+install.packages("AEM", repos = "http://R-Forge.R-project.org")
+install.packages("AEM", repos="http://R-Forge.R-project.org")
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr); library(multcomp)#
+source("setupParams/theme.R")
+require(ggplot2) #
+bw_update <- theme_bw() +#
+                    theme(plot.background = element_blank(),#
+                          panel.background = element_rect(colour = NA, fill = NA),#
+                          panel.border = element_rect(colour = "black",#
+                                                      fill = NA, size = 0.8),#
+                          panel.grid.minor = element_line(colour = NA),#
+                          panel.grid.major = element_line(colour = "black",#
+                                                          size = 0.2,#
+                                                          linetype = "dotted"),#
+                          axis.title = element_text(size = 8),#
+                          axis.text = element_text(size = 8),#
+                          axis.ticks = element_line(size = 0.5),#
+                          #axis.ticks.length = unit(2, "mm"), # Disabled lines with "unit" as they are not working...#
+                          #legend.position = "top",#
+                          #legend.direction = "horizontal",#
+                          legend.title = element_text(size = 8),#
+                          legend.text = element_text(size = 8),#
+                          legend.key = element_blank(),#
+                          #legend.key.height = unit(0.44, "cm"),#
+                          #legend.key.width = unit(0.30, "cm"),#
+                          legend.background = element_blank(),#
+                          plot.title = element_text(size = 8, hjust = 0),#
+                          strip.background = element_blank(),#
+                          strip.text = element_text(size = 8))
+source("setupParams/theme.R")
+source("../setupParams/theme.R")
+getwd()
+setwd("/Users/ajsmit/Dropbox/repos/MHW/proc")#
+require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable); library(magrittr); library(multcomp)#
+source("../setupParams/theme.R")
+# First specify coastal sections#
+wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")#
+sc <- c("Fish Hoek", "Gordons Bay", "Hamburg", "Hermanus", "Humewood", "Knysna",#
+        "Mossel Bay", "Muizenberg", "Pollock Beach", "Tsitsikamma West",#
+        "Storms River Mouth", "Tsitsikamma East", "Ystervarkpunt")#
+ec <- c("Eastern Beach", "Nahoon Beach", "Orient Beach", "Sodwana")#
+#
+# Then specify directories for loading#
+# Annual values#
+dir1 <- paste(getwd(), "/data/MHW/annual/", sep = "")#
+dir2 <- paste(getwd(), "/data/MCS/annual/", sep = "")#
+dir3 <- paste(getwd(), "/data/MHW/SST annual/", sep = "")#
+dir4 <- paste(getwd(), "/data/MCS/SST annual/", sep = "")#
+#  Individual events#
+dir5 <- paste(getwd(), "/data/MHW/events/", sep = "")#
+dir6 <- paste(getwd(), "/data/MCS/events/", sep = "")#
+dir7 <- paste(getwd(), "/data/MHW/SST events/", sep = "")#
+dir8 <- paste(getwd(), "/data/MCS/SST events/", sep = "")

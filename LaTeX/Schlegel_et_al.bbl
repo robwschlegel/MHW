@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{50}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -242,10 +242,6 @@ Rehage, J.~S., Blanchard, J.~R., Boucek, R.~E., Lorenz, J.~J., Robinson, M.,
   2016. {Knocking back invasions: variable resistance and resilience to
   multiple cold spells in native vs. nonnative fishes}. Ecosphere 00~(00),
   e01268.
-
-\bibitem[{Reynolds et~al.(2002)Reynolds, Rayner, and Smith}]{Reynolds2002}
-Reynolds, R.~W., Rayner, N.~A., Smith, T., 2002. {An improved in situ and
-  satellite SST analysis for climate}. Journal of Climate.
 
 \bibitem[{Reynolds et~al.(2007)Reynolds, Smith, Liu, Chelton, Casey, and
   Schlax}]{Reynolds2007}
