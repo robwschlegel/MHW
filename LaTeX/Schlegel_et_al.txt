@@ -1,44 +1,45 @@
 ---
 abstract: |
-    As climates change it is necessary that we understand the new challenges
-    this may create. The shallow water ecosystems found along the coastlines
-    of the world are particularly at risk as their temperatures may change
-    more rapidly and dramatical than waters in the open ocean. To this end
-    it is necessary that we identify the occurrence of extreme events,
-    referred to here as Marine Heatwaves (MHWs) and Marine Cold-Spells
-    (MCSs), in the nearshore environment as both strong warm and cold events
-    may be damaging to local flora and fauna. We have taken a recently
-    developed algorithm that defines these extreme events in a novel way and
-    applied it to the *in situ* time series available for the coast of South
-    Africa that are longer than 10 years and with at least 90% complete
-    daily records. We found that MHWs and MCSs occur along the entirety of
-    the coast of South Africa and with some temporal and spatial agreement
-    between the largest events detected. MHWs occur more often, last longer
-    and have greater cumulative intensities than MCSs. The cumulative
-    intensity \[C\] for most MHWs and MCSs were comparable however, several
-    were much larger and there tended to be specific areas that displayed
-    more extreme events than the coastal average. The coast was further
-    divided into three sections (west, south, and east) to investigate the
-    effect of geography and differing oceanographic conditions on MHWs and
-    MCSs and it was found that the south coast experiences longer, more
-    intense and a greater count of MHWs and MCSs than the other two coastal
-    sections. The south coast is a region of mixing between two major
-    currents, the Benguela and Agulhas, though the exact mechanism driving
-    the higher intensity of events their requires further study. The largest
-    three MHWs in each of the time series along the coast of South Africa
-    have generally occurred in the second half of the time series whereas
-    the largest three MCSs have generally occurred in the first half. Thus
-    implying that MHWs are on the rise while MCSs are declining. These same
-    calculations were conducted for offshore temperatures from NOAA
-    Optimally Interpolated sea surface temperature (OISST) data along
-    shore-normal transects for each *in situ* station and for the oceans
-    around southern Africa. It was found that a similar pattern of
-    increasing MHWs and decreasing MCSs existed. An additional finding was
-    that the proportion of co-occurrence between *in situ* and OISST data
-    for each coastal section ranged from 0.20–0.50 with co-occurrence rates
-    for both MHWs and MCSs being the largest on the south coast. Most
-    individual time series showed co-occurrence rates between 0.25–0.50 for
-    both MHWs and MCSs with co-occurrence rates generally higher for MHWs.
+    As climates change it is necessary that we understand the new threats
+    that this may create. The shallow water ecosystems found along the
+    coastlines of the world are particularly at risk as their temperatures
+    may change more rapidly and dramatically than waters in the open ocean.
+    To this end it is necessary that we identify the occurrence of extreme
+    events, referred to here as Marine Heatwaves (MHWs) and Marine
+    Cold-Spells (MCSs), in the nearshore environment as both strong warm and
+    cold events may be damaging to local flora and fauna. We have taken a
+    recently developed algorithm that defines these extreme events in a
+    novel way and applied it to the *in situ* time series available for the
+    coast of South Africa that are longer than 10 years and with at least
+    90% complete daily records. We found that MHWs and MCSs occur along the
+    entirety of the coast of South Africa and with some temporal and spatial
+    agreement between the largest events detected. MHWs occur more often and
+    last longer than MCSs, which have greater mean intensities. The
+    cumulative intensity \[C days\] for most MHWs and MCSs were comparable
+    however, several were much larger and there tended to be specific areas
+    that displayed more extreme events than the coastal average. The coast
+    was further divided into three sections (west, south, and east) to
+    investigate the effect of geography and differing oceanographic
+    conditions on MHWs and MCSs and it was found that the east coast
+    experiences shorter MHWs and MCSs than the other two coasts whereas the
+    mean intensity of MHWs was significantly smaller on the south coast
+    while the mean intensity of MCSs was significantly larger than the other
+    two coasts. These significant differences in mean intensities are
+    attributed to the effects of the interaction of the Agulhas and Benguela
+    currents. The largest three MHWs in each of the time series along the
+    coast of South Africa have generally occurred in the second half of the
+    time series whereas the largest three MCSs have generally occurred in
+    the first half. Thus implying that MHWs are on the rise while MCSs are
+    declining. These same calculations were conducted for offshore
+    temperatures from NOAA Optimally Interpolated sea surface temperature
+    (OISST) data at the nearest locations to the *in situ* stations and it
+    was found that a similar pattern of increasing MHWs and decreasing MCSs
+    existed. An additional finding was that the proportion of co-occurrence
+    between *in situ* and OISST data for each coastal section ranged from
+    0.20–0.50 with co-occurrence rates for both MHWs and MCSs being the
+    largest on the south coast. Most individual time series showed
+    co-occurrence rates between 0.25–0.50 for both MHWs and MCSs with
+    co-occurrence rates generally higher for MHWs.
 address:
 - |
     Department of Biodiversity and Conservation Biology, University of the
@@ -93,11 +94,11 @@ temperature record that are relative to location and time of year [e.g.
 Recent years have seen investigations of heatwaves in the ocean due to
 them becoming more frequent [e.g.
 @Mackenzie2007; @Selig2010; @Sura2011; @Lima2012; @DeCastro2014].
-Well-known marine heat waves (MHW) have occurred in the Mediterranean in
-2003 [@Black2004; @Olita2007; @Garrabou2009], off the coast of Western
-Australia in 2011 [@Feng2013; @Pearce2013; @Wernberg2013], in the north
-west Atlantic Ocean in 2012 [@Mills2012; @Chen2014; @Chen2015] and now
-the “Blob” from 2014 to 2016 in the north east Pacific Ocean
+Well-known marine heat waves (MHWs) have occurred in the Mediterranean
+in 2003 [@Black2004; @Olita2007; @Garrabou2009], off the coast of
+Western Australia in 2011 [@Feng2013; @Pearce2013; @Wernberg2013], in
+the north west Atlantic Ocean in 2012 [@Mills2012; @Chen2014; @Chen2015]
+and now the “Blob” from 2014 to 2016 in the north east Pacific Ocean
 [@Bond2015]. The extreme temperatures from these events may have
 negative impacts upon the local ecology for the regions in which they
 occur. For example, the 2003 Mediterranean heatwave may have affected up
@@ -105,9 +106,8 @@ to 80% of the gorgonian fan colonies in certain areas of this sea
 [@Garrabou2009], whereas the 2011 event off the west coast of Australia
 has been recognized as being a driving factor in the regime shift there
 from temperate kelp forests to the beginnings of a coral reef system
-[@Wernberg2013]. The extensive bleaching of corals in Australia in early
-2016 has also been attributed to masses of anomalously warm waters
-(refs.).
+[@Wernberg2013]. The extensive bleaching of corals in early 2016 has
+also been attributed to masses of anomalously warm waters ().
 
 Although the consequences of these anomalously warm events are widely
 publicised, the events themselves have until recently not been
@@ -172,7 +172,7 @@ winds and consequently the intensification and increasing count of
 upwelling events [see @Garcia-Reyes2015 for a review of this and
 alternative hypotheses]. We therefore propose that the development of
 coastal MCSs can be attributed to an intensification of upwelling. Since
-MHWs and MCSs are both able to affect ecosystem change, a mechanistic
+MHWs and MCSs are both able to effect ecosystem change, a mechanistic
 understanding of their drivers will be invaluable. To this end our study
 serves as a constructive first step to understand the prevalence of
 anomalous thermal events with respect to forcing mechanisms at different
@@ -182,30 +182,33 @@ scales.
 sea surface temperature data [hereafter referred to as OISST;
 @Reynolds2007], but warned users to be cognisant that different data
 sets would provide different kinds of information pertaining to
-heatwaves. Our study applies the MHW (MCS) definition to datasets of
-coastal *in situ* (local-scale) and offshore gridded SST (broad-scale)
-temperature time series collected at different locations along
-coastlines influenced by contrasting ocean currents — the Benguela
-Current, an eastern boundary upwelling system, and the Agulhas Current,
-warm temperate — and locally modified by regional aspects of the coastal
-bathymetry and geomorphology and other smaller scale coastal features.
-These systems, assessed within a framework that couple local- and
-broad-scale features, permit us to assess how MHWs (MCSs) develop in
-coastal regions. Specifically, we aim to assess the significance of MHWs
-(MCSs) within the context of i) the data sets’ inherent differences, ii)
-the various dynamical properties that then emerge out of the regional
-oceanographic context, and iii) out of the local-scale modifications of
-the regional ocean features as they approach the coast. In doing so, we
-wish to provide a mechanistic understanding of the nature and origin of
-MHWs (MCSs) within oceanographically distinct ocean/coastal regions. The
-working hypothesis is that MHWs and MCSs manifesting offshore and
-onshore are decoupled (no difference in timing, duration, frequency and
-intensity). We predict that coastal MHW events are coupled with synoptic
-scale ocean thermal patterns visible across the offshore region at
-scales of 100s of kilometres, and that MCSs originate at a local scale
-as isolated incidents. The possibility of atmospheric forcing on coastal
-events is considered a very likely possibility but it was not assessed
-within the scope of this study.
+heatwaves. Our study applies the @Hobday2016 MHW (MCS) definition to
+datasets of coastal *in situ* (local-scale) and offshore gridded OISST
+(broad-scale) temperature time series collected at different locations
+along coastlines influenced by contrasting ocean currents — the Benguela
+Current, an eastern boundary upwelling system, and the Agulhas Current —
+and locally modified by regional aspects of the coastal bathymetry and
+geomorphology and other smaller scale coastal features. These systems,
+assessed within a framework that couple local- and broad-scale features,
+permit us to assess how MHWs (MCSs) develop in coastal regions.
+Specifically, we aim to assess the significance of MHWs (MCSs) within
+the context of the datasets’ inherent differences, and examine the
+various dynamical properties that then emerge out of the regional
+oceanographic context and out of the local-scale modifications of the
+regional ocean features as they approach the coast. In doing so, we wish
+to provide a mechanistic understanding of the nature and origin of MHWs
+(MCSs) within regionally distinct ocean/coastal sections. Our
+predictions are that i) local coastal MHW events are coupled with
+offshore broad-scale thermal patterns; ii) MCSs originate at the local
+scale in the coastal *in situ* dataset as isolated incidents decoupled
+from broader-scale patterns; iii) different coastal sections, each
+variously influenced by interactions between local- and broad-scale
+processes, display different dynamics (timing, frequency, duration and
+intensity) of MHWs and MCSs; and iv) the frequency of warm (cold) events
+will increase (decrease) with time under a regime of climate change. The
+possibility of atmospheric forcing on coastal events is considered a
+very likely possibility but it was not assessed within the scope of this
+study.
 
 Methods
 =======
@@ -216,38 +219,37 @@ Study region
 The variety of oceanographic features around the *ca*. 2,700 km long
 South African coast provides a natural testing bed for the potential
 effects of different ocean forcing mechanisms on the occurrence of MHWs
-and MCSs. Annual mean (standard deviation; hereafter referred to as
-“sd)” coastal seawater temperatures range from 12.3 (1.2)C at the
-western limit near the Namibian border (Site 1) to 24.4 (2.0)C in the
-east near the Mozambican border (Site 21), and our study sites were
-selected to cover this full range (). We classify the coast into three
-regions based on their major oceanographic features, their temperature
-characteristics, and aspects of the underlying continental shelf. The
-first is the west coast region dominated by the Benguela Current, which
-forms an Eastern Boundary Upwelling System (EBUS) [@Hutchings2009].
-Seasonal upwelling is maintained by prevailing south-easterly trade
-winds. Evenly low temperatures are especially noticeable at upwelling
-cells over a relatively narrow continental shelf in the region
-northwards of the Cape Peninsula to Cape Columbine. The west coast
-defines a cool temperate regime, with the range of monthly mean
-temperatures at most sections intermediate between cold temperate and
-warm temperate [@Luning1990]. The second region is the warm temperate
-[@Luning1990] east coast where the influence of the south-westerly
-flowing warm Agulhas Current flowing tightly along the narrow
-continental shelf (except for the Natal Bight) is strongly felt. This
-stretch of coast is spatially homogeneous with respect to temperature
-and characterised by a moderate amount of seasonal variation. Although
-the Agulhas Current retroflects back into the southern Indian Ocean
-[@Hutchings2009] just south of the much wider and cooler Agulhas Bank
-[@Roberts2005], its influence regularly extends as far west as False Bay
-(Sites 5–21; ). The third coastal region is that overlying the Agulhas
-Bank. Although also warm temperate, it experiences a much larger range
-in annual temperature and variability compared to the west and east
-coast regions, which is in part influenced by the retention and cooling
-of Agulhas Current water on the bank, the presence of some
-current-driven upwelling cells along this coastal section (Sites 15–17)
-[@Roberts2005], and because of the effects of embayments and capes
-throughout the region.
+and MCSs. Annual mean±standard deviation (hereafter referred to as “sd”)
+coastal seawater temperatures range from 12.3±1.2C at the western limit
+near the Namibian border (Site 1) to 24.4±2.0C in the east near the
+Mozambican border (Site 21), and our study sites were selected to cover
+this full range (). We classify the coast into three regions based on
+their major oceanographic features, their temperature characteristics,
+and aspects of the underlying continental shelf. The first is the west
+coast region dominated by the Benguela Current, which forms an Eastern
+Boundary Upwelling System (EBUS) [@Hutchings2009]. Seasonal upwelling is
+maintained by prevailing south-easterly trade winds. Evenly low
+temperatures are especially noticeable at upwelling cells over a
+relatively narrow continental shelf in the region northwards of the Cape
+Peninsula to Cape Columbine. The west coast defines a cool temperate
+regime, with the range of monthly mean temperatures at most sections
+intermediate between cold temperate and warm temperate [@Luning1990].
+The second region is the warm temperate [@Luning1990] east coast where
+the influence of the warm south-westerly flowing Agulhas Current, which
+hugs tightly along the narrow continental shelf (except for the Natal
+Bight), is strongly felt. This stretch of coast is spatially homogeneous
+with respect to temperature and characterised by a moderate amount of
+seasonal variation. Although the Agulhas Current retroflects back into
+the southern Indian Ocean [@Hutchings2009] just south of the much wider
+and cooler Agulhas Bank [@Roberts2005], its influence regularly extends
+as far west as False Bay (Sites 5–21; ). The third coastal region is
+that overlying the Agulhas Bank. Although also warm temperate, it
+experiences a much larger range in annual temperature and variability
+compared the west and east coast regions, which is in part influenced by
+the retention and cooling of Agulhas Current water on the bank, the
+presence of some current-driven upwelling cells along this coastal
+section (Sites 15–17) [@Roberts2005], and because of the effects of
+embayments and capes throughout the region.
 
 ![Map of southern Africa showing the bathymetry (only the 250m isobath
 is labelled), the location of the *in situ* thermal time series shown
@@ -302,29 +304,25 @@ spatially in .
 The second set of temperature data used in this study are the daily
  NOAA optimally interpolated sea surface temperature [OISST;
 @Reynolds2007] derived from the Advanced Very High Resolution Radiometer
-(AVHRR). To compare the offshore meso-scale (OISST dataset) extreme
+(AVHRR). To compare the offshore mesoscale (OISST dataset) extreme
 events against those along the coast (*in situ* dataset), shore-normal
 transects were drawn from each of the 21 sites extending to the 200m
 isobath. Temperature values from the OISST data were then extracted at
 each of the roughly 25  25 km pixels along these transects, shown as
-black boxes in , starting 25 km from the shore. Where the shelf was less
-than 25 km wide (Sites 17–21) the nearest ‘ocean pixel’ to the *in situ*
-time series coordinate was used. It was decided to use mean temperatures
-along these shore-normal transects as they better represent the
-meso-scale temperatures we were interested in comparing against the
-coastal events, rather than simply using the nearest OISST pixel, as
-this would only draw a comparison between the two different data types
-at the coast, and not the meso-scale activity in the ocean over the
-continental shelf. The individual time series within each pixel of each
-transects were then averaged to create 21 time series to match against
-those calculated for the *in situ* sites. These 21 OISST time series
-could then be analysed for MHWs (MCSs) in the same way as the *in situ*
-data (see below). Each individual pixel from the OISST dataset for the
-oceans around southern Africa was also analysed for MHWs and MCSs. This
-allowed for a broad overview of the occurrence of extreme events on the
-mesoscale. Note that the OISST time series had valid data covering
-1982–2015 which did not match exactly the coverage by individual *in
-situ* sites.
+black boxes in . Where the shelf was less than 25 km wide (Sites 17–21)
+the nearest ‘ocean pixel’ to the *in situ* time series coordinate was
+used. It was decided to use mean temperatures along these shore-normal
+transects as they better represent the mesoscale temperatures we were
+interested in comparing against the coastal events, rather than simply
+using the nearest OISST pixel, as this would only draw a comparison
+between the two different data types at the coast, and not the mesoscale
+activity in the ocean. The individual time series within each pixel of
+each transects were then averaged to create 21 time series to match
+against those calculated for the *in situ* sites. These 21 OISST time
+series could then be analysed for MHWs (MCSs) in the same way as the *in
+situ* data (see below). Note that the OISST time series had valid data
+covering 1982–2015 which did not match exactly the coverage by
+individual *in situ* sites.
 
 Defining and calculating MHWs and MCSs
 --------------------------------------
@@ -348,11 +346,11 @@ end dates but with ‘breaks’ between events lasting $\leq$2 days followed
 by subsequent $\geq$5 day events were considered as continuous events.
 After the events were defined, a set of metrics () were calculated
 including maximum and mean intensity (measured as anomalies relative to
-the climatological mean, in C), duration (length from start to end
-dates, in days), and cumulative intensity (the integrated intensity over
-the duration of the event analogous to degree-heating-days, in C).
-Although MCS intensities are calculated as negative values (i.e.
-anomalies) they are reported here as absolute values.
+the climatological mean, in C), duration (days from start to end dates,
+in days), and cumulative intensity (the integrated intensity over the
+duration of the event analogous to degree-heating-days, in C). Although
+MCS intensities are calculated as negative values (i.e. anomalies) they
+are reported here as absolute values.
 
   Name \[unit\]                   Definition
   ------------------------------- ---------------------------------------------------------------------------
@@ -374,7 +372,7 @@ calculation of MCSs. After the individual events were recorded, mean
 annual values for the metrics seen in were created for each year of each
 times series. This provided two different sets of measurements for the
 extreme events that will be referred to specifically throughout this
-paper. ‘Annual’ data refers to the annual means of events for each year
+paper. ‘Annual’ data refer to the annual means of events for each year
 of each time series whereas ‘event’ data refer to the individually
 calculated events that have not been aggregated into annual means.
 
@@ -397,20 +395,23 @@ calculated. This was initially done by taking each event (warm and cold)
 within an *in situ* time series and looking for an event occurring
 within the OISST time series at the same site within a certain period of
 time before the *in situ* date. These co-occurrence proportions were
-used to describe how often the mesoscale oceanography off the coast
-preceeded the extreme events occurring along the coast. Only events
-occurring on dates within those of each time series were used for this
-calculation. The sum of events found to occur within the same time frame
-was then divided by the total number of *in situ* events that occurred
-during the time period shared with the OISST data (which varies from
-station to station) to produce a co-occurrence proportion. The
-proportions of co-occurrence were then recalculated controlling for the
-size of the lag window used when comparing the two different datasets
-for concurrent events, as well as the directionality used for this
-comparison. In other words, a range of window sizes from 2-14 were used
-for each site to see how far apart events generally occurred and the lag
-period used was also applied after the *in situ* date. This allowed us
-to see how often the *in situ* event preceeded the mesoscale event.
+used to describe how often the mesoscale oceanography off the coast led
+the extreme events occurring along the coast. All events occurring on
+dates outside of the dates occurring within the matching time series
+were removed from this calculation. The sum of events found to occur
+within the same time frame was then divided by the total number of *in
+situ* events that occurred during the time period shared with the OISST
+data (which varies from station to station) to produce a co-occurrence
+proportion. The proportions of co-occurrence were then recalculated
+controlling for the size of the lag window used when comparing the two
+different datasets for concurrent events, as well as the directionality
+used for this comparison. In other words, a range of window sizes from
+2-14 were used for each site to see how far apart events generally
+occurred and the lag period used was also applied only after the *in
+situ* date, as well as both before and after the date, effectively
+doubling the range of the lag. This allowed us to see how often the *in
+situ* event led the mesoscale event as well as seeing broadly the
+amounts of co-occurrence occurring between the two data sets.
 
 Besides controlling for the duration and direction of lag, the size of
 the events themselves (ranked by cumulative intensity) was compared.
@@ -446,107 +447,105 @@ there were more or fewer.
 Results
 =======
 
-Events
-------
+Event metrics
+-------------
 
-Both annual datasets were combined so that a two-way ANOVA could be run
-on them that considered the following factors when testing for signicant
-differences: coast, event, data. Coast here refers to the three
-different coastal sections, event refers to either MHWs or MCS and data
-indicates whether the data are from the *in situ* or OISST datasets.
-When searching through these combined annual datasets for differences in
-the count of events it was found that there was a significant
-differences between the two types of data (i.e. *in situ* vs. OISST
-data) (*F*=50.27, df~1~=1, df~2~=2306, *p*&lt;0.01). There were also
-significant differences between the coastal sections for the duration of
-events (*F*=16.70, df~1~=2, df~2~=1612, *p*&lt;0.01) as well as the two
-types of data (*F*=17.57, df~1~=1, df~2~=1612, *p*=0.39). The mean
-intensity of events were significantly different between each coast
-(*F*=36.51, df~1~=2, df~2~=1612, *p*&lt;0.01) and between MHWs and MCSs
-(*F*=17563, df~1~=1, df~2~=1612, *p*&lt;0.01). There were also
-significant interactions for mean intensity of the events between every
-combination of all three factors. Therefore the mean intensity of both
-MHWs and MCSs between the different coastal sections were significantly
-different (*F*=3.292, df~1~=2, df~2~=1612, *p*=0.03), the mean intensity
-of events from the different datasets between the different coastal
-sections were significant (*F*=47.29, df~1~=2, df~2~=1612, *p*&lt;0.01),
-as were the differences between MHWs and MCSs from the different types
-of data (*F*=785.5, df~1~=1, df~2~=1612, *p*&lt;0.01) and ultimately
-differences between MHWs and MCSs for the different coastal sections
-from both datasets were significant, too (*F*=5.622, df~1~=1,
-df~2~=1612, *p*&lt;0.01). Note that the degrees of freedom in the
-results for the count of events differ from duration/mean intensity as
-there were years within many time series in which there were no events.
-These annual values were reported as 0 for the count results; however,
-any years in which no events occurred had their resultant duration and
-mean intensity values reported as NA.
+Looking for differences in the metrics of MHWs and MCSs between datasets
+and between coasts (), a series of general linear hypotheses
+[@Hothorn2008] revealed significant differences in the frequency of MHWs
+and MCSs between the *in situ* and OISST datasets, with the OISST
+dataset displaying more events of each kind (MHWs: *t*=-5.37,
+*p*&lt;0.01; MCSs: *t*=-5.28, *p*&lt;0.01). The number of hot events is
+neither more nor less than the number of cold events irrespective of
+dataset analysed. Considering the difference in MHWs or MCSs between
+coasts, differences were not found for the *in situ* nor the OISST
+datasets.
 
-shows the mean(sd) values from the annual data for: count \[n\],
-duration \[days\] and mean intensity \[C\] for both the *in situ* and
-OISST annual datasets. also shows the results of a post-hoc Tukey test
-run on the ANOVA from all of the annual data as mentioned above. Using
-lower case letters, the significant differences between each coastal
-section from the same dataset and same type of event (i.e. MHW or MCS)
-are shown. The significant differences between the same coastal section
-and type of event between the different datasets are shown with upper
-case letters.
+MHWs and MCSs detected in the OISST dataset are of longer duration than
+in the *in situ* dataset (MHWs: *t*=-2.34, *p*&lt;0.05; MCSs: *t*=-3.31,
+*p*&lt;0.01). Comparing coasts within the *in situ* dataset, cold events
+are shorter along the east than along the south (*t*=5.41, *p*&lt;0.01)
+or west coasts (*t*=2.06, *p*&lt;0.05); the warm events show the same
+response, with the duration along the east coast being shorter than
+along the south (*t*=3.79, *p*&lt;0.01) or west (*t*=2.67, *p*&lt;0.01)
+coasts. MCSs are also of shorter duration along the east coast compared
+to the south coast in the OISST dataset (*t*=2.83, *p*&lt;0.01), while
+MHWs follow the same pattern that emerged in the *in situ* data (east
+*vs.* south: *t*=6.01, *p*&lt;0.01; east *vs.* west: *t*=3.79,
+*p*&lt;0.01). Contrasting the duration of MHWs with that of MCSs within
+coast and dataset, the duration of the two event types is identical,
+except for in the OISST dataset along the east coast where cold events
+last longer (*t*=-2.70, *p*&lt;0.01).
 
-  --------------------------------------------- ------------- ------------------- ---------------------- -- ------------- ------------------- ----------------------
-                                                                                                                                              
-  coast                                          count \[n\]   duration \[days\]   mean intensity \[C\]      count \[n\]   duration \[days\]   mean intensity \[C\]
-  <span>**<span>A</span> — *in situ***</span>                                                                                                 
-  all                                            1.6(1.8)-A       9.3(5.1)-A           2.65(0.79)-A          1.5(1.7)-A       9.0(5.1)-A           2.79(1.09)-A
-  west                                           1.8(1.9)aA       9.1(3.9)aA           2.86(0.90)aA          1.5(1.9)aA       8.5(5.2)aA           2.32(0.58)aA
-  south                                          1.5(1.8)aA       9.8(6.1)aA           2.50(0.65)bA          1.5(1.6)aA       9.7(5.5)aA           3.08(1.22)bA
-  east                                           1.5(1.7)aA       7.7(2.2)aA           2.85(0.89)aA          1.6(1.6)aA       7.1(1.9)aA           2.37(0.67)aA
-  <span>**<span>B — OISST</span>**</span>                                                                                                     
-  all                                            2.2(2.1)-B       10.2(5.4)-A          1.72(0.33)-B          2.2(2.6)-B       10.2(5.1)-B          1.83(0.52)-B
-  west                                           2.1(1.8)aA       10.9(6.7)aA          1.75(0.41)aB          2.3(2.7)aA       9.8(6.6)aA           1.87(0.61)aB
-  south                                          2.2(2.1)aB       10.6(5.5)aA          1.74(0.29)aB          2.1(2.7)aB       10.7(5.0)aA          1.79(0.45)aB
-  east                                           2.5(2.3)aA       8.3(2.4)bA           1.64(0.33)aB          2.2(2.2)aA       9.4(3.4)aA           1.93(0.61)aB
-  --------------------------------------------- ------------- ------------------- ---------------------- -- ------------- ------------------- ----------------------
-
-  : The mean(sd) values for event count, duration and mean intensity
-  from the annual data for MHWs and MCSs for each coastal section as
-  calculated from the *in situ* (A) and OISST (B) time series. The
-  aforementioned annual data were averaged across all years for all time
-  series within each respective coast to produce the mean(sd) values
-  shown in this table. The lower case letters indicate if any of the
-  coastal sections differ within the same dataset and event type (i.e.
-  MHW or MCS). The upper case letters indicate if the coastal sections
-  differ between the datasets and same event type.<span
-  data-label="table2"></span>
-
-Top three events
-----------------
+The *in situ* dataset yielded more intense MHWs (*t*=19.80, *p*&lt;0.01)
+and MCSs (*t*=14.19, *p*&lt;0.01) than the OISST dataset. Looking at the
+difference in intensity of events within dataset, MCSs are more intense
+than MHWs in the OISST dataset (*t*=-4.10, *p*&lt;0.01). There are also
+differences in the intensity of MHWs and MCSs between coasts within a
+dataset. Considering the *in situ* data, the intensity event types is
+greater along the south coast for both MHWs (south *vs.* east:
+*t*=-2.58, *p*&lt;0.01; south *vs.* west: *t*=3.28, *p*&lt;0.01) and
+MCSs (south *vs.* east: *t*=5.48, *p*&lt;0.01; south *vs.* west:
+*t*=-6.66, *p*&lt;0.01). More intense MCSs were detected in the OISST
+dataset on the south coast compared to the east (*t*=-2.15,
+*p*&lt;0.05), while MHWs were less intense along the east compared to
+the south (*t*=3.01, *p*&lt;0.01) or west (*t*=2.18, *p*&lt;0.05)
+coasts. Focussing on differences between coasts but within a dataset,
+MHWs emerging from the *in situ* dataset are more intense than their
+cold counterparts along the west (*t*=4.48, *p*&lt;0.01) and east
+(*t*=3.06, *p*&lt;0.01) coasts, but MCS are more intense compared to
+MHWs along the south coast (*t*=-5.66, *p*&lt;0.01). A coastal
+difference in intensity of cold and warm events is only seen along the
+east coast (*t*=-4.36, *p*&lt;0.01) in the OISST dataset.
 
 The mean annual statistics shown in give a broad overview of the events
 occurring along the coast; however, examining the largest MHWs and MCSs
 better aids in our understanding of which coastal sections show the most
-intense events. The ranking of these events are based on the cumulative
+intense events. The ranking of these events is based on the cumulative
 intensity metric as explained in . To calculate the mean cumulative
 intensity of all events it was necessary to use the individual event
-data, and not the annual mean data used for . Doing so for all of the
-individual events from the *in situ* data we see that mean(sd)
-cumulative intensity for MHWs along the coast is 26.11(24.37)C and
-26.45(24.25)C for MCSs. The mean(sd) cumulative intensity over the
-entire coast for the MHWs from the OISST dataset was lower at
-18.65(15.10)C whereas the mean(sd) cumulative intensity of the MCSs from
-the OISST data was much closer to the *in situ* value at 23.17(23.49)C.
+data, and not the annual mean data used for . Doing so for MHWs from
+both datasets we see that there is a significant difference (*t*=7.68,
+*p*&lt;0.01) in the mean±sd cumulative intensities with the *insitu*
+dataset (26.11±24.37C) having greater cummulative intensities than the
+the OISST dataset (18.65±15.10C). The absolute mean±sd MCS cummulative
+intensities between the two datasets are also significantly different
+(*t*=2.99, *p*&lt;0.01) with the *in situ* events (26.45±24.25C) being
+greater than the the OISST events (23.17±23.49C).
 
-The three largest MHWs that occurred within the *in situ* dataset were
-all on the south coast (). The size of the south coast events are larger
-than those along the west coast, with the largest three MHWs from the
-east coast being the smallest. This is due in part to the events on the
-south coast having a greater duration than the other two coastal
-sections. As with the MHWs, the largest three MCSs from the *in situ*
-data were also found on the south coast (). The west coast had the next
-largest three events and the east coast the smallest. The south coast
-MCSs had greater durations than the MCSs from the other coastal sections
-but less pronounced than the MHWs.
+  --------------------------------------------- ------------- ------------------- ---------------------- -- -------------- ------------------- ---------------------------
+                                                                                                                                               
+  coast                                          count \[n\]   duration \[days\]   mean intensity \[C\]      count \[n\]    duration \[days\]   mean intensity \[C days\]
+  <span>**<span>A</span> — *in situ***</span>                                                                                                  
+  all                                            1.6±1.8^-A^      9.3±5.1^-A^         2.65±0.79^-A^          1.5±1.7^-A^       9.0±5.1^-A^            2.79±1.09^-A^
+  west                                           1.8±1.9^aA^      9.1±3.9^aA^         2.86±0.90^aA^          1.5±1.9^aA^       8.5±5.2^aA^            2.32±0.58^aA^
+  south                                          1.5±1.8^aA^      9.8±6.1^aA^         2.50±0.65^bA^          1.5±1.6^aA^       9.7±5.5^aA^            3.08±1.22^bA^
+  east                                           1.5±1.7^aA^      7.7±2.2^bA^         2.85±0.89^aA^          1.6±1.6^aA^       7.1±1.9^bA^            2.37±0.67^aA^
+  <span>**<span>B — OISST</span>**</span>                                                                                                      
+  all                                            2.2±2.1^-B^     10.2±5.4^-A^         1.72±0.33^-B^          2.2±2.6^-B^      10.2±5.1^-B^            1.83±0.52^-B^
+  west                                           2.1±1.8^aA^     10.9±6.7^aA^         1.75±0.41^aB^          2.3±2.7^aA^      9.8±6.6^adA^           1.87±0.61^adB^
+  south                                          2.2±2.1^aB^     10.6±5.5^aA^         1.74±0.29^aB^          2.1±2.7^aB^      10.7±5.0^aA^            1.79±0.45^aB^
+  east                                           2.5±2.3^aA^      8.3±2.4^bA^         1.64±0.33^bB^          2.2±2.2)^aA^      9.4±3.4^dA^            1.93±0.61^dB^
+  --------------------------------------------- ------------- ------------------- ---------------------- -- -------------- ------------------- ---------------------------
+
+  : The mean±sd values for event count, duration and mean intensity from
+  the annual data for MHWs and MCSs for each coastal section as
+  calculated from the *in situ* (A) and OISST (B) time series. The
+  aforementioned annual data were averaged across all years for all time
+  series within each respective coast to produce the mean±sd values
+  shown. Lower case letters indicate if any of the coastal sections
+  differ *within* the same dataset *and* event type, with metrics
+  sharing the same letter being statistically indistinguishable from
+  one-another (i.e. MHW or MCS). Upper case letters indicate if the
+  coastal sections differ *between* the datasets, but *within* coast
+  *and* event type.<span data-label="table2"></span>
+
+Patterns in mean cumulative intensity
+-------------------------------------
 
 <span>llcccc</span> coast & site & start date & duration \[days\] & mean
-intensity \[C\] & cumulative intensity \[C\]\
+intensity \[C\] & cumulative intensity \[C days\]\
+\
 \
 west & Sea Point & 1996-01-04 & 40 & 3.08 & 123.20\
 west & Sea Point & 2005-05-21 & 39 & 2.56 & 99.66\
@@ -567,60 +566,66 @@ south & Ystervarkpunt & 2000-05-11 & 51 & 2.94 & 150.10\
 east & Sodwana & 2004-02-12 & 17 & 3.25 & 55.20\
 east & Orient Beach & 1984-03-31 & 13 & 3.73 & 48.44\
 east & Orient Beach & 1995-12-6 & 15 & 3.01 & 45.13\
+\
+\
+west & Sea Point & 1992-01-21 & 39 & 2.96 & 115.60\
+west & Hout Bay & 1992-01-20 & 36 & 3.15 & 113.50\
+west & Kommetjie & 2004-10-29 & 53 & 2.03 & 107.40\
+south & Knysna & 1992-05-3 & 50 & 2.41 & 120.40\
+south & Fish Hoek & 2004-10-30 & 53 & 1.92 & 101.60\
+south & Pollock Beach & 1994-03-27 & 31 & 3.19 & 99.05\
+east & Nahoon Beach & 2006-10-21 & 25 & 1.81 & 45.34\
+east & Eastern Beach & 2000-06-24 & 26 & 1.58 & 41.12\
+east & Orient Beach & 2000-06-24 & 26 & 1.58 & 41.12\
+\
+west & Kommetjie & 2010-12-13 & 54 & 3.92 & 211.90\
+west & Hout Bay & 2010-12-25 & 41 & 4.06 & 166.30\
+west & Sea Point & 2010-12-25 & 41 & 3.78 & 154.90\
+south & Hamburg & 1984-02-5 & 65 & 3.91 & 254.20\
+south & Storms River Mouth & 1982-03-13 & 60 & 2.79 & 167.30\
+south & Tsitsikamma East & 1982-03-13 & 60 & 2.79 & 167.30\
+east & Eastern Beach & 2010-12-26 & 32 & 2.90 & 92.85\
+east & Orient Beach & 2010-12-26 & 32 & 2.90 & 92.85\
+east & Eastern Beach & 1984-02-24 & 22 & 3.97 & 87.26\
+
+The three largest MHWs that occur within the *in situ* dataset are all
+on the south coast (). The size of the south coast events are larger
+than those along the west coast, with the largest three MHWs from the
+east coast being the smallest. This is due in part to the events on the
+south coast having a greater duration than the other two coastal
+sections, which influences the cumulative intensity metric. As with the
+MHWs, the largest three MCSs from the *in situ* data are also on the
+south coast (). The west coast has the next largest three events and the
+east coast the smallest. The south coast MCSs have a greater duration
+than the MCSs from the other coastal sections, but are less pronounced
+than that of the MHWs.
 
 The pattern seen in the *in situ* data of the largest MHWs and MCSs
-having occurred on the south, west and east coasts respectively was not
-repeated with the OISST dataset. Whereas the single largest MHW occurred
+occurring on the south, west and east coasts respectively is not
+repeated with the OISST dataset. Whereas the single largest MHW occurs
 on the south coast in the OISST data, the three largest MHWs from the
-west coast were larger than the second and third largest events from the
-south coast (). The three largest MHWs from the east coast were again
+west coast are larger than the second and third largest events from the
+south coast (). The three largest MHWs from the east coast are again
 smaller than those from the other coasts. The largest MCSs for the south
-and west coasts from the OISST data were similarly shuffled with no one
-coastal section having the three largest events. The east coast MCSs
-were however consistent with other findings in that they were again the
-smallest three events. All of the coastal sections in the OISST data
-showed that at least two of their largest MCSs occurred at the same time
-at different sites. This is a level of co-occurrence that the *in situ*
-data did not show.
+and west coasts from the OISST data are similarly show no clear pattern
+with no one coastal section having the three largest events as in the
+*in situ* dataset. The east coast MCSs from the OISST dataset are
+however consistent in that they are again the smallest three events. All
+of the coastal sections in the OISST dataset show that at least two of
+their largest MCSs occurred at the same time at different sites. This is
+a level of co-occurrence that the *in situ* data do not show.
 
-  coast                                   site                  start date   duration \[days\]   mean intensity \[C\]   cumulative intensity \[C x days\]
-  --------------------------------------- -------------------- ------------ ------------------- ---------------------- -----------------------------------
-  <span>**<span>A — MHW</span>**</span>                                                                                
-  west                                    Sea Point             1992-01-21          39                   2.96                        115.60
-  west                                    Hout Bay              1992-01-20          36                   3.15                        113.50
-  west                                    Kommetjie             2004-10-29          53                   2.03                        107.40
-  south                                   Knysna                1992-05-3           50                   2.41                        120.40
-  south                                   Fish Hoek             2004-10-30          53                   1.92                        101.60
-  south                                   Pollock Beach         1994-03-27          31                   3.19                         99.05
-  east                                    Nahoon Beach          2006-10-21          25                   1.81                         45.34
-  east                                    Eastern Beach         2000-06-24          26                   1.58                         41.12
-  east                                    Orient Beach          2000-06-24          26                   1.58                         41.12
-  <span>**<span>B — MCS</span>**</span>                                                                                
-  west                                    Kommetjie             2010-12-13          54                   3.92                        211.90
-  west                                    Hout Bay              2010-12-25          41                   4.06                        166.30
-  west                                    Sea Point             2010-12-25          41                   3.78                        154.90
-  south                                   Hamburg               1984-02-5           65                   3.91                        254.20
-  south                                   Storms River Mouth    1982-03-13          60                   2.79                        167.30
-  south                                   Tsitsikamma East      1982-03-13          60                   2.79                        167.30
-  east                                    Eastern Beach         2010-12-26          32                   2.90                         92.85
-  east                                    Orient Beach          2010-12-26          32                   2.90                         92.85
-  east                                    Eastern Beach         1984-02-24          22                   3.97                         87.26
-
-  : The three largest MHWs (A) and MCSs (B) per coast from the OISST
-  data. Column descriptions may be found in the caption for .<span
-  data-label="table4"></span>
-
-The individual event data for both the *in situ* and OISST data were
-combined, as with the annual data, and a two-way ANOVA was run on both
-datasets together using the factors: coast, event and data. The
-differences between every factor and interactions between every factor
-were found to be significant (p$\leq$0.03).
+A three-way ANOVA on the individual event data for both the *in situ*
+and OISST data combined (i.e. as with the annual data) with three
+factors (coast, event type, dataset) yielded significant marginal
+effects and interactions between all factors (*p*$\leq$0.03).
 
 As well as having significantly different cumulative intensities, one
 can see in that the three largest events occurring for each time series
-within the OISST dataset are often different from the *in situ* dataset
-and show a greater amount of co-occurrence for neighbouring coastal
-stations than the corresponding *in situ* time series do.
+within the OISST dataset are often different from those seen in the *in
+situ* dataset, but show a greater amount of co-occurrence with events
+detected at neighbouring coastal stations than the corresponding *in
+situ* time series do.
 
 ![image](figure2.pdf){width="100.00000%"}
 
@@ -628,8 +633,7 @@ The temperatures on the dates of the largest MHW and MCS for the west
 and south coasts from the *in situ* data may be seen concurrently with
 the temperatures from the matching OISST time series in . One may see
 that when the largest events were occurring in the *in situ* data, the
-temperature values in the OISST data did not show similarly intense
-events.
+temperatures in the OISST data did not show similarly intense events.
 
 ![The temperature values from the *in situ* and OISST data during the
 largest MHW and MCS from the south and west coasts respectively from the
@@ -648,41 +652,41 @@ Co-occurrence rates
 The proportion of co-occurrence found for MHWs and MCSs between the
 datasets for each site may be seen in and respectively. When using the
 lag windows before and after the *in situ* event and comparing all
-events we see that as the width of the lag window increased from 2 to 14
-days the mean proportion of co-occurrence for all sites increased
+events we see that as the width of the lag window increases from 2 to 14
+days the mean proportion of co-occurrence for all sites increases
 linearly for MHWs (0.09 to 0.38) and MCSs (0.10 to 0.30). Using these
-same constraints we see that south coast sites had the largest mean
+same constraints we see that south coast sites have the largest mean
 increase in co-occurrence for MHWs (0.10 to 0.45) and MCSs (0.11 to
-0.34), whereas the west coast sites showed the smallest increase for
-MHWs (0.07 to 0.28) and MCSs (0.08 to 0.19). With all variables
-controlled for in the same manner, the co-occurrence rates between the
-different coastal sections were not significantly different for MHWs or
-MCSs at 2 day nor 14 day lags.
+0.34), whereas the west coast sites show the smallest increase for MHWs
+(0.07 to 0.28) and MCSs (0.08 to 0.19). With all variables controlled
+for in the same manner, the co-occurrence rates between the different
+coastal sections are not significantly different for MHWs or MCSs at 2
+day nor 14 day lags (*p*$\geq$0.12).
 
-The directionality of the lag window also affected the co-occurrence of
+The directionality of the lag window also affects the co-occurrence of
 events. Comparing all events within a 14 day lag window before the *in
-situ* event gave higher mean(sd) rates of co-occurrence for MHWs
-(0.22(0.13)) than for the same lag window after the *in situ* event for
-MHWs (0.18(0.10)). This same comparison for MCSs showed that the lag
-window before the *in situ* event (0.16(0.09)) had slightly lower rates
+situ* event gives higher mean±sd rates of co-occurrence for MHWs
+(0.22±0.13) than for the same lag window after the *in situ* event for
+MHWs (0.18±0.10). This same comparison for MCSs shows that the lag
+window before the *in situ* event (0.16±0.09) has slightly lower rates
 of co-occurrence than the lag window after the *in situ* event
-(0.17(0.08)). When the smaller events were screened from comparison and
-only the largest half of the events were used (50^th^ percentile), the
-difference in mean(sd) co-occurrence proportions for MHWs event lessened
-at 0.16(011) before the *in situ* event and 0.15(0.12) after. The
-mean(sd) co-occurrence proportion of MCSs at this level was less when
-using a lag window before the *in situ* event at 0.05(0.08) than for a
-lag window after at 0.08(0.08).
+(0.17±0.08). When the smaller events were screened from comparison and
+only the largest half of the events used (50^th^ percentile), the
+difference in mean±sd co-occurrence proportions for MHWs event lessens
+at 0.16±011 before the *in situ* event and 0.15±0.12 after. The mean±sd
+co-occurrence proportion of MCSs at this level is less when using a lag
+window before the *in situ* event at 0.05±0.08 than for a lag window
+after at 0.08±0.08.
 
-There was no co-occurrence for the largest MCSs between the datasets,
-whereas four of the paired time series showed co-occurrence for their
-most extreme MHW (). Interestingly, all four time series were on the
-south coast and three of the four showed co-occurrence for their largest
-MHW when the *in situ* event preceded the OISST event.
+There is no co-occurrence for the largest MCSs between the datasets,
+whereas four of the 21 time series show co-occurrence for their most
+extreme MHWs (). Interestingly, all four time series are on the south
+coast and three of the four show co-occurrence for their largest MHW
+when the *in situ* event preceded the OISST event.
 
 ![Proportion of MHW co-occurrence between *in situ* and OISST datasets
 for each site where sites 1-4 represent the west coast (WC), sites 5-17
-the south coast (SC) and 18-21 the east coast (EC). Columns denoted with
+the south coast (SC) and 18-21 the east coastc(EC). Columns denoted with
 “before” show the proportion of co-occurrence when events in the OISST
 data occurred on or before the dates of the *in situ* events. The
 columns denoted with “after” show the proportion of co-occurrence when
@@ -703,71 +707,72 @@ Decadal trends in MHWs and MCSs
 -------------------------------
 
 In order to calculate the decadal trends in MHW and MCS count, linear
-models were fitted to the annual count values for each 30+ year time
-series. The slope of this line was then multiplied by ten to produce the
-following decadal trend values and show whether over the last 30+ years
-MHWs/MCSs have been increasing or decreasing. As the OISST data set is
-over 30 years in duration, decadal values were calculated for each OISST
-time series. It was found that the mean(sd) decadal trend for MHW
-occurrence in the OISST dataset was 0.5(0.3) dec$^{-1}$ across all sites
-and -0.7(0.6) dec$^{-1}$ for MCSs. The decadal trends in MHW occurrence
-increase as one moves from the colder Benguela fed west coast to the
-warmer Agulhas fuelled east coast with the mean(sd) decadal MHW trend on
-the west coast being 0.3(0.3) dec$^{-1}$, the south coast being
-0.5(0.3) dec$^{-1}$ and the east coast at 0.6(0.2) dec$^{-1}$. Just as
-MHWs are occurring more frequently per decade on the east coast than the
-west, MCSs are decreasing more frequently on the east coast than the
-west. The decadal trend in MCSs on the west coast is
--0.1(0.6) dec$^{-1}$, -0.8(0.5) dec$^{-1}$ on the south coast and
--0.9(0.2) dec$^{-1}$ on the east coast.
+models were fitted to the annual count values for each &gt;30 year time
+series. The slope of this line indicate whether after &gt;30 years
+MHWs/MCSs are increasing or decreasing. As the OISST data set is over 30
+years in duration, decadal trends were calculated for each OISST time
+series. We see that the mean±sd decadal trend for MHW occurrence in the
+OISST dataset is 0.5±0.3 dec$^{-1}$ across all sites and
+-0.7±0.6± dec$^{-1}$ for MCSs. The decadal trends in MHW occurrence
+increase as one moves from the colder Benguela fed west coast to warmer
+Agulhas driven east coast with the mean±sd decadal MHW trend on the west
+coast being 0.3±0.3 dec$^{-1}$, the south coast being 0.5±0.3 dec$^{-1}$
+and the east coast at 0.6±0.2 dec$^{-1}$. Just as MHWs are occurring
+more frequently per decade on the east coast than the west, the
+frequency of MCSs is decreasing more on the east coast than the west.
+The decadal trend in MCSs on the west coast is -0.1±0.6 dec$^{-1}$,
+-0.8±0.5 dec$^{-1}$ on the south coast and -0.9±0.2 dec$^{-1}$ on the
+east coast.
 
-Of the 21 *in situ* time series, only four of them reached the 30+ year
-requirement. Of these four time series the mean(sd) decadal trend for
-MHWs was found to be 0.3(0.5) dec$^{-1}$ and -0.1(0.5) dec$^{-1}$ for
-MCSs. There were two sites from the west coast and two from the south,
-excluding the east coast from a possible calculation of decadal change
-for *in situ* MHWs and MCSs. The mean(sd) decadal trend for MHWs (MCSs)
-on the west coast was 0.1(0.5) dec$^{-1}$ (-0.2(0.7) dec$^{-1}$) and
-0.5(0.5) dec$^{-1}$ (0.1(0.4) dec$^{-1}$) on the south.
+Of the 21 *in situ* time series, only four of them reach the &gt;30 year
+requirement. Of these four time series the mean±sd decadal trend for
+MHWs is 0.3±0.5 dec$^{-1}$ and -0.1±0.5 dec$^{-1}$ for MCSs. There are
+two sites from the west coast and two from the south, excluding the east
+coast from a possible calculation of decadal change for *in situ* MHWs
+and MCSs. The mean±sd decadal trend for MHWs (MCSs) on the west coast is
+0.1±0.5 dec$^{-1}$ (-0.2±0.7 dec$^{-1}$) and 0.5±0.5 dec$^{-1}$
+(0.1±0.4 dec$^{-1}$) on the south.
 
-For the remaining 17 *in situ* time series we calculated the the sum of
-the annual count of events in the first half of each time series
-compared against the sum of the annual count of events in the second
-half. This produced a proportion value that could be used as an
-indicator as to how many more MHWs or MCSs were occurring in the second
-half of the time series. The mean(sd) proportion of MHWs occurring in
-the second half of the shorter time series was 1.7(1.3) whereas the
-proportion of MCSs was 0.8(0.6), meaning that more of the MHWs are
-occurring in the second half of time series than the first, and vice
-versa for the MCSs. The shorter time series on the south coast showed
-the pattern of having more MHWs in the second half of the time series at
-2.1(1.4) and fewer MCSs in the second half at 0.5(0.3). The short west
-coast time series had more MHWs in the second half at 1.5(0.6) as well
-as more MCSs at 1.8(0.6). The east coast had fewer MHWs at 0.7(0.4) in
-the second half of the shorter time series with the proportion of MCSs
-in being roughly split between the first and second half of the time
-series at 1.0(0.8).
+For the remaining 17 *in situ* time series we calculated the sum of the
+annual count of both warm and cold events in the first and second
+halves. Comparing these results produced a proportion value that could
+then be used as an indicator as to how much more often MHWs or MCSs
+occured in the second half of the time series *vs,* the first. The
+mean±sd proportion of MHWs occurring in the second half of the shorter
+time series was 1.7±1.3, whereas the proportion of MCSs was 0.8±0.6,
+suggesting that more of the MHWs occur in the second half of time
+series, and *vice versa* for the MCSs. The shorter time series on the
+south coast show the pattern of having more MHWs in the second half of
+the time series at 2.1±1.4 and fewer MCSs in the second half at 0.5±0.3.
+The short west coast time series also has more MHWs in the second half
+at 1.5±0.6, but it also has more MCSs at 1.8±0.6. The east coast has
+fewer MHWs at 0.7±0.4 in the second half of the shorter time series with
+the proportion of MCSs being roughly split between the first and second
+half of the time series at 1.0±0.8.
 
 Offshore MHWs and MCSs
 ----------------------
 
-The same algorithm used to detect MHWs and MCSs for the *in situ* and
-coastal OISST data was then applied to every pixel in the OISST data to
-detect MHWs and MCSs in the oceans around southern Africa. After the
-individual events were detected, annual mean values were created so that
-these results could be compared with the *in situ* results. shows the
-mean count \[n\], duration \[days\], and intensity \[C\] of each pixel
-from the OISST dataset as derived from the annual data. These data show
-that the most MHWs occur south of the tip of the continent whereas some
-of the pixels with the greatest count of MCSs may be found directly
-against the west coast. As for the duration of events, it is clear from
-that the MHWs and MCSs the satellite is detecting in the Agulhas current
-are relatively short. Almost all of the pixels that show events in the
-upper range of the durations detected occurred well away from the coast,
-too. When calculating mean intensity for each individual pixel, the west
-and south coasts show centres of intensity very near the shore whereas
-the east coast generally does not. The most intense events detected in
-the OISST data where found to occur along or below the south coast.
+When one languidly casts their gaze away from the coast and out towards
+the boundless expanse of ocean around southern Africa the mesoscale
+patterns as they occur independent of the continent may be more readily
+seen. shows the mean count, duration and intensity of each pixel from
+the OISST dataset as derived from the annual data. The most MHWs occur
+well south of the tip of the continent whereas some of the most frequent
+MCS activity may be found directly against the west coast. This helps to
+explain the finding that MHWs were shown to be longer and more intense
+in the *in situ* dataset, whereas the OISST dataset shows MCSs to be
+longer and more intense. As for the duration of events, it is clear from
+that the MHWs and MCSs detected in the Agulhas current are relatively
+short-lived. Almost all of the pixels that show events in the upper
+range of the durations detected occur well away from the coast, too.
+This explains why the events in the *in situ* data have a greater
+duration. As for the intensity of offshore events, the west and south
+coasts are shown to have centres of intensity very near the shore
+whereas the east coast generally does not. The most intense events
+detected in the OISST data are found along or south of the south coast,
+corroborating the finding that the south coast has the greatest
+proportion of co-occurrence amongst the three coastal sections.
 
 ![Mean values from the annual data of each pixel from the OISST dataset
 around southern Africa. The first second and third rows show the mean
@@ -778,23 +783,22 @@ populated. The ‘MCS Intensity (mean)’ panel shows the intensity of the
 MCSs in negative values, not absolute values.<span
 data-label="fig:Figure6"></span>](MHW_MCS_mean.png){width="100.00000%"}
 
-Using the individual events detected per pixel from the offshore OISST
-data, decadal trends could be drawn using the same method detailed in
-the previous section. One may see in that the count, duration and
-intensity of MHWs have mostly been increasing throughout the studied
-regions of the Indian and Atlantic oceans with only scattered pockets of
-decrease. The count of MCS has been decreasing most rapidly along the
-coast of southern Africa and over the Agulhas Bank with a couple of
-notable exceptions near Port Elizabeth and north of the Cape Peninsula
-() where the count of MCSs have been increasing very near to the coast.
-The duration of MCSs is seen to generally increase further offshore with
-most of the nearshore changing little or decreasing. THere is a strong
-pocket of decreasing MCSs just off the coast from Port Elizabeth. The
+Whereas the mean count, duration and intensity of MHWs and MCSs offshore
+are telling, the picture is not complete without also considering the
+trend in these metrics, too. One may see in that the count, duration and
+intensity of MHWs have almost exclusively been increasing throughout the
+studied regions of the Indian and Atlantic oceans. The count of MCS has
+been decreasing most rapidly along the coast of southern Africa with a
+couple of notable exceptions near Port Elizabeth and north of the Cape
+Peninsula where the count of MCSs have been increasing very near to the
+coast. The duration of MCSs is seen to generally increase further
+offshore with most of the nearshore changing little or decreasing. The
 intensity of MCSs is either changing little near the coast or is
 increasing dramatically, as seen in the dark blue spot north of the Cape
-Peninsula in the “MCS Intensity (mean) Trend” panel in . The intensity
-of MCSs in the Atlantic is decreasing more rapidly and broadly than the
-Indian ocean.
+Peninsula in the “MCS Intensity (mean) Trend” panel in . This means that
+a consistent &gt;30 year trend in extreme cold events, more so than
+anywhere else in this region of the ocean, has been acting on the
+coastal waters here.
 
 ![Decadal trend values calculated from the annual OISST data around
 southern Africa. The decadal trends were calculated by fitting a linear
@@ -802,169 +806,292 @@ model to the annual data of each pixel for the relevant metrics and
 multiplying the slope of the line by 10. The panels are in the same
 position as . The “MCS Intensity (mean) Trend” panel shows the trend in
 MCS intensity as negative values, not absolute values (e.g. dark blue
-regions show MCSs becoming stronger, not weaker).<span
+regions mean the MCSs are getting stronger, not weaker).<span
 data-label="fig:Figure7"></span>](MHW_MCS_trend.png){width="100.00000%"}
 
 Discussion
 ==========
 
-Events
-------
+Our results clearly show that MHWs and MCSs detected in two
+fundamentally different kinds of datasets display markedly differing
+metrics regarding the events’ timing, frequency, duration and intensity.
+These differences appear to be related to the nature and variability of
+physical oceanographic processes at broad- and local-scales, and the
+coupling of the processes across these scales. These finding illustrate
+how a study of the properties of anomalous events can provide novel
+insights into drivers of the thermal regime along coastlines, and can be
+used to arrive at a mechanistic understanding of the nature and origin
+of MHWs (MCSs), which under a regime of climate change will become the
+major mode of perturbation to marine ecosystems and the marine living
+resources and coupled ecosystem services we derive from these systems.
+This analysis would not have been possible had it not been for the
+recent framework of @Hobday2016, which has enabled the calculation of
+objective, quantitative metrics for the comparison of anomalous thermal
+events across scales, location and time. However, @Hobday2016 noted that
+their definition does not make assumptions about the drivers of
+heatwaves, nor does it hint at any ecological effects. We also draw no
+conclusions about the consequences of the events detected in our study,
+but we show how a careful analysis of events in contrasting datasets may
+yield information about the underlying drivers of those events.
 
-It was surprising to find that the mean intensity of MCSs on the south
-coast was significantly larger (*p*&lt;0.01) than MCSs found within the
-EBUS on the west coast for the *in situ* data. From these results we may
-now hypothesise that there is an as of yet unknown driver on the south
-coast affecting the extreme cold events there that is not present on the
-other two coastal sections.
+Relation between local- and broadscale MHWs and MCSs
+----------------------------------------------------
 
-The difference between the *in situ* and OISST datasets was striking.
-Whereas the count of events for the west and east coast, as well as the
-duration of events between all of the individual coastal sections
-between the datasets were not significantly different, the count of
-MHWs/MCSs on the south coast and the mean intensity values for each
-coastal section were. The OISST data showed many weak events occurring
-often whereas the *in situ* dataset showed fewer, significantly larger
-events. This implies that a large number of the events occurring between
-these two datasets are unrelated and that some other variable may be
-having a more pronounced effect on coastal temperatures than the ocean
-temperature. Before calculating the proportions of co-occurrence between
-the datasets it was already clear from these results that the events
-that occurred within the OISST data would differ from those of the *in
-situ* data.
+The difference between the *in situ* and OISST datasets is striking. We
+anticipated a large degree of coupling between the anomalously warm
+events manifesting in datasets that encapsulate local- and broad-scale
+patterns, as represented by the *in situ* and OISST datasets,
+respectively. We found instead that the broad-scale dataset yields
+heatwaves that are more frequent and longer in duration, but less
+intense than its local-scale counterpart. Cold-spells, for which we
+expected a greater deal of decoupling between local- and broad-scale
+manifestations, indeed show evidence of such lack of coupling. MCSs are
+more frequently seen and last longer in the OISST data; however, the
+mean intensity of MCSs at the broad-scale is lower than at the coast.
+Furthermore, there is no difference in the frequency of MHWs and MCSs
+emerging at the two scales, but the duration and intensity of MHWs
+relative to MCSs across scale are modified by the section of the coast
+in which they occur. Taken at face value, these finding might suggest
+that both MHWs and MCSs are completely decoupled between coastal and
+offshore regions. A more in-depth assessment of the rates of coupling is
+provided later (see *Co-occurrence rates*, below), and it shows that
+*some* coupling is indeed present, particularly in MHWs.
 
-When considering all of the OISST events, and not only those found near
-the coast, we see that the range of count, days and intensities are
-similar to those found in the *in situ* data, but that these larger
-events are generally occurring farther from the coast. This supports the
-argument that the events detected along the coast by these two different
-datasets were not the same, even when they were found to occur within
-similar time frames.
+An important outcome emerging from the above analysis is that the OISST
+dataset shows many weak events occurring often whereas the *in situ*
+dataset shows fewer but more intense events. The interaction between
+frequency and duration is an important consideration, because this
+influences the cumulative intensity metric. This indeed emerges in mean
+cumulative intensities calculated for the MHWs and MCSs, which are
+highest in the *in situ* data. Events near the coast are more intense
+overall. Heatwaves are ubiquitous throughout the world’s oceans, but if
+this patterns of intensification of anomalous events at the coast holds
+true for different world regions, it creates interesting challenges for
+the management of marine living resources and ecosystems at the coast.
+Coastal seas are where people’s interaction with the ocean is greatest,
+through recreational, artisinal and some aspects of commercial fisheries
+(), as well as various other activities that are of great socio-economic
+importance, such as tourism ().
 
-Top three events
-----------------
+We see that a large number of the events occurring between these two
+datasets are unrelated and that some other influence(s) may be having a
+more pronounced effect on the temperatures experienced at the coast than
+the ocean temperatures offshore. This conclusion is important in the
+light of the findings of @Smit2013, who found that there is a very
+strong mismatch in the temperatures recorded by thermal loggers
+installed *in situ* at the coast (i.e. local-scale) compared to the
+measurement of the ocean’s temperature from space (i.e. broad-scale).
+That study showed biases of up to +6 C between the same local-scale
+dataset used here and AVHRR and MODIS Terra SST, with a strong spatial
+pattern. The insight emerging from the present study is that there are
+not only spatial influences affecting the mismatch between local- and
+broad-scale thermal patterns, but that there is a temporal component to
+these biases too. In other words, it is not possible to apply a constant
+and simple bias adjustment to the *in situ* and SST time series used by
+@Smit2013. Such a deterioration of the offshore thermal signal in
+coastal waters is known to occur due to the local modifications of
+nearshore circulation patterns by headlands, embayments, influences of
+the bathymetry and other such perturbations that introduce eddies and
+fronts and a shoaling of the thermocline
+[@Okubo1973; @Pingree1979; @Wolanski1988; @Black1990; @Grundlingh1991; @Graham1997].
+These processes are by no means yet fully understood, and our
+understanding of physical oceanographic process remain weighted toward
+the mesoscale, as was noted by @Graham1997 in the light of their study
+on upwelling shadows, another process responsible for the local
+modification of a phenomenon that is generally studied at the
+broad-scale. These local-scale deviations are know to affect coastal
+ecological processes, such as the transport, dispersal and settlement of
+larvae [@Pineda:1994kc; @McCulloch:2003de; @Narvaez:2004ix] and the
+dynamics of phytoplankton and nutrient delivery
+[@Graham1997; @Narvaez:2004ix], and it is likely that thermal patterns
+over similar scales will also have local significance for the biology of
+the nearshore region.
 
-When considering the cumulative intensities of the individual events,
-and not the annual mean values, we found the results to have more
-significant differences. Given that the annual mean intensities for MCSs
-were significantly larger in the *in situ* data, it was unexpected to
-find that the largest three MCSs for each coast from the OISST data were
-much larger than the *in situ* data. One would assume that as the *in
-situ* data are measured at *ca*. 5m deep on average, which is below the
-bulk surface layer (*ca*. 0.5m) that the OISST data measure
-[@Reynolds2002], they would be predisposed to picking up cold upwelling
-events and less exposed to thermal heating, which would appear as larger
-MCSs and smaller MHWs compared to the OISST data.
+MHWs and MCSs in different coastal sections
+-------------------------------------------
 
-This apparent discrepancy also places doubt on the use of MCSs as a
-proxy for upwelling. If the *in situ* data had recorded longer and/or
-more intense MCSs than seen in the OISST data it would have better
-supported the argument that the MCS algorithm was detecting more extreme
-cold events near the coast, where upwelling occurs
-[@Lutjeharms2000; @Hutchings2009]. Instead the results show that the
-cumulative intensity of MCSs on the south coast from the *in situ* data
-alone are significantly larger than their OISST counterparts. We suggest
-that using the MCS algorithm to detect upwelling be done with extreme
-caution. The MCS algorithm detects cold events based on their intensity
-outside of a locally produced climatology, and because most upwelling
-occurs at seasonally predictable times, the cold events detected here
-are likely due to other factors. Aside from this observation, upwelling
-events should have notable properties, such as rate of onset and
-duration of peak intensity, which set them apart from other events that
-may cause colder water to occur at the surface. Further work on the
-definition of the characteristics of upwelling events could be coupled
-with the MCS algorithm for accurate use in upwelling detection in
-temperature time series.
+Meaningful patterns of event metrics also emerge between coasts. The
+number of anomalously warm or cold events between coasts is not
+influenced by whether we are looking at coastal or offshore regions.
+Each coastal section is thus equally prone to experience a MHW or a MCS.
+Differences emerge in a comparison of the duration and intensity
+metrics, however. The east coast differs from the other two coastal
+sections in that MHWs and MCSs at both the local- and broad-scale are of
+shortest duration here; however, comparing the event duration between
+events, we see that in this regions the cold spells last longer than
+heatwaves. Furthermore, the east coast also displays the least intense
+MHWs but most intense MCSs of any coastal region along offshore portions
+of South Africa’s coastline. This stretch of coastline is heavily
+influenced by the Agulhas Current separated from the coast by only a
+very narrow and steep continental shelf...
 
-The disagreement between the *in situ* and OISST datasets continued into
-the detection of the top three events for each coastal section. The
-pattern of event sizes within the *in situ* data are very clear in that
-events on the south coast are much more extreme than the west and east
-coasts in that order. The OISST data are less conclusive on whether the
-south or west coast experiences the most extreme events, but it is
-apparent from all of the analyses from both datasets that the east coast
-experiences very few extreme MHWs or MCSs. The duration of extreme
-events off the east coast at the mesoscale level is also markedly
-shorter than the other two coasts. This implies that meso-scale activity
-may be having a greater driving force on the extreme events along the
-east coast of southern Africa than the other two coasts.
+The south coast differs from other coastal sections in that the *in
+situ* dataset, which reflects local-scale processes, has the lowest mean
+intensity heatwaves while their cold counterparts are the most intense.
+Offshore regions of the south coast, however, are dominated by the
+lowest mean intensity MCS, suggesting that in this region cold events
+are largely influenced by local coastal phenomena. It is very likely
+that there is some additional and as yet unknown driver here which is
+affecting the extreme events there that is not present on the other two
+coastal sections.
 
-The sites along the south coast could be further divided into those
-within False Bay (Sites 5–7) and those on the Agulhas Bank (Sites 8–17).
-False Bay, which is \~50 km across, is situated within the transition
-zone between the Benguela and Agulhas Currents [@Smit2013]. Many
-satellite temperatures products therefore inadequately resolve the SST
-within this body of water (cite.). This is problematic as it is
-important to precisely monitor the large ranges in temperature this area
-experiences (cite.) as it is important both ecologically (cite.) and to
-the many stakeholders that use this embayment. Two of the three largest
-MHWs and MCSs from the *in situ* dataset were recorded within False Bay,
-whereas only one large MHW and no MCSs were detected by the OISST
-dataset. This illustrates the problem of using satellite temperature
-data for coastal ecology.
+The west coast does not show exceptional patterns in MHW and MCS
+metrics. At first glance, we were surprised to find that the mean
+intensity of south coast coastal MCSs are larger than those of the EBUS
+on the west coast. Upwelling systems are defined by periodic occurrences
+of cold water of deep origin near the coast and it seems intuitive to
+associate these with the cold-spells . But cold upwelled water *defines*
+the climatology for the region, and for a cold spell to manifest in an
+upwelling region the temperature of that water would have to be colder
+than the 90th percentile based on a 30-year climatological baseline
+period , and lasts for five or more days. Since cold, deep water is
+thermally very stable within narrow upper and lower limits (), the lower
+thermal limit of upwelled water will be well-constrained and effectively
+buffer the system with respect to strong anomalous events occurring
+there . Contrast this situation with that of warm events, which are
+surface phenomena whose upper boundary is determined by solar heat flux
+and for which the upper thermal limit is far more difficult to establish
+.
 
-The broad consistent patterns in MHW and MCS metrics detected throughout
-the Indian and Atlantic oceans shows the usefulness of satellite SST
-data to detect events near, but not adjacent to, the coast. For example,
-@Roberts2005 argues for a wind forced coastal upwelling cell near
-Tsitsikamma (Sites 12–14). That these three sites show greater
-cumulative intensities for MCSs than all but one time series from the
-OISST dataset may support the hypothesis of such a coastal upwelling
-cell. Though as mentioned earlier, the current MCS algorithm should not
-be taken as showing upwelling events with any fidelity. More research is
-necessary if upwelling hypotheses like the aforementioned may be
-investigated in this manner. This would be an intriguing use of the MCS
-algorithm to validate multiple competing hypotheses that as of yet may
-not have been able to be tested in any other way.
+Our analysis casts doubt on our thoughts to use MCSs as a means to
+detect the intensification of upwelling, which is a plausible prediction
+in an age when Earth’s climate gradually warms [@Garcia-Reyes2015]. If
+the *in situ* data had recorded longer and/or more intense MCSs than the
+OISST data it would have shown that the MCS algorithm was detecting more
+extreme cold events near the coast, where upwelling is known to occur
+[@Lutjeharms2000; @Hutchings2009]. Instead the results show that
+offshore MCS are, on average, longer and the largest events are more
+intense. We suggest that using the MCS algorithm to detect upwelling be
+done with extreme caution. The MCS algorithm detects cold events based
+on their intensity outside of a locally produced climatology, and
+because most upwelling occurs at seasonally predictable times, the cold
+events detected here are likely due to other factors. Aside from this
+observation, upwelling events should have notable properties, such as
+rate of onset and duration of peak intensity, which set them apart from
+other events that may cause colder water to occur at the surface.
+Further work on the definition of the characteristics of upwelling
+events could be coupled with the MCS algorithm for accurate use in
+upwelling detection in temperature time series.
 
-Another important consideration was the co-occurrence of the most
-extreme events between and within time series. The fact that none of the
-top three MHWs or MCSs for any of the coastal sections from the *in
-situ* dataset occurred within a similar window shows that these events
-all occurred independent of one another. Conversely, the OISST dataset
-shows that all but one of the coastal sections for both MHWs and MCSs,
-had at least two of the three top events occurring at the same time.
-This means that the largest events detected in the OISST data were
-occurring over a broad area at the same time whereas the *in situ*
-events were isolated not only in time, but in the location in which they
-were occurring. This further reinforces our conclusion that the events
-detected by the different datasets are often intrinsically different
-from one another.
+Patterns in mean cumulative intensity
+-------------------------------------
+
+The pattern of mean cumulative intensity within the local-scale data is
+very clear in that warm and cold events on the south coast are much more
+extreme than along the west and east coasts. The OISST data are less
+conclusive on whether the south or west coast experiences the most
+extreme events, but it is apparent from all of the analyses from both
+datasets that the east coast experiences very few extreme MHWs or MCSs.
+These findings suggest that the east coast is the most thermally stable
+of the three coastal sections, and that MHWs or MCSs with mean
+cumulative intensities that could potentially damage ecosystems are
+least prone to develop there. It is the south coast region, however,
+where coastal ecosystems are most at risk due to excessively warm
+events.
+
+Although @Hobday2016 provide caveats regarding using event metrics
+across datasets, we nevertheless feel that it would be informative to
+bring the mean cumulative intensity (C days) of heatwaves experienced
+along the South African south coast into context by comparing them with
+MHWs from regions analysed by them. We see that at our coastal
+locations, Muizenberg and Mossel Bay, heatwaves have *on average*
+cumulative intensities ranging from 156.4 to 310.30 C days. The two
+longest individual HMW events experienced by the Western Australian reef
+system [@Feng2013] had cumulative intensities 237 and 276 C days in 1999
+and 2014, respectively. The 2012 HMW of the northwest Atlantic
+[@Mills2012; @Chen2014] had a cumulative intensity of 145 C days, while
+the subsequent 2012-2013 heatwave went to 443 C days.
+
+The sites along the south coast could be divided into those within False
+Bay (Sites 5–7) and those on the Agulhas Bank (Sites 8–17). False Bay,
+which is \~50 km across, is situated within the transition zone between
+the Benguela and Agulhas Currents [@Smit2013]. Many satellite
+temperature products inadequately resolve the SST within this body of
+water (). Regions such as this often display naturally large thermal
+ranges (both temporally and spatially) () and are of great ecological ()
+and socio-economic importance (). We think that such regions are also
+more prone to MHWs (and perhaps MCSs) due to an even stronger decoupling
+from broad-scale thermal patterns and drivers: indeed, two of the three
+largest MHWs and MCSs detected in the local-scale dataset were recorded
+within False Bay, whereas only one large MHW and no MCSs were detected
+with the OISST dataset. This illustrates the problem of using satellite
+temperature data for coastal ecological applications, and emphasizes the
+need for more comprehensive coverage of coastal ecosystems in long-term
+seawater temperature monitoring programmes.
+
+Although we are are generally sceptical of use of most gridded SST
+product for coastal applications, there are exceptions to this general
+‘rule’ in situations where a good deal of local knowledge of regional
+oceanographic patterns and processes is available. Our example of the
+discrepancies for the size of the events recorded in False Bay serves to
+illustrate the usefulness of satellite SST data to detect events near
+the coast. For example, @Roberts2005 argues for a wind forced coastal
+upwelling cell near Tsitsikamma (Sites 12–14). That these three sites
+show greater cumulative intensities for MCSs than all but one time
+series from the OISST dataset may support the hypothesis for the
+existence of such a coastal upwelling cell. It is important to stress
+here, however, that the usefulness of the SST product does not reside in
+its use in isolation, but that our findings based on this product are
+compared and contrasted with findings derived from an analysis of the
+local-scale set of data. We also need to be aware that, as mentioned
+earlier, the current MCS algorithm should not be taken as showing
+upwelling events *per se* with any fidelity. Greater insight is
+necessary if hypotheses, like the aforementioned one on upwelling, could
+be investigated in this manner. This would be an intriguing use of the
+MCS algorithm if it can be used to validate one of multiple competing
+hypotheses that as of yet may not have been able to be tested in any
+other way.
+
+Another important consideration is the co-occurrence of the events with
+the highest mean cumulative intensity within and between datasets. As
+one may see in , none of the top three MHWs or MCSs for any of the
+coastal sections from the *in situ* dataset are the same. They are all
+individually different events occurring at different times. The OISST
+dataset tells an entirely different story in that all but one of the
+coastal sections, for both MHWs and MCSs, have at least two of the three
+top events occurring at the same time. This means that the largest
+events detected in the OISST data occur over a broad area at the same
+time, whereas the *in situ* events are isolated not only in time, but
+also in the location in which they occur. This further reinforces our
+conclusion that the events detected by the different datasets are often
+intrinsically different from one another.
 
 Co-occurrence rates
 -------------------
 
-When looking at the lag window before the *in situ* events occurred, the
-rates of co-occurrence for MCSs are much lower than for the MHWs. This
-shows that if these events are indeed related, more MHWs are being
-caused by meso-scale activity than MCSs, as was expected. This finding
-is supported further by comparing the rates of co-occurrence for MCS
-lagged before and after the *in situ* event occurred. More MCS from the
-OISST data are shown to occur after the *in situ* events for all coastal
-sections. The co-occurrence rates of MHWs before and after the *in situ*
-events are similar.
+Looking at lags that precede the *in situ* events, the rates of
+co-occurrence for MCSs are much lower than for MHWs ( and ). This shows
+that if these events are indeed related, more MHWs are being caused by
+mesoscale activity than MCSs, as was expected. This finding is supported
+further by comparing the rates of co-occurrence for MCS lagged before
+and after the *in situ* event occurred. More MCS from the OISST data are
+shown to occur after the *in situ* events for all coastal sections. This
+may suggest some local heat loss process, perhaps related to atmospheric
+cold events, cooling the waters near the coast, which then gradually
+with time spreads to waters further offshore. Such localised coastal
+phenomena have been implicated for several of the cold spells which have
+caused the mass mortality of some marine species [e.g.
+@Gunter1941; @Firth2011]. The co-occurrence rates of MHWs before and
+after the *in situ* events are similar.
 
-One may also infer from the results that the proportions of
-co-occurrence for time series on the south coast being much larger than
-the other two coasts is caused by the much higher level of influence
-from meso-scale phenomena occurring on the Agulhas Bank. We also see
+We also infer from the proportions of co-occurrence for time series on
+the south coast, which are generally much higher than at the other two
+coasts, that events are caused by the much higher level of influence
+from mesoscale phenomena occurring over the Agulhas Bank. We also see
 that there is a higher proportion of co-occurrence for the larger MHWs
 and MCSs on the south coast when a lag window after the *in situ* event
-is used (). This supports the argument that events originating in the
+is applied. This supports the argument that events originating in the
 nearshore are then propagating out onto the Agulhas Bank and affecting
-the oceanography there more often than meso-scale events originating on
-the Agulhas Bank are affecting the nearshore environment. Indeed, when
-one looks at the mean intensity of events offshore from the south coast
-it is plain to see that they are originating along the coast and
-travelling south west with the Agulhas current. The region north of Cape
-Point also shows areas of high intensity orignating at the coast and
-radiating outward. This helps to explain why the south coast showed the
-greatest proportion of co-occurrence for the three coastal sections,
-with the west coast second.
+the oceanography there more often than mesoscale events originating on
+the Agulhas Bank are affecting the nearshore environment. The overall
+low rate of co-occurrence for all three coastal sections reinforces the
+argument that it is not the mesoscale phenomena of the open ocean
+abutting the southern African landmass that are driving extreme events
+in the nearshore.
 
-The low proportion of co-occurrence between the datasets, and the
+The very low proportion of co-occurrence between the datasets, and the
 decline in the proportion as the smaller events are screened out is
-strong evidence against the hypothesis that meso-scale activity, both
+strong evidence against the hypothesis that mesoscale activity, both
 warm and cold, is causing nearshore extreme thermal events. The small
 increases in co-occurrence for some sites as only larger events were
 compared does imply that there is some relationship between the inshore
@@ -976,31 +1103,50 @@ Climate change
 
 As MHWs and MCSs are temperature related phenomena we would be remiss
 not to discuss the potential of our findings in relation to climate
-change. The count of the MHWs and MCSs that occurred along the coast is
+change. The frequency of the MHWs and MCSs that occur along the coast is
 less telling in this regard than the trend in these events themselves.
-Although all but 4 of the *in situ* time series used in this
+Although all but four of the *in situ* time series used in this
 investigation are too short to draw adequate conclusions on the decadal
 trends seen in MHWs and MCSs, the OISST data are not. And as
-hypothesised these data showed positive decadal trends for MHWs and
-negative trends for MCSs. Meaning that over the past 33 years of
-satellite observation along the shore-normal transects seen in , MHWs
-have been increasing every decade for each coastal section while MCSs
-have been decreasing. A synoptic view of the oceans around southern
-Africa shows a similar pattern.
+hypothesised these data show positive decadal trends for MHWs and
+negative trends for MCSs. This means that over the past 33 years of
+satellite observation along our shore-normal transects, MHWs have been
+increasing every decade for each coastal section while MCSs have been
+decreasing.
 
-Other than the increasing (decreasing) MHWs (MCSs) over the Agulhas
-bank, the lack of adherence to meso-scale and broad geographic features
-in the oceans around southern Africa implies that some other variable is
-affecting change in the extreme events in the ocean. Two minor, and one
-major exception to this observation are the increases seen in the OISST
-data for the count of MCS north of Cape Point and near Port Elizabeth,
-both areas known for upwelling, as well as the major increase in mean
-intensity of MCSs north of Cape Point. This means that a consistent 30+
-year trend in extreme cold events, more so than anywhere else in the
-oceans around Southern Africa, has been acting on the coastal waters
-here. Investigations into the impact this may have had on the ecosystems
-here may produce interesting findings in regards to the effect of
-climate change on ecosystems.
+When one looks more broadly at the ocean around southern Africa this
+pattern generally holds up. We see in that the frequency, duration and
+intensity of MHWs have almost exclusively increased throughout the
+studied regions of the Indian and Atlantic oceans. The frequency of MCS
+has decreased most rapidly along the coast of southern Africa with a
+couple of notable exceptions near Port Elizabeth and north of the Cape
+Peninsula where the frequency of MCSs is increasing very near to the
+coast. The duration of MCSs is seen to generally increase further
+offshore with most of the nearshore changing little or decreasing. The
+intensity of MCSs is either changing little near the coast or is
+increasing dramatically, as seen in the dark blue patch north of the
+Cape Peninsula in the “MCS Intensity (mean) Trend” panel in . This means
+that a consistent &gt;30 year trend in extreme cold events, more so than
+anywhere else in this region of the ocean, has been acting on the
+coastal waters here. Investigations into the impact this may have had on
+these ecosystems may produce interesting findings in regards to the
+effect of climate change on ecosystems.
+
+Though less conclusive than the trends calculated from the longer time
+series, similar patterns were found in the shorter *in situ* time series
+as well. As the algorithm used to calculate these events is based on
+percentiles, it stands to reason that as the mean temperature of South
+Africa’s coastal waters has been increasing by 0.1C per decade on
+average since the early 1970s (Schlegel and Smit, in review), there will
+be an increase in MHWs and a decrease in MCSs. The gradual mean increase
+in temperature will cause the algorithm used here to be biased in its
+detection of MHWs as time progresses simply because temperatures are
+generally warmer in the later half of the time series therefore, the
+chances of the algorithm detecting a MHW increases because the base
+temperature from which the MHW will be fluctuating from will be greater
+than the beginning of the time series. Ultimately, for the species and
+ecosystems experiencing this increase in duress, the semantic argument
+of the viability of percentiles provides little solace.
 
 Conclusion
 ==========
@@ -1008,42 +1154,53 @@ Conclusion
 Given that the MHW algorithm is based on the percentiles found within
 each time series and not on arbitrarily decided minimum or maximum
 thresholds, one will always find a certain number of MHWs and MCSs in
-any time series. This is evident in the results of our analysis in that
-every time series used from both datasets experienced on average at
-least one MHW and MCS per year. Within each dataset, but not between as
-the *in situ* data for the south coast had significantly fewer MHWs/MCSs
-than the OISST data, the count of events are similar for each coastal
-section, regardless of the local oceanographic and geographic
-properties. It is the cumulative intensity of the events occurring on
-the different coastal sections that most clearly defines them. We
-expected to see the most intense MCSs on the west coast as this is part
-of an EBUS however, the south coast, a region dominated by the warmer
-Agulhas Current, but with some influence from the colder Benguela, had
-both the most intense and longest individual MHWs and MCSs in the *in
-situ* data.
+any time series. It is our experience with these data that every time
+series used from both datasets experiences, on average, at least one MHW
+and MCS per year. Within each dataset, but not between, the count of
+events is similar for each coastal section, regardless of the local
+oceanographic and geographic properties. Instead, it is the duration,
+mean intensity and also the derived cumulative intensity of the events
+occurring on the different coastal sections that most clearly define
+spatial differences — so much so, that this will almost certainly
+translate to different rates of vulnerabilities of coastal sections,
+both the ecosystems and the humans that derive benefit from them, to the
+ravages of climate change. As the rates of co-occurrence between local-
+and broad-scale data are generally low, and the magnitude and
+co-occurrence of events within the different datasets differ from one
+another, we infer that some other force outside of mesoscale phenomena
+is contributing to extreme inshore events. We think that direct
+atmospheric forcing of coastal thermal heating is one such driver that
+needs immediate research attention in order to better understand what is
+driving the occurrence and intensity of these events.
 
-We have also shown that MCSs are not a good indicator for upwelling. As
-upwelling tends to occur at seasonally predictable times, the MCS
-algorithm may not consider these events as anomalous. Therefore the MCSs
-measured here are indicators of non-seasonal or atypical forcing.
-
-As the rates of co-occurrence between *in situ* and OISST data are
-generally low, the mean intensity of *in situ* events for all coastal
-sections are significantly larger and the largest events found within
-the OISST data occur at similar times across broad coastal sections
-whereas the *in situ* events do not, we conclude that some other force
-outside of meso-scale phenomena is contributing to extreme inshore
-events. This is likely due to atmospheric forcing and warrants further
-research to better understand what is driving the occurrence and
-intensity of these events.
+We have provided a cursory look at an oceanographic basis for explaining
+these differences, but we think that there is an urgent need to consider
+more carefully the complex local-scale modifications of broader-scale
+patterns seen further afield in order to fully appreciate the drivers of
+coastal thermal variability in space and time. That such studies are
+still lacking in an age when the pulse of the global ocean is measured
+with exquisite precision is a reflection on the oceanographic
+community’s ongoing preoccupation with mainly broad-scale patterns and
+processes. Globally comprehensive ocean temperatures are made available
+almost in real time, but to the best of our knowledge the best coastal
+temperature databases are all comprised of records retrieved from
+delayed-mode instruments. In the latter case, near-real-time warnings of
+the onset and intensity of MHWs (or MCSs) are not yet feasible, whereas
+it is already possible to develop and implement such warning systems
+using currently-available gridded satellite SST products. . We think
+that there is an urgent need for such warning systems, and feel that the
+need is greater for coastal ecosystems because a large portion of the
+world’s living marine resources are produced and harvested there (, ),
+and yet it is also here where the effects of MHWs and MCSs are most
+intensely seen.
 
 Acknowledgements {#acknowledgements .unnumbered}
 ================
 
-The authors would like to thank DAFF, DEA, EKZNW, KZNSB, SAWS and SAEON
-for contributing all of the raw data used in this study. Without it,
-this article and the South African Coastal Temperature Network (SACTN)
-would not be possible. This research was supported by NRF Grant
+We would like to thank DAFF, DEA, EKZNW, KZNSB, SAWS and SAEON for
+contributing all of the raw data used in this study. Without it, this
+article and the South African Coastal Temperature Network (SACTN) would
+not be possible. This research was supported by NRF Grant
 (CPRR14072378735). This paper makes a contribution to the objectives of
 the Australian Research Council Centre of Excellence for Climate System
 Science (ARCCSS). The authors report no financial conflicts of
