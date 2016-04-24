@@ -88,8 +88,6 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
-INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
-INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
@@ -274,6 +272,18 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/cleveref/cleveref.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/cleveref/cleveref.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/soul/soul.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/soul/soul.sty
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux
 INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux
 OUTPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.aux

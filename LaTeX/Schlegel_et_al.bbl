@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{59}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -25,6 +25,11 @@ Alexander, L.~V., Zhang, X., Peterson, T.~C., Caesar, J., Gleason, B., {Klein
 Black, E., Blackburn, M., Harrison, R.~G., Hoskins, B.~J., Methven, J., 2004.
   {Factors contributing to the summer 2003 European heatwave}. Weather 59~(8),
   217--223.
+
+\bibitem[{Black et~al.(1990)Black, Gay, and Andrews}]{Black1990}
+Black, K.~P., Gay, S.~L., Andrews, J.~C., 1990. Residence times of
+  neutrally-buoyant matter such as larvae, sewage or nutrients on coral reefs.
+  Coral Reefs 9~(3), 105--114.
 
 \bibitem[{Bond et~al.(2015)Bond, Cronin, Freeland, and Mantua}]{Bond2015}
 Bond, N.~A., Cronin, M.~F., Freeland, H., Mantua, N., 2015. {Causes and impacts
@@ -121,6 +126,15 @@ Gershunov, A., Douville, H., 2008. {Extensive summer hot and cold extremes
   under current and possible future climatic conditions: Europe and North
   America}. In: Climate Extremes and Society. pp. 74--98.
 
+\bibitem[{Graham and Largier(1997)}]{Graham1997}
+Graham, W.~M., Largier, J.~L., 1997. Upwelling shadows as nearshore retention
+  sites: the example of northern monterey bay. Continental Shelf Research
+  17~(5), 509--532.
+
+\bibitem[{Grundlingh and Largier(1991)}]{Grundlingh1991}
+Grundlingh, M., Largier, J., 1991. Physical oceanography of false bay: a
+  review. Royal Society of South Africa. Transactions TRSAAC, 47~(4/5).
+
 \bibitem[{Gunter(1941)}]{Gunter1941}
 Gunter, G., 1941. {Death of Fishes Due to Cold on the Texas Coast, January,
   1940}. Ecology 22~(2), 203--208.
@@ -197,6 +211,11 @@ Matthes, H., Rinke, A., Dethloff, K., 2015. {Recent changes in Arctic
   temperature extremes: warm and cold spells during winter and summer}.
   Environmental Research Letters 10~(11), 114020.
 
+\bibitem[{McCulloch(2003)}]{McCulloch:2003de}
+McCulloch, A., Nov. 2003. {Topographically generated fronts, very nearshore
+  oceanography and the distribution and settlement of mussel larvae and
+  barnacle cyprids}. Journal of Plankton Research 25~(11), 1427--1439.
+
 \bibitem[{Meehl(2004)}]{Meehl2004}
 Meehl, G.~a., 2004. {More Intense, More Frequent, and Longer Lasting Heat Waves
   in the 21st Century}. Science 305~(5686), 994--997.
@@ -207,6 +226,18 @@ Mills, K.~E., Pershing, A.~J., Brown, C.~J., Chen, Y., Chiang, F.-S., Holland,
   D.~S., Lehuta, S., Nye, J.~a., Sun, J.~C., Thomas, A.~C., Wahle, R.~a., 2012.
   {Lessons From the 2012 Ocean Heat Wave in the Northwest Atlantic}.
   Oceanography 26~(2), 60--64.
+
+\bibitem[{Narv{\'a}ez et~al.(2004)Narv{\'a}ez, Poulin, Leiva, Hern{\'a}ndez,
+  Castilla, and Navarrete}]{Narvaez:2004ix}
+Narv{\'a}ez, D.~A., Poulin, E., Leiva, G., Hern{\'a}ndez, E., Castilla, J.~C.,
+  Navarrete, S.~A., Jan. 2004. {Seasonal and spatial variation of nearshore
+  hydrographic conditions in central Chile}. Continental Shelf Research 24~(2),
+  279--292.
+
+\bibitem[{Okubo(1973)}]{Okubo1973}
+Okubo, A., 1973. Effect of shoreline irregularities on streamwise dispersion in
+  estuaries and other embayments. Netherlands Journal of Sea Research 6~(1),
+  213--224.
 
 \bibitem[{Olita et~al.(2007)Olita, Sorgente, Natale, Gaber{\v{s}}ek, Ribotti,
   Bonanno, and Patti}]{Olita2007}
@@ -235,6 +266,15 @@ Pearce, A.~F., Feng, M., 2013. {The rise and fall of the "marine heat wave" off
 \bibitem[{Perkins and Alexander(2013)}]{Perkins2013}
 Perkins, S.~E., Alexander, L.~V., 2013. {On the measurement of heat waves}.
   Journal of Climate 26~(13), 4500--4517.
+
+\bibitem[{Pineda(1994)}]{Pineda:1994kc}
+Pineda, J., 1994. {Internal tidal bores in the nearshore: Warm-water fronts,
+  seaward gravity currents and the onshore transport of neustonic larvae}.
+  Journal of Marine Research 52~(3), 427--458.
+
+\bibitem[{Pingree and Maddock(1979)}]{Pingree1979}
+Pingree, R., Maddock, L., 1979. The tidal physics of headland flows and
+  offshore tidal bank formation. Marine Geology 32~(3), 269--289.
 
 \bibitem[{Rehage et~al.(2016)Rehage, Blanchard, Boucek, Lorenz, and
   Robinson}]{Rehage2016}
@@ -290,6 +330,10 @@ Wernberg, T., Smale, D.~A., Tuya, F., Thomsen, M.~S., Langlois, T.~J.,
   de~Bettignies, T., Bennett, S., Rousseaux, C.~S., 2013. {An extreme climatic
   event alters marine ecosystem structure in a global biodiversity hotspot}.
   Nature Climate Change 3~(1), 78--82.
+
+\bibitem[{Wolanski and Hamner(1988)}]{Wolanski1988}
+Wolanski, E., Hamner, W., 1988. Topographically controlled fronts in the ocean
+  and their biological influence. Science 241, 177--181.
 
 \bibitem[{Woodward(1987)}]{Woodward1987}
 Woodward, F.~I., 1987. {Climate and Plant Distribution}.
