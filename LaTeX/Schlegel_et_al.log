@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  24 APR 2016 20:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  25 APR 2016 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1897,41 +1897,41 @@ erthousand on input line 172.
 LaTeX Info: Redefining \ohm on input line 172.
 Package gensymb Info: Using \textohm for \ohm on input line 172.
 Package gensymb Info: Using \textmu for \micro on input line 172.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 198.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 197.
 
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 205.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 204.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 205.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 204.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 205
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 204
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 205
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 204
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 205.
+(Font)              <8> on input line 204.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 205.
+(Font)              <6> on input line 204.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 205.
-LaTeX Font Info:    Try loading font information for U+msa on input line 205.
+(Font)              <5> on input line 204.
+LaTeX Font Info:    Try loading font information for U+msa on input line 204.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1939,7 +1939,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 205.
+LaTeX Font Info:    Try loading font information for U+msb on input line 204.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1947,7 +1947,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 205.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 204.
 
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
@@ -1958,14 +1958,14 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 205.
+(Font)              <10> on input line 204.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 205.
+(Font)              <7> on input line 204.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 209.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 208.
 
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1980,266 +1980,215 @@ File: figure1_1km_inset_map_labeled.pdf Graphic file (type pdf)
 
 <use figure1_1km_inset_map_labeled.pdf>
 Package pdftex.def Info: figure1_1km_inset_map_labeled.pdf used on input line 2
-28.
+27.
 (pdftex.def)             Requested size: 441.01773pt x 275.9225pt.
  [5] [6 <./figure1_1km_inset_map_labeled.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 243.
+               Default added (so using `tbp') on input line 242.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 261.
 [7] [8] [9]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 285.
+               Default added (so using `tbp') on input line 284.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 313.
+               Default added (so using `tbp') on input line 312.
 
-[10] [11] <figure2.pdf, id=446, 722.7pt x 433.62pt>
+[10] [11] <figure2.pdf, id=445, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 385.
+Package pdftex.def Info: figure2.pdf used on input line 384.
 (pdftex.def)             Requested size: 688.5567pt x 413.13425pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 386.
+(Font)              <9> on input line 385.
 
-<figure3.png, id=450, 913.4928pt x 913.011pt>
+<figure3.png, id=449, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 394.
+Package pdftex.def Info: figure3.png used on input line 393.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
- [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=486, 433.62pt 
+ [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=485, 433.62pt 
 x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
 
 <use figure4.pdf>
-Package pdftex.def Info: figure4.pdf used on input line 407.
+Package pdftex.def Info: figure4.pdf used on input line 406.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
 
 
-LaTeX Warning: Float too large for page by 41.50014pt on input line 410.
+LaTeX Warning: Float too large for page by 41.50014pt on input line 409.
 
-<figure5.pdf, id=491, 433.62pt x 578.16pt>
+<figure5.pdf, id=490, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
-Package pdftex.def Info: figure5.pdf used on input line 413.
+Package pdftex.def Info: figure5.pdf used on input line 412.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 418.
  [15] [16 <./figure4.pdf>] [17 <./figure5.pdf>]
 
 LaTeX Warning: Marginpar on page 18 moved.
 
-<MHW_MCS_mean.png, id=521, 727.0362pt x 503.7219pt>
+<MHW_MCS_mean.png, id=520, 727.0362pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
  <use MHW_MCS_mean.png>
-Package pdftex.def Info: MHW_MCS_mean.png used on input line 429.
+Package pdftex.def Info: MHW_MCS_mean.png used on input line 428.
 (pdftex.def)             Requested size: 441.01773pt x 305.5559pt.
 
-<MHW_MCS_trend.png, id=524, 742.9356pt x 502.2765pt>
+<MHW_MCS_trend.png, id=523, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
  <use MHW_MCS_trend.png>
-Package pdftex.def Info: MHW_MCS_trend.png used on input line 437.
+Package pdftex.def Info: MHW_MCS_trend.png used on input line 436.
 (pdftex.def)             Requested size: 441.01773pt x 298.16463pt.
 
-[18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21]
+[18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21] [22] [23]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Package natbib Warning: Citation `Okubo1973' on page 22 undefined on input line
- 452.
-
-
-Package natbib Warning: Citation `Pingree1979' on page 22 undefined on input li
-ne 452.
-
-
-Package natbib Warning: Citation `Wolanski1988' on page 22 undefined on input l
-ine 452.
-
-
-Package natbib Warning: Citation `Black1990' on page 22 undefined on input line
- 452.
-
-
-Package natbib Warning: Citation `Grundlingh1991' on page 22 undefined on input
- line 452.
-
-
-Package natbib Warning: Citation `Graham1997' on page 22 undefined on input lin
-e 452.
-
-
-Package natbib Warning: Citation `Graham1997' on page 22 undefined on input lin
-e 452.
-
-
-Package natbib Warning: Citation `Pineda:1994kc' on page 22 undefined on input 
-line 452.
-
-
-Package natbib Warning: Citation `McCulloch:2003de' on page 22 undefined on inp
-ut line 452.
-
-
-Package natbib Warning: Citation `Narvaez:2004ix' on page 22 undefined on input
- line 452.
-
-
-Package natbib Warning: Citation `Graham1997' on page 22 undefined on input lin
-e 452.
-
-
-Package natbib Warning: Citation `Narvaez:2004ix' on page 22 undefined on input
- line 452.
-
-[22] [23]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [24] [25] [26] [27]
+[24] [25] [26] [27]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 510.
+               Default added (so using `tbp') on input line 509.
 
 
-Overfull \hbox (20.69366pt too wide) in paragraph at lines 515--545
+Overfull \hbox (20.69366pt too wide) in paragraph at lines 514--544
  [][] 
  []
 
-(./Schlegel_et_al.bbl [28] [29] [30] [31])
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
-[32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
+(./Schlegel_et_al.bbl [28] [29] [30] [31] [32])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 556.
+ [33]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 556.
  (./Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 556.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 556.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 (rerunfilecheck)             Checksum: E5B6FA0CCCB7DB652EF78FDC561D3B63;1324.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 556.
  ) 
 Here is how much of TeX's memory you used:
- 29724 strings out of 494910
- 550866 string characters out of 6178755
- 679936 words of memory out of 5000000
- 31992 multiletter control sequences out of 15000+600000
+ 29740 strings out of 494910
+ 551092 string characters out of 6178755
+ 678123 words of memory out of 5000000
+ 32000 multiletter control sequences out of 15000+600000
  108229 words of font info for 189 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  63i,12n,92p,10508b,1000s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2260,10 +2209,10 @@ blic/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmtt8.pfb>
-Output written on Schlegel_et_al.pdf (32 pages, 2376627 bytes).
+Output written on Schlegel_et_al.pdf (33 pages, 2379160 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 649 compressed objects within 7 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 787 PDF objects out of 1000 (max. 8388607)
+ 684 compressed objects within 7 object streams
+ 138 named destinations out of 1000 (max. 500000)
  30408 words of extra memory for PDF output out of 35830 (max. 10000000)
 
