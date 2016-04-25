@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  25 APR 2016 10:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  25 APR 2016 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1975,7 +1975,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [2] [3] [4]
-<figure1_1km_inset_map_labeled.pdf, id=281, 579.16376pt x 362.35374pt>
+<figure1_1km_inset_map_labeled.pdf, id=286, 579.16376pt x 362.35374pt>
 File: figure1_1km_inset_map_labeled.pdf Graphic file (type pdf)
 
 <use figure1_1km_inset_map_labeled.pdf>
@@ -1996,7 +1996,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 312.
 
-[10] [11] <figure2.pdf, id=445, 722.7pt x 433.62pt>
+[10] [11] <figure2.pdf, id=450, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
 Package pdftex.def Info: figure2.pdf used on input line 384.
@@ -2004,12 +2004,12 @@ Package pdftex.def Info: figure2.pdf used on input line 384.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 385.
 
-<figure3.png, id=449, 913.4928pt x 913.011pt>
+<figure3.png, id=454, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
 Package pdftex.def Info: figure3.png used on input line 393.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
- [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=485, 433.62pt 
+ [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=489, 433.62pt 
 x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
 
@@ -2020,7 +2020,7 @@ Package pdftex.def Info: figure4.pdf used on input line 406.
 
 LaTeX Warning: Float too large for page by 41.50014pt on input line 409.
 
-<figure5.pdf, id=490, 433.62pt x 578.16pt>
+<figure5.pdf, id=494, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
 Package pdftex.def Info: figure5.pdf used on input line 412.
@@ -2028,16 +2028,13 @@ Package pdftex.def Info: figure5.pdf used on input line 412.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 418.
  [15] [16 <./figure4.pdf>] [17 <./figure5.pdf>]
-
-LaTeX Warning: Marginpar on page 18 moved.
-
-<MHW_MCS_mean.png, id=520, 727.0362pt x 503.7219pt>
+<MHW_MCS_mean.png, id=525, 727.0362pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
  <use MHW_MCS_mean.png>
 Package pdftex.def Info: MHW_MCS_mean.png used on input line 428.
 (pdftex.def)             Requested size: 441.01773pt x 305.5559pt.
 
-<MHW_MCS_trend.png, id=523, 742.9356pt x 502.2765pt>
+<MHW_MCS_trend.png, id=528, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
  <use MHW_MCS_trend.png>
 Package pdftex.def Info: MHW_MCS_trend.png used on input line 436.
@@ -2186,8 +2183,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 556.
  ) 
 Here is how much of TeX's memory you used:
  29740 strings out of 494910
- 551092 string characters out of 6178755
- 678123 words of memory out of 5000000
+ 551096 string characters out of 6178755
+ 676653 words of memory out of 5000000
  32000 multiletter control sequences out of 15000+600000
  108229 words of font info for 189 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
@@ -2209,10 +2206,10 @@ blic/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmtt8.pfb>
-Output written on Schlegel_et_al.pdf (33 pages, 2379160 bytes).
+Output written on Schlegel_et_al.pdf (33 pages, 2378995 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 684 compressed objects within 7 object streams
+ 791 PDF objects out of 1000 (max. 8388607)
+ 688 compressed objects within 7 object streams
  138 named destinations out of 1000 (max. 500000)
  30408 words of extra memory for PDF output out of 35830 (max. 10000000)
 
