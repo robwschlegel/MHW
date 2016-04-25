@@ -1,8 +1,14 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{62}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Ainsworth et~al.(2016)Ainsworth, Heron, Ortiz, Mumby, Grech, Ogawa,
+  Eakin, and Leggat}]{Ainsworth2016}
+Ainsworth, T.~D., Heron, S.~F., Ortiz, J.~C., Mumby, P.~J., Grech, A., Ogawa,
+  D., Eakin, C.~M., Leggat, W., 2016. {Climate change disables coral bleaching
+  protection on the Great Barrier Reef}. Science 352~(6283), 338--342.
 
 \bibitem[{Alexander et~al.(2006)Alexander, Zhang, Peterson, Caesar, Gleason,
   {Klein Tank}, Haylock, Collins, Trewin, Rahimzadeh, Tagipour, {Rupa Kumar},
@@ -59,6 +65,11 @@ DeCastro, M., G{\~{o}}mez-Gesteira, M., Costoya, X., Santos, F., 2014.
   {Upwelling influence on the number of extreme hot SST days along the Canary
   upwelling ecosystem}. Journal of Geophysical Research: Oceans 119~(5),
   3029--3040.
+
+\bibitem[{Dufois and Rouault(2012)}]{Dufois2012}
+Dufois, F., Rouault, M., 2012. {Sea surface temperature in False Bay (South
+  Africa): towards a better understanding of its seasonal and inter-annual
+  variability}. Continental Shelf Research 43, 24--35.
 
 \bibitem[{Easterling et~al.(2000)Easterling, Meehl, Parmesan, Changnon, Karl,
   and Mearns}]{Easterling2000}
@@ -214,6 +225,12 @@ Mackenzie, B.~R., Schiedek, D., 2007. {Daily ocean monitoring since the 1860s
 \bibitem[{Marsh et~al.(1986)Marsh, O'Shea, and Best}]{Marsh1986}
 Marsh, H., O'Shea, T.~J., Best, R.~C., 1986. {Research on Sirenians}. Ambio
   15~(3), 177--180.
+
+\bibitem[{Mart{\'{i}}nez et~al.(2007)Mart{\'{i}}nez, Intralawan, V{\'{a}}zquez,
+  P{\'{e}}rez-Maqueo, Sutton, and Landgrave}]{Martinez2007}
+Mart{\'{i}}nez, M.~L., Intralawan, A., V{\'{a}}zquez, G., P{\'{e}}rez-Maqueo,
+  O., Sutton, P., Landgrave, R., 2007. {The coasts of our world: Ecological,
+  economic and social importance}. Ecological Economics 63~(2-3), 254--272.
 
 \bibitem[{Matthes et~al.(2015)Matthes, Rinke, and Dethloff}]{Matthes2015}
 Matthes, H., Rinke, A., Dethloff, K., 2015. {Recent changes in Arctic
