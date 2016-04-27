@@ -19,3 +19,5 @@ file.edit("LaTeX/MHWfix.bib")
 # Perna viridis -> \emph{Perna viridis}
 
 # Loligo vulgaris reynaudii -> \emph{Loligo vulgaris reynaudii}
+
+# Alosa pseudoharengus -> \emph{Alosa pseudoharengus}
