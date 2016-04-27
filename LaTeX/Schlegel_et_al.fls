@@ -88,6 +88,8 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/fixltx2e.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
@@ -418,8 +420,8 @@ INPUT /Users/ajsmit/Dropbox/repos/MHW/LaTeX/Schlegel_et_al.out
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx5.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx9.pfb
