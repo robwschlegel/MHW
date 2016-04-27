@@ -1,4 +1,4 @@
-\begin{thebibliography}{62}
+\begin{thebibliography}{66}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -21,6 +21,12 @@ Alexander, L.~V., Zhang, X., Peterson, T.~C., Caesar, J., Gleason, B., {Klein
   Zhai, P., Rusticucci, M., Vazquez-Aguirre, J.~L., 2006. {Global observed
   changes in daily climate extremes of temperature and precipitation}. Journal
   of Geophysical Research Atmospheres 111~(D5).
+
+\bibitem[{Amos et~al.(2013)Amos, {Al Rashidi}, Rakha, El-gamily, and
+  Nicholls}]{Amos2013}
+Amos, C.~L., {Al Rashidi}, T., Rakha, K., El-gamily, H., Nicholls, R., 2013.
+  {SEA SURFACE TEMPERATURE TRENDS IN THE COASTAL OCEAN}. Current Development in
+  Oceanography 6~(1), 1--13.
 
 \bibitem[{Black et~al.(2004)Black, Blackburn, Harrison, Hoskins, and
   Methven}]{Black2004}
@@ -184,6 +190,13 @@ Jentsch, A., Kreyling, J., Beierkuhnlein, C., 2007. {A new generation of
   climate-change experiments: events, not trends}. Frontiers in Ecology and the
   Environment 5~(6), 315--324.
 
+\bibitem[{Klumb et~al.(2003)Klumb, Rudstam, Mills, Schneider, and
+  Sawyko}]{Klumb2003}
+Klumb, R.~A., Rudstam, L.~G., Mills, E.~L., Schneider, C.~P., Sawyko, P.~M.,
+  2003. {Importance of Lake Ontario Embayments and Nearshore Habitats as
+  Nurseries for Larval Fishes with Emphasis on Alewife (Alosa pseudoharengus)}.
+  Journal of Great Lakes Research 29~(1), 181--198.
+
 \bibitem[{Kreyling et~al.(2008)Kreyling, Beierkuhnlein, Ellis, and
   Jentsch}]{Kreyling2008}
 Kreyling, J., Beierkuhnlein, C., Ellis, L., Jentsch, A., 2008. {Invasibility of
@@ -194,6 +207,13 @@ Kreyling, J., Beierkuhnlein, C., Ellis, L., Jentsch, A., 2008. {Invasibility of
 \bibitem[{Lima and Wethey(2012)}]{Lima2012}
 Lima, F.~P., Wethey, D.~S., 2012. {Three decades of high-resolution coastal sea
   surface temperatures reveal more than warming}. Nature Communications 3, 704.
+
+\bibitem[{Ling et~al.(2009)Ling, Johnson, Ridgway, Hobday, and
+  Haddon}]{Ling2009}
+Ling, S.~D., Johnson, C.~R., Ridgway, K., Hobday, A.~J., Haddon, M., 2009.
+  {Climate-driven range extension of a sea urchin: inferring future trends by
+  analysis of recent population dynamics}. Global Change Biology 15~(3),
+  719--731.
 
 \bibitem[{Lirman et~al.(2011)Lirman, Schopmeyer, Manzello, Gramer, Precht,
   Muller-Karger, Banks, Barnes, Bartels, Bourque, Byrne, Donahue, Duquesnel,
@@ -206,6 +226,13 @@ Lirman, D., Schopmeyer, S., Manzello, D., Gramer, L.~J., Precht, W.~F.,
   S., 2011. {Severe 2010 cold-water event caused unprecedented mortality to
   corals of the Florida reef tract and reversed previous survivorship
   patterns}. PLOS ONE 6~(8).
+
+\bibitem[{Lugendo et~al.(2005)Lugendo, Pronker, Cornelissen, de~Groene,
+  Nagelkerken, Dorenbosch, van~der Velde, and Mgaya}]{Lugendo2005}
+Lugendo, B.~R., Pronker, A., Cornelissen, I., de~Groene, A., Nagelkerken, I.,
+  Dorenbosch, M., van~der Velde, G., Mgaya, Y.~D., 2005. {Habitat utilisation
+  by juveniles of commercially important fish species in a marine embayment in
+  Zanzibar, Tanzania}. Aquatic Living Resources 18~(2), 149--158.
 
 \bibitem[{L{\"{u}}nning et~al.(1990)L{\"{u}}nning, Yarish, and
   Kirkman}]{Luning1990}
