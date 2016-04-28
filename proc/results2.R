@@ -9,7 +9,7 @@
 # 7. Calcuate statistical significance between coastal sections;
 # 8. Calculate co-occurrence between coastal sections;
 # 9. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
-# 10. Rate of increase in MHWs/ MCSs;
+# 10. Decadal trends in MHWs/ MCSs;
 # 11. R2 between in situ and OISST time series;
 # 12. Co-occurrence within datasets and coastal sections
 
@@ -18,7 +18,7 @@
 # setwd("/Users/ajsmit/Dropbox/̧repos/MHW/proc") # for when I work in Sublime Text 3; not needed in RStudio
 require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable)
 library(magrittr); library(multcomp)
-source("setupParams/theme.R")
+source("setupParams/theme.R"); source("func/seqSites.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
 # All of the files from Eric
@@ -815,7 +815,7 @@ tukeyFrequency <- TukeyHSD(aovCo)
 #tukeyFrequency
 
 #############################################################################
-## 10. Rate of increase in MHWs/ MCSs
+## 10. Decadal trends in MHWs/ MCSs
 
 ## Decadal trends
 # First  subset out in situ time series over 30 years
@@ -832,15 +832,33 @@ for(i in 1:length(levels(as.factor(allLong$site)))){
   dat1 <- subset(allLong, site == levels(as.factor(allLong$site))[i])
   for(j in 1:length(levels(as.factor(dat1$type)))){
     dat2 <- subset(dat1, type == levels(as.factor(dat1$type))[j])
-    for(k in 1:length(levels(as.factor(dat2$event)))){
-      dat3 <- subset(dat2, event == levels(as.factor(dat2$event))[k])
-      lmodel <- lm(dat3$frequency ~ seq(1:length(dat3$frequency)))
-      dat4 <- data.frame(site = dat3$site[1], coast = dat3$coast[1], type = dat3$type[1],
-                         event = dat3$event[1], trend = round(as.numeric(coef(lmodel)[2]*10),1))
-      trends <- rbind(trends, dat4)
-    }
+    mhwlmodel <- lm(dat2$frequency[dat2$event == "mhw"] ~ seq(1:length(dat2$frequency[dat2$event == "mhw"])))
+    mcslmodel <- lm(dat2$frequency[dat2$event == "mcs"] ~ seq(1:length(dat2$frequency[dat2$event == "mcs"])))
+    dat3 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
+                       mhwtrend = round(as.numeric(coef(mhwlmodel)[2]*10),2),
+                       mhwR2 = round(summary(mhwlmodel)$adj.r.squared,2), 
+                       mhwp = round(coef(summary(mhwlmodel))[2,4],3),
+                       mcstrend = round(as.numeric(coef(mcslmodel)[2]*10),2),
+                       mcsR2 = round(summary(mcslmodel)$adj.r.squared,2), 
+                       mcsp = round(coef(summary(mcslmodel))[2,4],3))
+    trends <- rbind(trends, dat3)
   }
 }
+
+## Order data.frame for use in the paper
+trendsTable <- trends[order(trends$type, trends$coast),]
+rownames(trendsTable) <- NULL
+trendsTable <- trendsTable[c(22:25,1:21),]
+rownames(trendsTable) <- NULL
+trendsTable <- trendsTable[c(1,2,4,3,7,8,5,6,9,16,10,12,21,15,14,20,18,19,17,13,11,22,24,23,25),]
+trendsTable$ID <- as.character(c(1,2,6,7,1:21))
+rownames(trendsTable) <- NULL
+trendsTable <- trendsTable[,c(10,2,4:9)]
+trendsTable$coast <- as.character(trendsTable$coast)
+trendsTable$coast[trendsTable$coast == "wc"] <- "west"
+trendsTable$coast[trendsTable$coast == "sc"] <- "south"
+trendsTable$coast[trendsTable$coast == "ec"] <- "east"
+print(xtable(trendsTable[,1:8]), include.rownames=FALSE)
 
 ## OISST stats
 # OISST MHW all
@@ -963,11 +981,45 @@ for(i in 1:length(levels(as.factor(isShort$site)))){
   }
 }
 
-## ANOVA for event counts in first vs. second halves of short time series
-aovShortCount <- aov(count ~ half * event * coast, data = shortCount)
-#summary(aovShortCount)
-tukeyIntensCum <- TukeyHSD(aovShortCount)
-#tukeyIntensCum
+shortCount$c1 <- interaction(shortCount$coast, shortCount$event, shortCount$half)
+levels(shortCount$c1)
+(mod7 <- aov(count ~ c1, data = shortCount))
+print(model.tables(mod7, "means"),digits = 3)
+boxplot(count ~ c1, data = shortCount)
+summary(mod7)
+summary.lm(mod7)
+contrasts(shortCount$c1)
+# the factors are...
+# coast (wc, sc and ec)
+# event (MHW and MCS)
+# half (first or second)
+# We want to test...
+# 1. is there a diff. in the number of MHWs btw the first and second halfs of the data?
+# 2. is there a diff. in the number of MCSs btw the first and second halfs of the data?
+# 3. within the first half of the data, is there a diff in the number of MHWs and MCSs?
+# 4. within the second half of the data, is there a diff in the number of MHWs and MCSs?
+# 5. within the wc, is there a difference in MHWs between halves?
+# 6. within the wc, is there a difference in MCSs between halves?
+# 7. within the sc, is there a difference in MHWs between halves?
+# 8. within the sc, is there a difference in MCSs between halves?
+# 9. within the ec, is there a difference in MHWs between halves?
+# 10. within the ec, is there a difference in MCSs between halves?
+cntrMat7 <- rbind("first-second (MHW)"=c(0, 0, 0, 1, 1, 1, 0, 0, 0, -1, -1, -1), # 1.
+                  "first-second (MCS)"=c(1, 1, 1, 0, 0, 0, -1, -1, -1, 0, 0, 0), # 2.
+                  
+                  "MHW-MCS (first half)"=c(-1, -1, -1, 1, 1, 1, 0, 0, 0, 0, 0, 0), # 3.
+                  "MHW-MCS (secnd half)"=c(0, 0, 0, 0, 0, 0, -1, -1, -1, 1, 1, 1), # 4.
+                  
+                  "first-second (MHW, wc)"=c(0, 0, 0, 1, 0, 0, 0, 0, 0, -1, 0, 0), # 5.
+                  "first-second (MCS, wc)"=c(1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0), # 6.
+                  
+                  "first-second (MHW, sc)"=c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, 0), # 7.
+                  "first-second (MCS, sc)"=c(0, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0), # 8.
+                  
+                  "first-second (MHW, ec)"=c(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1), # 9.
+                  "first-second (MCS, ec)"=c(0, 0, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0)) # 10.
+mod7.glht <- glht(mod7, linfct = mcp(c1 = cntrMat7), alternative = "two.sided", vcov = sandwich)
+summary(mod7.glht, test = adjusted("none"))
 
 #############################################################################
 ## 11. R2 between in situ and OISST time series
