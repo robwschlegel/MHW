@@ -10,7 +10,7 @@ if(file.exists("/home/rws/Documents/Project/References/MHW.bib")){
 }
 
 # Then open the .bib file in R for the manual touch ups listed below
-file.edit("LaTeX/MHWfix.bib")
+file.edit("LaTeX/MHW.bib")
 
 ## Things to correct:
 
@@ -21,3 +21,12 @@ file.edit("LaTeX/MHWfix.bib")
 # Loligo vulgaris reynaudii -> \emph{Loligo vulgaris reynaudii}
 
 # Alosa pseudoharengus -> \emph{Alosa pseudoharengus}
+
+# Ecklonia maxima -> \emph{Ecklonia maxima}
+
+## When preparing the .doc file two shortcuts are taken 
+  # This is a reminder how to undo them
+
+# \cref -> \Cref
+
+# Insert contents of MHW.bib accordingly

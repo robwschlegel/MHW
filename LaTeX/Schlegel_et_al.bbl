@@ -1,4 +1,4 @@
-\begin{thebibliography}{66}
+\begin{thebibliography}{70}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -20,13 +20,18 @@ Alexander, L.~V., Zhang, X., Peterson, T.~C., Caesar, J., Gleason, B., {Klein
   Stephenson, D.~B., Burn, J., Aguilar, E., Brunet, M., Taylor, M., New, M.,
   Zhai, P., Rusticucci, M., Vazquez-Aguirre, J.~L., 2006. {Global observed
   changes in daily climate extremes of temperature and precipitation}. Journal
-  of Geophysical Research Atmospheres 111~(D5).
+  of Geophysical Research: Atmospheres 111~(D5), D05109.
 
 \bibitem[{Amos et~al.(2013)Amos, {Al Rashidi}, Rakha, El-gamily, and
   Nicholls}]{Amos2013}
 Amos, C.~L., {Al Rashidi}, T., Rakha, K., El-gamily, H., Nicholls, R., 2013.
   {Sea surface temperature trends in the coastal ocean}. Current Development in
   Oceanography 6~(1), 1--13.
+
+\bibitem[{Benthuysen et~al.(2014)Benthuysen, Feng, and Zhong}]{Benthuysen2014}
+Benthuysen, J., Feng, M., Zhong, L., 2014. {Spatial patterns of warming off
+  Western Australia during the 2011 Ningaloo Ni{\~{n}}o: quantifying impacts of
+  remote and local forcing}. Continental Shelf Research 91, 232--246.
 
 \bibitem[{Black et~al.(2004)Black, Blackburn, Harrison, Hoskins, and
   Methven}]{Black2004}
@@ -38,6 +43,12 @@ Black, E., Blackburn, M., Harrison, R.~G., Hoskins, B.~J., Methven, J., 2004.
 Black, K.~P., Gay, S.~L., Andrews, J.~C., 1990. {Residence times of
   neutrally-buoyant matter such as larvae, sewage or nutrients on coral reefs}.
   Coral Reefs 9~(3), 105--114.
+
+\bibitem[{Bolton et~al.(2012)Bolton, Anderson, Smit, and Rothman}]{Bolton2012}
+Bolton, J.~J., Anderson, R.~J., Smit, A.~J., Rothman, M.~D., 2012. {South
+  African kelp moving eastwards: the discovery of Ecklonia maxima (Osbeck)
+  Papenfuss at De Hoop Nature Reserve on the south coast of South Africa}.
+  African Journal of Marine Science 34~(1), 147--151.
 
 \bibitem[{Bond et~al.(2015)Bond, Cronin, Freeland, and Mantua}]{Bond2015}
 Bond, N.~A., Cronin, M.~F., Freeland, H., Mantua, N., 2015. {Causes and impacts
@@ -71,6 +82,11 @@ DeCastro, M., G{\~{o}}mez-Gesteira, M., Costoya, X., Santos, F., 2014.
   {Upwelling influence on the number of extreme hot SST days along the Canary
   upwelling ecosystem}. Journal of Geophysical Research: Oceans 119~(5),
   3029--3040.
+
+\bibitem[{Deser et~al.(2010)Deser, Alexander, Xie, and Phillips}]{Deser2010}
+Deser, C., Alexander, M.~A., Xie, S.~P., Phillips, A.~S., 2010. {Sea surface
+  temperature variability: patterns and mechanisms}. Annual Review of Marine
+  Science 2, 115--143.
 
 \bibitem[{Dufois and Rouault(2012)}]{Dufois2012}
 Dufois, F., Rouault, M., 2012. {Sea surface temperature in False Bay (South
@@ -116,7 +132,7 @@ Fischer, E.~M., Sch{\"{a}}r, C., 2010. {Consistent geographical patterns of
 Garc{\'{i}}a-Reyes, M., Sydeman, W.~J., Schoeman, D.~S., Rykaczewski, R.~R.,
   Black, B.~A., Smit, A.~J., Bograd, S.~J., 2015. {Under pressure: climate
   change, upwelling, and eastern boundary upwelling ecosystems}. Frontiers in
-  Marine Science 2~(December), 1--10.
+  Marine Science 2~(109), 1--10.
 
 \bibitem[{Garrabou et~al.(2009)Garrabou, Coma, Bensoussan, Bally,
   Chevaldonn{\'{e}}, Cigliano, Diaz, Harmelin, Gambi, Kersting, Ledoux,
@@ -133,7 +149,9 @@ Garrabou, J., Coma, R., Bensoussan, N., Bally, M., Chevaldonn{\'{e}}, P.,
 \bibitem[{Gershunov and Douville(2008)}]{Gershunov2008}
 Gershunov, A., Douville, H., 2008. {Extensive summer hot and cold extremes
   under current and possible future climatic conditions: Europe and North
-  America}. In: Climate Extremes and Society. pp. 74--98.
+  America}. In: DIaz, H.~F., Murnane, R.~J. (Eds.), Climate Extremes and
+  Society. Cambridge University Press, Cambridge, United Kingdom, Ch.~5, pp.
+  74--98.
 
 \bibitem[{Glickman(2000)}]{Glickman2000}
 Glickman, T.~S., 2000. {Glossary of Meteorology}. American Meteorological
@@ -236,13 +254,18 @@ Lugendo, B.~R., Pronker, A., Cornelissen, I., de~Groene, A., Nagelkerken, I.,
 
 \bibitem[{L{\"{u}}nning et~al.(1990)L{\"{u}}nning, Yarish, and
   Kirkman}]{Luning1990}
-L{\"{u}}nning, K., Yarish, C., Kirkman, H., 1990. {Seaweds: their environment,
+L{\"{u}}nning, K., Yarish, C., Kirkman, H., 1990. {Seaweeds: their environment,
   biogeography and ecophysiology}. John Wiley and Sons, New York, USA.
 
 \bibitem[{Lutjeharms et~al.(2000)Lutjeharms, Cooper, and
   Roberts}]{Lutjeharms2000}
 Lutjeharms, J. R.~E., Cooper, J., Roberts, M., 2000. {Upwelling at the inshore
   edge of the Agulhas Current}. Continental Shelf Research 20~(7), 737--761.
+
+\bibitem[{Lutjeharms et~al.(2003)Lutjeharms, Penven, and Roy}]{Lutjeharms2003}
+Lutjeharms, J. R.~E., Penven, P., Roy, C., 2003. {Modelling the shear edge
+  eddies of the southern Agulhas Current}. Continental Shelf Research
+  23~(11-13), 1099--1115.
 
 \bibitem[{Mackenzie and Schiedek(2007)}]{Mackenzie2007}
 Mackenzie, B.~R., Schiedek, D., 2007. {Daily ocean monitoring since the 1860s
@@ -270,15 +293,15 @@ McCulloch, A., Shanks, A.~L., 2003. {Topographically generated fronts, very
   and barnacle cyprids}. Journal of Plankton Research 25~(11), 1427--1439.
 
 \bibitem[{Meehl(2004)}]{Meehl2004}
-Meehl, G.~a., 2004. {More intense, more frequent, and longer lasting heat waves
+Meehl, G.~A., 2004. {More intense, more frequent, and longer lasting heat waves
   in the 21st century}. Science 305~(5686), 994--997.
 
 \bibitem[{Mills et~al.(2012)Mills, Pershing, Brown, Chen, Chiang, Holland,
   Lehuta, Nye, Sun, Thomas, and Wahle}]{Mills2012}
-Mills, K.~E., Pershing, A.~J., Brown, C.~J., Chen, Y., Chiang, F.-S., Holland,
-  D.~S., Lehuta, S., Nye, J.~a., Sun, J.~C., Thomas, A.~C., Wahle, R.~a., 2012.
-  {Lessons from the 2012 ocean heat wave in the Northwest Atlantic}.
-  Oceanography 26~(2), 60--64.
+Mills, K.~E., Pershing, A.~J., Brown, C.~J., Chen, Y., Chiang, F., Holland,
+  D.~S., Lehuta, S., Nye, J.~A., Sun, J.~C., Thomas, A.~C., Wahle, R.~A., 2012.
+  {Fisheries management in a changing climate: lessons from the 2012 ocean heat
+  wave in the Northwest Atlantic}. Oceanography 26~(2), 191--195.
 
 \bibitem[{Narv{\'{a}}ez et~al.(2004)Narv{\'{a}}ez, Poulin, Leiva,
   Hern{\'{a}}ndez, Castilla, and Navarrete}]{Narvaez2004}
@@ -305,11 +328,11 @@ O'Shea, T.~J., Beck, C.~A., Bonde, R.~K., Kochman, H.~I., Odell, D.~K., 1985.
   {An analysis of manatee mortality patterns in Florida, 1976-81}. The Journal
   of Wildlife Management 49~(1), 1--11.
 
-\bibitem[{Pachauri et~al.(2014)Pachauri, Meyer, {Van Ypersele}, Brinkman, {Van
-  Kesteren}, Leprince-Ringuet, and {Van Boxmeer}}]{IPCC2014}
-Pachauri, R.~K., Meyer, L., {Van Ypersele}, J.-P., Brinkman, S., {Van
-  Kesteren}, L., Leprince-Ringuet, N., {Van Boxmeer}, F., 2014. {Climate Change
-  2014 Synthesis Report}.
+\bibitem[{Pachauri et~al.(2014)Pachauri, Meyer, van Ypersele, Brinkman, van
+  Kesteren, Leprince-Ringuet, and {Van Boxmeer}}]{IPCC2014}
+Pachauri, R.~K., Meyer, L., van Ypersele, J., Brinkman, S., van Kesteren, L.,
+  Leprince-Ringuet, N., {Van Boxmeer}, F., 2014. {Climate Change 2014 Synthesis
+  Report}.
 
 \bibitem[{Pearce and Feng(2013)}]{Pearce2013}
 Pearce, A.~F., Feng, M., 2013. {The rise and fall of the marine heat wave off
