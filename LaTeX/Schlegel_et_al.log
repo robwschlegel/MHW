@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  29 APR 2016 18:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  30 APR 2016 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2065,11 +2065,11 @@ Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 599.
  ) 
 Here is how much of TeX's memory you used:
- 29448 strings out of 494910
- 542532 string characters out of 6178755
+ 29452 strings out of 494910
+ 542572 string characters out of 6178755
  640888 words of memory out of 5000000
  31695 multiletter control sequences out of 15000+600000
- 108325 words of font info for 191 fonts, out of 8000000 for 9000
+ 108544 words of font info for 193 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  63i,12n,92p,10508b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
@@ -2090,7 +2090,7 @@ blic/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
 /lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.p
 fb>
-Output written on Schlegel_et_al.pdf (36 pages, 2375770 bytes).
+Output written on Schlegel_et_al.pdf (36 pages, 2375722 bytes).
 PDF statistics:
  910 PDF objects out of 1000 (max. 8388607)
  800 compressed objects within 8 object streams

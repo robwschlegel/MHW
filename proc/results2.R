@@ -826,24 +826,30 @@ isShort <- allAnnual[!(allAnnual$site %in% is30$site),]
 # Combine all long time series
 allLong <- rbind(isLong, allAnnualSST)
 
-# Calculate trends
+# Calculate trends using a GLM (Poisson with log-link)
 trends <- data.frame()
 for(i in 1:length(levels(as.factor(allLong$site)))){
   dat1 <- subset(allLong, site == levels(as.factor(allLong$site))[i])
   for(j in 1:length(levels(as.factor(dat1$type)))){
     dat2 <- subset(dat1, type == levels(as.factor(dat1$type))[j])
-    mhwlmodel <- lm(dat2$frequency[dat2$event == "mhw"] ~ seq(1:length(dat2$frequency[dat2$event == "mhw"])))
-    mcslmodel <- lm(dat2$frequency[dat2$event == "mcs"] ~ seq(1:length(dat2$frequency[dat2$event == "mcs"])))
+    mhwlmodel <- glm(dat2$frequency[dat2$event == "mhw"] ~ seq(1:length(dat2$frequency[dat2$event == "mhw"])), 
+                     family = poisson(link = "log"))
+    mhwlmodel0 <- glm(dat2$frequency[dat2$event == "mhw"] ~ 1, family = poisson(link = "log")) # intercept only
+    mcslmodel <- glm(dat2$frequency[dat2$event == "mcs"] ~ seq(1:length(dat2$frequency[dat2$event == "mcs"])), 
+                     family = poisson(link = "log"))
+    mcslmodel0 <- glm(dat2$frequency[dat2$event == "mcs"] ~ 1, family = poisson(link = "log")) # intercept only
     dat3 <- data.frame(site = dat2$site[1], coast = dat2$coast[1], type = dat2$type[1],
-                       mhwtrend = round(as.numeric(coef(mhwlmodel)[2]*10),2),
-                       mhwR2 = round(summary(mhwlmodel)$adj.r.squared,2), 
-                       mhwp = round(coef(summary(mhwlmodel))[2,4],3),
-                       mcstrend = round(as.numeric(coef(mcslmodel)[2]*10),2),
-                       mcsR2 = round(summary(mcslmodel)$adj.r.squared,2), 
-                       mcsp = round(coef(summary(mcslmodel))[2,4],3))
+                       mhwtrend = round(as.numeric(coef(mhwlmodel)[2]*10),1),
+                       mhwpR2 = round(1-logLik(mhwlmodel)/logLik(mhwlmodel0),2), # McFadden's pseudo-R2
+                       mhwp.val = round(coef(summary(mhwlmodel))[,4][2],2),
+                       mcstrend = round(as.numeric(coef(mcslmodel)[2]*10),1),
+                       mcspR2 = round(1-logLik(mcslmodel)/logLik(mcslmodel0),2), # McFadden's pseudo-R2
+                       mcsp.val = round(coef(summary(mcslmodel))[,4][2],2))
     trends <- rbind(trends, dat3)
   }
+  row.names(trends) <- NULL
 }
+
 
 ## Order data.frame for use in the paper
 trendsTable <- trends[order(trends$type, trends$coast),]
@@ -858,7 +864,7 @@ trendsTable$coast <- as.character(trendsTable$coast)
 trendsTable$coast[trendsTable$coast == "wc"] <- "west"
 trendsTable$coast[trendsTable$coast == "sc"] <- "south"
 trendsTable$coast[trendsTable$coast == "ec"] <- "east"
-print(xtable(trendsTable[,1:8]), include.rownames=FALSE)
+print(xtable(trendsTable[,1:8], auto = TRUE), include.rownames=FALSE)
 
 ## OISST stats
 # OISST MHW all
