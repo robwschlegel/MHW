@@ -868,52 +868,53 @@ print(xtable(trendsTable[,1:8], auto = TRUE), include.rownames=FALSE)
 
 ## OISST stats
 # OISST MHW all
-mean(trends$trend[trends$type == "OISST" & trends$event == "mhw"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mhw"])
+mean(trends$mhwtrend[trends$type == "OISST"])
+sd(trends$mhwtrend[trends$type == "OISST"])
 # OISST MHW wc
-mean(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "wc"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "wc"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"])
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"])
 # OISST MHW sc
-mean(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "sc"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "sc"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"])
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"])
 # OISST MHW ec
-mean(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "ec"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mhw" & trends$coast == "ec"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"])
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"])
 
-# OISST MCS
-mean(trends$trend[trends$type == "OISST" & trends$event == "mcs"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mcs"])
-# OISST MCS wc
-mean(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "wc"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "wc"])
-# OISST MCS sc
-mean(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "sc"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "sc"])
-# OISST MCS ec
-mean(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "ec"])
-sd(trends$trend[trends$type == "OISST" & trends$event == "mcs" & trends$coast == "ec"])
+# OISST MCS all
+mean(trends$mcstrend[trends$type == "OISST"])
+sd(trends$mcstrend[trends$type == "OISST"])
+# OISST MHW wc
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"])
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"])
+# OISST MHW sc
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"])
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"])
+# OISST MHW ec
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"])
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"])
 
 
 ## in situ stats
-# insitu MHW
-mean(trends$trend[trends$type == "insitu" & trends$event == "mhw"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mhw"])
-# insitu MHW wc
-mean(trends$trend[trends$type == "insitu" & trends$event == "mhw" & trends$coast == "wc"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mhw" & trends$coast == "wc"])
-# insitu MHW sc
-mean(trends$trend[trends$type == "insitu" & trends$event == "mhw" & trends$coast == "sc"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mhw" & trends$coast == "sc"])
+# in situ MHW all
+mean(trends$mhwtrend[trends$type == "insitu"])
+sd(trends$mhwtrend[trends$type == "insitu"])
+# in situ MHW wc
+mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"])
+sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"])
+# in situ MHW sc
+mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"])
+sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"])
 
-# insitu MCS
-mean(trends$trend[trends$type == "insitu" & trends$event == "mcs"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mcs"])
-# insitu MCS wc
-mean(trends$trend[trends$type == "insitu" & trends$event == "mcs" & trends$coast == "wc"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mcs" & trends$coast == "wc"])
-# insitu MCS sc
-mean(trends$trend[trends$type == "insitu" & trends$event == "mcs" & trends$coast == "sc"])
-sd(trends$trend[trends$type == "insitu" & trends$event == "mcs" & trends$coast == "sc"])
+
+# in situ MCS all
+mean(trends$mcstrend[trends$type == "insitu"])
+sd(trends$mcstrend[trends$type == "insitu"])
+# in situ MCS wc
+mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"])
+sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"])
+# in situ MCS sc
+mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"])
+sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"])
 
 ## Short time series
 shorts <- data.frame()
