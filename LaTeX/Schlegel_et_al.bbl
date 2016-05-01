@@ -1,14 +1,8 @@
-\begin{thebibliography}{70}
+\begin{thebibliography}{67}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-
-\bibitem[{Ainsworth et~al.(2016)Ainsworth, Heron, Ortiz, Mumby, Grech, Ogawa,
-  Eakin, and Leggat}]{Ainsworth2016}
-Ainsworth, T.~D., Heron, S.~F., Ortiz, J.~C., Mumby, P.~J., Grech, A., Ogawa,
-  D., Eakin, C.~M., Leggat, W., 2016. {Climate change disables coral bleaching
-  protection on the Great Barrier Reef}. Science 352~(6283), 338--342.
 
 \bibitem[{Alexander et~al.(2006)Alexander, Zhang, Peterson, Caesar, Gleason,
   {Klein Tank}, Haylock, Collins, Trewin, Rahimzadeh, Tagipour, {Rupa Kumar},
@@ -21,12 +15,6 @@ Alexander, L.~V., Zhang, X., Peterson, T.~C., Caesar, J., Gleason, B., {Klein
   Zhai, P., Rusticucci, M., Vazquez-Aguirre, J.~L., 2006. {Global observed
   changes in daily climate extremes of temperature and precipitation}. Journal
   of Geophysical Research: Atmospheres 111~(D5), D05109.
-
-\bibitem[{Amos et~al.(2013)Amos, {Al Rashidi}, Rakha, El-gamily, and
-  Nicholls}]{Amos2013}
-Amos, C.~L., {Al Rashidi}, T., Rakha, K., El-gamily, H., Nicholls, R., 2013.
-  {Sea surface temperature trends in the coastal ocean}. Current Development in
-  Oceanography 6~(1), 1--13.
 
 \bibitem[{Benthuysen et~al.(2014)Benthuysen, Feng, and Zhong}]{Benthuysen2014}
 Benthuysen, J., Feng, M., Zhong, L., 2014. {Spatial patterns of warming off
@@ -275,12 +263,6 @@ Mackenzie, B.~R., Schiedek, D., 2007. {Daily ocean monitoring since the 1860s
 \bibitem[{Marsh et~al.(1986)Marsh, O'Shea, and Best}]{Marsh1986}
 Marsh, H., O'Shea, T.~J., Best, R.~C., 1986. {Research on Sirenians}. Ambio
   15~(3), 177--180.
-
-\bibitem[{Mart{\'{i}}nez et~al.(2007)Mart{\'{i}}nez, Intralawan, V{\'{a}}zquez,
-  P{\'{e}}rez-Maqueo, Sutton, and Landgrave}]{Martinez2007}
-Mart{\'{i}}nez, M.~L., Intralawan, A., V{\'{a}}zquez, G., P{\'{e}}rez-Maqueo,
-  O., Sutton, P., Landgrave, R., 2007. {The coasts of our world: Ecological,
-  economic and social importance}. Ecological Economics 63~(2-3), 254--272.
 
 \bibitem[{Matthes et~al.(2015)Matthes, Rinke, and Dethloff}]{Matthes2015}
 Matthes, H., Rinke, A., Dethloff, K., 2015. {Recent changes in Arctic

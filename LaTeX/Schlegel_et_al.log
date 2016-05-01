@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  30 APR 2016 20:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  1 MAY 2016 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1857,12 +1857,32 @@ erthousand on input line 81.
 LaTeX Info: Redefining \ohm on input line 81.
 Package gensymb Info: Using \textohm for \ohm on input line 81.
 Package gensymb Info: Using \textmu for \micro on input line 81.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 106.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 106.
+
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+! LaTeX Error: Float(s) lost.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.113 \end{frontmatter}
+                       
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 113.
 
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 113.
+
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1901,12 +1921,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 113.
-
-
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 113.
 
 
@@ -1921,119 +1935,138 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 113.
- [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.113 \end{frontmatter}
+                       
+Call for help
+
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 117.
 
- (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2] [3] [4]
-<figure1_1km_inset_map_labeled.pdf, id=304, 579.16376pt x 362.35374pt>
+
+Overfull \vbox (30.65178pt too high) has occurred while \output is active []
+
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+<figure1_1km_inset_map_labeled.pdf, id=309, 579.16376pt x 362.35374pt>
 File: figure1_1km_inset_map_labeled.pdf Graphic file (type pdf)
 
 <use figure1_1km_inset_map_labeled.pdf>
 Package pdftex.def Info: figure1_1km_inset_map_labeled.pdf used on input line 1
 35.
 (pdftex.def)             Requested size: 441.01773pt x 275.9225pt.
- [5] [6 <./figure1_1km_inset_map_labeled.pdf>] [7]
+ [5 <./figure1_1km_inset_map_labeled.pdf>] [6]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 150.
 
-[8] [9]
+[7] [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 192.
+               Default added (so using `tbp') on input line 193.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 220.
+               Default added (so using `tbp') on input line 221.
 
-[10] [11] [12] <figure2.pdf, id=476, 722.7pt x 433.62pt>
+[9] [10] [11] <figure2.pdf, id=474, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
-Package pdftex.def Info: figure2.pdf used on input line 292.
+Package pdftex.def Info: figure2.pdf used on input line 293.
 (pdftex.def)             Requested size: 688.5567pt x 413.13425pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 293.
+(Font)              <9> on input line 294.
 
-<figure3.png, id=480, 913.4928pt x 913.011pt>
+<figure3.png, id=478, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 301.
+Package pdftex.def Info: figure3.png used on input line 302.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
 
-<figure4.pdf, id=485, 433.62pt x 578.16pt>
+<figure4.pdf, id=483, 433.62pt x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
  <use figure4.pdf>
-Package pdftex.def Info: figure4.pdf used on input line 314.
+Package pdftex.def Info: figure4.pdf used on input line 315.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
 
 
-LaTeX Warning: Float too large for page by 41.50014pt on input line 317.
+LaTeX Warning: Float too large for page by 41.50014pt on input line 318.
 
-<figure5.pdf, id=490, 433.62pt x 578.16pt>
+<figure5.pdf, id=488, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
-Package pdftex.def Info: figure5.pdf used on input line 320.
+Package pdftex.def Info: figure5.pdf used on input line 321.
 (pdftex.def)             Requested size: 441.01773pt x 588.05685pt.
- [13] [14 <./figure2.pdf>] [15 <./figure3.png>] [16 <./figure4.pdf>] [17 <./fig
+ [12] [13 <./figure2.pdf>] [14 <./figure3.png>] [15 <./figure4.pdf>] [16 <./fig
 ure5.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 328.
+               Default added (so using `tbp') on input line 329.
 
-[18] <MHW_MCS_mean.png, id=557, 743.6583pt x 503.7219pt>
+[17] <MHW_MCS_mean.png, id=552, 743.6583pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
 
 <use MHW_MCS_mean.png>
-Package pdftex.def Info: MHW_MCS_mean.png used on input line 379.
+Package pdftex.def Info: MHW_MCS_mean.png used on input line 380.
 (pdftex.def)             Requested size: 441.01773pt x 298.72289pt.
- [19] [20 <./MHW_MCS_mean.png>]
-<MHW_MCS_trend.png, id=572, 742.9356pt x 502.2765pt>
+ <MHW_MCS_trend.png, id=555, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
- <use MHW_MCS_trend.png>
-Package pdftex.def Info: MHW_MCS_trend.png used on input line 387.
-(pdftex.def)             Requested size: 441.01773pt x 298.16463pt.
 
-[21 <./MHW_MCS_trend.png>] [22] [23] [24] [25] [26] [27] [28] [29]
+<use MHW_MCS_trend.png>
+Package pdftex.def Info: MHW_MCS_trend.png used on input line 388.
+(pdftex.def)             Requested size: 441.01773pt x 298.16463pt.
+ [18] [19 <./MHW_MCS_mean.png>] [20 <./MHW_MCS_trend.png>] [21] [22] [23] [24] 
+[25] [26] [27]
+
+LaTeX Warning: Marginpar on page 28 moved.
+
+[28]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 456.
+               Default added (so using `tbp') on input line 457.
 
 
-Overfull \hbox (20.69366pt too wide) in paragraph at lines 461--491
+Overfull \hbox (20.69366pt too wide) in paragraph at lines 462--492
  [][] 
  []
 
-(./Schlegel_et_al.bbl [30] [31] [32] [33] [34] [35])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 503.
- [36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 503.
+(./Schlegel_et_al.bbl [29] [30] [31] [32] [33] [34])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 504.
+ [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 504.
  (./Schlegel_et_al.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 503.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 503.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 504.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 504.
 Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
-(rerunfilecheck)             Checksum: 2AE5073D0CFFC164A13057B80A137610;1325.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 503.
+(rerunfilecheck)             Checksum: 7AA1BFAC35038BECD608F707F02D1747;1406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
  ) 
 Here is how much of TeX's memory you used:
- 28779 strings out of 494910
- 525102 string characters out of 6178755
- 629361 words of memory out of 5000000
- 31053 multiletter control sequences out of 15000+600000
- 107704 words of font info for 187 fonts, out of 8000000 for 9000
+ 28900 strings out of 494910
+ 527949 string characters out of 6178755
+ 642361 words of memory out of 5000000
+ 31164 multiletter control sequences out of 15000+600000
+ 107711 words of font info for 188 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 63i,12n,92p,10508b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+ 63i,12n,92p,10508b,819s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
 -ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmbx5.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pf
@@ -2050,10 +2083,10 @@ blic/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
 /lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.p
 fb>
-Output written on Schlegel_et_al.pdf (36 pages, 2376982 bytes).
+Output written on Schlegel_et_al.pdf (35 pages, 2379247 bytes).
 PDF statistics:
- 904 PDF objects out of 1000 (max. 8388607)
- 794 compressed objects within 8 object streams
- 147 named destinations out of 1000 (max. 500000)
- 30408 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 913 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 30416 words of extra memory for PDF output out of 35830 (max. 10000000)
 
