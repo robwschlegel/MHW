@@ -34,9 +34,9 @@ Black, K.~P., Gay, S.~L., Andrews, J.~C., 1990. {Residence times of
 
 \bibitem[{Bolton et~al.(2012)Bolton, Anderson, Smit, and Rothman}]{Bolton2012}
 Bolton, J.~J., Anderson, R.~J., Smit, A.~J., Rothman, M.~D., 2012. {South
-  African kelp moving eastwards: the discovery of Ecklonia maxima (Osbeck)
-  Papenfuss at De Hoop Nature Reserve on the south coast of South Africa}.
-  African Journal of Marine Science 34~(1), 147--151.
+  African kelp moving eastwards: the discovery of \emph{Ecklonia maxima}
+  (Osbeck) Papenfuss at De Hoop Nature Reserve on the south coast of South
+  Africa}. African Journal of Marine Science 34~(1), 147--151.
 
 \bibitem[{Bond et~al.(2015)Bond, Cronin, Freeland, and Mantua}]{Bond2015}
 Bond, N.~A., Cronin, M.~F., Freeland, H., Mantua, N., 2015. {Causes and impacts
@@ -44,7 +44,7 @@ Bond, N.~A., Cronin, M.~F., Freeland, H., Mantua, N., 2015. {Causes and impacts
   42~(9), 3414--3420.
 
 \bibitem[{Castillo and Lima(2010)}]{Castillo2010}
-Castillo, K.~D., Lima, F.~P., 2010. {Comparison of in situ and
+Castillo, K.~D., Lima, F.~P., 2010. {Comparison of \emph{in situ} and
   satellite-derived (MODIS-Aqua/Terra) methods for assessing temperatures on
   coral reefs}. Limnology and Oceanography Methods 8, 107--117.
 
@@ -93,9 +93,10 @@ Feng, M., McPhaden, M.~J., Xie, S.-P., Hafner, J., 2013. {La Ni{\~{n}}a forces
 
 \bibitem[{Firth et~al.(2011)Firth, Knights, and Bell}]{Firth2011}
 Firth, L.~B., Knights, A.~M., Bell, S.~S., 2011. {Air temperature and winter
-  mortality: Implications for the persistence of the invasive mussel, Perna
-  viridis in the intertidal zone of the south-eastern United States}. Journal
-  of Experimental Marine Biology and Ecology 400~(1-2), 250--256.
+  mortality: Implications for the persistence of the invasive mussel,
+  \emph{Perna viridis} in the intertidal zone of the south-eastern United
+  States}. Journal of Experimental Marine Biology and Ecology 400~(1-2),
+  250--256.
 
 \bibitem[{Firth et~al.(2015)Firth, Mieszkowska, Grant, Bush, Davies, Frost,
   Moschella, Burrows, Cunningham, Dye, and Hawkins}]{Firth2015}
@@ -200,8 +201,8 @@ Jentsch, A., Kreyling, J., Beierkuhnlein, C., 2007. {A new generation of
   Sawyko}]{Klumb2003}
 Klumb, R.~A., Rudstam, L.~G., Mills, E.~L., Schneider, C.~P., Sawyko, P.~M.,
   2003. {Importance of Lake Ontario Embayments and Nearshore Habitats as
-  Nurseries for Larval Fishes with Emphasis on Alewife (Alosa pseudoharengus)}.
-  Journal of Great Lakes Research 29~(1), 181--198.
+  Nurseries for Larval Fishes with Emphasis on Alewife (\emph{Alosa
+  pseudoharengus})}. Journal of Great Lakes Research 29~(1), 181--198.
 
 \bibitem[{Kreyling et~al.(2008)Kreyling, Beierkuhnlein, Ellis, and
   Jentsch}]{Kreyling2008}
@@ -240,9 +241,9 @@ Lugendo, B.~R., Pronker, A., Cornelissen, I., de~Groene, A., Nagelkerken, I.,
   by juveniles of commercially important fish species in a marine embayment in
   Zanzibar, Tanzania}. Aquatic Living Resources 18~(2), 149--158.
 
-\bibitem[{L{\"{u}}nning et~al.(1990)L{\"{u}}nning, Yarish, and
+\bibitem[{L{\"{u}}ning et~al.(1990)L{\"{u}}ning, Yarish, and
   Kirkman}]{Luning1990}
-L{\"{u}}nning, K., Yarish, C., Kirkman, H., 1990. {Seaweeds: their environment,
+L{\"{u}}ning, K., Yarish, C., Kirkman, H., 1990. {Seaweeds: their environment,
   biogeography and ecophysiology}. John Wiley and Sons, New York, USA.
 
 \bibitem[{Lutjeharms et~al.(2000)Lutjeharms, Cooper, and
@@ -310,12 +311,6 @@ O'Shea, T.~J., Beck, C.~A., Bonde, R.~K., Kochman, H.~I., Odell, D.~K., 1985.
   {An analysis of manatee mortality patterns in Florida, 1976-81}. The Journal
   of Wildlife Management 49~(1), 1--11.
 
-\bibitem[{Pachauri et~al.(2014)Pachauri, Meyer, van Ypersele, Brinkman, van
-  Kesteren, Leprince-Ringuet, and {Van Boxmeer}}]{IPCC2014}
-Pachauri, R.~K., Meyer, L., van Ypersele, J., Brinkman, S., van Kesteren, L.,
-  Leprince-Ringuet, N., {Van Boxmeer}, F., 2014. {Climate Change 2014 Synthesis
-  Report}.
-
 \bibitem[{Pearce and Feng(2013)}]{Pearce2013}
 Pearce, A.~F., Feng, M., 2013. {The rise and fall of the marine heat wave off
   Western Australia during the summer of 2010/2011}. Journal of Marine Systems
@@ -347,9 +342,10 @@ Reynolds, R.~W., Smith, T.~M., Liu, C., Chelton, D.~B., Casey, K.~S., Schlax,
   temperature}. Journal of Climate 20~(22), 5473--5496.
 
 \bibitem[{Roberts(2005)}]{Roberts2005}
-Roberts, M.~J., 2005. {Chokka squid (Loligo vulgaris reynaudii) abundance
-  linked to changes in South Africa's Agulhas Bank ecosystem during spawning
-  and the early life cycle}. ICES Journal of Marine Science 62~(1), 33--55.
+Roberts, M.~J., 2005. {Chokka squid (\emph{\emph{Loligo vulgaris reynaudii}})
+  abundance linked to changes in South Africa's Agulhas Bank ecosystem during
+  spawning and the early life cycle}. ICES Journal of Marine Science 62~(1),
+  33--55.
 
 \bibitem[{Selig et~al.(2010)Selig, Casey, and Bruno}]{Selig2010}
 Selig, E.~R., Casey, K.~S., Bruno, J.~F., 2010. {New insights into global
@@ -365,9 +361,17 @@ Smale, D.~A., Wernberg, T., 2009. {Satellite-derived SST data as a proxy for
   Olbers, and Bolton}]{Smit2013}
 Smit, A.~J., Roberts, M., Anderson, R.~J., Dufois, F., Dudley, S. F.~J.,
   Bornman, T.~G., Olbers, J., Bolton, J.~J., 2013. {A coastal seawater
-  temperature dataset for biogeographical studies: large biases between in situ
-  and remotely-sensed data sets around the coast of South Africa}. PLOS ONE
-  8~(12).
+  temperature dataset for biogeographical studies: large biases between
+  \emph{in situ} and remotely-sensed data sets around the coast of South
+  Africa}. PLOS ONE 8~(12).
+
+\bibitem[{Stocker et~al.(2013)Stocker, Qin, Plattner, Tignor, Allen, Boschung,
+  Nauels, Xia, Bex, and Midgley}]{IPCC2014}
+Stocker, T., Qin, D., Plattner, G.~K., Tignor, M., Allen, S.~K., Boschung, J.,
+  Nauels, A., Xia, Y., Bex, V., Midgley, P.~M. (Eds.), 2013. {Climate change
+  2013: the physical science basis: Working Group I contribution to the Fifth
+  Assessment Report of the Intergovernmental Panel on Climate Change}.
+  Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA.
 
 \bibitem[{Sura(2011)}]{Sura2011}
 Sura, P., 2011. {A general perspective of extreme events in weather and
