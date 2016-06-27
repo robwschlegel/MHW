@@ -108,7 +108,7 @@ metaData3 <- metaData3[c(1:4,22,5:17,23,18:21,24),c(1:5,7:9,11:15)]
 metaData3[c(5,19,24),1] <- "coast"
 metaData3[c(5,19,24),2] <- "mean"
 metaData3[c(5,19,24),c(4:7)] <- NA
-metaData3$length <- round(metaData3$length/365,1) # Conert to year
+metaData3$length <- round(metaData3$length/365,1) # Convert to year
 colnames(metaData3)[c(6:9)] <- c("start date", "end date", "duration (years)", "NA %")
 xtable(metaData3, auto = TRUE)
 
