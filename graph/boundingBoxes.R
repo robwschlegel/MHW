@@ -85,7 +85,7 @@ boundingBoxIso <- function(dat, distance = 400000, isobath = -200){
   for(i in rev(1:length(dat$lon))){
     distances <- seq(from = 0, to = distance, by = 1000)
     heading <- shore.normal.transect(dat[i,])
-    coords <- coords <- data.frame(lon = heading$lon, lat = heading$lat)
+    coords <- data.frame(lon = heading$lon, lat = heading$lat)
     distances2 <- as.data.frame(destPoint(p = coords, b = heading$heading, d = distances))
     sitesIdx <- knnx.index(sa_bathy[,1:2], as.matrix(distances2), k = 1)
     bathy2 <- sa_bathy[sitesIdx,]
