@@ -1,32 +1,32 @@
 #############################################################################
 ## This script does:
-# 1. load annual MHW/ MCS files and clean meta-data for publication;
-# 2. Calculates event count, length and mean intensity for each coast for both datasets;
+# 1. Load annual MHW/ MCS files and clean meta-data for publication;
+# 2. Calculates event count, duration and mean intensity for each coast for both datasets;
 # 3. Load all events and extract top three MHWs/ MCSs;
-# 4. Extracts top three MHW/ MCS events for each coastal section and type of data;
-# 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data;
-# 6. Calculate beginning and end dates for largest events;
-# 7. Calcuate statistical significance between coastal sections;
-# 8. Calculate co-occurrence between coastal sections;
-# 9. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
-# 10. Decadal trends in MHWs/ MCSs;
-# 11. R2 between in situ and OISST time series;
-# 12. Co-occurrence within datasets and coastal sections
+# 4. Extracts top three MHWs/ MCSs for each coastal section and type of data;
+# 5. Extracts top 1 MHW/ MCS for each coastal section and type of data;
+# 6. Calcuate statistical significance between coastal sections;
+# 7. Calculate co-occurrence values;
+# 8. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
+# 9. Decadal trends in MHWs/ MCSs
+#############################################################################
 
 #############################################################################
 ## DEPENDS ON:
-# setwd("/Users/ajsmit/Dropbox/̧repos/MHW/proc") # for when I work in Sublime Text 3; not needed in RStudio
-require(zoo); require(plyr); require(stringr); require(lubridate); require(xtable)
-library(magrittr); library(multcomp)
-source("setupParams/theme.R"); source("func/seqSites.R")
+# setwd("/Users/ajsmit/Dropbox/̧repos/MHW/proc")
+library(zoo)
+library(plyr)
+library(stringr)
+library(lubridate)
+library(xtable)
+library(magrittr)
+library(multcomp)
+library(doMC); doMC::registerDoMC(4)
+source("setupParams/theme.R")
+source("func/seqSites.R")
 # "graph/eventsPlots2.R" # This script calculates the co-occurrence rates for sites
 # "data/metaData2.csv"
-# All of the files from Eric
-#############################################################################
-
-#############################################################################
-## USED BY:
-#
+# Several files from Eric CJ Oliver generated via Python
 #############################################################################
 
 #############################################################################
@@ -41,8 +41,8 @@ source("setupParams/theme.R"); source("func/seqSites.R")
 # "data/mcs1dates.csv"
 #############################################################################
 
-#############################################################################
-## 1. loads annual and event MHW/ MCS files and metadata2
+
+# 1. Load annual and event MHW/ MCS files and metadata2 -------------------
 
 # First specify coastal sections
 wc <- c("Hout Bay", "Kommetjie", "Port Nolloth", "Sea Point")
@@ -53,47 +53,52 @@ ec <- c("Eastern Beach", "Nahoon Beach", "Orient Beach", "Sodwana")
 
 # Then specify directories for loading
 # Annual values
-dir1 <- paste(getwd(), "/data/MHW/annual/", sep = "")
-dir2 <- paste(getwd(), "/data/MCS/annual/", sep = "")
-dir3 <- paste(getwd(), "/data/MHW/SST annual/", sep = "")
-dir4 <- paste(getwd(), "/data/MCS/SST annual/", sep = "")
-#  Individual events
-dir5 <- paste(getwd(), "/data/MHW/events/", sep = "")
-dir6 <- paste(getwd(), "/data/MCS/events/", sep = "")
-dir7 <- paste(getwd(), "/data/MHW/SST events/", sep = "")
-dir8 <- paste(getwd(), "/data/MCS/SST events/", sep = "")
+dir1 <- paste(getwd(), "/data/MHW/annual", sep = "")
+dir2 <- paste(getwd(), "/data/MCS/annual", sep = "")
+dir3 <- paste(getwd(), "/data/MHW/SST annual", sep = "")
+dir4 <- paste(getwd(), "/data/MCS/SST annual", sep = "")
+# Individual events
+dir5 <- paste(getwd(), "/data/MHW/events", sep = "")
+dir6 <- paste(getwd(), "/data/MCS/events", sep = "")
+dir7 <- paste(getwd(), "/data/MHW/SST events", sep = "")
+dir8 <- paste(getwd(), "/data/MCS/SST events", sep = "")
 
-# Load annual event stats
-annualLoad <- function(dir) {
-  fname1 <-  dir(dir, full.names = TRUE)
-  fname2 <-  dir(dir, full.names = FALSE)
-  pf <- str_sub(fname2, -20, -1)
-  siteNames1 <-  unlist(strsplit(dir(dir, full.names = FALSE), pf[1]))
-  siteNames1 <-  str_replace_all(siteNames1, "_", " ") # parse names for site column
-  dat <- data.frame()
-  for(i in 1:length(fname1)) { # A shameful for loop... in order to label sites correctly
-    x <- read.csv(fname1[i], header = TRUE, skip = 2)
-    x$site <-  siteNames1[i]
-    if(x$site[1] %in% wc) {
-      x$coast <- "wc"
-    } else if(x$site[1] %in% sc) {
-      x$coast <- "sc"
-    } else if(x$site[1] %in% ec) {
-      x$coast <- "ec"
-    }
-    x <- x[,c(25:26,1,2,3,5)]
-    colnames(x)[3:6] <- c("year","frequency","duration","intensity")
-    x[is.na(x$frequency)] <- 0
-    dat <- rbind(dat, x)
+# Function that loads individual annual files
+annual.load <- function(file) {
+  x <- as.character(file)
+  y <- read.csv(x, header = TRUE, skip = 2)
+  y$site <- sapply(strsplit(as.character(x), "/"), "[[", 8)
+  y$site <- sapply(strsplit(y$site, "_MHW_data.annual.csv"), "[[", 1)
+  y$site <- sapply(strsplit(y$site, "_MCS_data.annual.csv"), "[[", 1)
+  y$site <- str_replace_all(y$site, "_", " ")
+  if(y$site[1] %in% wc) {
+    y$coast <- "wc"
+  } else if(y$site[1] %in% sc) {
+    y$coast <- "sc"
+  } else if(y$site[1] %in% ec) {
+    y$coast <- "ec"
+  } else {
+    stop(paste(y$site, " not detected in any coastal region.", sep = ""))
   }
+  y <- y[,c(25:26,1,2,3,5)]
+  colnames(y)[3:6] <- c("year","frequency","duration","intensity")
+  y[is.na(y$frequency)] <- 0
+  return(y)
+}
+
+# Function that loads all annual files in a folder
+annual.load.all <- function(directory) {
+  fname <- dir(directory, full.names = TRUE)
+  dat <- ldply(fname, annual.load, .parallel = T)
   dat$coast <- factor(dat$coast, levels = c("wc", "sc", "ec"))
   return(dat)
 }
 
-mhwAnnual <- annualLoad(dir1)
-mcsAnnual <- annualLoad(dir2)
-mhwAnnualSST <- annualLoad(dir3)
-mcsAnnualSST <- annualLoad(dir4)
+# Load all annual files
+mhwAnnual <- annual.load.all(dir1)
+mcsAnnual <- annual.load.all(dir2)
+mhwAnnualSST <- annual.load.all(dir3)
+mcsAnnualSST <- annual.load.all(dir4)
 
 # Load metadata
 load("data/metaData2.Rdata")
@@ -112,11 +117,11 @@ metaData3$length <- round(metaData3$length/365,1) # Convert to year
 colnames(metaData3)[c(6:9)] <- c("start date", "end date", "duration (years)", "NA %")
 xtable(metaData3, auto = TRUE)
 
-#############################################################################
-## 2. Calculates event count, length and mean intensity for each coast for both datasets
+
+# 2. Calculates event count, duration and mean intensity for each  --------
 
 # Function used for calculations
-resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
+results.annual.coastal <- function(mhw1, mcs1){ # To be used with "annual" data frames only
   results <- data.frame(coast = as.factor("All"),
                         mhw_freq = round(mean(mhw1[, 4], na.rm = T), 1),
                         mhw_freq_sd = round(sd(mhw1[, 4], na.rm = T), 1),
@@ -151,18 +156,17 @@ resultsAnnualCoastal <- function(mhw1, mcs1){ # To be used with "annual" data fr
   return(results)
 }
 
-allAnnualResults <- resultsAnnualCoastal(mhwAnnual, mcsAnnual)
+allAnnualResults <- results.annual.coastal(mhwAnnual, mcsAnnual)
 xtable(allAnnualResults)
 write.csv(allAnnualResults, "data/allAnnualResults.csv")
-allAnnualSSTResults <- resultsAnnualCoastal(mhwAnnualSST, mcsAnnualSST)
+allAnnualSSTResults <- results.annual.coastal(mhwAnnualSST, mcsAnnualSST)
 xtable(allAnnualSSTResults)
 write.csv(allAnnualSSTResults, "data/allAnnualSSTResults.csv")
 
-#############################################################################
-## 3. Load all events and extract top three MHWs/ MCSs
 
-#####
-#These hashes are here so that this chunk can be collapsed efficiently
+# 3. Load all events and extract top three MHWs/ MCSs ---------------------
+
+# Pretty column names
 colNames <- c(
   "eventNo", # Event number,
   "yearStrt", # Start year,
@@ -192,37 +196,43 @@ colNames <- c(
   "normIntMax", # Maximum intensity (normalized) [unitless],
   "normIntMean" # Mean intensity (normalized) [unitless]
 )
-#####
 
-# Load events
-eventLoad <- function(dir) {
-  fname1 <-  dir(dir, full.names = TRUE)
-  fname2 <-  dir(dir, full.names = FALSE)
-  pf <- str_sub(fname2, -20, -1)
-  siteNames1 <-  unlist(strsplit(dir(dir, pattern = "data.events", full.names = FALSE), pf[1]))
-  siteNames1 <-  str_replace_all(siteNames1, "_", " ") # parse names for site column
-  dat <- data.frame()
-  for(i in 1:length(fname1)) { # A shameful for loop... in order to label sites correctly
-    x <- read.csv(fname1[i], header = FALSE, skip = 2, sep = ",",
-                  col.names = colNames)
-    x$site <-  siteNames1[i]
-    x$coast <- metaData2$coast[metaData2$site == x$site[1]]
-    x$date <-  as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-"))
-    x$month <- floor_date(as.Date(paste(x$yearStrt, x$monthStrt, x$dayStrt, sep = "-")), "month")
-    x$lon <- metaData2$lon[metaData2$site == x$site[1]]
-    x$lat <- metaData2$lat[metaData2$site == x$site[1]]
-    dat <- rbind(dat, x)
-  }
+# Function that loads individual event files
+event.load <- function(file) {
+  x <- as.character(file)
+  y <- read.csv(x, header = FALSE, skip = 2, sep = ",",
+                col.names = colNames)
+  y$site <- sapply(strsplit(as.character(x), "/"), "[[", 8)
+  y$site <- sapply(strsplit(y$site, "_MHW_data.events.csv"), "[[", 1)
+  y$site <- sapply(strsplit(y$site, "_MCS_data.events.csv"), "[[", 1)
+  y$site <- str_replace_all(y$site, "_", " ")
+  return(y)
+}
+
+# Function that loads all event files in a folder
+event.load.all <- function(directory) {
+  fname <- dir(directory, full.names = TRUE)
+  dat <- ldply(fname, event.load, .parallel = T)
+  dat <- dat %>%
+    group_by(site) %>%
+    mutate(coast = metaData2$coast[metaData2$site == site[1]])
+  dat$date <-  as.Date(paste(dat$yearStrt, dat$monthStrt, dat$dayStrt, sep = "-"))
+  dat$month <- floor_date(as.Date(paste(dat$yearStrt, dat$monthStrt, dat$dayStrt, sep = "-")), "month")
+  dat <- dat %>%
+    group_by(site) %>%
+    mutate(lon = metaData2$lon[metaData2$site == site[1]]) %>% 
+    mutate(lat = metaData2$lat[metaData2$site == site[1]])
   return(dat)
 }
 
-mhwEvent <- eventLoad(dir5)
-mcsEvent <- eventLoad(dir6)
-mhwEventSST <- eventLoad(dir7)
-mcsEventSST <- eventLoad(dir8)
+# Load the files
+mhwEvent <- event.load.all(dir5)
+mcsEvent <- event.load.all(dir6)
+mhwEventSST <- event.load.all(dir7)
+mcsEventSST <- event.load.all(dir8)
 
 # The top three events per site
-eventLoadn <- function(dir, nCum = 5) {
+event.load.n <- function(dir, nCum = 5) {
   fname1 = dir(dir, pattern = "data.events", full.names = TRUE)
   fname2 = dir(dir, pattern = "data.events", full.names = FALSE)
   pf <- str_sub(fname2, -20, -1)
@@ -238,22 +248,22 @@ eventLoadn <- function(dir, nCum = 5) {
 }
 
 # in situ
-mhwn <- eventLoadn(dir5, nCum = 3) # produce a data frame with mhw data...
+mhwn <- event.load.n(dir5, nCum = 3) # produce a data frame with mhw data...
 mhwn$index <- rep(1:3, length(levels(as.factor(mhwn$site)))) # Make sure to correct the rep() to match nCum
 mhwn$type <- "insitu"
-mcsn <- eventLoadn(dir6, nCum = 3) # produce a data frame with mcs data...
+mcsn <- event.load.n(dir6, nCum = 3) # produce a data frame with mcs data...
 mcsn$index <- rep(1:3, length(levels(as.factor(mcsn$site))))
 mcsn$type <- "insitu"
 # SST
-mhwnSST <- eventLoadn(dir7, nCum = 3)
+mhwnSST <- event.load.n(dir7, nCum = 3)
 mhwnSST$index <- rep(1:3, length(levels(as.factor(mhwnSST$site))))
 mhwnSST$type <- "OISST"
-mcsnSST <- eventLoadn(dir8, nCum = 3)
+mcsnSST <- event.load.n(dir8, nCum = 3)
 mcsnSST$index <- rep(1:3, length(levels(as.factor(mcsnSST$site))))
 mcsnSST$type <- "OISST"
 
-#############################################################################
-## 4. Extracts top three MHW/ MCS events for each coastal section and type of data
+
+# 4. Extracts top three MHW/ MCS events for each coastal section a --------
 
 # The extracting function
 topCoastn <- function(dat, nCum){
@@ -284,38 +294,16 @@ mcsSST3 <- topCoastn(mcsnSST, 3)
 xtable(mcsSST3)
 write.csv(mcsSST3, "data/mcsSST3.csv")
 
-# Combine into one table for publication
-  # Currently keeping them seperate as I think it looks less cluttered
 
-#############################################################################
-## 5. Extracts top 1 MHW/ MCS events for each coastal section and type of data
+# 5. Extracts top 1 MHW/ MCS events for each coastal section and t --------
 
 mhw1 <- topCoastn(mhwn, 1)
 mcs1 <- topCoastn(mcsn, 1)
 mhwSST1 <- topCoastn(mhwnSST, 1)
 mcsSST1 <- topCoastn(mcsnSST, 1)
 
-#############################################################################
-## 6. Calculate beginning and end dates for largest events
 
-## NB: The code from which this is calculated was changed so this no longer runs, but it is unneccessary anyway...
-
-# eventDates <- function(dat){
-#   dat$start.date <- as.Date(paste(dat$yearStrt, dat$monthStrt, dat$dayStrt, sep = "/"), "%Y/%m/%d")
-#   dat$end.date <- as.Date(paste(dat$yearEnd, dat$monthEnd, dat$dayEnd, sep = "/"), "%Y/%m/%d")
-#   dat <- dat[,c(28,31:34,11,13:14)]
-#   return(dat)
-# }
-#
-# mhw1dates <- eventDates(mhw1)
-# write.csv(mhw1dates, "data/mhw1dates.csv")
-# mcs1dates <- eventDates(mcs1)
-# write.csv(mcs1dates, "data/mcs1dates.csv")
-# mhwSST1dates <- eventDates(mhwSST1)
-# mcsSST1dates <- eventDates(mcsSST1)
-
-#############################################################################
-## 7. Calcuate statistical significance between coastal sections
+# 6. Calcuate statistical significance between coastal sections -----------
 
 # A function that takes a column of data and tests for homoscedasticity and normality
 # x <- mhwAnnual[6]
@@ -353,91 +341,29 @@ allAllEvent <- rbind(allEvent, allEventSST)
 
 ## Mean(sd) of cummulative intensity for the entire coastline
 # in situ + MHW
-mean(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"], na.rm = T)
-sd(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"], na.rm = T)
+mean(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"], na.rm = T) # 26.10681
+sd(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"], na.rm = T) # 24.36918
 # in situ + MCS
-mean(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"], na.rm = T)
-sd(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"], na.rm = T)
+mean(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"], na.rm = T) # 26.44975
+sd(abs(allAllEvent$intCum)[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"], na.rm = T) # 24.24552
 # OISST + MHW
-mean(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"], na.rm = T)
-sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"], na.rm = T)
+mean(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"], na.rm = T) # 18.64982
+sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"], na.rm = T) # 15.10139
 # OISST + MCS
-mean(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T)
-sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T)
-
-## t-test for differences in cummulative intensity between datasets for MHW and MCS
-# MHW
-t.test(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mhw"],
-       allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mhw"])
-# MCS
-t.test(abs(allAllEvent$intCum[allAllEvent$type == "insitu" & allAllEvent$event == "mcs"]),
-       abs(allAllEvent$intCum[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"]))
-
-## ANOVA for in situ
-aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
-#summary(aovFrequency)
-tukeyFrequency <- TukeyHSD(aovFrequency)
-#tukeyFrequency
-aovDuration <- aov(duration ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
-#summary(aovDuration)
-tukeyDuration <- TukeyHSD(aovDuration)
-#tukeyDuration
-aovIntensity <- aov(intensity ~ coast * event, data = allAllAnnual[allAllAnnual$type == "insitu",])
-#summary(aovIntensity)
-tukeyIntensity <- TukeyHSD(aovIntensity)
-#tukeyIntensity
-
-## ANOVA for OISST
-aovFrequency <- aov(frequency ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
-#summary(aovFrequency)
-tukeyFrequency <- TukeyHSD(aovFrequency)
-#tukeyFrequency
-aovDuration <- aov(duration ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
-#summary(aovDuration)
-tukeyDuration <- TukeyHSD(aovDuration)
-#tukeyDuration
-aovIntensity <- aov(intensity ~ coast * event, data = allAllAnnual[allAllAnnual$type == "OISST",])
-#summary(aovIntensity)
-tukeyIntensity <- TukeyHSD(aovIntensity)
-#tukeyIntensity
-
-## ANOVA for MHWs
-aovFrequency <- aov(frequency ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
-#summary(aovFrequency)
-tukeyFrequency <- TukeyHSD(aovFrequency)
-#tukeyFrequency
-aovDuration <- aov(duration ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
-#summary(aovDuration)
-tukeyDuration <- TukeyHSD(aovDuration)
-#tukeyDuration
-aovIntensity <- aov(intensity ~ coast * type, data = allAllAnnual[allAllAnnual$event == "mhw",])
-#summary(aovIntensity)
-tukeyIntensity <- TukeyHSD(aovIntensity)
-#tukeyIntensity
-
-## ANOVA for everything
-aovFrequency <- aov(frequency ~ coast * event * type, data = allAllAnnual)
-#summary(aovFrequency)
-tukeyFrequency <- TukeyHSD(aovFrequency)
-#tukeyFrequency
-aovDuration <- aov(duration ~ coast * event * type, data = allAllAnnual)
-#summary(aovDuration)
-tukeyDuration <- TukeyHSD(aovDuration)
-#tukeyDuration
-aovIntensity <- aov(intensity ~ coast * event * type, data = allAllAnnual)
-#summary(aovIntensity)
-tukeyIntensity <- TukeyHSD(aovIntensity)
-#tukeyIntensity
+mean(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T) # 23.16813
+sd(abs(allAllEvent$intCum)[allAllEvent$type == "OISST" & allAllEvent$event == "mcs"], na.rm = T) # 23.4894
 
 ### START AJS...
-# I used a series of planned comparisons (generalized linear hypothesis test) as specific contrasts. It is unnecessary to test each and every possible thing that is testable. The analyses below addresses all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
-# first for the count data; the factors are...
+# I used a series of planned comparisons (generalized linear hypothesis test) as specific contrasts. 
+# It is unnecessary to test each and every possible thing that is testable. 
+# The analyses below address all the comparisons in Table 2 (also the tests between columns in the table, which is not reported there).
+# First for the count data; the factors are...
 # type (in situ and OISST)
 # event (MHW and MCS)
 # coast (wc, sc and ec)
 # We want to test...
-# 1. is there is diff. in the number of MHWs btw the in situ and OISST data?
-# 2. is there is diff. in the number of MCSs btw the in situ and OISST data?
+# 1. is there a diff. in the number of MHWs btw the in situ and OISST data?
+# 2. is there a diff. in the number of MCSs btw the in situ and OISST data?
 # 3. do in situ and OISST data yield the same number of events?
 # 4. within the in situ data, is there a diff in the number of MHWs and MCSs?
 # 5. within the OISST data, is there a diff in the number of MHWs and MCSs?
@@ -535,143 +461,62 @@ summary(mod5a.glht, test = adjusted("none")) # --> Note that it is important to 
 (mod6 <- aov(abs(intensity) ~ c2, data = allAllAnnual))
 mod6a.glht <- glht(mod6, linfct = mcp(c2 = cntrMat2), alternative = "two.sided", vcov = sandwich)
 summary(mod6a.glht, test = adjusted("none"))
-
-# Below is a plain vanilla approach with unplanned ad-hoc comparisons, i.e. every combination of factor levels is compared to every other combination. Since the contrasts are still orthogonal there should not be problems with inflated type I errors, but the above is more efficient as it demonstrates more thought in the selection of hypotheses. Just for fun I have also been playing a bit with the 'magrittr' package and pipes...
-mod1 <- aov(frequency ~ event * type * coast, data = allAllAnnual)
-summary(mod1)
-mod1.Tukey <- TukeyHSD(mod1)
-
-mod1.Tukey$`type:event` %>% # event only
-  data.frame(comp = row.names(mod1.Tukey$`type:event`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`type:event:coast` %>% # event only
-  data.frame(comp = row.names(mod1.Tukey$`type:event:coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-# reveal only the significant differences:
-mod1.Tukey$`event` %>% # event only
-  data.frame(comp = row.names(mod1.Tukey$`event`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`type` %>% # type only
-  data.frame(comp = row.names(mod1.Tukey$`type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`coast` %>% # coast only
-  data.frame(comp = row.names(mod1.Tukey$`coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`event:type` %>% # OISST has more MCS and MHW
-  data.frame(comp = row.names(mod1.Tukey$`event:type`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-mod1.Tukey$`event:type:coast` %>% # comparisons of coasts within events and type
-  data.frame(comp = row.names(mod1.Tukey$`event:type:coast`)) %>%
-  dplyr::filter(p.adj <= 0.05)
-
-# The same thing can be done for the durationa and intensity data (omitted here).
 ### END AJS...
 
-## ANOVA for in situ cummulative intensity
-aovIntensCum <- aov(intCum ~ coast * event, data = allAllEvent[allAllEvent$type == "insitu",])
-#summary(aovIntensCum)
-tukeyIntensCum <- TukeyHSD(aovIntensCum)
-#tukeyIntensCum
 
-## ANOVA for in situ cummulative intensity
-aovIntensCum <- aov(intCum ~ coast * event, data = allAllEvent[allAllEvent$type == "OISST",])
-#summary(aovIntensCum)
-tukeyIntensCum <- TukeyHSD(aovIntensCum)
-#tukeyIntensCum
+# 7. Calculate co-occurrence values ---------------------------------------
 
-## ANOVA for all cummulative intensity
-aovIntensCum <- aov(intCum ~ coast * event * type, data = allAllEvent)
-#summary(aovIntensCum)
-tukeyIntensCum <- TukeyHSD(aovIntensCum)
-#tukeyIntensCum
-
-## Check that data are normal. These ones are not.
-## First pull out your Residuals
-# res <- residuals(aovFrequency )
-# ## Now pull out your fitted values
-# yfit <- fitted.values(aovFrequency )
-# #window(width=8, height=3)
-# par(mfrow=c(1,3),mex=0.8)
-# ## Looking at the spread of the residuals to check Variances
-# plot(yfit,res,xlab="Predicted values",ylab="Residuals")
-# abline(0,0,lty=3)
-# ### Looking at Normality
-# qqnorm(res,main="Model Validation Graphs")
-# qqline(res)
-# hist(res,main= "",xlab="Residuals")
-
-#
-
-# GLM for everything # Not currently using this
-# glmFrequency <- lm(frequency ~ coast * event * type, data = allAllAnnual)
-# summary(glmFrequency)
-
-#############################################################################
-## 8. Calculate co-occurrence between coastal sections
-
-## The code to calculate co-occurrence for individual sites may be found in "graph/eventsPlots2.R"
-
-## NB: The way in which this is calculated for the coast needs to be considered carefully...
-    ## The following function is too biased for the south coast.
-    ## Rather using the indivudal co-occurrence rates and meaning them by coast.
-
-# cooccurrenceCoast <- function(dat1, dat2, lag = seq(2,14,2)){
-#   dat3 <- data.frame()
-#   direction <- c("b","x","a")
-#   coasts <- factor(matrix(c("west", "south", "east")), levels = c("west", "south", "east"))
-#   for(i in 1:length(levels(coasts))) {
-#     x1 <- droplevels(subset(dat1, coast == coasts[i]))
-#     x2 <- droplevels(subset(dat2, coast == coasts[i]))
-#     x1 <- x1[x1$yearStrt >= min(x2$yearStrt), ] # Subset x so that dates match up
-#     x1 <- x1[x1$yearStrt <= max(x2$yearStrt), ]
-#     x2 <- x2[x2$yearStrt >= min(x1$yearStrt), ]
-#     x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
-#     for(j in 1:length(lag)){
-#       for(k in 1:length(seq(0.0,1,0.1))){
-#         for(l in 1:length(direction)){
-#           x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
-#           x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
-#           y <- 0
-#           #x3 <- data.frame() # For test purposes to see which events match up
-#           for(m in 1:nrow(x1.1)) {
-#             x1.2 <- x1.1$date[m]
-#             if(direction[l] == "b"){
-#               x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
-#             } else if(direction[l] == "x"){
-#               x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
-#             } else if (direction[l] == "a") {
-#               x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
-#             }
-#             x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
-#             y <- y + nrow(x2.2)
-#           }
-#           z <- data.frame(coast = x1$coast[1], lon = x1$lon[1], lat = x1$lat[1],
-#                           lag = lag[j], quantile = seq(0.0,1,0.1)[k], direction = direction[l],
-#                           insitu = nrow(x1.1), OISST = nrow(x2.1),
-#                           cooccurrence= y, proportion = y/nrow(x1.1))
-#           dat3 <- rbind(dat3, z)
-#         }
-#       }
-#     }
-#   }
-#   return(dat3)
-# }
+# Function used for calculating co-occurrence
+cooccurrence <- function(dat1, dat2, lag = seq(2,14,2)){
+  dat3 <- data.frame()
+  direction <- c("b","x","a")
+  for(i in 1:length(levels(as.factor(dat1$site)))) {
+    x1 <- droplevels(subset(dat1, site == levels(as.factor(dat1$site))[i]))
+    x2 <- droplevels(subset(dat2, site == levels(as.factor(dat1$site))[i]))
+    x1 <- x1[x1$yearStrt >= min(x2$yearStrt), ] # Subset x so that dates match up
+    x1 <- x1[x1$yearStrt <= max(x2$yearStrt), ]
+    x2 <- x2[x2$yearStrt >= min(x1$yearStrt), ]
+    x2 <- x2[x2$yearStrt <= max(x1$yearStrt), ]
+    for(j in 1:length(lag)){
+      for(k in 1:length(seq(0.0,1,0.1))){
+        for(l in 1:length(direction)){
+          x1.1 <- x1[x1$intCum >= quantile(x1$intCum, probs = seq(0.0,1,0.1)[k]),]
+          x2.1 <- x2[x2$intCum >= quantile(x2$intCum, probs = seq(0.0,1,0.1)[k]),]
+          y <- 0
+          #x3 <- data.frame() # For test purposes to see which events match up
+          for(m in 1:nrow(x1.1)) {
+            x1.2 <- x1.1$date[m]
+            if(direction[l] == "b"){
+              x1.3 <- seq((x1.2 - days(lag[j])), x1.2, 1)
+            } else if(direction[l] == "x"){
+              x1.3 <- seq((x1.2 - days(lag[j])), (x1.2 + days(lag[j])), 1)
+            } else if (direction[l] == "a") {
+              x1.3 <- seq(x1.2, (x1.2 + days(lag[j])), 1)
+            }
+            x2.2 <- droplevels(subset(x2.1, date %in% x1.3))
+            y <- y + nrow(x2.2)
+          }
+          z <- data.frame(site = x1$site[1], lon = x1$lon[1], lat = x1$lat[1],
+                          lag = lag[j], quantile = seq(0.0,1,0.1)[k], direction = direction[l],
+                          insitu = nrow(x1.1), OISST = nrow(x2.1),
+                          cooccurrence= y, proportion = y/nrow(x1.1))
+          dat3 <- rbind(dat3, z)
+        }
+      }
+    }
+  }
+  return(dat3)
+}
 
 #mhwCO0 <- cooccurrence(mhw, mhwSST, lag = 0) # Test to see which happen on exact same day
 #MHW
-# mhwCoastCO <- cooccurrenceCoast(mhwEvent, mhwEventSST) # This takes several minutes to run... cursed for loops...
-# write.csv(mhwCoastCO, "data/mhwCoastCO.csv", row.names = F)
-# mhwCoastCO <- read.csv("data/mhwCoastCO.csv")
+# mhwCoastCO <- cooccurrence(mhwEvent, mhwEventSST) # This takes several minutes to run... cursed for loops...
+# write.csv(mhwCoastCO, "data/mhwCO.csv", row.names = F)
+# mhwCoastCO <- read.csv("data/mhwCO.csv")
 #MCS
-# mcsCoastCO <- cooccurrenceCoast(mcsEvent, mcsEventSST)
-# write.csv(mcsCoastCO, "data/mcsCoastCO.csv", row.names = F)
-# mcsCoastCO <- read.csv("data/mcsCoastCO.csv")
+# mcsCoastCO <- cooccurrence(mcsEvent, mcsEventSST)
+# write.csv(mcsCoastCO, "data/mcsCO.csv", row.names = F)
+# mcsCoastCO <- read.csv("data/mcsCO.csv")
 
 mhwCoastCO <- read.csv("data/mhwCO.csv")
 mcsCoastCO <- read.csv("data/mcsCO.csv")
@@ -696,100 +541,100 @@ mcsCoastCO$coast[mcsCoastCO$site %in% ec] <- "east"
 # write.csv(mcsCoastCO, "data/mcsCoastCO.csv")
 
 # Some exploratory stats
-mean(mhwCoastCO$proportion[mhwCoastCO$direction =="b"])
-mean(mhwCoastCO$proportion[mhwCoastCO$direction =="x"])
-mean(mhwCoastCO$proportion[mhwCoastCO$direction =="a"])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="b"]) # 0.1067157
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="x"]) # 0.2111034
+mean(mhwCoastCO$proportion[mhwCoastCO$direction =="a"]) # 0.1171394
 
-mean(mcsCoastCO$proportion[mcsCoastCO$direction =="b"])
-mean(mcsCoastCO$proportion[mcsCoastCO$direction =="x"])
-mean(mcsCoastCO$proportion[mcsCoastCO$direction =="a"])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="b"]) # 0.04615112
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="x"]) # 0.0938059
+mean(mcsCoastCO$proportion[mcsCoastCO$direction =="a"]) # 0.05763613
 
-#############################################################################
-## 9. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence
+
+# 8. Calcuate stats and statistical significance between coastal s --------
 
 ## Mean(sd) of co-occurrence for the different types
 # MHW + all coasts + both directions + 0th quantile + 2 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0894
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0683
 # MHW + all coasts + both directions + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.3842
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.2004
 # MCS + all coasts + both directions + 0th quantile + 2 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.1007
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0542
 # MCS + all coasts + both directions + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.3030
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.1264
 
 
 ## Mean values considering lag windows
 # MHW + all coasts + before + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.2216
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.1315
 # MHW + all coasts + before + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.1762
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.0978
 # MCS + all coasts + before + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.1628
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.0958
 # MCS + all coasts + before + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.1682
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.0816
 
 
 # MHW + all coasts + before + 50th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14]) # 0.1693
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "b" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14]) # 0.1126
 # MHW + all coasts + before + 50th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14]) # 0.1514
+sd(mhwCoastCO$proportion[mhwCoastCO$direction == "a" & mhwCoastCO$quantile == 0.5 & mhwCoastCO$lag == 14]) # 0.1271
 # MCS + all coasts + before + 50th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14]) # 0.0503
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "b" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14]) # 0.0773
 # MCS + all coasts + before + 50th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14]) # 0.0807
+sd(mcsCoastCO$proportion[mcsCoastCO$direction == "a" & mcsCoastCO$quantile == 0.5 & mcsCoastCO$lag == 14]) # 0.0761
 
 
 ## Mean values considering lag length
 # MHW + south coast + both directions + 0th quantile + 2 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.1040
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0709
 # MHW + south coast + both directions + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.4540
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "south" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.1754
 # MCS + south coast + both directions + 0th quantile + 2 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.1117
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0635
 # MCS + south coast + both directions + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.3391
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "south" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.1421
 
 # MHW + west coast + both directions + 0th quantile + 2 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0719
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0334
 # MHW + west coast + both directions + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.2834
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "west" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.0567
 # MCS + west coast + both directions + 0th quantile + 2 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0824
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0352
 # MCS + west coast + both directions + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.1920
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "west" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.0223
 
 # MHW + east coast + both directions + 0th quantile + 2 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0593
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 2]) # 0.0857
 # MHW + east coast + both directions + 0th quantile + 14 day lag
-mean(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
-sd(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14])
+mean(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.2580
+sd(mhwCoastCO$proportion[mhwCoastCO$coast == "east" & mhwCoastCO$direction == "x" & mhwCoastCO$quantile == 0.0 & mhwCoastCO$lag == 14]) # 0.2926
 # MCS + east coast + both directions + 0th quantile + 2 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0836
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 2]) # 0.0296
 # MCS + east coast + both directions + 0th quantile + 14 day lag
-mean(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
-sd(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14])
+mean(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.2967
+sd(mcsCoastCO$proportion[mcsCoastCO$coast == "east" & mcsCoastCO$direction == "x" & mcsCoastCO$quantile == 0.0 & mcsCoastCO$lag == 14]) # 0.0556
 
 ## ANOVA for different coasts co-occurrence
 # MHW + both lag + 2 day lag
@@ -814,8 +659,8 @@ aovCo <- aov(proportion ~ coast, data = mcsCoastCO[mcsCoastCO$direction == "x" &
 tukeyFrequency <- TukeyHSD(aovCo)
 #tukeyFrequency
 
-#############################################################################
-## 10. Decadal trends in MHWs/ MCSs
+
+# 9. Decadal trends in MHWs/ MCSs -----------------------------------------
 
 ## Decadal trends
 # First  subset out in situ time series over 30 years
@@ -868,53 +713,53 @@ print(xtable(trendsTable[,1:8], auto = TRUE), include.rownames=FALSE)
 
 ## OISST stats
 # OISST MHW all
-mean(trends$mhwtrend[trends$type == "OISST"])
-sd(trends$mhwtrend[trends$type == "OISST"])
+mean(trends$mhwtrend[trends$type == "OISST"]) # 0.22
+sd(trends$mhwtrend[trends$type == "OISST"]) # 0.15
 # OISST MHW wc
-mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"])
-sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"]) # 0.13
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "wc"]) # 0.13
 # OISST MHW sc
-mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"])
-sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"]) # 0.24
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "sc"]) # 0.17
 # OISST MHW ec
-mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"])
-sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"])
+mean(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"]) # 0.25
+sd(trends$mhwtrend[trends$type == "OISST" & trends$coast == "ec"]) # 0.06
 
 # OISST MCS all
-mean(trends$mcstrend[trends$type == "OISST"])
-sd(trends$mcstrend[trends$type == "OISST"])
-# OISST MHW wc
-mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"])
-sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"])
-# OISST MHW sc
-mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"])
-sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"])
-# OISST MHW ec
-mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"])
-sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"])
+mean(trends$mcstrend[trends$type == "OISST"]) # -0.34
+sd(trends$mcstrend[trends$type == "OISST"]) # 0.27
+# OISST MCS wc
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"]) # -0.03
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "wc"]) # 0.21
+# OISST MCS sc
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"]) # -0.41
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "sc"]) # 0.25
+# OISST MCS ec
+mean(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"]) # -0.45
+sd(trends$mcstrend[trends$type == "OISST" & trends$coast == "ec"]) # 0.17
 
 
 ## in situ stats
 # in situ MHW all
-mean(trends$mhwtrend[trends$type == "insitu"])
-sd(trends$mhwtrend[trends$type == "insitu"])
+mean(trends$mhwtrend[trends$type == "insitu"]) # 0.20
+sd(trends$mhwtrend[trends$type == "insitu"]) # 0.37
 # in situ MHW wc
-mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"])
-sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"])
+mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"]) # 0.00
+sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "wc"]) # 0.28
 # in situ MHW sc
-mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"])
-sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"])
+mean(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"]) # 0.40
+sd(trends$mhwtrend[trends$type == "insitu" & trends$coast == "sc"]) # 0.42
 
 
 # in situ MCS all
-mean(trends$mcstrend[trends$type == "insitu"])
-sd(trends$mcstrend[trends$type == "insitu"])
+mean(trends$mcstrend[trends$type == "insitu"]) # -0.08
+sd(trends$mcstrend[trends$type == "insitu"]) # 0.34
 # in situ MCS wc
-mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"])
-sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"])
+mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"]) # -0.15
+sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "wc"]) # 0.49
 # in situ MCS sc
-mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"])
-sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"])
+mean(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"]) # 0.00
+sd(trends$mcstrend[trends$type == "insitu" & trends$coast == "sc"]) # 0.29
 
 ## Short time series
 shorts <- data.frame()
@@ -943,30 +788,30 @@ tukeyIntensCum <- TukeyHSD(aovShorts)
 
 ## Short stats
 # MHW all
-mean(shorts$prop[shorts$event == "mhw"])
-sd(shorts$prop[shorts$event == "mhw"])
+mean(shorts$prop[shorts$event == "mhw"]) # 1.72
+sd(shorts$prop[shorts$event == "mhw"]) # 1.31
 # MHW wc
-mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "wc"])
-sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "wc"])
+mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "wc"]) # 1.50
+sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "wc"]) # 0.60
 # MHW sc
-mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "sc"])
-sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "sc"])
+mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "sc"]) # 2.14
+sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "sc"]) # 1.42
 # MHW ec
-mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "ec"])
-sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "ec"])
+mean(shorts$prop[shorts$event == "mhw" & shorts$coast == "ec"]) # 0.68
+sd(shorts$prop[shorts$event == "mhw" & shorts$coast == "ec"]) # 0.36
 
 # MCS all
-mean(shorts$prop[shorts$event == "mcs"])
-sd(shorts$prop[shorts$event == "mcs"])
+mean(shorts$prop[shorts$event == "mcs"]) # 0.79
+sd(shorts$prop[shorts$event == "mcs"]) # 0.65
 # MCS wc
-mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "wc"])
-sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "wc"])
+mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "wc"]) # 1.81
+sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "wc"]) # 0.58
 # MCS sc
-mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "sc"])
-sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "sc"])
+mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "sc"]) # 0.51
+sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "sc"]) # 0.34
 # MCS ec
-mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
-sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"])
+mean(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"]) # 1.05
+sd(shorts$prop[shorts$event == "mcs" & shorts$coast == "ec"]) # 0.82
 
 ## Short counts for ANOVA
 shortCount <- data.frame()
@@ -1027,31 +872,4 @@ cntrMat7 <- rbind("first-second (MHW)"=c(0, 0, 0, 1, 1, 1, 0, 0, 0, -1, -1, -1),
                   "first-second (MCS, ec)"=c(0, 0, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0)) # 10.
 mod7.glht <- glht(mod7, linfct = mcp(c1 = cntrMat7), alternative = "two.sided", vcov = sandwich)
 summary(mod7.glht, test = adjusted("none"))
-
-#############################################################################
-## 11. R2 between in situ and OISST time series
-
-# Load time series for both datasets
-load("prep/SA_coastal_temps.RData")
-SA_coastal_temps$date <- as.Date(SA_coastal_temps$date)
-load("data/OISSTdaily.Rdata")
-
-resultsR2 <- data.frame()
-for(i in 1:length(levels(SA_coastal_temps$site))) {
-  x <- subset(SA_coastal_temps, site == levels(SA_coastal_temps$site)[i])
-  y <- subset(OISSTdaily, site == levels(SA_coastal_temps$site)[i])
-  x <- x[x$date %in% y$date,]
-  y <- y[y$date %in% x$date,]
-  z <- data.frame(site = as.character(x$site[1]), R2 = round(coef(lm(y$temp~x$temp))[2],2))
-  resultsR2 <- rbind(resultsR2, z)
-}
-
-# Add column for plotting
-row.names(resultsR2) <- NULL
-resultsR2$R22 <- paste0("R^2 ==", format(resultsR2$R2, digits=2))
-
-#############################################################################
-## 12. Co-occurrence within datasets and coastal sections
-
-
 
