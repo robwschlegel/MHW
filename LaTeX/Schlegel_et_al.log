@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.13)  1 DEC 2016 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.13)  12 DEC 2016 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2036,7 +2036,7 @@ Package microtype Info: Loading generic settings for font family
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-<figure1_1km_inset_map_labeled.pdf, id=305, 579.16376pt x 362.35374pt>
+<figure1_1km_inset_map_labeled.pdf, id=308, 579.16376pt x 362.35374pt>
 File: figure1_1km_inset_map_labeled.pdf Graphic file (type pdf)
 
 <use figure1_1km_inset_map_labeled.pdf>
@@ -2057,7 +2057,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 222.
 
-[10] [11] <figure2.pdf, id=474, 722.7pt x 433.62pt>
+[10] [11] <figure2.pdf, id=479, 722.7pt x 433.62pt>
 File: figure2.pdf Graphic file (type pdf)
  <use figure2.pdf>
 Package pdftex.def Info: figure2.pdf used on input line 294.
@@ -2065,12 +2065,12 @@ Package pdftex.def Info: figure2.pdf used on input line 294.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 295.
 
-<figure3.png, id=478, 913.4928pt x 913.011pt>
+<figure3.png, id=483, 913.4928pt x 913.011pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
 Package pdftex.def Info: figure3.png used on input line 303.
 (pdftex.def)             Requested size: 441.01773pt x 440.78975pt.
- [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=513, 433.62pt 
+ [12] [13 <./figure2.pdf>] [14 <./figure3.png>] <figure4.pdf, id=518, 433.62pt 
 x 578.16pt>
 File: figure4.pdf Graphic file (type pdf)
 
@@ -2081,7 +2081,7 @@ Package pdftex.def Info: figure4.pdf used on input line 316.
 
 LaTeX Warning: Float too large for page by 41.50014pt on input line 319.
 
-<figure5.pdf, id=518, 433.62pt x 578.16pt>
+<figure5.pdf, id=523, 433.62pt x 578.16pt>
 File: figure5.pdf Graphic file (type pdf)
  <use figure5.pdf>
 Package pdftex.def Info: figure5.pdf used on input line 322.
@@ -2092,13 +2092,13 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 330.
 
 [15] [16 <./figure4.pdf>] [17 <./figure5.pdf>]
-<MHW_MCS_mean.png, id=553, 743.6583pt x 503.7219pt>
+<MHW_MCS_mean.png, id=558, 743.6583pt x 503.7219pt>
 File: MHW_MCS_mean.png Graphic file (type png)
  <use MHW_MCS_mean.png>
 Package pdftex.def Info: MHW_MCS_mean.png used on input line 381.
 (pdftex.def)             Requested size: 441.01773pt x 298.72289pt.
 
-<MHW_MCS_trend.png, id=556, 742.9356pt x 502.2765pt>
+<MHW_MCS_trend.png, id=561, 742.9356pt x 502.2765pt>
 File: MHW_MCS_trend.png Graphic file (type png)
  <use MHW_MCS_trend.png>
 Package pdftex.def Info: MHW_MCS_trend.png used on input line 389.
@@ -2126,15 +2126,15 @@ Package rerunfilecheck Info: File `Schlegel_et_al.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
  ) 
 Here is how much of TeX's memory you used:
- 31990 strings out of 493029
- 600093 string characters out of 6136234
- 680815 words of memory out of 5000000
- 34614 multiletter control sequences out of 15000+600000
- 108053 words of font info for 190 fonts, out of 8000000 for 9000
+ 32005 strings out of 493029
+ 600327 string characters out of 6136234
+ 681815 words of memory out of 5000000
+ 34622 multiletter control sequences out of 15000+600000
+ 108550 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,92p,10423b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+ 62i,12n,92p,10423b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
 -ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmbx5.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pf
@@ -2149,12 +2149,12 @@ sr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.p
-fb>
-Output written on Schlegel_et_al.pdf (35 pages, 2371899 bytes).
+fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
+Output written on Schlegel_et_al.pdf (35 pages, 2397206 bytes).
 PDF statistics:
- 912 PDF objects out of 1000 (max. 8388607)
- 802 compressed objects within 9 object streams
- 144 named destinations out of 1000 (max. 500000)
- 30416 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 925 PDF objects out of 1000 (max. 8388607)
+ 814 compressed objects within 9 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 30928 words of extra memory for PDF output out of 35830 (max. 10000000)
 

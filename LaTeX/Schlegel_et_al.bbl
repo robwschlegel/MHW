@@ -1,4 +1,4 @@
-\begin{thebibliography}{67}
+\begin{thebibliography}{69}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -347,6 +347,12 @@ Roberts, M.~J., 2005. {Chokka squid (\emph{\emph{Loligo vulgaris reynaudii}})
   spawning and the early life cycle}. ICES Journal of Marine Science 62~(1),
   33--55.
 
+\bibitem[{Schlegel and Smit(2016)}]{Schlegel2016}
+Schlegel, R.~W., Smit, A.~J., 2016. Climate change in coastal waters: Time
+  series properties affecting trend estimation. Journal of Climate 29~(24),
+  9113--9124.
+\newline\urlprefix\url{http://dx.doi.org/10.1175/JCLI-D-16-0014.1}
+
 \bibitem[{Selig et~al.(2010)Selig, Casey, and Bruno}]{Selig2010}
 Selig, E.~R., Casey, K.~S., Bruno, J.~F., 2010. {New insights into global
   patterns of ocean temperature anomalies: implications for coral reef health
@@ -376,6 +382,18 @@ Stocker, T., Qin, D., Plattner, G.~K., Tignor, M., Allen, S.~K., Boschung, J.,
 \bibitem[{Sura(2011)}]{Sura2011}
 Sura, P., 2011. {A general perspective of extreme events in weather and
   climate}. Atmospheric Research 101~(1-2), 1--21.
+
+\bibitem[{Wernberg et~al.(2016)Wernberg, Bennett, Babcock, de~Bettignies, Cure,
+  Depczynski, Dufois, Fromont, Fulton, Hovey, Harvey, Holmes, Kendrick,
+  Radford, Santana-Garcon, Saunders, Smale, Thomsen, Tuckett, Tuya,
+  Vanderklift, and Wilson}]{Wernberg2016}
+Wernberg, T., Bennett, S., Babcock, R.~C., de~Bettignies, T., Cure, K.,
+  Depczynski, M., Dufois, F., Fromont, J., Fulton, C.~J., Hovey, R.~K., Harvey,
+  E.~S., Holmes, T.~H., Kendrick, G.~A., Radford, B., Santana-Garcon, J.,
+  Saunders, B.~J., Smale, D.~A., Thomsen, M.~S., Tuckett, C.~A., Tuya, F.,
+  Vanderklift, M.~A., Wilson, S., 2016. Climate-driven regime shift of a
+  temperate marine ecosystem. Science 353~(6295), 169--172.
+\newline\urlprefix\url{http://science.sciencemag.org/content/353/6295/169}
 
 \bibitem[{Wernberg et~al.(2011)Wernberg, Russell, Moore, Ling, Smale, Campbell,
   Coleman, Steinberg, Kendrick, and Connell}]{Wernberg2011}

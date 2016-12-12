@@ -14,3 +14,6 @@ The scripts and raw data used to compare marine heat waves and cold-spells betwe
 
 ## 2016/12/01
 * First round of suggested revisions made by RWS
+
+## 2016/12/11
+* First round of co-author comments from the first round of revisions completed
