@@ -16,6 +16,7 @@
 # setwd("/Users/ajsmit/Dropbox/̧repos/MHW/proc")
 library(zoo)
 library(plyr)
+library(dplyr)
 library(stringr)
 library(lubridate)
 library(xtable)
