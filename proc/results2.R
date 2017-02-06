@@ -9,6 +9,7 @@
 # 7. Calculate co-occurrence values;
 # 8. Calcuate stats and statistical significance between coastal sections etc. for co-occurrence;
 # 9. Decadal trends in MHWs/ MCSs
+# 10. R2 between in situ and OISST time series
 #############################################################################
 
 #############################################################################
@@ -874,3 +875,24 @@ cntrMat7 <- rbind("first-second (MHW)"=c(0, 0, 0, 1, 1, 1, 0, 0, 0, -1, -1, -1),
 mod7.glht <- glht(mod7, linfct = mcp(c1 = cntrMat7), alternative = "two.sided", vcov = sandwich)
 summary(mod7.glht, test = adjusted("none"))
 
+
+# 10. R2 between in situ and OISST time series ----------------------------
+
+# Load time series for both datasets
+load("prep/SA_coastal_temps.RData")
+SA_coastal_temps$date <- as.Date(SA_coastal_temps$date)
+load("data/OISSTdaily.Rdata")
+
+resultsR2 <- data.frame()
+for(i in 1:length(levels(SA_coastal_temps$site))) {
+  x <- subset(SA_coastal_temps, site == levels(SA_coastal_temps$site)[i])
+  y <- subset(OISSTdaily, site == levels(SA_coastal_temps$site)[i])
+  x <- x[x$date %in% y$date,]
+  y <- y[y$date %in% x$date,]
+  z <- data.frame(site = as.character(x$site[1]), R2 = round(coef(lm(y$temp~x$temp))[2],2))
+  resultsR2 <- rbind(resultsR2, z)
+}
+
+# Add column for plotting
+row.names(resultsR2) <- NULL
+resultsR2$R22 <- paste0("R^2 ==", format(resultsR2$R2, digits=2))

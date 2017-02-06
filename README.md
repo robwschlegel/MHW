@@ -20,3 +20,6 @@ The scripts and raw data used to compare marine heat waves and cold-spells betwe
 
 ## 2016/12/19
 * Last round of co-author comments for the first round of revisions completed
+
+## 2017/02/06
+* Added greyscale versions of all figures for non-colour printing
