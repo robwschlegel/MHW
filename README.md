@@ -1,9 +1,9 @@
 # MHW
-The scripts and raw data used to compare marine heat waves and cold-spells between local and broad-scales along the coast of South Africa.
+The scripts and raw data used to compare marine heatwaves and cold-spells between sub and meso-scales along the coast of South Africa.
 
 ## File description
 * The text of the paper may be found in "/LaTeX/Schlegel\_et_al.tex"
-* The code used to prepare calculate the heatwaves and cold-spells may be found at <https://github.com/ecjoliver/marineHeatWaves>
+* The code used to prepare the data and calculate the heatwaves and cold-spells may be found at <https://github.com/ecjoliver/marineHeatWaves>
 * The code used to calculate the rates of co-occurrence may be found in "proc/results2.R"
 * The code used to create the figures seen in the paper may be found in "graph/..."
 * The "/data" folder contains the raw data used in the analyses as well as the output from the "prep/..." and "proc/..." scripts
